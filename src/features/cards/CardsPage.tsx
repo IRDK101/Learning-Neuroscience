@@ -10,7 +10,7 @@ import { Diagram } from '../../ui/Diagram';
 
 const KINDS = [
   { id: 'basic', label: 'Q & A' },
-  { id: 'reverse', label: 'Reverse (function → name)' },
+  { id: 'reverse', label: 'Reverse (from function to name)' },
   { id: 'occlusion', label: 'Diagram (name the highlighted part)' },
 ];
 const TYPES: EntityType[] = ['region', 'neurotransmitter', 'drug', 'molecule', 'pathway', 'concept', 'case', 'term'];
@@ -37,19 +37,18 @@ export function CardsPage() {
   return (
     <div className="stack">
       <div className="page-head">
-        <div className="eyebrow">Flashcards</div>
-        <h1>Spaced repetition</h1>
+        <h1>Flashcards</h1>
         <p>Cards you know well come back less often. Cards you miss come back soon. Rate honestly: that's what makes the schedule work.</p>
       </div>
 
-      <section className="panel stack">
+      <section className="stack">
         <div className="row">
           <h2 style={{ margin: 0 }}>Deck: {describeFilter(filter, content)}</h2>
           <span className="spacer" />
           <CopyLinkButton path={`/cards${filterToQuery(filter)}`} label="Share deck" />
         </div>
-        <div>
-          <div className="small muted">Topic</div>
+        <div className="filter-group">
+          <div className="label">Topic</div>
           <div className="linklist">
             {readyTopics.map((t) => (
               <button key={t.id} type="button" className="chip" aria-pressed={filter.topics.includes(t.id)} onClick={() => setFilter({ ...filter, topics: toggle(filter.topics, t.id) })}>
@@ -58,18 +57,18 @@ export function CardsPage() {
             ))}
           </div>
         </div>
-        <div>
-          <div className="small muted">Exam unit</div>
+        <div className="filter-group">
+          <div className="label">Exam</div>
           <div className="linklist">
             {content.units.map((u) => (
               <button key={u.id} type="button" className="chip" aria-pressed={filter.units.includes(u.id)} onClick={() => setFilter({ ...filter, units: toggle(filter.units, u.id) })}>
-                {u.id.replace('exam', 'Exam ')} · {u.name}
+                {u.id.replace('exam', 'Exam ')}: {u.name}
               </button>
             ))}
           </div>
         </div>
-        <div>
-          <div className="small muted">About</div>
+        <div className="filter-group">
+          <div className="label">About</div>
           <div className="linklist">
             {TYPES.map((t) => (
               <button key={t} type="button" className="chip" aria-pressed={filter.types.includes(t)} onClick={() => setFilter({ ...filter, types: toggle(filter.types, t) })}>
@@ -78,8 +77,8 @@ export function CardsPage() {
             ))}
           </div>
         </div>
-        <div>
-          <div className="small muted">Card type</div>
+        <div className="filter-group">
+          <div className="label">Card type</div>
           <div className="linklist">
             {KINDS.map((k) => (
               <button key={k.id} type="button" className="chip" aria-pressed={filter.kinds.includes(k.id)} onClick={() => setFilter({ ...filter, kinds: toggle(filter.kinds, k.id) })}>
@@ -96,20 +95,9 @@ export function CardsPage() {
             </button>
           </div>
         )}
-        <div className="kpis">
-          <div className="stat">
-            <b>{due}</b>
-            <span>due now</span>
-          </div>
-          <div className="stat">
-            <b>{fresh}</b>
-            <span>new</span>
-          </div>
-          <div className="stat">
-            <b>{cards.length}</b>
-            <span>in deck</span>
-          </div>
-        </div>
+        <p className="counts sheet" style={{ marginTop: 0 }}>
+          This deck has <b>{cards.length}</b> cards: <b>{due}</b> due now and <b>{fresh}</b> you haven't seen yet.
+        </p>
         <div className="row">
           <button type="button" className="btn primary" disabled={plan.queue.length === 0} onClick={() => setSession({ queue: plan.queue, cram: false })}>
             <Icon name="cards" /> Study {plan.due.length} due + {plan.fresh.length} new
@@ -159,7 +147,7 @@ function Session({ queue: initial, cram, onDone }: { queue: Card[]; cram: boolea
   if (!card) {
     return (
       <div className="panel stack" style={{ maxWidth: 640, margin: '0 auto', textAlign: 'center' }}>
-        <div className="summary-score">{stats.reviewed}</div>
+        <div className="result-score">{stats.reviewed}</div>
         <h2>cards reviewed</h2>
         <p className="muted">
           {stats.reviewed ? `${Math.round(((stats.reviewed - stats.again) / stats.reviewed) * 100)}% remembered on the first try.` : ''}{' '}
@@ -182,12 +170,12 @@ function Session({ queue: initial, cram, onDone }: { queue: Card[]; cram: boolea
     <div style={{ maxWidth: 720, margin: '0 auto' }} className="stack">
       <div className="row">
         <button type="button" className="btn small ghost" onClick={onDone}>
-          ← End session
+          End session
         </button>
         <span className="spacer" />
         <span className="small muted">
           {i + 1} / {queue.length}
-          {cram ? ' · cram' : ''}
+          {cram ? ' (cram)' : ''}
         </span>
       </div>
       <div className="meter">
@@ -227,7 +215,7 @@ function Session({ queue: initial, cram, onDone }: { queue: Card[]; cram: boolea
             <button key={g.rating} type="button" className={`btn ${g.label.toLowerCase()}`} onClick={() => grade(g.rating)}>
               {g.label}
               <small>
-                {formatInterval(intervals[g.rating])} · {g.key}
+                {formatInterval(intervals[g.rating])}, key {g.key}
               </small>
             </button>
           ))}

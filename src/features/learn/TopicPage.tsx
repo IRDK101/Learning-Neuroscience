@@ -25,17 +25,19 @@ export function TopicPage() {
           <span className="spacer" />
           <CopyLinkButton path={`/learn/${t.id}`} />
         </div>
-        <h1 style={{ marginTop: '0.5rem' }}>{t.name}</h1>
+        <h1 style={{ marginTop: '0.6rem' }}>{t.name}</h1>
         <p>{t.summary}</p>
         {t.status === 'planned' && <div className="notice">This topic is coming soon.</div>}
-        <div style={{ maxWidth: 420 }}>
-          <div className="small muted">Mastery {Math.round(m * 100)}%</div>
-          <Meter value={m} label="Topic mastery" />
-        </div>
+        {m > 0 && (
+          <div style={{ maxWidth: 420 }}>
+            <div className="small muted">{Math.round(m * 100)}% mastered</div>
+            <Meter value={m} label="Topic mastery" />
+          </div>
+        )}
       </div>
 
       {t.lessons.length > 0 && (
-        <section className="panel">
+        <section>
           <h2>Lessons</h2>
           <ol className="lesson-list">
             {t.lessons.map((id, i) => {
@@ -44,11 +46,13 @@ export function TopicPage() {
               return (
                 <li key={id}>
                   <Link to={`/learn/${t.id}/${l.slug}`}>
-                    <span className={`lesson-num${done ? ' done' : ''}`}>{done ? <Icon name="check" size={16} /> : i + 1}</span>
+                    <span className={`lesson-num${done ? ' done' : ''}`} aria-label={done ? 'Done' : undefined}>
+                      {done ? <Icon name="check" size={22} /> : i + 1}
+                    </span>
                     <span>
                       <b>{l.title}</b>
                       <span className="small muted" style={{ display: 'block' }}>
-                        {l.minutes} min · {l.summary}
+                        {l.summary} ({l.minutes} min)
                       </span>
                     </span>
                   </Link>
@@ -59,7 +63,7 @@ export function TopicPage() {
         </section>
       )}
 
-      <section className="panel">
+      <section className="sheet">
         <h2>Practice this topic</h2>
         <div className="row">
           <Link className="btn primary" to={`/cards${filterToQuery({ topics: [t.id], units: [], types: [], kinds: [] })}`}>
@@ -82,7 +86,7 @@ export function TopicPage() {
       </section>
 
       {diagrams.length > 0 && (
-        <section className="panel">
+        <section className="sheet">
           <h2>Diagrams</h2>
           <div className="linklist">
             {diagrams.map((d) => (
@@ -94,7 +98,7 @@ export function TopicPage() {
         </section>
       )}
 
-      <section className="panel">
+      <section className="sheet">
         <h2>Key ideas</h2>
         {(['neurotransmitter', 'drug', 'pathway', 'concept', 'case'] as const).map((type) => {
           const ids = Object.values(content.entities)
@@ -103,9 +107,7 @@ export function TopicPage() {
           if (!ids.length) return null;
           return (
             <div key={type} style={{ marginBottom: '0.8rem' }}>
-              <div className="small muted" style={{ marginBottom: '0.3rem', textTransform: 'capitalize' }}>
-                {type === 'case' ? 'Disorders' : `${type}s`}
-              </div>
+              <h3>{{ neurotransmitter: 'Neurotransmitters', drug: 'Drugs', pathway: 'Pathways', concept: 'Concepts', case: 'Disorders' }[type]}</h3>
               <div className="linklist">
                 {ids.map((id) => (
                   <EntityLink key={id} id={id} />

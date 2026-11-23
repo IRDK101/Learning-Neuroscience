@@ -49,7 +49,7 @@ function Block({ b, topic, onPathwayStep }: { b: LessonBlock; topic: string; onP
     case 'aside':
       return (
         <aside className={`aside aside-${b.kind}`}>
-          <div className="aside-label">{b.kind === 'added' ? 'Background (added, not from the notes)' : b.kind === 'tip' ? 'Tip' : 'Note'}</div>
+          <div className="aside-label">{b.kind === 'added' ? 'Background, added for beginners (not from the notes)' : b.kind === 'tip' ? 'Tip' : 'Note'}</div>
           <div dangerouslySetInnerHTML={{ __html: b.html }} />
         </aside>
       );
@@ -57,7 +57,7 @@ function Block({ b, topic, onPathwayStep }: { b: LessonBlock; topic: string; onP
       const d = getDiagram(b.diagram);
       return (
         <div className="figure-marker">
-          <Icon name="map" size={15} /> {b.caption ?? `Diagram: ${d?.title}`}
+          <Icon name="map" size={15} /> {b.caption ?? `See the figure: ${d?.title}.`}
         </div>
       );
     }
@@ -68,7 +68,7 @@ function Block({ b, topic, onPathwayStep }: { b: LessonBlock; topic: string; onP
       if (!q) return null;
       return (
         <div className="check">
-          <div className="eyebrow">Check yourself</div>
+          <div className="check-label">Check yourself</div>
           <QuestionView q={q} onAnswer={(ok) => recordAnswer(topic, q.id, ok)} />
         </div>
       );
@@ -158,13 +158,15 @@ export function LessonPage() {
       <div className="row" style={{ marginBottom: '0.4rem' }}>
         <UnitTag unit={t.unit} />
         <span className="small muted">
-          {l.minutes} min{p.lessons[l.id] ? ' · completed ✓' : ''}
+          {l.minutes} minutes{p.lessons[l.id] ? ', completed' : ''}
         </span>
         <span className="spacer" />
         <CopyLinkButton path={`/learn/${t.id}/${l.slug}`} />
       </div>
-      <h1>{l.title}</h1>
-      <p className="muted">{l.summary}</p>
+      <div className="lesson-head">
+        <h1>{l.title}</h1>
+        <p className="lede">{l.summary}</p>
+      </div>
 
       <div className={figure ? 'lesson-layout' : ''}>
         <div className="lesson-text" onPointerOver={onTextOver} onPointerOut={onTextOut}>
@@ -178,7 +180,7 @@ export function LessonPage() {
             </div>
           ))}
 
-          <div ref={endRef} className="panel" style={{ marginTop: '2rem' }}>
+          <div ref={endRef} className="lesson-end">
             <h2 style={{ marginTop: 0 }}>Practice this topic</h2>
             <p className="muted">Lock it in with spaced-repetition flashcards or a quick quiz on {t.name}.</p>
             <div className="row">
@@ -189,23 +191,10 @@ export function LessonPage() {
                 <Icon name="spark" /> 10-question quiz
               </Link>
             </div>
-            <div className="row" style={{ marginTop: '1rem' }}>
-              {prev && (
-                <Link className="btn ghost" to={`/learn/${t.id}/${prev.slug}`}>
-                  ← {prev.title}
-                </Link>
-              )}
-              <span className="spacer" />
-              {next ? (
-                <Link className="btn" to={`/learn/${t.id}/${next.slug}`}>
-                  Next: {next.title} →
-                </Link>
-              ) : (
-                <Link className="btn" to={`/learn/${t.id}`}>
-                  Back to topic →
-                </Link>
-              )}
-            </div>
+            <nav className="lesson-nav" aria-label="Lessons">
+              {prev ? <Link to={`/learn/${t.id}/${prev.slug}`}>Previous: {prev.title}</Link> : <span />}
+              {next ? <Link to={`/learn/${t.id}/${next.slug}`}>Next: {next.title}</Link> : <Link to={`/learn/${t.id}`}>Back to {t.name}</Link>}
+            </nav>
           </div>
         </div>
 
@@ -223,7 +212,7 @@ export function LessonPage() {
                 selected ? (
                   <span>
                     <b>{entity(selected)?.name}:</b> {entity(selected)?.short}{' '}
-                    <Link to={`/entity/${selected}`}>More →</Link>
+                    <Link to={`/entity/${selected}`}>More about it</Link>
                   </span>
                 ) : (
                   <span className="idle">{d.title}. Tap a structure to identify it.</span>

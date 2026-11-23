@@ -41,18 +41,17 @@ export function QuizPage() {
   return (
     <div className="stack">
       <div className="page-head">
-        <div className="eyebrow">Trivia quiz</div>
         <h1>Quiz yourself</h1>
         <p>Multiple choice plus "which region would be damaged if…" cases. Wrong answers explain why and link back to the lesson.</p>
       </div>
-      <section className="panel stack">
+      <section className="stack">
         <div className="row">
           <h2 style={{ margin: 0 }}>{describeFilter(filter, content)}</h2>
           <span className="spacer" />
           <CopyLinkButton path={`/quiz${filterToQuery({ ...filter, n })}`} label="Share this quiz" />
         </div>
-        <div>
-          <div className="small muted">Topic</div>
+        <div className="filter-group">
+          <div className="label">Topic</div>
           <div className="linklist">
             {readyTopics.map((t) => (
               <button key={t.id} type="button" className="chip" aria-pressed={filter.topics.includes(t.id)} onClick={() => setFilter({ ...filter, topics: toggle(filter.topics, t.id) })}>
@@ -61,8 +60,8 @@ export function QuizPage() {
             ))}
           </div>
         </div>
-        <div>
-          <div className="small muted">Exam unit</div>
+        <div className="filter-group">
+          <div className="label">Exam</div>
           <div className="linklist">
             {content.units.map((u) => (
               <button key={u.id} type="button" className="chip" aria-pressed={filter.units.includes(u.id)} onClick={() => setFilter({ ...filter, units: toggle(filter.units, u.id) })}>
@@ -114,11 +113,11 @@ function Round({ questions, filter, onExit, onAgain }: { questions: Question[]; 
     return (
       <div className="panel stack" style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center' }}>
-          <div className="summary-score">
+          <div className="result-score">
             {score}/{questions.length}
           </div>
           <p className="muted">
-            {Math.round((score / questions.length) * 100)}% · best streak {best}
+            {Math.round((score / questions.length) * 100)}% correct, best streak {best}
           </p>
         </div>
         {missed.length > 0 && (
@@ -134,7 +133,7 @@ function Round({ questions, filter, onExit, onAgain }: { questions: Question[]; 
                   {m.lesson && (
                     <>
                       {' '}
-                      · <Link to={lessonHref(m.lesson)}>lesson</Link>
+                      (<Link to={lessonHref(m.lesson)}>review the lesson</Link>)
                     </>
                   )}
                 </li>
@@ -159,11 +158,11 @@ function Round({ questions, filter, onExit, onAgain }: { questions: Question[]; 
     <div style={{ maxWidth: 720, margin: '0 auto' }} className="stack">
       <div className="row">
         <button type="button" className="btn small ghost" onClick={onExit}>
-          ← Quit
+          Quit
         </button>
         <span className="spacer" />
         <span className="small muted">
-          Question {i + 1} / {questions.length} · {results.filter(Boolean).length} correct
+          Question {i + 1} of {questions.length}, {results.filter(Boolean).length} correct so far
         </span>
       </div>
       <div className="meter">

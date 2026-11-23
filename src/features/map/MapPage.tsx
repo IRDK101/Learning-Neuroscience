@@ -16,8 +16,7 @@ export function MapIndex() {
   return (
     <div className="stack">
       <div className="page-head">
-        <div className="eyebrow">Brain & body map</div>
-        <h1>Explore the diagrams</h1>
+        <h1>Brain and body maps</h1>
         <p>Every diagram is clickable. Tap a structure to see what it does, what it connects to, and which cards and questions cover it.</p>
       </div>
       <div className="grid grid-3">
@@ -31,7 +30,7 @@ export function MapIndex() {
           </Link>
         ))}
       </div>
-      <section className="panel">
+      <section className="sheet">
         <h2>Search everything</h2>
         <input type="search" placeholder="e.g. dopamine, VTA, SSRIs…" value={q} onChange={(e) => setQ(e.target.value)} aria-label="Search brain structures, transmitters, drugs and concepts" style={{ width: '100%' }} />
         {hits.length > 0 && (
@@ -39,7 +38,7 @@ export function MapIndex() {
             {hits.map((e) => (
               <li key={e.id}>
                 <Link to={content.diagramsFor[e.id] ? `/map/${content.diagramsFor[e.id][0]}?focus=${e.id}` : `/entity/${e.id}`}>{e.name}</Link>
-                <span className="muted small"> · {e.short}</span>
+                <span className="muted small">: {e.short}</span>
               </li>
             ))}
           </ul>
@@ -153,7 +152,7 @@ export function MapPage() {
             </section>
           )}
         </div>
-        <aside className="panel" style={{ position: 'sticky', top: 72 }}>
+        <aside className="panel side-sheet">
           {selected && entity(selected) ? (
             <InfoPanel
               id={selected}

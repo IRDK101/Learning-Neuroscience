@@ -9,11 +9,15 @@
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <title>NeuroMap</title>
     <script>
-      // Apply the saved theme before first paint to avoid a flash.
-      try {
-        var t = JSON.parse(localStorage.getItem('neuromap:v1') || '{}').settings?.theme;
-        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
-      } catch (e) {}
+      // Resolve the theme before first paint (saved choice, else the device setting) to avoid a flash.
+      (function () {
+        var t;
+        try {
+          t = JSON.parse(localStorage.getItem('neuromap:v1') || '{}').settings.theme;
+        } catch (e) {}
+        if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.theme = t;
+      })();
     </script>
   </head>
   <body>

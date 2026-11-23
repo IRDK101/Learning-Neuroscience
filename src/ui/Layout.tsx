@@ -19,8 +19,13 @@ function ThemeButton() {
   const next = settings.theme === 'system' ? 'light' : settings.theme === 'light' ? 'dark' : 'system';
   useEffect(() => {
     const root = document.documentElement;
-    if (settings.theme === 'system') delete root.dataset.theme;
-    else root.dataset.theme = settings.theme;
+    const media = window.matchMedia('(prefers-color-scheme: dark)');
+    const apply = () => {
+      root.dataset.theme = settings.theme === 'system' ? (media.matches ? 'dark' : 'light') : settings.theme;
+    };
+    apply();
+    media.addEventListener('change', apply);
+    return () => media.removeEventListener('change', apply);
   }, [settings.theme]);
   const label = { system: 'Theme: match device', light: 'Theme: light', dark: 'Theme: dark' }[settings.theme];
   return (
@@ -61,7 +66,11 @@ export function Layout() {
         <Outlet />
       </main>
       <footer className="footer">
-        <Link to="/progress">Progress & settings</Link> · <Link to="/corrections">Corrections to the notes</Link> · <Link to="/about">About & credits</Link>
+        <div className="footer-inner">
+          <Link to="/progress">Progress and settings</Link>
+          <Link to="/corrections">Corrections to the notes</Link>
+          <Link to="/about">About and credits</Link>
+        </div>
       </footer>
       <nav className="tabbar" aria-label="Main">
         {NAV.map((n) => (

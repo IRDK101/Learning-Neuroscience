@@ -75,13 +75,13 @@ export function QuestionView({
           <b>{correct ? 'Correct!' : 'Not quite.'}</b> {q.explain}
           {!correct && showLessonLink && q.lesson && (
             <div style={{ marginTop: '0.4rem' }}>
-              <Link to={lessonHref(q.lesson)}>Review this in the lesson →</Link>
+              <Link to={lessonHref(q.lesson)}>Review this in the lesson</Link>
             </div>
           )}
           {onNext && (
             <div style={{ marginTop: '0.6rem' }}>
               <button type="button" className="btn primary small" onClick={onNext} autoFocus>
-                {nextLabel} →
+                {nextLabel}
               </button>
             </div>
           )}

@@ -1,118 +1,82 @@
+import { useState } from 'react';
 import { Link } from 'react-router';
-import { content, readyTopics } from '../../content';
+import { content, entity } from '../../content';
 import { dueCount } from '../../lib/session';
-import { mastery, streak, useProgress } from '../../progress/store';
-import { Icon, Meter, UnitTag } from '../../ui/bits';
+import { streak, useProgress } from '../../progress/store';
 import { Diagram } from '../../ui/Diagram';
+import { Syllabus } from '../../ui/Syllabus';
 
 export function HomePage() {
   const p = useProgress();
+  const [picked, setPicked] = useState<string | null>('locus-coeruleus');
   const due = dueCount(content.cards, p.cards);
-  const seen = Object.keys(p.cards).length;
-  const newAvailable = content.cards.length - seen;
   const days = streak(p.days);
   const lessonsDone = Object.keys(p.lessons).length;
-  const firstLesson = content.lessons[0];
-  const nextLesson = content.lessons.find((l) => !p.lessons[l.id]) ?? firstLesson;
+  const first = content.lessons[0];
+  const next = content.lessons.find((l) => !p.lessons[l.id]) ?? first;
+  const e = entity(picked ?? undefined);
 
   return (
-    <div className="stack">
-      <section className="hero">
+    <div>
+      <section className="home-hero">
         <div>
-          <div className="eyebrow">PSYC 6 · Intro to Neuroscience</div>
-          <h1>Learn the brain by exploring it.</h1>
-          <p>
-            Interactive brain maps, short lessons, spaced-repetition flashcards and quick games, built from a student's course notes and
-            checked for accuracy. No account needed; your progress stays on this device.
+          <h1>Learn the brain by taking it apart.</h1>
+          <p className="lede">
+            Short lessons, maps you can tap, and flashcards that come back right before you'd forget them. Built from PSYC 6 course
+            notes, with the mistakes fixed.
           </p>
           <div className="row">
-            {lessonsDone === 0 ? (
-              <Link className="btn primary" to="/learn">
-                <Icon name="book" /> Start here
+            {next && (
+              <Link className="btn primary" to={`/learn/${next.topic}/${next.slug}`}>
+                {lessonsDone === 0 ? 'Start the first lesson' : `Continue: ${next.title}`}
               </Link>
-            ) : (
-              nextLesson && (
-                <Link className="btn primary" to={`/learn/${nextLesson.topic}/${nextLesson.slug}`}>
-                  <Icon name="book" /> Continue: {nextLesson.title}
-                </Link>
-              )
             )}
             <Link className="btn" to="/cards">
-              <Icon name="cards" /> Review {due > 0 ? `${due} due` : 'cards'}
-            </Link>
-            <Link className="btn" to="/map/nt-overlay">
-              <Icon name="map" /> Explore the map
+              {due > 0 ? `Review ${due} due cards` : 'Study flashcards'}
             </Link>
           </div>
         </div>
-        <Link to="/map/nt-overlay" aria-label="Open the neurotransmitter systems map" style={{ textDecoration: 'none' }}>
-          <Diagram id="nt-overlay" controls={false} showLabels={false} ariaLabel="Preview: neurotransmitter systems" />
-        </Link>
+        <Diagram
+          id="nt-overlay"
+          controls={false}
+          showLabels={false}
+          selected={picked}
+          projectionsFor={picked ? [picked] : undefined}
+          onSelect={(id) => setPicked((x) => (x === id ? null : id))}
+          ariaLabel="The brain's neurotransmitter systems. Tap a structure to identify it."
+          caption={
+            e ? (
+              <span>
+                <b>{e.name}.</b> {e.short} <Link to={`/map/nt-overlay?focus=${e.id}`}>Open in the map</Link>
+              </span>
+            ) : (
+              <span>The brain's four neurotransmitter systems. Tap any colored nucleus to see what it does.</span>
+            )
+          }
+        />
       </section>
 
-      <section className="kpis" aria-label="Your progress">
-        <div className="panel stat">
-          <b>{due}</b>
-          <span>cards due{newAvailable > 0 ? ` · ${newAvailable} new` : ''}</span>
-        </div>
-        <div className="panel stat">
-          <b>
-            {days}
-            {days > 0 && <Icon name="flame" size={20} />}
-          </b>
-          <span>day streak</span>
-        </div>
-        <div className="panel stat">
-          <b>
-            {lessonsDone}/{content.lessons.length}
-          </b>
-          <span>lessons done</span>
-        </div>
-      </section>
+      <p className="today" aria-label="Your progress today">
+        {due > 0 ? (
+          <span>
+            <b>{due}</b> flashcards are due today.
+          </span>
+        ) : (
+          <span>Nothing is due today.</span>
+        )}
+        {days > 0 && (
+          <span>
+            You're on a <b>{days}-day</b> streak.
+          </span>
+        )}
+        <span>
+          <b>{lessonsDone}</b> of {content.lessons.length} lessons done.
+        </span>
+        <span className="spacer" />
+        <Link to="/progress">Your progress</Link>
+      </p>
 
-      <section>
-        <h2>Your topics</h2>
-        <div className="grid grid-2">
-          {readyTopics.map((t) => {
-            const ids = content.cards.filter((c) => c.topic === t.id).map((c) => c.id);
-            const m = mastery(p, ids, t.id);
-            const topicDue = dueCount(content.cards.filter((c) => c.topic === t.id), p.cards);
-            return (
-              <div key={t.id} className="panel stack">
-                <div className="row">
-                  <UnitTag unit={t.unit} />
-                  <span className="spacer" />
-                  <span className="small muted">{Math.round(m * 100)}% mastery</span>
-                </div>
-                <h3 style={{ margin: 0 }}>
-                  <Link to={`/learn/${t.id}`}>{t.name}</Link>
-                </h3>
-                <Meter value={m} label={`${t.name} mastery`} />
-                <div className="row">
-                  <Link className="btn small" to={`/cards?topic=${t.id}`}>
-                    Flashcards{topicDue ? ` (${topicDue} due)` : ''}
-                  </Link>
-                  <Link className="btn small" to={`/quiz?topic=${t.id}&n=10`}>
-                    Quiz
-                  </Link>
-                  <Link className="btn small" to={`/play/find?diagram=nt-overlay`}>
-                    Find the region
-                  </Link>
-                </div>
-              </div>
-            );
-          })}
-          <div className="panel stack">
-            <h3 style={{ margin: 0 }}>Coming next</h3>
-            <p className="muted small" style={{ margin: 0 }}>
-              {content.topics.filter((t) => t.status === 'planned').length} more topics from the course, from brain anatomy to memory and mental illness.
-            </p>
-            <Link className="btn small" to="/learn">
-              See the full path
-            </Link>
-          </div>
-        </div>
-      </section>
+      <Syllabus />
     </div>
   );
 }

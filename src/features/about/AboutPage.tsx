@@ -6,7 +6,6 @@ export function AboutPage() {
   return (
     <div className="stack" style={{ maxWidth: 760 }}>
       <div className="page-head">
-        <div className="eyebrow">About</div>
         <h1>About NeuroMap</h1>
       </div>
       <section className="panel">

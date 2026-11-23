@@ -364,7 +364,7 @@ export function InfoPanel({
   const connected = connectedIds(id);
   return (
     <article className="info-panel" aria-live="polite">
-      <div className="tiny muted">{ENTITY_TYPE_LABEL[e.type]}</div>
+      <div className="kind">{ENTITY_TYPE_LABEL[e.type]}</div>
       <h2>
         {e.name}
         <SourceBadges corrections={e.corrections} flags={e.flags} source={e.source} />
@@ -397,12 +397,12 @@ export function InfoPanel({
         )}
         {cards.length > 0 && (
           <Link className="btn small" to={`/cards?ref=${id}`}>
-            <Icon name="cards" /> {cards.length} cards
+            <Icon name="cards" /> Study {cards.length} cards
           </Link>
         )}
         {qs.length > 0 && (
           <Link className="btn small" to={`/quiz?ref=${id}`}>
-            <Icon name="spark" /> Quiz ({qs.length})
+            <Icon name="spark" /> Quiz me
           </Link>
         )}
         <CopyLinkButton path={`/entity/${id}`} />

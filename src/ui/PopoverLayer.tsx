@@ -138,7 +138,7 @@ export function PopoverLayer() {
         </h4>
         <p>{e.short}</p>
         <Link to={`/entity/${e.id}`} onClick={hide}>
-          Open {e.name} →
+          Open {e.name}
         </Link>
       </div>
     );
@@ -150,9 +150,7 @@ export function PopoverLayer() {
     <div ref={popRef} className="popover" role="dialog" aria-label={`Correction ${state.id}`} style={style}>
       {c ? (
         <>
-          <div className="tiny muted">
-            {c.id} · corrected from your notes
-          </div>
+          <div className="tiny muted">{c.id}, corrected from your notes</div>
           <h4>{c.where}</h4>
           <p>
             <b>Your notes:</b> <i>{c.notes}</i>
@@ -166,7 +164,7 @@ export function PopoverLayer() {
         </>
       ) : f ? (
         <>
-          <div className="tiny muted">{f.id} · flagged, kept as in your notes</div>
+          <div className="tiny muted">{f.id}, flagged but kept as in your notes</div>
           <h4>{f.where}</h4>
           <p>
             <b>Your notes:</b> <i>{f.notes}</i>
@@ -177,7 +175,7 @@ export function PopoverLayer() {
         <p>Unknown correction {state.id}</p>
       )}
       <Link to={`/corrections#${state.id}`} onClick={hide} className="small">
-        All corrections →
+        See all corrections
       </Link>
     </div>
   );

@@ -6,7 +6,7 @@ import { copyLink } from './toast';
 
 export function UnitTag({ unit }: { unit: string }) {
   const u = content.units.find((x) => x.id === unit);
-  return <span className={`tag unit-${unit}`}>{u ? `${u.id.replace('exam', 'Exam ')} · ${u.name}` : unit}</span>;
+  return <span className={`tag unit-${unit}`}>{u ? `${u.id.replace('exam', 'Exam ')}: ${u.name}` : unit}</span>;
 }
 
 export function TypeTag({ id }: { id: string }) {

@@ -123,12 +123,12 @@ export function FindGame() {
   if (finished) {
     return (
       <div className="panel stack" style={{ maxWidth: 640, margin: '0 auto', textAlign: 'center' }}>
-        <div className="summary-score">{score}</div>
+        <div className="result-score">{score}</div>
         <h2>
           {timed ? 'found in 60 seconds' : `out of ${answered}`}
         </h2>
         <p className="muted">
-          Accuracy {answered ? Math.round((score / answered) * 100) : 0}% · best streak {bestRun}
+          {answered ? Math.round((score / answered) * 100) : 0}% accurate, best streak {bestRun}
         </p>
         <div className="row" style={{ justifyContent: 'center' }}>
           <button type="button" className="btn primary" onClick={restart}>
@@ -147,34 +147,28 @@ export function FindGame() {
   return (
     <div className="stack">
       <div className="crumbs">
-        <Link to="/play">Play</Link> / Find the region · {d.title}
+        <Link to="/play">Play</Link> / Find the region / {d.title}
       </div>
       <div className="game-hud">
-        <div className="stat">
-          <b>{score}</b>
-          <span>score</span>
-        </div>
-        <div className="stat">
-          <b>{run}</b>
-          <span>streak</span>
-        </div>
+        <span>
+          <b>{score}</b> found
+        </span>
+        <span>
+          <b>{run}</b> in a row
+        </span>
         {timed ? (
           <>
-            <div className="stat">
-              <b>{timeLeft}s</b>
-              <span>left</span>
-            </div>
+            <span>
+              <b>{timeLeft}</b> seconds left
+            </span>
             <div className="timer-bar" aria-hidden="true">
               <span style={{ width: `${(timeLeft / SECONDS) * 100}%` }} />
             </div>
           </>
         ) : (
-          <div className="stat">
-            <b>
-              {answered + 1}/{Math.min(ROUND, pool.length)}
-            </b>
-            <span>round</span>
-          </div>
+          <span>
+            <b>{answered + 1}</b> of {Math.min(ROUND, pool.length)}
+          </span>
         )}
         <span className="spacer" />
         <div className="linklist">
@@ -191,21 +185,13 @@ export function FindGame() {
       </div>
       {mode === 'find' ? (
         <>
-          <div className="panel prompt" aria-live="assertive">
-            {feedback ? (
-              feedback.ok ? (
-                <span style={{ color: 'var(--ok)' }}>✓ Yes, that's the {name}.</span>
-              ) : (
-                <span style={{ color: 'var(--bad)' }}>
-                  ✗ That's the {entity(feedback.wrong)?.name}. The {name} is outlined.
-                </span>
-              )
-            ) : (
-              <>
-                Click the <b>{name}</b>
-              </>
-            )}
-          </div>
+          <p className={`prompt${feedback ? (feedback.ok ? ' ok' : ' bad') : ''}`} aria-live="assertive">
+            {feedback
+              ? feedback.ok
+                ? `Yes, that's the ${name}.`
+                : `That's the ${entity(feedback.wrong)?.name}. The ${name} is outlined.`
+              : `Find the ${name}.`}
+          </p>
           <Diagram
             id={d.id}
             layers={layers}

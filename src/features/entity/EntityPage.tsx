@@ -24,7 +24,7 @@ export function EntityPage() {
           <div className="stack">
             <Diagram id={d.id} selected={spot} focus={[spot]} caption={spot === e.id ? d.title : `${d.title}: shown at ${entity(spot)?.name}`} />
             <Link className="btn small" to={`/map/${d.id}?focus=${spot}`}>
-              Open in the map →
+              Open in the map
             </Link>
           </div>
         )}

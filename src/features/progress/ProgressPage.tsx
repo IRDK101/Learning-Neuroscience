@@ -31,27 +31,23 @@ export function ProgressPage() {
   return (
     <div className="stack">
       <div className="page-head">
-        <div className="eyebrow">Your progress</div>
-        <h1>Progress & settings</h1>
+        <h1>Progress and settings</h1>
         <p>Everything is stored in this browser only. Use export/import to move it to another device.</p>
       </div>
 
-      <section className="kpis">
-        <div className="panel stat">
-          <b>{dueCount(content.cards, p.cards)}</b>
-          <span>cards due</span>
-        </div>
-        <div className="panel stat">
-          <b>{p.reviews}</b>
-          <span>reviews done</span>
-        </div>
-        <div className="panel stat">
-          <b>{streak(p.days)}</b>
-          <span>day streak</span>
-        </div>
-      </section>
+      <p className="today">
+        <span>
+          <b>{dueCount(content.cards, p.cards)}</b> cards due.
+        </span>
+        <span>
+          <b>{p.reviews}</b> reviews so far.
+        </span>
+        <span>
+          <b>{streak(p.days)}</b>-day streak.
+        </span>
+      </p>
 
-      <section className="panel">
+      <section className="sheet">
         <h2>Mastery by topic</h2>
         {readyTopics.map((t) => {
           const m = mastery(p, content.cards.filter((c) => c.topic === t.id).map((c) => c.id), t.id);
@@ -62,7 +58,7 @@ export function ProgressPage() {
                 <Link to={`/learn/${t.id}`}>{t.name}</Link>
                 <span className="spacer" />
                 <span className="small muted">
-                  {Math.round(m * 100)}%{q ? ` · quiz ${q.correct}/${q.answered}` : ''}
+                  {Math.round(m * 100)}%{q ? `, quiz ${q.correct} of ${q.answered} right` : ''}
                 </span>
               </div>
               <Meter value={m} label={`${t.name} mastery`} />
@@ -72,7 +68,7 @@ export function ProgressPage() {
         <p className="tiny muted">Mastery blends how well your cards are learned (FSRS stability) with your recent quiz accuracy.</p>
       </section>
 
-      <section className="panel stack">
+      <section className="sheet stack">
         <h2>Move progress between devices</h2>
         <div className="row">
           <button type="button" className="btn primary" onClick={download}>
@@ -89,7 +85,7 @@ export function ProgressPage() {
         {msg && <div className={`notice ${msg.ok ? 'ok' : 'bad'}`}>{msg.text}</div>}
       </section>
 
-      <section className="panel stack">
+      <section className="sheet stack">
         <h2>Settings</h2>
         <label className="field" style={{ maxWidth: 260 }}>
           Theme

@@ -13,7 +13,6 @@ export function CorrectionsPage() {
   return (
     <div className="stack" style={{ maxWidth: 860 }}>
       <div className="page-head">
-        <div className="eyebrow">Accuracy</div>
         <h1>Corrections to the notes</h1>
         <p>
           The site follows the course notes but fixes factual errors. Each fix is listed here with the original wording. <b>Flags</b> are
