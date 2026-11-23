@@ -470,3 +470,14 @@ I'll run every pair of colors that appear together through a colorblind simulati
   - Find-the-region, Trivia and Pathway builder, all working on this topic
 - **Deploy:** GitHub Actions to Pages, pushed to `main`.
 - **Before deploy, you need to have done:** make the repo public, and set Settings → Pages → Source → **GitHub Actions**.
+
+---
+
+## 8. Phase 1 notes (what changed from this plan while building)
+
+- **Diagrams live in `content/diagrams/`** (not `src/diagrams/`), next to the rest of the content, with one `diagrams.yaml` instead of a meta file per SVG. One SVG can back several diagrams: `nt-overlay` is the midline brain with neurotransmitter layers turned on.
+- **Hotspots use `data-ref`** (any entity, not just regions), so the synapse diagram can have receptors, transporters and enzymes. A drug's target is highlighted by walking up `parent` links (e.g., cocaine → dopamine transporter → the generic reuptake transporter drawn on the synapse).
+- **Lessons use `marked`** plus a small directive parser instead of remark. Same syntax as planned (`::diagram`, `::focus`, `::check`, `::pathway`, `:::added`), plus inline `[[id]]` links and `{{C-022}}` correction badges.
+- **Added a `molecule` entity type** (enzymes, precursors, receptors, transporters, channels).
+- **Generated cards and questions are made only for topics marked `ready`**, so unfinished topics don't fill decks with half-finished cards.
+- **Content size:** one topic is about 400 KB of JSON (about 60 KB gzipped). Before all 19 topics are in, Phase 2 will split the bundle per topic and lazy-load it.
