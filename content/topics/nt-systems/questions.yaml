@@ -1,0 +1,218 @@
+# Hand-written quiz questions. "answer" is the correct option; distractors should be plausible,
+# and "why" explains what's wrong with each. Lesson links are inferred from refs unless given.
+
+- id: q-nt-deactivation-ways
+  kind: mcq
+  stem: Which of these is NOT a way neurotransmitters are cleared from the synapse?
+  answer: Voltage-gated Ca²⁺ channels pump the transmitter out of the cleft
+  distractors:
+    - { text: "Reuptake through transporters into the presynaptic terminal", why: "This is a real way: reuptake recycles the transmitter." }
+    - { text: "Enzymes in the cleft break it down", why: "This is a real way, e.g. AChE splits acetylcholine." }
+    - { text: "Glial cells (astrocytes) take it up", why: "This is a real way, especially for glutamate and GABA." }
+  explain: The four ways are reuptake, enzymes, glial uptake and diffusion. Voltage-gated Ca²⁺ channels trigger release; they don't clear anything.
+  refs: [reuptake-transporter, voltage-gated-calcium-channel]
+  lesson: nt-systems/how-transmitter-systems-work#four-steps
+  tags: { difficulty: 1 }
+
+- id: q-nt-receptor-decides
+  kind: mcq
+  stem: Acetylcholine makes skeletal muscle contract but slows the heart. What explains the opposite effects?
+  answer: Different receptors respond to ACh in different ways
+  distractors:
+    - { text: "The heart receives far more ACh than muscle does", why: "The amount changes the strength of the effect, not its direction." }
+    - { text: "The heart converts ACh into an inhibitory transmitter", why: "ACh is broken into choline and acetate, neither of which is a transmitter." }
+    - { text: "Muscles use ionotropic GABA receptors for ACh", why: "GABA receptors don't respond to ACh." }
+  explain: A transmitter's effect is decided by the receptor it binds, not by the transmitter itself.
+  refs: [receptor-decides-effect, acetylcholine]
+  lesson: nt-systems/how-transmitter-systems-work#receptor-decides
+
+- id: q-nt-antagonist
+  kind: mcq
+  stem: A drug fits into dopamine receptors without activating them, so dopamine can no longer bind. What kind of drug is it?
+  answer: An antagonist
+  distractors:
+    - { text: "An agonist", why: "An agonist activates the receptor (mimics the transmitter)." }
+    - { text: "A reuptake inhibitor", why: "A reuptake inhibitor blocks the transporter, not the receptor." }
+    - { text: "A precursor", why: "A precursor is a raw material used to make the transmitter." }
+  explain: Antagonists bind receptors without activating them, so they block the natural transmitter. Antipsychotics are dopamine-receptor antagonists.
+  refs: [antagonist, antipsychotics]
+  tags: { difficulty: 1 }
+
+- id: q-nt-ache
+  kind: mcq
+  stem: Why does acetylcholine's signal end so quickly?
+  answer: Acetylcholinesterase in the cleft rapidly splits it into choline and acetate
+  distractors:
+    - { text: "A transporter pumps intact ACh back into the terminal", why: "Only the choline is taken back up, after AChE has split ACh." }
+    - { text: "MAO on mitochondria breaks it down", why: "MAO breaks down monoamines (DA, NE, 5-HT), not ACh." }
+    - { text: "Astrocytes quickly absorb it", why: "Astrocyte uptake matters most for glutamate and GABA." }
+  refs: [acetylcholinesterase, acetylcholine]
+
+- id: q-nt-ach-rate
+  kind: mcq
+  stem: What limits how fast neurons can make acetylcholine?
+  answer: The supply of choline, which comes mostly from the diet
+  distractors:
+    - { text: "Tyrosine hydroxylase activity", why: "That's the rate-limiting step for the catecholamines." }
+    - { text: "The supply of tryptophan", why: "That limits serotonin production." }
+    - { text: "GAD activity", why: "GAD converts glutamate into GABA." }
+  refs: [choline, acetylcholine, rate-limiting-step]
+  source: corrected
+  corrections: [C-021]
+
+- id: q-nt-ach-sources
+  kind: mcq
+  stem: Where are the brain's acetylcholine-releasing (cholinergic) neurons?
+  answer: In the basal forebrain (medial septal nuclei, basal nucleus of Meynert) and the PMT complex
+  distractors:
+    - { text: "In the substantia nigra and ventral tegmental area", why: "Those are the dopamine sources." }
+    - { text: "In the locus coeruleus", why: "That's the main norepinephrine source." }
+    - { text: "In the raphe nuclei", why: "Those make serotonin." }
+  refs: [basal-forebrain, pmt-complex, acetylcholine]
+
+- id: q-nt-th-rate
+  kind: mcq
+  stem: Which enzyme is the rate-limiting step for making dopamine, norepinephrine and epinephrine?
+  answer: Tyrosine hydroxylase
+  distractors:
+    - { text: "DOPA decarboxylase", why: "It acts after the slow step, converting L-DOPA into dopamine." }
+    - { text: "Dopamine β-hydroxylase", why: "It is needed only for norepinephrine (and epinephrine), and it isn't the slow step." }
+    - { text: "Monoamine oxidase", why: "MAO breaks catecholamines down; it doesn't make them." }
+  refs: [tyrosine-hydroxylase, catecholamine-synthesis]
+
+- id: q-nt-parkinsons
+  kind: case
+  stem: A patient has a tremor at rest and great difficulty starting movements. L-DOPA improves the symptoms. Which structure has lost neurons?
+  answer: substantia-nigra
+  distractors: [ventral-tegmental-area, locus-coeruleus, raphe-nuclei]
+  explain: Parkinson's disease is the loss of dopamine neurons in the substantia nigra, which supply the striatum. L-DOPA lets the surviving neurons make more dopamine.
+  refs: [parkinsons-disease]
+  corrections: [C-054]
+  source: corrected
+
+- id: q-nt-ldopa
+  kind: mcq
+  stem: Why is Parkinson's disease treated with L-DOPA rather than dopamine itself?
+  answer: L-DOPA crosses the blood–brain barrier; dopamine does not
+  distractors:
+    - { text: "L-DOPA grows new substantia nigra neurons", why: "It can't make new cells; it boosts the ones that are left." }
+    - { text: "L-DOPA blocks the dopamine transporter", why: "That's how cocaine works." }
+    - { text: "L-DOPA can't be broken down by MAO", why: "That isn't the reason; the barrier is." }
+  refs: [l-dopa, blood-brain-barrier, parkinsons-disease]
+
+- id: q-nt-amphetamine-vs-cocaine
+  kind: mcq
+  stem: Amphetamine raises synaptic dopamine more dramatically than cocaine does. Why?
+  answer: It also enters the terminal and releases dopamine from vesicles without an action potential
+  distractors:
+    - { text: "It inhibits tyrosine hydroxylase", why: "That would lower dopamine production." }
+    - { text: "It blocks MAO on the postsynaptic cell", why: "MAO sits in the presynaptic terminal on mitochondria; blocking it is how MAO inhibitors work." }
+    - { text: "It directly activates dopamine receptors", why: "Amphetamine acts on the transporter and vesicles, not on the receptor." }
+  refs: [amphetamine, cocaine, dopamine-transporter]
+  tags: { difficulty: 3 }
+
+- id: q-nt-dbh
+  kind: mcq
+  stem: Where is dopamine converted into norepinephrine?
+  answer: Inside synaptic vesicles, by dopamine β-hydroxylase (DBH)
+  distractors:
+    - { text: "In the cytosol, by PNMT", why: "PNMT makes epinephrine from norepinephrine." }
+    - { text: "In the synaptic cleft, by MAO", why: "MAO breaks monoamines down, inside the terminal." }
+    - { text: "In the cell body, by tyrosine hydroxylase", why: "TH makes L-DOPA from tyrosine." }
+  refs: [dopamine-beta-hydroxylase, norepinephrine]
+
+- id: q-nt-pnmt
+  kind: mcq
+  stem: Before norepinephrine can be turned into epinephrine, what has to happen?
+  answer: It has to leave the vesicle, because PNMT works in the cytosol
+  distractors:
+    - { text: "It has to be released into the cleft, where PNMT is", why: "PNMT is inside the cell, in the cytosol." }
+    - { text: "It has to be broken down by MAO first", why: "MAO destroys NE; it doesn't convert it." }
+    - { text: "It has to be converted back into dopamine", why: "The chain only runs forward: DA → NE → epinephrine." }
+  refs: [pnmt, epinephrine]
+  tags: { difficulty: 3 }
+
+- id: q-nt-chain-order
+  kind: mcq
+  stem: Which molecule must a neuron make before it can make norepinephrine?
+  answer: Dopamine
+  distractors:
+    - { text: "Serotonin", why: "Serotonin comes from tryptophan, a separate chain." }
+    - { text: "Epinephrine", why: "Epinephrine comes after NE, not before." }
+    - { text: "Acetylcholine", why: "ACh is made from choline + acetyl CoA, unrelated to catecholamines." }
+  refs: [catecholamine-synthesis, norepinephrine]
+  tags: { difficulty: 1 }
+
+- id: q-nt-mao-location
+  kind: mcq
+  stem: Where does monoamine oxidase (MAO) break down dopamine?
+  answer: Inside the presynaptic terminal, on mitochondria
+  distractors:
+    - { text: "In the synaptic cleft", why: "That's where AChE works on acetylcholine." }
+    - { text: "On the postsynaptic receptor", why: "Receptors bind transmitter; they don't break it down." }
+    - { text: "Inside astrocytes only", why: "MAO acts on dopamine after reuptake into the terminal." }
+  refs: [monoamine-oxidase, mitochondrion]
+
+- id: q-nt-ne-everywhere
+  kind: case
+  stem: You want to lower norepinephrine signaling across almost the whole brain with one small lesion. Which nucleus would you target?
+  answer: locus-coeruleus
+  distractors: [raphe-nuclei, substantia-nigra, nucleus-basalis]
+  explain: The locus coeruleus in the pons is the main NE source; a few neurons project to nearly every part of the brain and spinal cord.
+  refs: [norepinephrine]
+
+- id: q-nt-tryptophan
+  kind: mcq
+  stem: Which statement about making serotonin is correct?
+  answer: Its precursor, tryptophan, must come from the diet, and its supply limits production
+  distractors:
+    - { text: "It is made from tyrosine by tyrosine hydroxylase", why: "That's the start of the catecholamine chain." }
+    - { text: "It is made from glutamate by GAD", why: "That's how GABA is made." }
+    - { text: "It is converted into dopamine by DBH", why: "DBH converts dopamine into norepinephrine." }
+  refs: [tryptophan, serotonin]
+
+- id: q-nt-ssri-delay
+  kind: mcq
+  stem: SSRIs block serotonin reuptake within hours, but mood usually improves only after 2–3 weeks. What does that suggest?
+  answer: The benefit comes from slower downstream changes, not just more serotonin in the synapse
+  distractors:
+    - { text: "SSRIs take weeks to reach the brain", why: "They act on reuptake quickly; the delay is in the downstream effects." }
+    - { text: "SSRIs first deplete serotonin, then refill it", why: "They block reuptake; there's no depletion phase." }
+    - { text: "SSRIs work through dopamine instead", why: "They are selective for the serotonin transporter." }
+  refs: [ssris, serotonin]
+  source: corrected
+  corrections: [C-080]
+  tags: { difficulty: 3 }
+
+- id: q-nt-gad
+  kind: mcq
+  stem: What makes a GABA neuron different from a glutamate neuron?
+  answer: It has the enzyme GAD, which converts glutamate into GABA
+  distractors:
+    - { text: "It has no synaptic vesicles", why: "GABA is packaged in vesicles like other amino-acid transmitters." }
+    - { text: "It uses tryptophan as its precursor", why: "Tryptophan is the precursor of serotonin." }
+    - { text: "It releases GABA without action potentials", why: "Release still depends on action potentials and Ca²⁺." }
+  refs: [glutamic-acid-decarboxylase, gaba]
+
+- id: q-nt-benzo
+  kind: mcq
+  stem: How do benzodiazepines such as Xanax reduce anxiety?
+  answer: They make GABA-A receptors respond more strongly to GABA, so more Cl⁻ flows in
+  distractors:
+    - { text: "They open GABA-A channels even when no GABA is present", why: "They modulate the receptor; GABA still has to bind." }
+    - { text: "They block glutamate reuptake", why: "That would increase excitation." }
+    - { text: "They increase dopamine release", why: "They act on the GABA system." }
+  refs: [benzodiazepines, gaba-a-receptor]
+  source: corrected
+  corrections: [C-079]
+
+- id: q-nt-excitatory
+  kind: mcq
+  stem: Which is the brain's main excitatory neurotransmitter?
+  answer: Glutamate
+  distractors:
+    - { text: "GABA", why: "GABA is the main inhibitory transmitter." }
+    - { text: "Glycine", why: "Glycine is mostly inhibitory." }
+    - { text: "Serotonin", why: "Serotonin is a neuromodulator with many receptor types." }
+  refs: [glutamate]
+  tags: { difficulty: 1 }

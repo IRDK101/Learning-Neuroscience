@@ -1,0 +1,12 @@
+- id: exam1
+  name: Foundations
+  subtitle: Exam 1 · anatomy, neurons, signaling, neurotransmitters
+  order: 1
+- id: exam2
+  name: Senses & Movement
+  subtitle: Exam 2 · taste, smell, hearing, touch, vision, movement
+  order: 2
+- id: exam3
+  name: Higher Functions
+  subtitle: Exam 3 · emotion, attention, language, memory, mental illness
+  order: 3

@@ -1,0 +1,197 @@
+- id: brainstem
+  type: region
+  name: Brainstem
+  kind: division
+  system: brainstem
+  short: The stalk at the base of the brain (midbrain, pons and medulla) that connects the brain to the spinal cord.
+  location: Below the thalamus, in front of the cerebellum; it continues smoothly into the spinal cord.
+  functions:
+    - Connects the brain to the spinal cord and houses the source nuclei of the diffuse modulatory systems.
+  topics: [nervous-system-structure, nt-systems]
+
+- id: midbrain
+  type: region
+  name: Midbrain
+  aliases: [mesencephalon]
+  parent: brainstem
+  system: brainstem
+  short: The top part of the brainstem, just below the thalamus; home of the dopamine neurons and the colliculi.
+  location: Top of the brainstem, below the thalamus.
+  functions:
+    - Contains the substantia nigra and ventral tegmental area, the brain's dopamine sources.
+    - Its roof holds the superior and inferior colliculi.
+  topics: [nervous-system-structure, nt-systems]
+
+- id: pons
+  type: region
+  name: Pons
+  parent: brainstem
+  system: brainstem
+  short: The bulging middle part of the brainstem, between the midbrain and the medulla.
+  location: Middle of the brainstem, in front of the cerebellum.
+  functions:
+    - Contains the locus coeruleus (norepinephrine) and part of the PMT complex (acetylcholine).
+  topics: [nervous-system-structure, nt-systems]
+
+- id: medulla
+  type: region
+  name: Medulla
+  aliases: [medulla oblongata]
+  parent: brainstem
+  system: brainstem
+  short: The lowest part of the brainstem, where it becomes the spinal cord; the corticospinal tract crosses here.
+  location: Bottom of the brainstem, just above the spinal cord.
+  functions:
+    - Where the corticospinal tract crosses the midline (decussates).
+    - Contains the gustatory nucleus, the cochlear nuclei and the dorsal column nuclei.
+  topics: [nervous-system-structure]
+
+- id: substantia-nigra
+  type: region
+  name: Substantia nigra
+  aliases: [SN]
+  kind: nucleus
+  parent: midbrain
+  system: brainstem
+  short: A dark band of dopamine neurons in the midbrain that feeds the striatum. Its loss causes Parkinson's disease.
+  location: In the midbrain (upper brainstem), on its front (ventral) side.
+  functions:
+    - Main source of dopamine for the striatum (basal ganglia), needed to start movements.
+    - Its dopamine neurons die in Parkinson's disease.
+  connections:
+    - { to: striatum, dir: out, note: "Dopamine (nigrostriatal pathway)" }
+  cases: [parkinsons-disease]
+  topics: [nt-systems, brain-control-of-movement]
+
+- id: ventral-tegmental-area
+  type: region
+  name: Ventral tegmental area
+  aliases: [VTA]
+  kind: nucleus
+  parent: midbrain
+  system: brainstem
+  short: A midbrain cluster of dopamine neurons that projects to the frontal lobe, involved in reward learning, motivation and addiction.
+  location: In the midbrain, on the front (ventral) side near the midline, next to the substantia nigra.
+  functions:
+    - Sends dopamine to the frontal lobe (prefrontal cortex).
+    - Learning what is rewarding and creating incentives; heavily involved in addiction.
+  connections:
+    - { to: prefrontal-cortex, dir: out, note: "Dopamine" }
+  topics: [nt-systems]
+
+- id: locus-coeruleus
+  type: region
+  name: Locus coeruleus
+  aliases: [LC]
+  kind: nucleus
+  parent: pons
+  system: brainstem
+  short: A tiny nucleus in the pons that makes most of the brain's norepinephrine and sends it almost everywhere.
+  location: In the pons, at the back (dorsal side) near the fourth ventricle. Its name means "blue spot".
+  functions:
+    - Main source of norepinephrine, projecting to the thalamus, hypothalamus, cortex, hippocampus, cerebellum and spinal cord.
+    - Regulates sleep–wake cycles and autonomic functions; involved in learning, memory and mood.
+  connections:
+    - { to: thalamus, dir: out }
+    - { to: hypothalamus, dir: out }
+    - { to: cerebral-cortex, dir: out }
+    - { to: hippocampus, dir: out }
+    - { to: cerebellum, dir: out }
+    - { to: spinal-cord, dir: out }
+  topics: [nt-systems]
+
+- id: raphe-nuclei
+  type: region
+  name: Raphe nuclei
+  kind: nucleus
+  parent: brainstem
+  system: brainstem
+  short: A chain of nuclei along the midline of the brainstem that supplies the whole brain with serotonin.
+  location: Along the midline of the brainstem, from the midbrain down to the medulla.
+  functions:
+    - Main source of serotonin, projecting very widely ("basically everywhere").
+    - Involved in sleep–wake, mood and emotion, and learning about pleasure.
+  connections:
+    - { to: cerebral-cortex, dir: out }
+    - { to: thalamus, dir: out }
+    - { to: hypothalamus, dir: out }
+    - { to: cerebellum, dir: out }
+    - { to: spinal-cord, dir: out }
+  topics: [nt-systems]
+
+- id: pmt-complex
+  type: region
+  name: Pontomesencephalotegmental complex
+  aliases: [PMT complex, PNT complex]
+  kind: nucleus
+  parent: brainstem
+  system: brainstem
+  short: Acetylcholine neurons where the pons meets the midbrain, sending ACh mainly up to the thalamus.
+  location: High in the brainstem, where the pons meets the midbrain ("ponto-mesencephalo-tegmental").
+  functions:
+    - A brainstem source of acetylcholine.
+    - { text: "Sends acetylcholine mainly to the thalamus, adjusting how readily sensory information is relayed.", source: added }
+  connections:
+    - { to: thalamus, dir: out, note: "Cholinergic" }
+  topics: [nt-systems]
+
+- id: superior-colliculus
+  type: region
+  name: Superior colliculus
+  kind: nucleus
+  parent: midbrain
+  system: brainstem
+  short: A bump on the roof of the midbrain that orients the eyes and head toward things you see.
+  location: On the back (dorsal) surface of the midbrain, the upper of the two pairs of bumps.
+  functions:
+    - Processes visual information and orients the eyes and head toward stimuli.
+  corrections: [C-011]
+  source: corrected
+  topics: [nervous-system-structure, central-visual-system]
+
+- id: inferior-colliculus
+  type: region
+  name: Inferior colliculus
+  kind: nucleus
+  parent: midbrain
+  system: brainstem
+  short: A bump on the roof of the midbrain that relays sound information on its way to the thalamus.
+  location: On the back (dorsal) surface of the midbrain, just below the superior colliculus.
+  functions:
+    - Auditory relay between the superior olive and the thalamus (MGN).
+  corrections: [C-011]
+  source: corrected
+  topics: [nervous-system-structure, auditory-vestibular]
+
+- id: cerebellum
+  type: region
+  name: Cerebellum
+  system: cerebellum
+  short: The "little brain" behind the brainstem that coordinates, corrects and learns movements. It holds most of the brain's neurons.
+  location: Back of the head, below the occipital lobe and behind the brainstem.
+  functions:
+    - Movement selection, planning, correction and motor learning.
+    - Contains about 70–80% of the brain's neurons.
+  topics: [nervous-system-structure, brain-control-of-movement]
+
+- id: fourth-ventricle
+  type: region
+  name: Fourth ventricle
+  kind: ventricle
+  system: ventricles
+  short: The lowest fluid-filled ventricle, sitting between the brainstem and the cerebellum.
+  location: Between the pons/medulla and the cerebellum.
+  functions:
+    - Holds cerebrospinal fluid; the lowest of the four ventricles.
+  topics: [nervous-system-structure]
+
+- id: spinal-cord
+  type: region
+  name: Spinal cord
+  system: spinal-cord
+  short: The column of nerve tissue inside the spine that carries signals between the brain and body and runs reflexes.
+  location: Continues down from the medulla inside the vertebral column.
+  functions:
+    - Carries sensory information up (dorsal side) and motor commands down (ventral side).
+    - Runs reflexes and basic walking patterns without the brain.
+  topics: [nervous-system-structure, spinal-control-of-movement]

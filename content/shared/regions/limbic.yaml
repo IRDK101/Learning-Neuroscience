@@ -1,0 +1,78 @@
+- id: limbic-system
+  type: region
+  name: Limbic system
+  kind: division
+  system: limbic
+  short: A ring of older structures around the brain's core (cingulate cortex, hippocampus, amygdala and more) involved in emotion and memory.
+  location: Surrounds the core of the brain, medial to (inside) the neocortex.
+  functions:
+    - Center for emotion, memory and feeling.
+  topics: [nervous-system-structure, emotion]
+
+- id: cingulate-cortex
+  type: region
+  name: Cingulate cortex
+  aliases: [cingulate gyrus]
+  parent: limbic-system
+  system: limbic
+  short: The strip of cortex that arches just above the corpus callosum, processing feelings and linking emotion to memory.
+  location: On the inner (medial) surface of each hemisphere, wrapped around the corpus callosum.
+  functions:
+    - Processes feelings and emotions and assists the rest of the limbic system.
+    - Part of the Papez circuit linking emotion with the neocortex.
+  topics: [nervous-system-structure, emotion]
+
+- id: hippocampus
+  type: region
+  name: Hippocampus
+  parent: limbic-system
+  system: limbic
+  short: A seahorse-shaped structure in the medial temporal lobe that forms new memories of facts and events.
+  location: Deep in the medial temporal lobe, just behind the amygdala. On the midline view it is shown faintly because it lies off the midline.
+  functions:
+    - Forms new declarative (fact and event) memories; H.M. could not form new ones after losing it.
+    - Brakes the stress (HPA) axis using glucocorticoid receptors that sense cortisol.
+    - Receives acetylcholine from the medial septal nuclei and norepinephrine from the locus coeruleus.
+  topics: [memory, nervous-system-structure, nt-systems]
+
+- id: basal-forebrain
+  type: region
+  name: Basal forebrain complex
+  aliases: [basal forebrain]
+  kind: division
+  system: limbic
+  short: A group of nuclei at the base of the forebrain whose neurons send acetylcholine to the cortex and hippocampus.
+  location: Below the front of the corpus callosum, in front of the hypothalamus.
+  functions:
+    - Main source of acetylcholine for the cortex and hippocampus, made up of the medial septal nuclei and the basal nucleus of Meynert.
+  topics: [nt-systems]
+
+- id: medial-septal-nuclei
+  type: region
+  name: Medial septal nuclei
+  aliases: [medial septum]
+  kind: nucleus
+  parent: basal-forebrain
+  system: limbic
+  short: Cholinergic nuclei near the midline of the basal forebrain that send acetylcholine to the hippocampus.
+  location: In the septal area, just below the front of the corpus callosum.
+  functions:
+    - { text: "Sends acetylcholine to the hippocampus, supporting learning and memory.", source: added }
+  connections:
+    - { to: hippocampus, dir: out, note: "Cholinergic input" }
+  topics: [nt-systems]
+
+- id: nucleus-basalis
+  type: region
+  name: Basal nucleus of Meynert
+  aliases: [nucleus basalis, nucleus basalis of Meynert]
+  kind: nucleus
+  parent: basal-forebrain
+  system: limbic
+  short: Cholinergic nucleus in the basal forebrain that sprays acetylcholine across the cerebral cortex.
+  location: At the base of the forebrain, beneath the basal ganglia (shown projected onto the midline).
+  functions:
+    - { text: "Sends acetylcholine widely across the cerebral cortex.", source: added }
+  connections:
+    - { to: cerebral-cortex, dir: out, note: "Diffuse cholinergic input" }
+  topics: [nt-systems]

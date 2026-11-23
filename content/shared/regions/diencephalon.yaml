@@ -1,0 +1,46 @@
+- id: thalamus
+  type: region
+  name: Thalamus
+  system: diencephalon
+  short: The brain's relay station, routing sensory information (every sense except smell) to the right part of the cortex.
+  location: Center of the brain, above the brainstem and below the corpus callosum; one on each side of the third ventricle.
+  functions:
+    - Gatekeeper of sensory information, routing it to where it needs to go in the cortex.
+    - Smell is the only sense that doesn't have to pass through it first.
+    - Receives acetylcholine (from the PMT complex), norepinephrine and serotonin.
+  topics: [nervous-system-structure, nt-systems]
+
+- id: hypothalamus
+  type: region
+  name: Hypothalamus
+  system: diencephalon
+  short: A small region below the thalamus that runs the body's automatic systems (hormones, temperature, hunger) and drives fight-or-flight responses.
+  location: Just below and in front of the thalamus, directly above the pituitary gland.
+  functions:
+    - Regulates many body systems we don't consciously think about, through hormones and the autonomic nervous system.
+    - Starts the HPA stress axis by signaling the pituitary gland.
+    - Can generate rage displays on its own (sham rage) when the cortex is removed.
+  topics: [nervous-system-structure, emotion, nt-systems]
+
+- id: pituitary-gland
+  type: region
+  name: Pituitary gland
+  aliases: [pituitary]
+  kind: body
+  system: diencephalon
+  short: A pea-sized gland hanging below the hypothalamus that releases hormones into the blood on the hypothalamus's command.
+  location: On a stalk beneath the hypothalamus.
+  functions:
+    - Relays hypothalamic commands into the bloodstream, e.g. the HPA axis that ends with cortisol release.
+  topics: [mental-illness, nervous-system-structure]
+
+- id: third-ventricle
+  type: region
+  name: Third ventricle
+  kind: ventricle
+  system: ventricles
+  short: A thin, fluid-filled space on the midline between the left and right thalamus.
+  location: On the midline, between the two halves of the thalamus.
+  functions:
+    - Holds cerebrospinal fluid; it is near the center of the brain.
+  topics: [nervous-system-structure]

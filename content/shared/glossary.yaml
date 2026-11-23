@@ -1,0 +1,85 @@
+# Plain vocabulary. Anything with its own entity (region, NT, drug…) defines itself; don't repeat it here.
+
+- id: neuron
+  type: term
+  name: Neuron
+  aliases: [neurons, nerve cell]
+  short: A nerve cell, which receives signals on its dendrites and sends them down its axon to other cells.
+  topics: [neurons-and-glia]
+  source: added
+- id: axon
+  type: term
+  name: Axon
+  aliases: [axons]
+  short: The long output cable of a neuron that carries action potentials to its terminals.
+  topics: [neurons-and-glia]
+- id: synapse
+  type: term
+  name: Synapse
+  aliases: [synapses]
+  short: The junction where one neuron passes a signal to another cell, usually by releasing neurotransmitter across a tiny gap.
+  topics: [synaptic-transmission]
+- id: action-potential
+  type: term
+  name: Action potential
+  aliases: [AP, APs, action potentials, spike]
+  short: The brief, all-or-nothing electrical spike that travels down an axon (about 1–2 ms).
+  topics: [action-potential]
+- id: receptor
+  type: term
+  name: Receptor
+  aliases: [receptors]
+  short: A protein that a transmitter (or drug) binds to, triggering a response in the cell.
+  topics: [synaptic-transmission]
+- id: enzyme
+  type: term
+  name: Enzyme
+  aliases: [enzymes]
+  short: A protein that speeds up a specific chemical reaction, like building or breaking down a transmitter.
+  topics: [nt-systems]
+  source: added
+- id: precursor
+  type: term
+  name: Precursor
+  aliases: [precursors]
+  short: A starting molecule that gets converted into something else, e.g. tyrosine is the precursor of dopamine.
+  topics: [nt-systems]
+  source: added
+- id: cytosol
+  type: term
+  name: Cytosol
+  aliases: [cytoplasm]
+  short: The watery fluid inside a cell, outside the nucleus and other organelles.
+  topics: [neurons-and-glia]
+- id: presynaptic
+  type: term
+  name: Presynaptic
+  short: On the sending side of a synapse.
+  topics: [synaptic-transmission]
+- id: postsynaptic
+  type: term
+  name: Postsynaptic
+  short: On the receiving side of a synapse.
+  topics: [synaptic-transmission]
+- id: excitatory
+  type: term
+  name: Excitatory
+  short: Pushes the receiving neuron toward firing an action potential.
+  topics: [action-potential]
+- id: inhibitory
+  type: term
+  name: Inhibitory
+  short: Pushes the receiving neuron away from firing an action potential.
+  topics: [action-potential]
+- id: hyperpolarize
+  type: term
+  name: Hyperpolarize
+  aliases: [hyperpolarizes, hyperpolarization, hyperpolarized]
+  short: To make the inside of a cell more negative, so it is less likely to fire.
+  topics: [action-potential]
+- id: depolarize
+  type: term
+  name: Depolarize
+  aliases: [depolarizes, depolarization, depolarized]
+  short: To make the inside of a cell less negative, pushing it toward firing.
+  topics: [action-potential]

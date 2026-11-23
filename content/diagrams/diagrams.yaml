@@ -1,0 +1,28 @@
+# Each diagram is an original SVG in this folder. Hotspots are elements with data-ref="<entity id>".
+# The same SVG can back several diagrams with different layers turned on.
+
+- id: brain-midsagittal
+  title: Brain, midline view
+  svg: brain-midsagittal.svg
+  description: The brain cut down the middle between the two hemispheres, seen from the inside. Front of the head is on the left.
+  topics: [nervous-system-structure, nt-systems]
+
+- id: nt-overlay
+  title: Neurotransmitter systems
+  svg: brain-midsagittal.svg
+  description: Where the brain's diffuse modulatory systems start and where their axons go. Turn each transmitter on or off. Structures that lie off the midline (striatum, hippocampus) are drawn faintly.
+  topics: [nt-systems]
+  overlay: true
+  layers:
+    - { id: ach, name: Acetylcholine (ACh), color: ach }
+    - { id: da, name: Dopamine (DA), color: da }
+    - { id: ne, name: Norepinephrine (NE), color: ne }
+    - { id: serotonin, name: Serotonin (5-HT), color: serotonin }
+    - { id: deep, name: Deep structures }
+  defaultLayers: [ach, da, ne, serotonin, deep]
+
+- id: synapse
+  title: Chemical synapse
+  svg: synapse.svg
+  description: A chemical synapse, with the parts that synthesis, release, receptors, reuptake and drugs act on.
+  topics: [synaptic-transmission, nt-systems]

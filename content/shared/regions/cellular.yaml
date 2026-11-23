@@ -1,0 +1,72 @@
+# Parts of a synapse (used on the synapse diagram). kind: cellular, system: cellular.
+
+- id: presynaptic-terminal
+  type: region
+  name: Presynaptic terminal
+  aliases: [axon terminal, terminal bouton]
+  kind: cellular
+  system: cellular
+  short: The end of the sending neuron's axon, packed with vesicles of neurotransmitter.
+  functions:
+    - Releases neurotransmitter into the synaptic cleft when an action potential arrives.
+    - Takes transmitter back in (reuptake) to recycle or break it down.
+  topics: [synaptic-transmission, nt-systems]
+
+- id: synaptic-vesicle
+  type: region
+  name: Synaptic vesicle
+  aliases: [vesicle]
+  kind: cellular
+  parent: presynaptic-terminal
+  system: cellular
+  short: A tiny membrane bubble that stores neurotransmitter and dumps it into the cleft by fusing with the membrane.
+  functions:
+    - Stores neurotransmitter until an action potential triggers release.
+    - Tied to the membrane by SNARE proteins; Ca²⁺ entry makes it fuse and release its contents.
+  topics: [synaptic-transmission, nt-systems]
+
+- id: synaptic-cleft
+  type: region
+  name: Synaptic cleft
+  aliases: [cleft]
+  kind: cellular
+  system: cellular
+  short: The narrow gap between the sending and receiving cells that transmitter crosses.
+  functions:
+    - The space where neurotransmitter is released, crosses, and binds receptors on the other side.
+  topics: [synaptic-transmission, nt-systems]
+
+- id: postsynaptic-dendrite
+  type: region
+  name: Postsynaptic dendrite
+  aliases: [postsynaptic cell]
+  kind: cellular
+  system: cellular
+  short: The receiving side of the synapse, studded with receptors that detect the transmitter.
+  functions:
+    - Its receptors decide what the transmitter does (excite or inhibit, fast or slow).
+  topics: [synaptic-transmission, nt-systems]
+
+- id: mitochondrion
+  type: region
+  name: Mitochondrion
+  aliases: [mitochondria]
+  kind: cellular
+  system: cellular
+  short: The cell's power plant, making ATP; the enzyme MAO sits on its outer surface.
+  functions:
+    - Makes the ATP that neurons need in large amounts.
+    - Carries monoamine oxidase (MAO), which breaks down dopamine, norepinephrine and serotonin inside the terminal.
+  topics: [neurons-and-glia, nt-systems]
+
+- id: astrocyte
+  type: region
+  name: Astrocyte
+  aliases: [astrocytes, astroglia]
+  kind: cellular
+  system: cellular
+  short: A star-shaped glial cell that supports neurons and mops up transmitter (especially glutamate and GABA) from synapses.
+  functions:
+    - Provides structure, exchanges nutrients and regulates the fluid around neurons.
+    - Takes up glutamate and GABA from the synapse quickly (glial uptake).
+  topics: [neurons-and-glia, nt-systems]

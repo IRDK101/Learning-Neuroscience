@@ -1,0 +1,156 @@
+- id: acetylcholine
+  type: neurotransmitter
+  name: Acetylcholine
+  aliases: [ACh]
+  class: amine
+  subclass: Choline ester; often grouped with the amines.
+  short: The neurotransmitter of muscles and of a diffuse brain system for attention, learning and memory.
+  precursors: [choline, acetyl-coa]
+  synthesis: acetylcholine-cycle
+  rateLimiting: "The supply of choline, which comes mostly from the diet."
+  sources:
+    - { nucleus: nucleus-basalis, targets: [cerebral-cortex], name: Basal forebrain → cortex }
+    - { nucleus: medial-septal-nuclei, targets: [hippocampus], name: Septum → hippocampus }
+    - { nucleus: pmt-complex, targets: [thalamus], name: Brainstem → thalamus }
+  functions:
+    - { text: "Released at the neuromuscular junction to contract skeletal muscle; through the parasympathetic system it slows heart rate and acts on smooth muscle.", source: corrected, corrections: [C-023] }
+    - Helps regulate heart rate and blood pressure.
+    - Assists learning and memory.
+    - Can excite or inhibit depending on the receptor it binds.
+  deactivation:
+    - Broken down very quickly in the cleft by acetylcholinesterase (AChE) into choline and acetate.
+    - Choline is taken back into the terminal with Na⁺ and reused.
+  deactivationBy: [acetylcholinesterase, choline-transporter]
+  topics: [nt-systems]
+
+- id: dopamine
+  type: neurotransmitter
+  name: Dopamine
+  aliases: [DA]
+  class: amine
+  subclass: Catecholamine
+  short: A catecholamine from the midbrain that drives movement (via the striatum) and learning what is rewarding (via the frontal lobe).
+  precursors: [tyrosine]
+  synthesis: catecholamine-synthesis
+  rateLimiting: "Tyrosine hydroxylase (tyrosine → L-DOPA), the rate-limiting step for all catecholamines."
+  sources:
+    - { nucleus: substantia-nigra, targets: [striatum], name: Nigrostriatal, note: "Movement; lost in Parkinson's disease" }
+    - { nucleus: ventral-tegmental-area, targets: [prefrontal-cortex], name: VTA → frontal lobe, note: "Reward learning, motivation, addiction" }
+  functions:
+    - Learning what makes us happy and creating incentives (not producing happiness itself).
+    - Needed to start movements through the basal ganglia (direct and indirect pathways).
+    - Plays a big part in addiction.
+    - Mostly stays in the striatum/basal ganglia; widespread but doesn't cover the whole cortex.
+  deactivation:
+    - Pulled back into the terminal by the dopamine transporter (DAT).
+    - Once inside, some is repackaged into vesicles and some is broken down by MAO on mitochondria.
+  deactivationBy: [dopamine-transporter, monoamine-oxidase]
+  disorders: [parkinsons-disease, schizophrenia]
+  topics: [nt-systems]
+
+- id: norepinephrine
+  type: neurotransmitter
+  name: Norepinephrine
+  aliases: [NE, noradrenaline]
+  class: amine
+  subclass: Catecholamine
+  short: A catecholamine made from dopamine, sent from the locus coeruleus almost everywhere to control arousal, sleep–wake and attention.
+  precursors: [tyrosine]
+  synthesis: catecholamine-synthesis
+  rateLimiting: "Tyrosine hydroxylase (tyrosine → L-DOPA). Dopamine is made first, then DBH inside the vesicle converts it to NE."
+  sources:
+    - { nucleus: locus-coeruleus, targets: [thalamus, hypothalamus, cerebral-cortex, hippocampus, cerebellum, spinal-cord], name: Locus coeruleus → almost everywhere }
+  functions:
+    - Regulates sleep–wake cycles and autonomic functions.
+    - Involved in learning, memory and mood.
+    - A small, concentrated source with very widespread connections.
+  deactivation:
+    - Reuptake by the norepinephrine transporter, then repackaged or broken down by MAO.
+  deactivationBy: [norepinephrine-transporter, monoamine-oxidase]
+  disorders: [major-depression]
+  topics: [nt-systems]
+
+- id: epinephrine
+  type: neurotransmitter
+  name: Epinephrine
+  aliases: [adrenaline]
+  class: amine
+  subclass: Catecholamine
+  short: Adrenaline, the last catecholamine in the chain, made from norepinephrine by PNMT; arousal and fight-or-flight.
+  precursors: [tyrosine]
+  synthesis: catecholamine-synthesis
+  rateLimiting: "Tyrosine hydroxylase. NE must leave the vesicle so PNMT (in the cytosol) can convert it to epinephrine."
+  functions:
+    - "Effects similar to NE: sleep–wake and extra arousal when needed."
+  deactivation:
+    - Reuptake for recycling, or breakdown by MAO.
+  deactivationBy: [monoamine-oxidase]
+  topics: [nt-systems]
+
+- id: serotonin
+  type: neurotransmitter
+  name: Serotonin
+  aliases: [5-HT, 5-hydroxytryptamine]
+  class: amine
+  subclass: Indolamine (monoamine)
+  short: A monoamine from the raphe nuclei that reaches basically the whole brain, shaping sleep–wake, mood and emotion.
+  precursors: [tryptophan]
+  synthesis: serotonin-synthesis
+  rateLimiting: "The supply of tryptophan, which must come from the diet."
+  sources:
+    - { nucleus: raphe-nuclei, targets: [cerebral-cortex, thalamus, hypothalamus, cerebellum, spinal-cord], name: Raphe → everywhere }
+  functions:
+    - Involved in sleep–wake, mood and emotion, and learning about pleasure.
+    - Has a very large number of receptor types with subtly different effects, the textbook example of one transmitter doing different things depending on the receptor.
+  deactivation:
+    - Reuptake by the serotonin transporter (SERT), which SSRIs block.
+    - Broken down by MAO inside the terminal.
+  deactivationBy: [serotonin-transporter, monoamine-oxidase]
+  disorders: [major-depression]
+  topics: [nt-systems]
+
+- id: glutamate
+  type: neurotransmitter
+  name: Glutamate
+  aliases: [Glu]
+  class: amino-acid
+  short: The brain's main excitatory neurotransmitter, an abundant amino acid used by most neurons.
+  functions:
+    - The main excitatory transmitter; amino acids are small, abundant and easy to make.
+    - Synthesized close to the axon terminal and packaged into vesicles.
+  deactivation:
+    - Some diffuses away and some is taken back up by transporters.
+    - Astrocytes pick it up quickly from the synapse.
+  deactivationBy: [astrocyte, reuptake-transporter]
+  disorders: [schizophrenia]
+  topics: [nt-systems]
+
+- id: gaba
+  type: neurotransmitter
+  name: GABA
+  aliases: [gamma-aminobutyric acid]
+  class: amino-acid
+  short: The brain's main inhibitory neurotransmitter, made from glutamate by the enzyme GAD.
+  precursors: [glutamate]
+  functions:
+    - GABA neurons are glutamate neurons with one extra enzyme, GAD, that converts glutamate into GABA.
+    - The main inhibitory transmitter; GABA-A receptors let in Cl⁻, making the cell less likely to fire.
+    - Target of anti-anxiety drugs (benzodiazepines) and alcohol, which enhance it.
+  deactivation:
+    - Reuptake by transporters and fast uptake by astrocytes; some diffuses away.
+  deactivationBy: [astrocyte, reuptake-transporter]
+  topics: [nt-systems]
+
+- id: glycine
+  type: neurotransmitter
+  name: Glycine
+  aliases: [Gly]
+  class: amino-acid
+  short: An amino-acid neurotransmitter that, like GABA, is mostly inhibitory.
+  functions:
+    - Mostly inhibitory.
+    - { text: "Especially important for inhibition in the spinal cord and brainstem.", source: added }
+  deactivation:
+    - Reuptake by transporters.
+  deactivationBy: [reuptake-transporter]
+  topics: [nt-systems]

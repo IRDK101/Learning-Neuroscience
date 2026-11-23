@@ -1,0 +1,28 @@
+- id: basal-ganglia
+  type: region
+  name: Basal ganglia
+  kind: division
+  system: basal-ganglia
+  short: Deep forebrain nuclei (caudate, putamen, globus pallidus) that help start wanted movements and suppress unwanted ones.
+  location: Deep inside each hemisphere, near the center of the brain.
+  functions:
+    - Made up of the caudate nucleus, putamen and globus pallidus; closely tied to the substantia nigra and subthalamic nucleus.
+    - Direct pathway helps start wanted movements; indirect pathway suppresses unwanted ones.
+  cases: [parkinsons-disease]
+  topics: [brain-control-of-movement, nervous-system-structure]
+
+- id: striatum
+  type: region
+  name: Striatum
+  aliases: [caudate and putamen]
+  parent: basal-ganglia
+  system: basal-ganglia
+  short: The input hub of the basal ganglia (caudate + putamen) and the main target of dopamine from the substantia nigra.
+  location: Deep in each hemisphere, beside the lateral ventricle (shown projected onto the midline).
+  functions:
+    - Receives most of the brain's dopamine, from the substantia nigra.
+    - Procedural memory and motor habits (skills you can't put into words).
+  connections:
+    - { to: substantia-nigra, dir: in, note: "Dopamine input (nigrostriatal pathway)" }
+  cases: [parkinsons-disease]
+  topics: [nt-systems, brain-control-of-movement, memory]

@@ -1,0 +1,219 @@
+# Entities introduced by Neurotransmitter Systems. (Entities in this file get topic nt-systems automatically.)
+
+# ---------------------------------------------------------------- pathways
+- id: catecholamine-synthesis
+  type: pathway
+  kind: synthesis
+  name: Catecholamine synthesis
+  short: The assembly line that turns tyrosine into L-DOPA, then dopamine, then norepinephrine, then epinephrine.
+  steps:
+    - { label: Tyrosine, ref: tyrosine, note: "An amino acid; the precursor of every catecholamine." }
+    - { label: L-DOPA, ref: l-dopa, via: tyrosine-hydroxylase, note: "Tyrosine hydroxylase is the rate-limiting step for the whole chain." }
+    - { label: Dopamine, ref: dopamine, via: dopa-decarboxylase, source: corrected, corrections: [C-022], note: "Dopamine neurons stop here." }
+    - { label: Norepinephrine, ref: norepinephrine, via: dopamine-beta-hydroxylase, note: "DBH sits inside the vesicle, so only neurons with DBH make NE." }
+    - { label: Epinephrine, ref: epinephrine, via: pnmt, note: "PNMT works in the cytosol, so NE must leave the vesicle first." }
+  diagrams: []
+
+- id: acetylcholine-cycle
+  type: pathway
+  kind: synthesis
+  name: Acetylcholine life cycle
+  short: How acetylcholine is made, released, broken down by AChE, and recycled as choline.
+  steps:
+    - { label: "Choline + acetyl CoA in the terminal", ref: choline, note: "Choline mostly comes from the diet." }
+    - { label: Acetylcholine (ACh), ref: acetylcholine, via: choline-acetyltransferase }
+    - { label: Loaded into vesicles, ref: synaptic-vesicle, via: vesicular-transporter }
+    - { label: Released into the cleft and binds receptors, ref: synaptic-cleft, note: "Triggered by an action potential." }
+    - { label: Split into choline + acetate, via: acetylcholinesterase, note: "AChE works very fast, right in the cleft." }
+    - { label: Choline taken back into the terminal, via: choline-transporter, note: "Co-transported with Na⁺, ready to be reused." }
+  diagrams: [synapse]
+
+- id: serotonin-synthesis
+  type: pathway
+  kind: synthesis
+  name: Serotonin synthesis
+  short: Tryptophan from the diet becomes 5-HTP, then serotonin, and in the pineal gland, melatonin.
+  steps:
+    - { label: Tryptophan, ref: tryptophan, note: "Must come from the diet; its supply limits serotonin production." }
+    - { label: 5-HTP, ref: five-htp, via: tryptophan-hydroxylase, source: added }
+    - { label: Serotonin (5-HT), ref: serotonin, via: dopa-decarboxylase, source: added, note: "The same decarboxylase that makes dopamine from L-DOPA." }
+    - { label: Melatonin (pineal gland), ref: melatonin, note: "Notes: tryptophan is also a precursor for melatonin." }
+
+- id: chemical-transmission-steps
+  type: pathway
+  kind: sequence
+  name: Chemical synaptic transmission
+  short: The four stages every chemical synapse runs through, from making transmitter to clearing it away.
+  steps:
+    - { label: Synthesis and storage in vesicles, ref: synaptic-vesicle, note: "Amino acids and amines are made in the terminal; peptides near the cell body." }
+    - { label: Action potential opens voltage-gated Ca²⁺ channels, ref: voltage-gated-calcium-channel }
+    - { label: Vesicles fuse and release transmitter, ref: snare-proteins, note: "Ca²⁺ lets the SNARE proteins fuse vesicles with the membrane." }
+    - { label: Transmitter binds postsynaptic receptors, ref: postsynaptic-dendrite }
+    - { label: "Deactivation: reuptake, enzymes, glia, diffusion", ref: reuptake-transporter, note: "Clearing the transmitter lets the synapse signal again quickly." }
+  topics: [synaptic-transmission]
+  diagrams: [synapse]
+
+# ---------------------------------------------------------------- concepts
+- id: neurotransmitter
+  type: concept
+  name: Neurotransmitter
+  aliases: [NT, NTs, neurotransmitters]
+  short: A chemical released by a neuron that acts on another cell's receptors.
+  source: corrected
+  corrections: [C-018]
+  points:
+    - "Classes: amino acids (glutamate, GABA, glycine), amines (ACh, dopamine, NE, serotonin), peptides, and gasotransmitters."
+  related: [neuromodulator, ergic-system]
+  topics: [synaptic-transmission]
+  generate: false
+
+- id: receptor-decides-effect
+  type: concept
+  name: The receptor decides the effect
+  short: A transmitter's effect can't be predicted from the transmitter alone; the receptor it binds decides whether it excites or inhibits, and how fast.
+  points:
+    - Acetylcholine can excite or inhibit depending on the receptor.
+    - Slower-opening receptors are also slower to close, so their effects last longer.
+    - Serotonin is the poster child, with a very large number of receptor types.
+  related: [ionotropic-receptor, metabotropic-receptor, acetylcholine, serotonin]
+
+- id: agonist
+  type: concept
+  name: Agonist
+  aliases: [agonists]
+  short: A drug that mimics or boosts a neurotransmitter's action, often by binding the same receptor and activating it.
+  points:
+    - Can work as well as, or better than, the natural transmitter.
+  related: [antagonist]
+
+- id: antagonist
+  type: concept
+  name: Antagonist
+  aliases: [antagonists]
+  short: A drug that binds a receptor without activating it, blocking the natural transmitter from acting.
+  points:
+    - Close enough to the natural chemical to fill the receptor, but not close enough to trigger it.
+  related: [agonist, antipsychotics]
+
+- id: ergic-system
+  type: concept
+  name: "-ergic system"
+  aliases: [-ergic, cholinergic, dopaminergic, noradrenergic, serotonergic, GABAergic, glutamatergic]
+  short: '"-ergic" names the neurons that use a given transmitter, e.g. dopaminergic neurons release dopamine.'
+  points:
+    - The dopaminergic system = neurons that release dopamine plus the cells that receive it.
+  related: [diffuse-modulatory-system]
+
+- id: diffuse-modulatory-system
+  type: concept
+  name: Diffuse modulatory system
+  aliases: [diffuse modulatory systems]
+  short: A small cluster of neurons whose axons spread across huge areas of the brain, tuning (modulating) the activity of many circuits at once.
+  points:
+    - Few cells, very widespread projections (e.g., the locus coeruleus or the raphe nuclei).
+    - Usually use neuromodulators such as dopamine, norepinephrine, serotonin and acetylcholine.
+  related: [neuromodulator, locus-coeruleus, raphe-nuclei, substantia-nigra, basal-forebrain]
+
+- id: neuromodulator
+  type: concept
+  name: Neuromodulator
+  aliases: [neuromodulators]
+  short: A transmitter (like dopamine or serotonin) that adjusts how strongly other synapses work rather than just passing a quick message.
+  points:
+    - The amines are powerful neuromodulators.
+  related: [diffuse-modulatory-system]
+
+- id: catecholamine
+  type: concept
+  name: Catecholamine
+  aliases: [catecholamines]
+  short: The family of dopamine, norepinephrine and epinephrine, all built from tyrosine and sharing a catechol group.
+  points:
+    - All three come from the same synthesis chain and are molecularly very similar.
+    - Tyrosine hydroxylase is the rate-limiting step for all three.
+    - A given neuron releases only one transmitter from the chain (whichever enzymes it has decide where it stops).
+  related: [catecholamine-synthesis, dopamine, norepinephrine, epinephrine]
+
+- id: rate-limiting-step
+  type: concept
+  name: Rate-limiting step
+  aliases: [rate limiting step, rate-limiting]
+  short: The slowest step in a chain of reactions, which sets how fast the final product can be made.
+  points:
+    - "Catecholamines: tyrosine hydroxylase. Acetylcholine: choline supply. Serotonin: tryptophan supply."
+  related: [tyrosine-hydroxylase, choline, tryptophan]
+
+- id: reuptake
+  type: concept
+  name: Reuptake
+  short: Pumping a released transmitter back into the presynaptic terminal through a transporter, ending its signal so it can be recycled.
+  points:
+    - One of four ways to clear a transmitter, along with enzymes, glial uptake and diffusion.
+    - Blocked by cocaine (dopamine) and SSRIs (serotonin).
+  related: [reuptake-transporter, cocaine, ssris]
+
+- id: blood-brain-barrier
+  type: concept
+  name: Blood–brain barrier
+  aliases: [blood-brain barrier, BBB]
+  short: Tight seals between the cells of brain capillaries that keep most substances in the blood from entering the brain.
+  source: corrected
+  corrections: [C-008]
+  points:
+    - L-DOPA can cross it, but dopamine cannot, which is why L-DOPA is given for Parkinson's disease.
+  related: [l-dopa]
+  topics: [nervous-system-structure]
+
+- id: monoamine-hypothesis
+  type: concept
+  name: Monoamine hypothesis
+  short: The idea that depression (and bipolar disorder) is linked to too little monoamine signaling, especially norepinephrine and serotonin.
+  points:
+    - Drugs that raise monoamines (MAO inhibitors, SSRIs) can treat mood disorders, but they take weeks, so slower downstream changes matter.
+  related: [mao-inhibitors, ssris, major-depression]
+  topics: [mental-illness]
+
+# ---------------------------------------------------------------- disorders
+- id: parkinsons-disease
+  type: case
+  kind: disorder
+  name: Parkinson's disease
+  aliases: [Parkinson's, Parkinsons]
+  short: A movement disorder caused by the death of dopamine neurons in the substantia nigra.
+  damage:
+    regions: [substantia-nigra]
+    cause: Dopamine-producing cells in the substantia nigra are lost, so less dopamine reaches the striatum.
+  deficits:
+    - Difficulty starting movements.
+    - { text: "A resting tremor (shaking at rest that lessens with movement).", source: corrected, corrections: [C-054] }
+  treatments:
+    - L-DOPA (crosses the blood–brain barrier) boosts dopamine in the surviving neurons, but it can't make new cells.
+    - Deep brain stimulation.
+  teaches: The nigrostriatal dopamine pathway is needed to start movements.
+  topics: [brain-control-of-movement]
+
+- id: major-depression
+  type: case
+  kind: disorder
+  name: Major depression
+  aliases: [depression, major depressive disorder]
+  short: A mood disorder of prolonged sadness and loss of pleasure; linked by the monoamine hypothesis to low NE and serotonin signaling.
+  deficits:
+    - Prolonged sadness that doesn't make logical sense, and losing pleasure in things you used to enjoy.
+    - Very different symptoms are possible (eating or sleeping too much or too little), suggesting several underlying disorders.
+  treatments:
+    - SSRIs and MAO inhibitors (take weeks to work), psychotherapy, deep brain stimulation.
+  topics: [mental-illness]
+
+- id: schizophrenia
+  type: case
+  kind: disorder
+  name: Schizophrenia
+  short: A disorder of disconnection from reality (hallucinations, delusions, plus loss of planning and motivation) linked to dopamine and glutamate.
+  deficits:
+    - "Positive symptoms (things present that shouldn't be): hallucinations, delusions."
+    - "Negative symptoms (things missing that should be there): trouble with planning, memory, attention."
+  treatments:
+    - Antipsychotics that block dopamine receptors.
+  teaches: Amphetamines (more dopamine) can cause psychosis, and drugs that block NMDA glutamate receptors (PCP, ketamine) mimic it.
+  topics: [mental-illness]

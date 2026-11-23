@@ -1,0 +1,75 @@
+# Cerebral cortex and lobes. Phase 1 includes what the midsagittal diagram and NT systems need;
+# Phase 2 (Structure of the Nervous System) fills in the rest.
+
+- id: cerebral-cortex
+  type: region
+  name: Cerebral cortex
+  aliases: [cortex, neocortex]
+  system: cortex
+  short: The brain's folded outer sheet of grey matter, divided into lobes, where perception, movement planning and thinking happen.
+  location: The outer layer of the cerebrum, folded into gyri (bumps) and sulci (grooves).
+  functions:
+    - Divided into sensory areas (receive direct sensory input) and association areas (link inputs together for language, memory, planning).
+  topics: [nervous-system-structure]
+
+- id: frontal-lobe
+  type: region
+  name: Frontal lobe
+  parent: cerebral-cortex
+  system: frontal
+  short: The front lobe of the cortex, in charge of movement, planning, decision-making and personality.
+  location: Front of the brain, anterior to the central sulcus.
+  functions:
+    - Contains the primary motor cortex (just in front of the central sulcus) and the prefrontal cortex.
+    - Decision-making and personality, as shown by Phineas Gage after his frontal-lobe injury.
+  cases: []
+  topics: [nervous-system-structure]
+
+- id: prefrontal-cortex
+  type: region
+  name: Prefrontal cortex
+  aliases: [PFC]
+  parent: frontal-lobe
+  system: frontal
+  short: The front-most part of the frontal lobe, used for planning, holding information in mind (working memory) and supplying context.
+  location: The anterior part of the frontal lobe, in front of the motor areas.
+  functions:
+    - Working memory and planning; damage causes trouble switching rules (Wisconsin Card-Sorting Test).
+    - Supplies context for emotion, e.g. a snake in the wild vs. a snake behind zoo glass.
+    - A main target of dopamine from the ventral tegmental area.
+  topics: [memory, emotion, nt-systems]
+
+- id: parietal-lobe
+  type: region
+  name: Parietal lobe
+  parent: cerebral-cortex
+  system: parietal
+  short: The lobe behind the central sulcus that handles touch and body sense and helps track where things are in space.
+  location: Top-back of the brain, between the central sulcus and the occipital lobe.
+  functions:
+    - Contains the primary somatosensory cortex (S1), just behind the central sulcus.
+    - Posterior parietal cortex supports spatial attention; damage on the right causes hemispatial neglect.
+  topics: [nervous-system-structure]
+
+- id: occipital-lobe
+  type: region
+  name: Occipital lobe
+  parent: cerebral-cortex
+  system: occipital
+  short: The lobe at the back of the brain, devoted to vision.
+  location: The back end of the cerebrum, above the cerebellum.
+  functions:
+    - Contains the primary visual cortex (V1) along the calcarine fissure.
+  topics: [nervous-system-structure]
+
+- id: corpus-callosum
+  type: region
+  name: Corpus callosum
+  kind: tract
+  system: white-matter
+  short: The thick bridge of axons that connects the left and right hemispheres.
+  location: Deep in the middle of the brain, arching above the thalamus and below the cingulate cortex.
+  functions:
+    - Carries information between the two hemispheres.
+    - Cutting it (split-brain surgery, used for severe epilepsy) stops the hemispheres from sharing information.
+  topics: [nervous-system-structure, language]

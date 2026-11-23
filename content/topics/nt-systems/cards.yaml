@@ -1,0 +1,100 @@
+# Hand-written flashcards. Many more are generated automatically from entities (npm run content:report nt-systems).
+
+- id: c-nt-ergic
+  kind: basic
+  front: What does “-ergic” mean, as in “dopaminergic” or “cholinergic”?
+  back: The system of neurons that release a given transmitter (plus the cells receiving it). Dopaminergic = dopamine-releasing; cholinergic = ACh-releasing.
+  refs: [ergic-system]
+  tags: { difficulty: 1 }
+
+- id: c-nt-receptor-decides
+  kind: basic
+  front: Can you predict a neurotransmitter's effect from the transmitter alone?
+  back: No, the receptor decides. ACh excites skeletal muscle but slows the heart; serotonin has many receptor types with different effects.
+  refs: [receptor-decides-effect]
+
+- id: c-nt-agonist-antagonist
+  kind: basic
+  front: Agonist vs antagonist?
+  back: An agonist mimics or boosts the transmitter (activates the receptor). An antagonist binds the receptor without activating it, blocking the transmitter.
+  refs: [agonist, antagonist]
+  tags: { difficulty: 1 }
+
+- id: c-nt-catechol-chain
+  kind: basic
+  front: Write out the catecholamine chain with its enzymes.
+  back: Tyrosine →(tyrosine hydroxylase, rate-limiting)→ L-DOPA →(DOPA decarboxylase)→ dopamine →(DBH, in vesicles)→ norepinephrine →(PNMT, in cytosol)→ epinephrine.
+  refs: [catecholamine-synthesis]
+  source: corrected
+  corrections: [C-022]
+  tags: { difficulty: 3 }
+
+- id: c-nt-one-per-neuron
+  kind: basic
+  front: Can one catecholamine neuron release both dopamine and norepinephrine?
+  back: No, each releases one transmitter from the chain. Its enzymes decide where it stops (no DBH → dopamine; DBH → NE; DBH + PNMT → epinephrine).
+  refs: [catecholamine]
+
+- id: c-nt-da-incentive
+  kind: basic
+  front: Is dopamine the “happiness chemical”?
+  back: Not really. It's for learning what's rewarding and creating incentives (wanting), not producing pleasure itself. That's also why it's central to addiction.
+  refs: [dopamine]
+
+- id: c-nt-ldopa-bbb
+  kind: basic
+  front: Why give L-DOPA (not dopamine) for Parkinson's, and what can't it do?
+  back: L-DOPA crosses the blood–brain barrier and boosts dopamine in surviving substantia nigra cells. It can't create new cells, so it needs some cells left.
+  refs: [l-dopa, parkinsons-disease]
+
+- id: c-nt-cocaine-amph
+  kind: basic
+  front: Cocaine vs amphetamine at the dopamine synapse?
+  back: Cocaine blocks the dopamine transporter (reuptake). Amphetamine also blocks it, and additionally enters the terminal and pushes dopamine out of vesicles without an action potential.
+  refs: [cocaine, amphetamine]
+  tags: { difficulty: 3 }
+
+- id: c-nt-ach-clearing
+  kind: basic
+  front: How is acetylcholine cleared, and what gets recycled?
+  back: AChE in the cleft splits ACh into choline + acetate. Choline is taken back into the terminal (with Na⁺) and reused.
+  refs: [acetylcholinesterase, choline-transporter]
+
+- id: c-nt-ach-sources
+  kind: basic
+  front: Name the brain's acetylcholine sources.
+  back: Basal forebrain complex (medial septal nuclei + basal nucleus of Meynert) and the pontomesencephalotegmental (PMT) complex in the brainstem.
+  refs: [basal-forebrain, pmt-complex]
+
+- id: c-nt-5ht-receptors
+  kind: basic
+  front: Why is serotonin the “poster child” for receptors deciding effects?
+  back: It has a very large number of receptor types, each with subtly different effects.
+  refs: [serotonin, receptor-decides-effect]
+
+- id: c-nt-ssri-delay
+  kind: basic
+  front: SSRIs block reuptake quickly but take 2–3 weeks to work. Why does that matter?
+  back: It suggests the benefit comes from slower downstream changes in the postsynaptic cell (e.g., more glucocorticoid receptors), not just extra serotonin in the synapse.
+  refs: [ssris]
+
+- id: c-nt-gaba-from-glu
+  kind: basic
+  front: How is GABA made?
+  back: From glutamate, by the enzyme GAD. GABA neurons are basically glutamate neurons with one extra enzyme.
+  refs: [gaba, glutamic-acid-decarboxylase]
+  tags: { difficulty: 1 }
+
+- id: c-nt-amino-clearing
+  kind: basic
+  front: How are glutamate and GABA cleared from the synapse?
+  back: Some diffuses away, some is taken back up by transporters, and astrocytes pick a lot up quickly.
+  refs: [glutamate, gaba, astrocyte]
+
+- id: c-nt-benzo
+  kind: basic
+  front: How do benzodiazepines and alcohol reduce anxiety?
+  back: They bind the GABA-A receptor at a different site and make GABA open its Cl⁻ channel more effectively, increasing inhibition. Benzodiazepines don't open the channel on their own.
+  refs: [benzodiazepines, alcohol, gaba-a-receptor]
+  source: corrected
+  corrections: [C-079]

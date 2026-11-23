@@ -1,0 +1,299 @@
+# Enzymes, precursors, receptors, transporters and channels. type: molecule.
+
+# ---------------------------------------------------------------- precursors
+- id: choline
+  type: molecule
+  kind: precursor
+  name: Choline
+  short: A nutrient from food that neurons combine with acetyl CoA to make acetylcholine.
+  functions:
+    - { text: "Combined with acetyl CoA to make ACh; the body makes only a little, so most comes from diet.", source: corrected, corrections: [C-021] }
+    - Its supply limits how fast ACh can be made.
+  topics: [nt-systems]
+
+- id: acetyl-coa
+  type: molecule
+  kind: precursor
+  name: Acetyl CoA
+  aliases: [acetyl coenzyme A]
+  short: A common molecule in cells that donates the acetyl group to make acetylcholine.
+  functions:
+    - Supplies the acetyl group that ChAT attaches to choline.
+  topics: [nt-systems]
+  source: added
+
+- id: tyrosine
+  type: molecule
+  kind: precursor
+  name: Tyrosine
+  short: The amino acid that dopamine, norepinephrine and epinephrine are all built from.
+  functions:
+    - Precursor of all the catecholamines; converted to L-DOPA by tyrosine hydroxylase.
+  topics: [nt-systems]
+
+- id: tryptophan
+  type: molecule
+  kind: precursor
+  name: Tryptophan
+  short: An amino acid from the diet that is the precursor of serotonin (and of melatonin).
+  functions:
+    - Precursor of serotonin and melatonin; not made by the body, so it must come from food.
+    - Its availability is the rate-limiting factor for making serotonin.
+  topics: [nt-systems]
+
+- id: five-htp
+  type: molecule
+  kind: precursor
+  name: 5-HTP
+  aliases: [5-hydroxytryptophan]
+  short: The intermediate between tryptophan and serotonin.
+  functions:
+    - Made from tryptophan by tryptophan hydroxylase, then converted to serotonin.
+  topics: [nt-systems]
+  source: added
+
+- id: melatonin
+  type: molecule
+  kind: hormone
+  name: Melatonin
+  short: A hormone made from serotonin (mainly in the pineal gland) that helps regulate sleep–wake rhythms.
+  functions:
+    - Made from serotonin, so tryptophan is its precursor too.
+  topics: [nt-systems]
+
+# ---------------------------------------------------------------- enzymes
+- id: choline-acetyltransferase
+  type: molecule
+  kind: enzyme
+  name: Choline acetyltransferase
+  aliases: [ChAT]
+  short: The enzyme that joins choline and acetyl CoA to make acetylcholine.
+  functions:
+    - Joins choline and an acetyl group to make ACh in the axon terminal.
+  topics: [nt-systems]
+
+- id: acetylcholinesterase
+  type: molecule
+  kind: enzyme
+  name: Acetylcholinesterase
+  aliases: [AChE]
+  short: An enzyme in the synaptic cleft that rapidly breaks acetylcholine into choline and acetate.
+  functions:
+    - Breaks ACh down very quickly in the cleft, ending its signal; the choline is then recycled.
+  topics: [nt-systems]
+
+- id: tyrosine-hydroxylase
+  type: molecule
+  kind: enzyme
+  name: Tyrosine hydroxylase
+  aliases: [TH]
+  short: The enzyme that turns tyrosine into L-DOPA; the rate-limiting step for all catecholamines.
+  functions:
+    - Converts tyrosine into L-DOPA; this is the slowest (rate-limiting) step for dopamine, NE and epinephrine.
+  topics: [nt-systems]
+
+- id: dopa-decarboxylase
+  type: molecule
+  kind: enzyme
+  name: DOPA decarboxylase
+  aliases: [DDC, AADC, aromatic L-amino acid decarboxylase]
+  short: The enzyme that converts L-DOPA into dopamine (and 5-HTP into serotonin).
+  functions:
+    - { text: "Converts L-DOPA into dopamine.", source: corrected, corrections: [C-022] }
+    - { text: "The same enzyme converts 5-HTP into serotonin.", source: added }
+  topics: [nt-systems]
+
+- id: dopamine-beta-hydroxylase
+  type: molecule
+  kind: enzyme
+  name: Dopamine β-hydroxylase
+  aliases: [DBH, dopamine beta-hydroxylase]
+  short: An enzyme inside vesicles that turns dopamine into norepinephrine.
+  functions:
+    - Sits inside synaptic vesicles and converts dopamine into norepinephrine; cells with DBH make NE, cells without it stop at dopamine.
+  topics: [nt-systems]
+
+- id: pnmt
+  type: molecule
+  kind: enzyme
+  name: PNMT
+  aliases: [phenylethanolamine N-methyltransferase]
+  short: The cytosolic enzyme that turns norepinephrine into epinephrine.
+  functions:
+    - Converts norepinephrine into epinephrine; it works in the cytosol, so NE must leave the vesicle first.
+  topics: [nt-systems]
+
+- id: monoamine-oxidase
+  type: molecule
+  kind: enzyme
+  name: Monoamine oxidase
+  aliases: [MAO]
+  short: An enzyme on mitochondria in the axon terminal that breaks down dopamine, norepinephrine and serotonin after reuptake.
+  functions:
+    - Breaks down monoamines (DA, NE, epinephrine, serotonin) inside the presynaptic terminal after reuptake.
+  topics: [nt-systems]
+
+- id: tryptophan-hydroxylase
+  type: molecule
+  kind: enzyme
+  name: Tryptophan hydroxylase
+  aliases: [TPH]
+  short: The enzyme that converts tryptophan into 5-HTP, the first step in making serotonin.
+  functions:
+    - Converts tryptophan into 5-HTP.
+  topics: [nt-systems]
+  source: added
+
+- id: glutamic-acid-decarboxylase
+  type: molecule
+  kind: enzyme
+  name: Glutamic acid decarboxylase
+  aliases: [GAD]
+  short: The enzyme that converts glutamate into GABA; only GABA neurons have it.
+  functions:
+    - Converts glutamate into GABA; GABA neurons are glutamate-makers with this one extra enzyme.
+  topics: [nt-systems]
+
+# ---------------------------------------------------------------- channels, receptors, transporters
+- id: voltage-gated-calcium-channel
+  type: molecule
+  kind: channel
+  name: Voltage-gated calcium channel
+  aliases: [voltage-gated Ca²⁺ channel]
+  short: A channel in the axon terminal that opens when the action potential arrives, letting in the Ca²⁺ that triggers release.
+  functions:
+    - Opens when the action potential reaches the terminal; incoming Ca²⁺ lets SNARE proteins fuse vesicles with the membrane.
+  topics: [synaptic-transmission, nt-systems]
+
+- id: snare-proteins
+  type: molecule
+  kind: protein
+  name: SNARE proteins
+  aliases: [SNAREs]
+  short: Proteins that tether vesicles to the membrane and make them fuse when Ca²⁺ rushes in.
+  functions:
+    - Tie vesicles to the presynaptic membrane; Ca²⁺ entry lets the vesicles fuse and dump their transmitter.
+  topics: [synaptic-transmission, nt-systems]
+
+- id: ionotropic-receptor
+  type: molecule
+  kind: receptor
+  name: Ionotropic receptor
+  aliases: [ligand-gated ion channel, ligand-gated channel]
+  short: "A receptor that is itself an ion channel and opens directly when transmitter binds: fast, short effects."
+  functions:
+    - Opens directly when transmitter binds, letting ions flow; fast acting.
+  topics: [synaptic-transmission, nt-systems]
+
+- id: metabotropic-receptor
+  type: molecule
+  kind: receptor
+  name: Metabotropic receptor
+  aliases: [G-protein-coupled receptor, GPCR]
+  short: "A receptor that activates G proteins inside the cell instead of opening a pore: slower but longer-lasting effects."
+  functions:
+    - Activates G proteins inside the cell; slower but potentially more powerful and longer lasting.
+  topics: [synaptic-transmission, nt-systems]
+
+- id: g-protein
+  type: molecule
+  kind: protein
+  name: G protein
+  short: A protein inside the cell, switched on by metabotropic receptors, that opens channels or triggers second messengers.
+  functions:
+    - { text: "Can open G-protein-gated ion channels or activate enzymes that make second messengers.", source: corrected, corrections: [C-020] }
+  topics: [synaptic-transmission, nt-systems]
+
+- id: autoreceptor
+  type: molecule
+  kind: receptor
+  name: Autoreceptor
+  short: A receptor on the presynaptic terminal that senses the neuron's own transmitter and tunes its release.
+  functions:
+    - Lets the presynaptic cell "listen to itself" and regulate how much it releases.
+  topics: [synaptic-transmission, nt-systems]
+
+- id: gaba-a-receptor
+  type: molecule
+  kind: receptor
+  name: GABA-A receptor
+  aliases: [GABA receptor]
+  parent: ionotropic-receptor
+  short: An ionotropic GABA receptor that is a chloride channel; benzodiazepines and alcohol make it work better.
+  functions:
+    - A Cl⁻ channel; Cl⁻ entering hyperpolarizes the cell, making it less likely to fire.
+  topics: [nt-systems, mental-illness]
+
+- id: dopamine-receptors
+  type: molecule
+  kind: receptor
+  name: Dopamine receptors
+  aliases: [D2 receptor]
+  parent: metabotropic-receptor
+  short: Metabotropic receptors for dopamine; antipsychotic drugs block them.
+  functions:
+    - The better a drug blocks dopamine receptors, the lower the dose needed for an antipsychotic effect.
+  topics: [nt-systems, mental-illness]
+
+- id: reuptake-transporter
+  type: molecule
+  kind: transporter
+  name: Reuptake transporter
+  aliases: [transporter, transporters]
+  short: A membrane protein that pumps transmitter from the cleft back into the presynaptic terminal (reuptake).
+  functions:
+    - Pulls transmitter back into the presynaptic terminal, ending the signal and allowing recycling.
+  topics: [synaptic-transmission, nt-systems]
+
+- id: dopamine-transporter
+  type: molecule
+  kind: transporter
+  name: Dopamine transporter
+  aliases: [DAT]
+  parent: reuptake-transporter
+  short: The reuptake pump for dopamine; cocaine blocks it and amphetamine sneaks in through it.
+  functions:
+    - Pulls dopamine back into the terminal after release.
+  topics: [nt-systems]
+
+- id: norepinephrine-transporter
+  type: molecule
+  kind: transporter
+  name: Norepinephrine transporter
+  aliases: [NET]
+  parent: reuptake-transporter
+  short: The reuptake pump that pulls norepinephrine back into the terminal.
+  functions:
+    - Pulls norepinephrine back into the terminal for repackaging or breakdown by MAO.
+  topics: [nt-systems]
+
+- id: serotonin-transporter
+  type: molecule
+  kind: transporter
+  name: Serotonin transporter
+  aliases: [SERT]
+  parent: reuptake-transporter
+  short: The reuptake pump for serotonin; SSRIs block it.
+  functions:
+    - Pulls serotonin back into the terminal after release.
+  topics: [nt-systems]
+
+- id: choline-transporter
+  type: molecule
+  kind: transporter
+  name: Choline transporter
+  parent: reuptake-transporter
+  short: Brings choline (left over after AChE breaks down ACh) back into the terminal, together with sodium.
+  functions:
+    - Recycles choline into the terminal along with Na⁺ so it can be made into ACh again.
+  topics: [nt-systems]
+
+- id: vesicular-transporter
+  type: molecule
+  kind: transporter
+  name: Vesicular transporter
+  aliases: [vesicular transporters, VAChT]
+  short: A transporter on the vesicle membrane that loads neurotransmitter into vesicles.
+  functions:
+    - Packages neurotransmitter (e.g., ACh, dopamine) into synaptic vesicles for release.
+  topics: [nt-systems]

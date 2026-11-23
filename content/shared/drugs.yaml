@@ -1,0 +1,108 @@
+- id: cocaine
+  type: drug
+  name: Cocaine
+  short: A stimulant that blocks the dopamine transporter so dopamine lingers in the synapse.
+  actsOn: [dopamine]
+  target: dopamine-transporter
+  action: reuptake-inhibitor
+  effect: increases
+  mechanism: Blocks the dopamine transporter, so dopamine stays in the synapse and keeps activating receptors (neurons eventually desensitize).
+  topics: [nt-systems]
+
+- id: amphetamine
+  type: drug
+  name: Amphetamine
+  aliases: [amphetamines, meth, methamphetamine]
+  short: A stimulant that blocks dopamine reuptake and also enters the terminal to push dopamine out of vesicles.
+  actsOn: [dopamine]
+  target: dopamine-transporter
+  action: releaser
+  effect: increases
+  mechanism: Enters the terminal through the dopamine transporter and breaks dopamine out of vesicles so it leaks out without an action potential, on top of blocking reuptake.
+  uses:
+    - High doses can cause brief psychosis, evidence that dopamine is involved in schizophrenia.
+  topics: [nt-systems]
+
+- id: l-dopa
+  type: drug
+  name: L-DOPA
+  aliases: [levodopa, L-dopa]
+  short: The precursor of dopamine; it crosses the blood–brain barrier and is the main treatment for Parkinson's disease.
+  actsOn: [dopamine]
+  target: dopa-decarboxylase
+  action: precursor
+  effect: increases
+  mechanism: Supplies the step after tyrosine hydroxylase, so surviving neurons can make more dopamine; it crosses the blood–brain barrier, while dopamine cannot.
+  uses:
+    - Treats Parkinson's disease if enough substantia nigra cells remain; it can't make new cells, only boost the ones left.
+  topics: [nt-systems]
+
+- id: mao-inhibitors
+  type: drug
+  name: MAO inhibitors
+  aliases: [MAOIs, MAOI]
+  short: Antidepressants that block monoamine oxidase, so less dopamine, norepinephrine and serotonin is broken down.
+  actsOn: [serotonin, norepinephrine, dopamine]
+  target: monoamine-oxidase
+  action: enzyme-inhibitor
+  effect: increases
+  mechanism: Blocks monoamine oxidase in the terminal, so monoamines are broken down less and more is available for release.
+  uses:
+    - Used for depression and anxiety; like SSRIs, the benefit seems to come from slower downstream changes.
+  topics: [nt-systems, mental-illness]
+
+- id: ssris
+  type: drug
+  name: SSRIs
+  aliases: [SSRI, selective serotonin reuptake inhibitors]
+  short: Antidepressants that block the serotonin transporter so serotonin stays in the synapse longer.
+  actsOn: [serotonin]
+  target: serotonin-transporter
+  action: reuptake-inhibitor
+  effect: increases
+  mechanism: Blocks the serotonin transporter (SERT), so serotonin remains in the synapse longer.
+  uses:
+    - { text: "Treat anxiety and depression; they take 2–3 weeks to work, which points to slower downstream changes (e.g., more glucocorticoid receptors).", source: corrected, corrections: [C-080] }
+  source: corrected
+  corrections: [C-080]
+  topics: [nt-systems, mental-illness]
+
+- id: antipsychotics
+  type: drug
+  name: Antipsychotics
+  aliases: [antipsychotic drugs]
+  short: Drugs for schizophrenia that block dopamine receptors; the stronger they bind, the lower the dose needed.
+  actsOn: [dopamine]
+  target: dopamine-receptors
+  action: antagonist
+  effect: decreases
+  mechanism: Blocks dopamine receptors; drugs that bind them more strongly work at lower doses.
+  uses:
+    - Many have serious side effects on movement and reward, because those systems use dopamine too.
+  topics: [nt-systems, mental-illness]
+
+- id: benzodiazepines
+  type: drug
+  name: Benzodiazepines
+  aliases: [benzodiazepine, Xanax]
+  short: Anti-anxiety drugs that make GABA-A receptors respond more strongly to GABA, increasing inhibition.
+  actsOn: [gaba]
+  target: gaba-a-receptor
+  action: allosteric-modulator
+  effect: increases
+  mechanism: Binds a separate site on the GABA-A receptor and makes GABA open its Cl⁻ channel more effectively; it doesn't open the channel on its own.
+  source: corrected
+  corrections: [C-079]
+  topics: [nt-systems, mental-illness]
+
+- id: alcohol
+  type: drug
+  name: Alcohol
+  aliases: [ethanol]
+  short: Ethanol, which (among other effects) enhances GABA-A receptors, increasing inhibition.
+  actsOn: [gaba]
+  target: gaba-a-receptor
+  action: allosteric-modulator
+  effect: increases
+  mechanism: Enhances GABA-A receptors, increasing Cl⁻ inflow and inhibiting neurons. This may help explain why drinking and anxiety disorders often go together.
+  topics: [nt-systems, mental-illness]

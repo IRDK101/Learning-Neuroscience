@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="40 30 720 530" role="img" aria-label="Midsagittal view of the brain, front of the head on the left">
+  <!-- Original drawing for NeuroMap. Stylized, not to scale. Anterior (front) is on the LEFT.
+       Hotspots: any element with data-ref="<entity-id>". Labels: <text data-label-for="<entity-id>">.
+       Layers: <g data-layer="…"> are hidden unless the diagram turns them on. -->
+  <defs>
+    <clipPath id="ms-cortex-clip">
+      <path d="M 78 300 C 60 220 90 140 170 95 C 240 52 340 40 420 48 C 520 56 620 100 672 180 C 705 230 712 280 690 318 C 670 342 620 350 575 335 C 545 326 528 318 515 322 L 300 336 C 230 346 130 342 90 322 Z"/>
+    </clipPath>
+    <marker id="arr-ach" class="arrow arrow-ach" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z"/></marker>
+    <marker id="arr-da" class="arrow arrow-da" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z"/></marker>
+    <marker id="arr-ne" class="arrow arrow-ne" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z"/></marker>
+    <marker id="arr-serotonin" class="arrow arrow-serotonin" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z"/></marker>
+  </defs>
+
+  <!-- ===================== base anatomy ===================== -->
+  <g class="base">
+    <g clip-path="url(#ms-cortex-clip)">
+      <polygon data-ref="frontal-lobe" points="0,0 438,0 450,128 300,170 250,300 250,420 0,420"/>
+      <polygon data-ref="parietal-lobe" points="438,0 640,0 612,105 540,272 450,128"/>
+      <polygon data-ref="occipital-lobe" points="640,0 900,0 900,420 540,420 540,272 612,105"/>
+      <polygon data-ref="prefrontal-cortex" data-tone="2" points="0,0 250,0 232,130 205,345 0,420"/>
+    </g>
+    <!-- sulci (decoration) -->
+    <path class="deco sulcus" d="M 438 46 C 442 70 448 100 450 128 M 612 105 C 590 160 562 220 540 272 M 688 300 C 650 296 610 292 570 300 M 170 95 C 190 120 200 150 196 175 M 300 60 C 310 80 330 95 360 100 M 560 90 C 555 110 560 130 575 150"/>
+    <path data-ref="cingulate-cortex" d="M 236 300 C 214 205 288 128 395 124 C 492 121 566 162 574 240 C 578 272 565 296 545 300 L 520 300 C 520 250 470 214 392 214 C 320 214 268 246 262 300 Z"/>
+    <path class="deco deep" d="M 282 245 C 285 215 320 198 390 198 C 460 198 500 215 510 252 L 515 322 L 300 336 Z"/>
+    <path data-ref="corpus-callosum" d="M 250 250 C 245 195 300 166 390 164 C 470 163 527 185 541 230 C 549 258 527 270 511 254 C 500 216 462 198 390 198 C 322 198 286 216 283 246 C 282 262 292 274 301 282 L 293 291 C 263 286 250 270 250 250 Z"/>
+    <path data-ref="midbrain" d="M 398 296 C 430 290 470 286 500 290 L 504 348 L 418 352 C 405 335 398 316 398 296 Z"/>
+    <ellipse data-ref="superior-colliculus" cx="509" cy="305" rx="10" ry="9"/>
+    <ellipse data-ref="inferior-colliculus" cx="510" cy="330" rx="9" ry="8"/>
+    <ellipse data-ref="thalamus" cx="425" cy="266" rx="54" ry="31"/>
+    <path data-ref="third-ventricle" d="M 368 246 C 354 268 360 296 384 308 L 392 300 C 376 288 372 268 378 250 Z"/>
+    <path data-ref="hypothalamus" d="M 330 290 C 340 280 378 280 392 296 C 396 312 378 326 360 328 C 342 326 326 306 330 290 Z"/>
+    <g data-ref="pituitary-gland">
+      <path d="M 356 326 L 352 346 L 346 346 L 350 326 Z"/>
+      <ellipse cx="349" cy="354" rx="15" ry="10"/>
+    </g>
+    <path data-ref="pons" d="M 418 352 L 504 348 L 508 412 L 436 420 C 398 412 390 366 418 352 Z"/>
+    <path data-ref="medulla" d="M 436 420 L 508 412 L 500 470 L 464 478 C 452 460 440 440 436 420 Z"/>
+    <path data-ref="spinal-cord" d="M 464 478 L 500 470 L 497 556 L 467 556 Z"/>
+    <path data-ref="cerebellum" d="M 515 372 C 532 342 602 336 660 350 C 706 362 714 412 682 442 C 642 480 562 480 530 452 C 512 434 509 400 515 372 Z"/>
+    <path class="deco arbor" d="M 540 410 C 580 402 620 392 662 378 M 556 410 C 590 424 632 434 668 428 M 540 412 C 566 440 600 456 632 462 M 600 398 C 610 380 630 370 650 366 M 610 430 C 625 446 640 452 660 452"/>
+    <path data-ref="fourth-ventricle" d="M 508 360 L 542 390 L 508 424 Z"/>
+
+    <g class="labels lbl-base">
+      <text text-anchor="middle" data-label-for="frontal-lobe" x="300" y="98">Frontal lobe</text>
+      <text text-anchor="middle" data-label-for="prefrontal-cortex" x="140" y="230"><tspan x="140">Prefrontal</tspan><tspan x="140" dy="17">cortex</tspan></text>
+      <text text-anchor="middle" data-label-for="parietal-lobe" x="530" y="112">Parietal lobe</text>
+      <text text-anchor="middle" data-label-for="occipital-lobe" x="648" y="214"><tspan x="648">Occipital</tspan><tspan x="648" dy="17">lobe</tspan></text>
+      <text text-anchor="middle" data-label-for="cingulate-cortex" x="400" y="148">Cingulate cortex</text>
+      <text text-anchor="middle" data-label-for="corpus-callosum" x="395" y="186" class="on-dark">Corpus callosum</text>
+      <text text-anchor="middle" data-label-for="thalamus" x="425" y="271">Thalamus</text>
+      <text data-label-for="hypothalamus" x="318" y="356" text-anchor="end">Hypothalamus</text>
+      <line data-label-for="hypothalamus" class="leader" x1="320" y1="351" x2="338" y2="315"/>
+      <text data-label-for="pituitary-gland" x="318" y="380" text-anchor="end">Pituitary gland</text>
+      <line data-label-for="pituitary-gland" class="leader" x1="320" y1="375" x2="337" y2="360"/>
+      <text data-label-for="third-ventricle" x="318" y="404" text-anchor="end">Third ventricle</text>
+      <line data-label-for="third-ventricle" class="leader" x1="320" y1="399" x2="372" y2="295"/>
+      <text text-anchor="middle" data-label-for="midbrain" x="455" y="335">Midbrain</text>
+      <text data-label-for="pons" x="388" y="430" text-anchor="end">Pons</text>
+      <line data-label-for="pons" class="leader" x1="390" y1="425" x2="420" y2="400"/>
+      <text data-label-for="medulla" x="430" y="462" text-anchor="end">Medulla</text>
+      <text data-label-for="spinal-cord" x="458" y="532" text-anchor="end">Spinal cord</text>
+      <text text-anchor="middle" data-label-for="cerebellum" x="615" y="424">Cerebellum</text>
+      <text data-label-for="fourth-ventricle" x="560" y="500">Fourth ventricle</text>
+      <line data-label-for="fourth-ventricle" class="leader" x1="566" y1="489" x2="520" y2="396"/>
+      <text data-label-for="superior-colliculus" x="556" y="268">Superior colliculus</text>
+      <line data-label-for="superior-colliculus" class="leader" x1="554" y1="264" x2="516" y2="299"/>
+      <text data-label-for="inferior-colliculus" x="556" y="290">Inferior colliculus</text>
+      <line data-label-for="inferior-colliculus" class="leader" x1="554" y1="286" x2="518" y2="326"/>
+    </g>
+  </g>
+
+  <!-- ===================== deep structures shown projected onto the midline ===================== -->
+  <g data-layer="deep">
+    <path data-ref="striatum" class="ghost" d="M 300 236 C 300 214 330 206 352 214 C 370 222 372 246 356 256 C 338 266 304 258 300 236 Z"/>
+    <path data-ref="hippocampus" class="ghost" d="M 548 318 C 568 298 610 290 636 302 C 642 314 630 324 616 320 C 592 315 572 324 556 332 Z"/>
+    <g class="labels">
+      <text text-anchor="middle" data-label-for="striatum" x="333" y="241" class="small">Striatum</text>
+      <text text-anchor="middle" data-label-for="hippocampus" x="598" y="318" class="small">Hippocampus</text>
+    </g>
+  </g>
+
+  <!-- ===================== acetylcholine ===================== -->
+  <g data-layer="ach">
+    <path class="proj" data-from="nucleus-basalis" data-to="cerebral-cortex" marker-end="url(#arr-ach)" d="M 316 292 C 240 260 200 180 250 120 C 310 64 470 62 560 130"/>
+    <path class="proj" data-from="nucleus-basalis" data-to="cerebral-cortex" marker-end="url(#arr-ach)" d="M 312 296 C 260 300 180 280 130 240"/>
+    <path class="proj" data-from="medial-septal-nuclei" data-to="hippocampus" marker-end="url(#arr-ach)" d="M 312 254 C 380 226 520 236 580 300"/>
+    <path class="proj" data-from="pmt-complex" data-to="thalamus" marker-end="url(#arr-ach)" d="M 484 342 C 474 318 456 300 438 284"/>
+    <ellipse data-ref="medial-septal-nuclei" class="nuc" cx="306" cy="258" rx="8" ry="7"/>
+    <ellipse data-ref="nucleus-basalis" class="nuc" cx="316" cy="296" rx="10" ry="6"/>
+    <ellipse data-ref="pmt-complex" class="nuc" cx="488" cy="348" rx="9" ry="6"/>
+    <g class="labels">
+      <text data-label-for="medial-septal-nuclei" x="228" y="250" text-anchor="end">Medial septal nuclei</text>
+      <line data-label-for="medial-septal-nuclei" class="leader" x1="230" y1="246" x2="298" y2="257"/>
+      <text data-label-for="nucleus-basalis" x="228" y="312" text-anchor="end">Basal nucleus of Meynert</text>
+      <line data-label-for="nucleus-basalis" class="leader" x1="230" y1="307" x2="306" y2="297"/>
+      <text data-label-for="pmt-complex" x="530" y="356">PMT complex</text>
+      <line data-label-for="pmt-complex" class="leader" x1="528" y1="352" x2="498" y2="348"/>
+    </g>
+  </g>
+
+  <!-- ===================== dopamine ===================== -->
+  <g data-layer="da">
+    <path class="proj" data-from="substantia-nigra" data-to="striatum" marker-end="url(#arr-da)" d="M 460 306 C 440 270 390 250 360 240"/>
+    <path class="proj" data-from="ventral-tegmental-area" data-to="prefrontal-cortex" marker-end="url(#arr-da)" d="M 414 318 C 360 330 260 320 170 250"/>
+    <ellipse data-ref="substantia-nigra" class="nuc" cx="466" cy="312" rx="17" ry="6" transform="rotate(-8 466 312)"/>
+    <ellipse data-ref="ventral-tegmental-area" class="nuc" cx="425" cy="322" rx="12" ry="7"/>
+    <g class="labels">
+      <text data-label-for="ventral-tegmental-area" x="380" y="400" text-anchor="end">Ventral tegmental area</text>
+      <line data-label-for="ventral-tegmental-area" class="leader" x1="382" y1="395" x2="420" y2="328"/>
+      <text data-label-for="substantia-nigra" x="380" y="424" text-anchor="end">Substantia nigra</text>
+      <line data-label-for="substantia-nigra" class="leader" x1="382" y1="419" x2="460" y2="317"/>
+    </g>
+  </g>
+
+  <!-- ===================== norepinephrine ===================== -->
+  <g data-layer="ne">
+    <path class="proj" data-from="locus-coeruleus" data-to="cerebral-cortex" marker-end="url(#arr-ne)" d="M 498 368 C 530 300 572 250 566 196 C 556 120 450 84 300 104 C 220 116 160 160 140 214"/>
+    <path class="proj" data-from="locus-coeruleus" data-to="thalamus" marker-end="url(#arr-ne)" d="M 496 368 C 482 330 462 306 446 290"/>
+    <path class="proj" data-from="locus-coeruleus" data-to="hypothalamus" marker-end="url(#arr-ne)" d="M 494 374 C 450 368 410 340 380 318"/>
+    <path class="proj" data-from="locus-coeruleus" data-to="hippocampus" marker-end="url(#arr-ne)" d="M 504 366 C 520 346 540 330 560 322"/>
+    <path class="proj" data-from="locus-coeruleus" data-to="cerebellum" marker-end="url(#arr-ne)" d="M 506 384 C 540 396 580 406 620 410"/>
+    <path class="proj" data-from="locus-coeruleus" data-to="spinal-cord" marker-end="url(#arr-ne)" d="M 498 388 C 500 430 488 486 484 540"/>
+    <ellipse data-ref="locus-coeruleus" class="nuc" cx="499" cy="377" rx="6" ry="10"/>
+    <g class="labels">
+      <text data-label-for="locus-coeruleus" x="550" y="396">Locus coeruleus</text>
+      <line data-label-for="locus-coeruleus" class="leader" x1="548" y1="392" x2="507" y2="378"/>
+    </g>
+  </g>
+
+  <!-- ===================== serotonin ===================== -->
+  <g data-layer="serotonin">
+    <path class="proj" data-from="raphe-nuclei" data-to="cerebral-cortex" marker-end="url(#arr-serotonin)" d="M 462 340 C 470 300 500 250 520 200 C 540 140 470 96 360 92 C 250 92 170 140 120 200"/>
+    <path class="proj" data-from="raphe-nuclei" data-to="thalamus" marker-end="url(#arr-serotonin)" d="M 460 342 C 452 320 440 306 430 292"/>
+    <path class="proj" data-from="raphe-nuclei" data-to="hypothalamus" marker-end="url(#arr-serotonin)" d="M 458 346 C 430 340 400 326 384 312"/>
+    <path class="proj" data-from="raphe-nuclei" data-to="cerebellum" marker-end="url(#arr-serotonin)" d="M 474 430 C 520 450 570 444 610 440"/>
+    <path class="proj" data-from="raphe-nuclei" data-to="spinal-cord" marker-end="url(#arr-serotonin)" d="M 474 460 C 476 490 478 516 478 546"/>
+    <g data-ref="raphe-nuclei" class="nuc">
+      <ellipse cx="462" cy="342" rx="4" ry="6"/>
+      <ellipse cx="466" cy="368" rx="4" ry="7"/>
+      <ellipse cx="468" cy="396" rx="4" ry="7"/>
+      <ellipse cx="471" cy="428" rx="4" ry="7"/>
+      <ellipse cx="474" cy="456" rx="4" ry="6"/>
+    </g>
+    <g class="labels">
+      <text data-label-for="raphe-nuclei" x="452" y="508" text-anchor="end">Raphe nuclei</text>
+      <line data-label-for="raphe-nuclei" class="leader" x1="454" y1="503" x2="472" y2="462"/>
+    </g>
+  </g>
+</svg>
