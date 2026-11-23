@@ -6,6 +6,9 @@
 import type { Entity, Region, Neurotransmitter, Drug, Pathway, Case, Concept, Molecule, Fact } from '../../src/content/schema';
 import type { Card, Diagram, Question, QuestionOption, Topic, UnitId } from '../../src/content/types';
 import { escapeRegExp, shuffled } from './util';
+import { isPlural, the } from '../../src/lib/text';
+
+export { isPlural, the };
 
 interface Ctx {
   entities: Record<string, Entity>;
@@ -83,13 +86,16 @@ export function generate(ctx: Ctx): { cards: Card[]; questions: Question[] } {
     topic: string,
     stem: string,
     answer: { text: string; ref?: string },
-    pool: { text: string; ref?: string }[],
+    pool: { text: string; ref?: string }[] | { text: string; ref?: string }[][],
     extra: Partial<Question> = {},
     exclude: string[] = [],
   ) => {
     const seen = new Set([answer.text.toLowerCase(), ...exclude.map((x) => x.toLowerCase())]);
     const distractors: QuestionOption[] = [];
-    for (const p of shuffled(pool, id)) {
+    // A pool may come in tiers (e.g., same topic first); shuffle within a tier, never across tiers.
+    const tiers = (Array.isArray(pool[0]) ? pool : [pool]) as { text: string; ref?: string }[][];
+    const ordered = tiers.flatMap((t, i) => shuffled(t, `${id}:${i}`));
+    for (const p of ordered) {
       const k = p.text.toLowerCase();
       if (seen.has(k) || (p.ref && exclude.includes(p.ref))) continue;
       seen.add(k);
@@ -115,11 +121,12 @@ export function generate(ctx: Ctx): { cards: Card[]; questions: Question[] } {
     });
   };
 
-  // Prefer distractors from the same topic, then anything of the same type.
-  const sameTopicFirst = <T extends Entity>(items: T[], topic: string) => [
-    ...items.filter((x) => x.topics.includes(topic)),
-    ...items.filter((x) => !x.topics.includes(topic)).sort((a, b) => a.id.localeCompare(b.id)),
+  // Prefer distractors from the same topic, then anything of the same type (two tiers).
+  const sameTopicFirst = <T extends Entity>(items: T[], topic: string): T[][] => [
+    items.filter((x) => x.topics.includes(topic)),
+    items.filter((x) => !x.topics.includes(topic)).sort((a, b) => a.id.localeCompare(b.id)),
   ];
+  const tiersMap = <T, U>(tiers: T[][], fn: (x: T) => U): U[][] => tiers.map((t) => t.map(fn));
 
   // ------------------------------------------------------------------ regions
   const regions = ofType('region').filter((r) => r.generate);
@@ -127,7 +134,8 @@ export function generate(ctx: Ctx): { cards: Card[]; questions: Question[] } {
     const topic = homeTopic(ctx, r);
     if (!topic || r.functions.length === 0) continue;
     const fn = r.functions;
-    card(`gen-fn-${r.id}`, r, topic, `What does the ${r.name} do?`, factList(fn), {
+    const plural = isPlural(r.name);
+    card(`gen-fn-${r.id}`, r, topic, `What ${plural ? 'do' : 'does'} ${the(r.name)} do?`, factList(fn), {
       source: srcOf(r, fn),
       corrections: [...new Set([...r.corrections, ...anyCorrected(fn)])],
     });
@@ -146,15 +154,15 @@ export function generate(ctx: Ctx): { cards: Card[]; questions: Question[] } {
       topic,
       `Which structure fits this description? “${mask(fn[0].text, r)}”`,
       { text: r.name, ref: r.id },
-      peers.map((x) => ({ text: x.name, ref: x.id })),
+      tiersMap(peers, (x) => ({ text: x.name, ref: x.id })),
     );
     mcq(
       `gen-q-rfn-${r.id}`,
       r,
       topic,
-      `Which of these is a key role of the ${r.name}?`,
+      `Which of these is a key role of ${the(r.name)}?`,
       { text: fn[0].text, ref: r.id },
-      peers.map((x) => ({ text: mask(x.functions[0].text, x, 'it'), ref: x.id })),
+      tiersMap(peers, (x) => ({ text: mask(x.functions[0].text, x, 'it'), ref: x.id })),
     );
   }
 
@@ -191,10 +199,10 @@ export function generate(ctx: Ctx): { cards: Card[]; questions: Question[] } {
           `gen-q-nucnt-${s.nucleus}`,
           nucleus,
           topic,
-          `Neurons in the ${nucleus.name} mainly release which neurotransmitter?`,
+          `Neurons in ${the(nucleus.name)} mainly release which neurotransmitter?`,
           { text: label(n), ref: n.id },
           nts.filter((o) => o.id !== n.id).map((o) => ({ text: label(o), ref: o.id })),
-          { explain: `The ${nucleus.name} is a source of ${n.name}. ${nucleus.short}` },
+          { explain: `${nucleus.name} is a source of ${n.name}. ${nucleus.short}` },
         );
       }
     }
@@ -261,7 +269,7 @@ export function generate(ctx: Ctx): { cards: Card[]; questions: Question[] } {
       topic,
       `Which drug does this? “${mask(firstSentence(d.mechanism), d, 'it')}”`,
       { text: d.name, ref: d.id },
-      sameTopicFirst(drugs.filter((o) => o.id !== d.id), topic).map((o) => ({ text: o.name, ref: o.id })),
+      tiersMap(sameTopicFirst(drugs.filter((o) => o.id !== d.id), topic), (o) => ({ text: o.name, ref: o.id })),
     );
   }
 
@@ -270,7 +278,7 @@ export function generate(ctx: Ctx): { cards: Card[]; questions: Question[] } {
   for (const m of molecules) {
     const topic = homeTopic(ctx, m);
     if (!topic || !m.functions.length) continue;
-    card(`gen-mol-${m.id}`, m, topic, `What does ${m.name}${m.aliases[0] ? ` (${m.aliases[0]})` : ''} do?`, factList(m.functions), {
+    card(`gen-mol-${m.id}`, m, topic, `What ${isPlural(m.name) ? 'do' : 'does'} ${m.name}${m.aliases[0] && m.aliases[0].length <= 8 ? ` (${m.aliases[0]})` : ''} do?`, factList(m.functions), {
       source: srcOf(m, m.functions),
       corrections: [...new Set([...m.corrections, ...anyCorrected(m.functions)])],
     });
@@ -280,7 +288,7 @@ export function generate(ctx: Ctx): { cards: Card[]; questions: Question[] } {
       topic,
       `Which ${m.kind === 'enzyme' ? 'enzyme' : 'molecule'} does this? “${mask(m.functions[0].text, m, 'it')}”`,
       { text: m.name, ref: m.id },
-      sameTopicFirst(molecules.filter((o) => o.id !== m.id && o.kind === m.kind), topic).map((o) => ({ text: o.name, ref: o.id })),
+      tiersMap(sameTopicFirst(molecules.filter((o) => o.id !== m.id && o.kind === m.kind), topic), (o) => ({ text: o.name, ref: o.id })),
     );
   }
 
@@ -315,7 +323,13 @@ export function generate(ctx: Ctx): { cards: Card[]; questions: Question[] } {
         topic,
         `${c.name}${c.deficits[0] ? ` (${c.deficits[0].text.replace(/\.$/, '')})` : ''}: which structure is damaged?`,
         { text: name(ctx, target), ref: target },
-        sameTopicFirst(regions.filter((r) => !c.damage.regions.includes(r.id)), topic).map((r) => ({ text: r.name, ref: r.id })),
+        tiersMap(
+          sameTopicFirst(
+            regions.filter((r) => !c.damage.regions.includes(r.id) && ['area', 'nucleus', 'division'].includes(r.kind) && !['cellular', 'body', 'bone', 'vascular', 'meninges', 'ventricles'].includes(r.system)),
+            topic,
+          ),
+          (r) => ({ text: r.name, ref: r.id }),
+        ),
         { explain: `${c.name}: ${c.short}` },
       );
     }
@@ -336,7 +350,7 @@ export function generate(ctx: Ctx): { cards: Card[]; questions: Question[] } {
       topic,
       `Which term matches? “${mask(c.short, c, 'this')}”`,
       { text: c.name, ref: c.id },
-      sameTopicFirst(concepts.filter((o) => o.id !== c.id), topic).map((o) => ({ text: o.name, ref: o.id })),
+      tiersMap(sameTopicFirst(concepts.filter((o) => o.id !== c.id), topic), (o) => ({ text: o.name, ref: o.id })),
     );
   }
 

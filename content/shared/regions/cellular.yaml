@@ -70,3 +70,208 @@
     - Provides structure, exchanges nutrients and regulates the fluid around neurons.
     - Takes up glutamate and GABA from the synapse quickly (glial uptake).
   topics: [neurons-and-glia, nt-systems]
+
+# ---------------------------------------------------------------- parts of a neuron
+- id: soma
+  type: region
+  name: Soma
+  aliases: [cell body]
+  kind: cellular
+  system: cellular
+  short: The neuron's cell body, containing the nucleus and the machinery that keeps the cell alive.
+  functions:
+    - Holds the nucleus and organelles; dendrites and the axon grow out of it.
+  topics: [neurons-and-glia]
+
+- id: cell-nucleus
+  type: region
+  name: Nucleus (of a cell)
+  aliases: [cell nucleus]
+  kind: cellular
+  parent: soma
+  system: cellular
+  short: The compartment that holds the cell's DNA (its genes and chromosomes).
+  functions:
+    - Contains the genetic material (DNA, genes, chromosomes).
+  topics: [neurons-and-glia]
+
+- id: dendrite
+  type: region
+  name: Dendrites
+  aliases: [dendrite, dendritic branches]
+  kind: cellular
+  system: cellular
+  short: The branching inputs of a neuron, where it receives messages from other neurons.
+  functions:
+    - Receive signals from other neurons; most synapses land on them.
+  topics: [neurons-and-glia]
+
+- id: dendritic-spine
+  type: region
+  name: Dendritic spines
+  aliases: [dendritic spine, spines]
+  kind: cellular
+  parent: dendrite
+  system: cellular
+  short: Tiny knobs along dendrites, each specialized to hold a single synapse.
+  functions:
+    - Each spine holds an individual synapse (an axospinous synapse).
+  topics: [neurons-and-glia]
+
+- id: axon-hillock
+  type: region
+  name: Axon hillock
+  aliases: [spike initiation zone]
+  kind: cellular
+  system: cellular
+  short: The start of the axon, next to the cell body, where action potentials are triggered.
+  functions:
+    - Where enough summed input triggers an action potential (the spike initiation zone).
+  topics: [neurons-and-glia, action-potential]
+
+- id: axon
+  type: region
+  name: Axon
+  aliases: [axons]
+  kind: cellular
+  system: cellular
+  short: The single long output cable of a neuron that carries action potentials to other cells.
+  functions:
+    - Carries messages away from the cell body; each neuron has only one axon, though it can branch.
+  topics: [neurons-and-glia]
+
+- id: myelin-sheath
+  type: region
+  name: Myelin sheath
+  aliases: [myelin]
+  kind: cellular
+  system: white-matter
+  short: Fatty insulation wrapped around axons that makes action potentials travel much faster.
+  functions:
+    - Insulates the axon and speeds conduction; made by oligodendrocytes (CNS) and Schwann cells (PNS).
+    - Myelinated axons make up white matter.
+  topics: [neurons-and-glia, action-potential]
+
+- id: node-of-ranvier
+  type: region
+  name: Nodes of Ranvier
+  aliases: [node of Ranvier, nodes]
+  kind: cellular
+  system: cellular
+  short: Small gaps between myelin segments where the action potential is regenerated as it jumps along the axon.
+  functions:
+    - Exposed patches of axon membrane; the action potential jumps from node to node (saltatory conduction).
+  topics: [neurons-and-glia, action-potential]
+
+- id: axon-collateral
+  type: region
+  name: Axon collaterals
+  aliases: [axon collateral]
+  kind: cellular
+  system: cellular
+  short: Side branches of an axon that "CC" the same message to other cells.
+  functions:
+    - Send a copy of the message to other targets, e.g. to both a muscle and the brain.
+  topics: [neurons-and-glia]
+
+- id: axon-terminal
+  type: region
+  name: Axon terminals
+  aliases: [terminal arbor]
+  kind: cellular
+  system: cellular
+  short: The branched end of the axon, where it forms synapses on other cells.
+  functions:
+    - Each terminal branch forms a synapse, releasing neurotransmitter onto the next cell.
+  topics: [neurons-and-glia]
+
+# ---------------------------------------------------------------- glia
+- id: oligodendrocyte
+  type: region
+  name: Oligodendrocytes
+  aliases: [oligodendrocyte]
+  kind: cellular
+  system: white-matter
+  short: Central nervous system glia that wrap myelin around the axons of several neurons at once.
+  functions:
+    - Make myelin in the CNS, covering segments of many different axons.
+  topics: [neurons-and-glia]
+
+- id: schwann-cell
+  type: region
+  name: Schwann cells
+  aliases: [Schwann cell]
+  kind: cellular
+  system: white-matter
+  short: Peripheral nervous system glia; each wraps myelin around one segment of a single axon.
+  functions:
+    - Make myelin in the PNS, one segment of one axon each.
+  topics: [neurons-and-glia]
+
+- id: microglia
+  type: region
+  name: Microglia
+  kind: cellular
+  system: cellular
+  short: The brain's immune cells, which clear away bacteria, viruses and debris.
+  functions:
+    - "Immune defense: pick up damaging bacteria and kill viruses."
+  topics: [neurons-and-glia]
+
+- id: ependymal-cell
+  type: region
+  name: Ependymal cells
+  aliases: [ependymal cell]
+  kind: cellular
+  system: ventricles
+  short: Cells that line the brain's ventricles; specialized ones (the choroid plexus) produce cerebrospinal fluid.
+  functions:
+    - Line the ventricles and help produce cerebrospinal fluid.
+  topics: [neurons-and-glia]
+
+- id: satellite-cell
+  type: region
+  name: Satellite cells
+  aliases: [satellite cell]
+  kind: cellular
+  system: cellular
+  short: Peripheral glia that support neuron cell bodies, much as astrocytes do in the brain.
+  functions:
+    - Provide structure and nutrient exchange in the PNS.
+  topics: [neurons-and-glia]
+
+# ---------------------------------------------------------------- organelles
+- id: rough-er
+  type: region
+  name: Rough endoplasmic reticulum
+  aliases: [rough ER]
+  kind: cellular
+  parent: soma
+  system: cellular
+  short: Ribosome-studded membranes that make proteins, including all the membrane proteins a neuron depends on.
+  functions:
+    - Makes proteins, including the channels and pumps in the cell membrane.
+  topics: [neurons-and-glia]
+
+- id: smooth-er
+  type: region
+  name: Smooth endoplasmic reticulum
+  aliases: [smooth ER]
+  kind: cellular
+  parent: soma
+  system: cellular
+  short: Membranes that make lipids and help control the ion levels inside the cell.
+  functions:
+    - Makes lipids for the membrane and helps regulate ion concentrations inside the cell.
+  topics: [neurons-and-glia]
+
+- id: golgi-apparatus
+  type: region
+  name: Golgi apparatus
+  kind: cellular
+  parent: soma
+  system: cellular
+  short: The cell's packaging center, which sorts proteins into vesicles.
+  functions:
+    - Packages molecules into vesicles, including the secretory granules that carry peptide transmitters.
+  topics: [neurons-and-glia]

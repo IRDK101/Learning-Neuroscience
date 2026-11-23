@@ -76,3 +76,15 @@
   connections:
     - { to: cerebral-cortex, dir: out, note: "Diffuse cholinergic input" }
   topics: [nt-systems]
+
+- id: amygdala
+  type: region
+  name: Amygdala
+  parent: limbic-system
+  system: limbic
+  short: An almond-shaped cluster of nuclei deep in the temporal lobe that detects threats and learns fear.
+  location: Deep in the medial temporal lobe, just in front of the hippocampus; one in each hemisphere.
+  functions:
+    - The fear and threat processing center of the brain.
+    - Drives the stress (HPA) axis up; the hippocampus brakes it.
+  topics: [nervous-system-structure, emotion, memory]

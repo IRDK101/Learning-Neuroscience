@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 440" role="img" aria-label="A neuron with its parts, and three kinds of glial cells">
+  <!-- Original drawing for NeuroMap. Stylized multipolar neuron; signals flow left (dendrites) to right (terminals). -->
+  <g class="base">
+    <g data-ref="dendrite" data-fill="#7aa6c2">
+      <path class="stroke-shape" style="stroke-width:9" d="M 166 205 C 130 180 104 145 74 112"/>
+      <path class="stroke-shape" style="stroke-width:6" d="M 112 158 C 92 158 72 166 50 176"/>
+      <path class="stroke-shape" style="stroke-width:9" d="M 168 240 C 126 268 104 308 74 340"/>
+      <path class="stroke-shape" style="stroke-width:6" d="M 108 296 C 84 298 62 292 40 288"/>
+      <path class="stroke-shape" style="stroke-width:8" d="M 196 176 C 190 130 174 100 152 66"/>
+      <path class="stroke-shape" style="stroke-width:5" d="M 176 112 C 196 96 210 80 220 56"/>
+      <path class="stroke-shape" style="stroke-width:8" d="M 214 266 C 222 310 212 352 190 390"/>
+    </g>
+    <g data-ref="dendritic-spine" data-fill="#4f7fa3">
+      <circle cx="84" cy="114" r="5"/><circle cx="98" cy="136" r="5"/><circle cx="64" cy="100" r="5"/><circle cx="125" cy="171" r="5"/>
+      <circle cx="86" cy="322" r="5"/><circle cx="100" cy="302" r="5"/>
+    </g>
+    <path data-ref="soma" d="M 160 220 C 160 180 200 165 225 180 C 250 192 262 210 256 228 C 250 252 225 268 200 264 C 172 260 160 245 160 220 Z"/>
+    <circle data-ref="cell-nucleus" data-fill="#5b6f9a" cx="206" cy="218" r="17"/>
+    <polygon data-ref="axon-hillock" data-fill="#e0a64a" points="252,206 294,216 294,228 252,240"/>
+    <g data-ref="axon" data-fill="#9aa8ba">
+      <path class="stroke-shape" style="stroke-width:6" d="M 292 222 L 716 222"/>
+    </g>
+    <g data-ref="myelin-sheath">
+      <rect x="310" y="210" width="70" height="24" rx="11"/><rect x="392" y="210" width="70" height="24" rx="11"/>
+      <rect x="474" y="210" width="70" height="24" rx="11"/><rect x="556" y="210" width="70" height="24" rx="11"/>
+      <rect x="638" y="210" width="70" height="24" rx="11"/>
+    </g>
+    <g data-ref="node-of-ranvier" data-fill="#d55e00">
+      <rect x="383" y="215" width="6" height="14" rx="2"/><rect x="465" y="215" width="6" height="14" rx="2"/>
+      <rect x="547" y="215" width="6" height="14" rx="2"/><rect x="629" y="215" width="6" height="14" rx="2"/>
+    </g>
+    <g data-ref="axon-collateral" data-fill="#9aa8ba">
+      <path class="stroke-shape" style="stroke-width:4" d="M 468 226 C 480 270 510 300 556 322"/>
+      <circle cx="560" cy="324" r="7"/>
+    </g>
+    <g data-ref="axon-terminal" data-fill="#2a9d8f">
+      <path class="stroke-shape" style="stroke-width:5" d="M 712 222 C 750 210 780 180 806 160 M 712 222 C 760 222 800 222 836 222 M 712 222 C 750 236 780 266 806 286"/>
+      <circle cx="812" cy="156" r="11"/><circle cx="844" cy="222" r="11"/><circle cx="812" cy="290" r="11"/>
+    </g>
+    <g data-ref="oligodendrocyte">
+      <circle cx="560" cy="108" r="20"/>
+      <path class="stroke-shape" style="stroke-width:4" d="M 552 126 C 540 160 520 190 510 210 M 568 126 C 580 160 590 190 596 210 M 574 92 C 600 70 630 56 660 48"/>
+    </g>
+    <g data-ref="astrocyte" data-fill="var(--cell-glia)">
+      <path class="stroke-shape" style="stroke-width:4" d="M 330 360 L 262 254 M 330 360 L 300 420 M 330 360 L 392 400 M 330 360 L 400 330 M 330 360 L 360 300"/>
+      <circle cx="330" cy="360" r="17"/>
+    </g>
+    <g data-ref="microglia" data-fill="#b48ead">
+      <path class="stroke-shape" style="stroke-width:3" d="M 640 380 l -22 -14 M 640 380 l 26 -10 M 640 380 l -10 28 M 640 380 l 20 22 M 640 380 l 4 -28"/>
+      <ellipse cx="640" cy="380" rx="13" ry="9"/>
+    </g>
+
+    <g class="labels lbl-base">
+      <text data-label-for="dendrite" x="20" y="40">Dendrites</text>
+      <line data-label-for="dendrite" class="leader" x1="60" y1="46" x2="140" y2="86"/>
+      <text data-label-for="dendritic-spine" x="20" y="232">Dendritic spines</text>
+      <line data-label-for="dendritic-spine" class="leader" x1="60" y1="222" x2="96" y2="140"/>
+      <text text-anchor="middle" data-label-for="soma" x="205" y="300">Soma (cell body)</text>
+      <text text-anchor="middle" data-label-for="cell-nucleus" x="206" y="162">Nucleus</text>
+      <text text-anchor="middle" data-label-for="axon-hillock" x="276" y="190">Axon hillock</text>
+      <text text-anchor="middle" data-label-for="myelin-sheath" x="345" y="262">Myelin sheath</text>
+      <text text-anchor="middle" data-label-for="node-of-ranvier" x="440" y="186">Node of Ranvier</text>
+      <line data-label-for="node-of-ranvier" class="leader" x1="452" y1="190" x2="466" y2="212"/>
+      <text text-anchor="middle" data-label-for="axon" x="512" y="262">Axon</text>
+      <text data-label-for="axon-collateral" x="572" y="330">Axon collateral</text>
+      <text text-anchor="middle" data-label-for="axon-terminal" x="840" y="330">Axon terminals</text>
+      <text data-label-for="oligodendrocyte" x="590" y="112">Oligodendrocyte</text>
+      <text data-label-for="astrocyte" x="356" y="380">Astrocyte</text>
+      <text data-label-for="microglia" x="662" y="418">Microglia</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,43 @@
+- id: q-mem-channel-vs-pump
+  kind: mcq
+  stem: What is the key difference between an ion channel and an ion pump?
+  answer: Pumps use energy (ATP) to move ions against their gradients; open channels just let ions flow down them
+  distractors:
+    - { text: "Channels use ATP; pumps don't", why: "It's the other way around." }
+    - { text: "Pumps only move negative ions", why: "The Na⁺/K⁺ pump moves positive ions." }
+    - { text: "Channels are always open", why: "Many channels are gated by voltage, ligands or force." }
+  refs: [ion-channel, ion-pump]
+
+- id: q-mem-resting
+  kind: mcq
+  stem: What mainly makes the inside of a resting neuron negative (about –65 mV)?
+  answer: K⁺ leaking out through always-open potassium channels
+  distractors:
+    - { text: "Na⁺ flooding into the cell", why: "Na⁺ entering would make the inside more positive; that's the action potential." }
+    - { text: "The Na⁺/K⁺ pump alone", why: "The pump maintains the gradients but adds only a few mV directly." }
+    - { text: "Ca²⁺ being pumped in", why: "Calcium is pumped out and kept very low inside." }
+  refs: [resting-membrane-potential, potassium-leak-channel]
+  source: corrected
+  corrections: [C-014]
+  tags: { difficulty: 3 }
+
+- id: q-mem-pump
+  kind: mcq
+  stem: What does the sodium-potassium pump move per ATP?
+  answer: 3 Na⁺ out and 2 K⁺ in
+  distractors:
+    - { text: "2 Na⁺ out and 3 K⁺ in", why: "It's 3 sodium out, 2 potassium in." }
+    - { text: "3 Na⁺ in and 2 K⁺ out", why: "Wrong directions: it keeps sodium out and potassium in." }
+    - { text: "1 Ca²⁺ out", why: "That's the calcium pump." }
+  refs: [sodium-potassium-pump]
+  tags: { difficulty: 1 }
+
+- id: q-mem-calcium
+  kind: mcq
+  stem: Which ion is about 10,000 times more concentrated outside the cell than inside?
+  answer: Calcium (Ca²⁺)
+  distractors:
+    - { text: "Potassium (K⁺)", why: "K⁺ is more concentrated inside." }
+    - { text: "Sodium (Na⁺)", why: "Na⁺ is higher outside, but not by nearly that much." }
+    - { text: "Chloride (Cl⁻)", why: "Cl⁻ is higher outside, but its gradients roughly balance." }
+  refs: [calcium-ion]

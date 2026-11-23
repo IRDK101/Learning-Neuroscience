@@ -1,0 +1,189 @@
+# Structure of the nervous system. Directions & planes are terms so they can be hotspots on the orientation diagram.
+
+# ---------------------------------------------------------------- directions & planes
+- id: anterior
+  type: term
+  name: Anterior
+  aliases: [rostral]
+  short: Toward the front (the nose). In animals on all fours also called rostral, "toward the beak".
+- id: posterior
+  type: term
+  name: Posterior
+  aliases: [caudal]
+  short: Toward the back. In animals on all fours also called caudal, "toward the tail".
+- id: dorsal
+  type: term
+  name: Dorsal
+  short: Toward the back (as in a dorsal fin). In the human brain this means toward the top of the head; in the spinal cord, toward your back.
+- id: ventral
+  type: term
+  name: Ventral
+  short: Toward the belly. In the human brain this means toward the bottom (jaw); in the spinal cord, toward your front.
+- id: superior
+  type: term
+  name: Superior
+  short: Higher up, toward the top of the head in a standing human.
+- id: inferior
+  type: term
+  name: Inferior
+  short: Lower down, toward the feet in a standing human.
+- id: medial
+  type: term
+  name: Medial
+  short: Toward the midline that divides left from right.
+- id: lateral
+  type: term
+  name: Lateral
+  short: Away from the midline, toward either side.
+- id: ipsilateral
+  type: term
+  name: Ipsilateral
+  short: On the same side of the body.
+  source: added
+- id: contralateral
+  type: term
+  name: Contralateral
+  short: On the opposite side of the body.
+  source: added
+- id: coronal-plane
+  type: term
+  name: Coronal plane
+  aliases: [coronal, coronal section, coronal slice]
+  short: A vertical slice parallel to your face, dividing front from back (like slicing a loaf of bread).
+- id: sagittal-plane
+  type: term
+  name: Sagittal plane
+  aliases: [sagittal, midsagittal, sagittal section]
+  short: A vertical slice from front to back that divides left from right; the midsagittal cut runs between the eyes.
+- id: horizontal-plane
+  type: term
+  name: Horizontal plane
+  aliases: [axial, transverse, horizontal section]
+  short: A slice parallel to the ground, dividing top from bottom (like a stack of cheese slices).
+- id: neuraxis
+  type: term
+  name: Neuraxis
+  short: The long axis of the nervous system. In humans it bends 90° where the brainstem meets the brain, which is why "dorsal" means "top" in the brain but "back" in the spinal cord.
+  source: added
+- id: gyrus
+  type: term
+  name: Gyrus
+  aliases: [gyri]
+  short: A bump or ridge on the surface of the brain.
+- id: sulcus
+  type: term
+  name: Sulcus
+  aliases: [sulci, fissure]
+  short: A groove between gyri on the surface of the brain; a deep one is called a fissure.
+
+# ---------------------------------------------------------------- divisions
+- id: central-nervous-system
+  type: concept
+  name: Central nervous system
+  aliases: [CNS]
+  short: The brain and spinal cord, everything of the nervous system encased in bone.
+  related: [peripheral-nervous-system]
+
+- id: peripheral-nervous-system
+  type: concept
+  name: Peripheral nervous system
+  aliases: [PNS]
+  short: All the nerves outside the brain and spinal cord, connecting them to the senses, muscles and organs.
+  points:
+    - Splits into the somatic and autonomic nervous systems.
+  related: [somatic-nervous-system, autonomic-nervous-system]
+
+- id: somatic-nervous-system
+  type: concept
+  name: Somatic nervous system
+  short: The part of the PNS for things you can feel and control, such as skin senses and skeletal muscles.
+  related: [peripheral-nervous-system]
+
+- id: autonomic-nervous-system
+  type: concept
+  name: Autonomic nervous system
+  aliases: [ANS]
+  short: The part of the PNS that runs organs and glands automatically (heart rate, digestion), with sympathetic and parasympathetic branches.
+  related: [sympathetic-nervous-system, parasympathetic-nervous-system]
+
+- id: sympathetic-nervous-system
+  type: concept
+  name: Sympathetic branch
+  aliases: [sympathetic nervous system, fight or flight]
+  short: "The autonomic branch for \"fight or flight\": faster heart, dilated pupils, energy mobilized."
+  source: corrected
+  corrections: [C-006]
+  related: [parasympathetic-nervous-system]
+
+- id: parasympathetic-nervous-system
+  type: concept
+  name: Parasympathetic branch
+  aliases: [parasympathetic nervous system, rest and digest]
+  short: "The autonomic branch for \"rest and digest\": slows the heart and runs digestion and maintenance."
+  related: [sympathetic-nervous-system]
+
+- id: cranial-nerves
+  type: concept
+  name: Cranial nerves
+  short: Twelve pairs of nerves that leave the brain directly (not through the spinal cord) to serve the head, face and neck.
+  points:
+    - Technically part of the PNS. Defects can cause loss of control of the face.
+    - The optic nerve is one of them.
+  related: [optic-nerve]
+
+- id: forebrain
+  type: concept
+  name: Forebrain
+  aliases: [prosencephalon]
+  short: The largest division of the brain, made up of the cerebrum and the diencephalon (thalamus and hypothalamus).
+  source: corrected
+  corrections: [C-009]
+  related: [cerebral-cortex, thalamus, hypothalamus]
+
+- id: diencephalon
+  type: concept
+  name: Diencephalon
+  short: The deep "between-brain" containing the thalamus and hypothalamus, above the brainstem.
+  related: [thalamus, hypothalamus]
+
+- id: grey-matter
+  type: concept
+  name: Grey matter
+  aliases: [gray matter]
+  short: Brain tissue made mostly of neuron cell bodies, dendrites and synapses; the cortex is grey matter.
+  source: corrected
+  corrections: [C-010]
+  related: [white-matter]
+
+- id: white-matter
+  type: concept
+  name: White matter
+  short: Brain tissue made mostly of myelinated axons, the wiring that connects areas; myelin's fat makes it look white.
+  points:
+    - Connections can be short, medium or long; some cross between the hemispheres (the corpus callosum).
+  related: [grey-matter, myelin-sheath, corpus-callosum]
+
+- id: association-cortex
+  type: concept
+  name: Association cortex
+  aliases: [association cortices, association areas]
+  short: Cortex that combines information from different senses and memory, for language, planning and other higher functions.
+  points:
+    - Contrast with primary sensory areas, which receive direct input from one sense.
+
+- id: cerebrospinal-fluid
+  type: concept
+  name: Cerebrospinal fluid
+  aliases: [CSF]
+  short: The clear fluid that fills the ventricles and the subarachnoid space, cushioning the brain.
+  related: [lateral-ventricles, subarachnoid-space]
+
+- id: meningitis
+  type: case
+  kind: disorder
+  name: Meningitis
+  short: Inflammation of the meninges, usually from infection; the swelling has no room to expand, so it presses on the brain.
+  damage:
+    regions: [meninges]
+  deficits:
+    - Extra pressure pushes into and can damage the brain.

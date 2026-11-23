@@ -1,0 +1,171 @@
+# Coverings, fluid spaces and blood supply of the brain.
+
+- id: skull
+  type: region
+  name: Skull
+  kind: body
+  system: bone
+  short: The bone that encases the brain; everything encased in bone (brain and spinal cord) is the central nervous system.
+  functions:
+    - Protects the brain.
+  topics: [nervous-system-structure]
+  source: added
+
+- id: meninges
+  type: region
+  name: Meninges
+  kind: division
+  system: meninges
+  short: The three protective membranes (dura, arachnoid, pia) between the skull and the brain.
+  functions:
+    - Protect and cushion the brain.
+    - Meningitis is inflammation of these layers; the swelling presses on the brain.
+  topics: [nervous-system-structure]
+
+- id: dura-mater
+  type: region
+  name: Dura mater
+  aliases: [dura]
+  kind: layer
+  parent: meninges
+  system: meninges
+  short: The tough outermost meningeal layer, just under the skull.
+  functions:
+    - The first, toughest protective layer around the brain.
+  topics: [nervous-system-structure]
+
+- id: arachnoid-membrane
+  type: region
+  name: Arachnoid membrane
+  aliases: [arachnoid, arachnoid mater]
+  kind: layer
+  parent: meninges
+  system: meninges
+  short: The middle meningeal layer, a web-like structural membrane below the dura.
+  functions:
+    - Structural layer that helps cushion the brain and absorb impacts.
+  topics: [nervous-system-structure]
+
+- id: subarachnoid-space
+  type: region
+  name: Subarachnoid space
+  kind: layer
+  parent: meninges
+  system: ventricles
+  short: The fluid-filled gap under the arachnoid, full of cerebrospinal fluid that cushions the brain.
+  functions:
+    - Filled mostly with cushioning cerebrospinal fluid (CSF).
+  topics: [nervous-system-structure]
+
+- id: pia-mater
+  type: region
+  name: Pia mater
+  aliases: [pia]
+  kind: layer
+  parent: meninges
+  system: meninges
+  short: The delicate innermost meningeal layer that hugs the surface of the brain.
+  source: corrected
+  corrections: [C-008]
+  functions:
+    - Clings to the brain's surface, following every gyrus and sulcus.
+  topics: [nervous-system-structure]
+
+- id: lateral-ventricles
+  type: region
+  name: Lateral ventricles
+  aliases: [lateral ventricle]
+  kind: ventricle
+  system: ventricles
+  short: The two large, mirror-image fluid-filled cavities, one inside each hemisphere.
+  location: Deep in each hemisphere, beneath the corpus callosum.
+  functions:
+    - Hold cerebrospinal fluid; the left and right ventricles mirror each other.
+    - Tend to be larger in people with schizophrenia (a pattern, not a diagnostic test).
+  topics: [nervous-system-structure]
+
+- id: internal-carotid-artery
+  type: region
+  name: Internal carotid arteries
+  aliases: [internal carotid artery, carotid arteries]
+  kind: vessel
+  system: vascular
+  short: The two large arteries running up the neck that deliver most of the brain's blood.
+  functions:
+    - Carry blood up from the neck into the Circle of Willis.
+  topics: [nervous-system-structure]
+
+- id: circle-of-willis
+  type: region
+  name: Circle of Willis
+  kind: vessel
+  system: vascular
+  short: A ring of connected arteries under the brain, so blood can take another route if one part is blocked.
+  functions:
+    - Joins the brain's arteries in a loop, providing backup routes, then feeds the cerebral arteries.
+  topics: [nervous-system-structure]
+
+- id: middle-cerebral-artery
+  type: region
+  name: Middle cerebral artery
+  aliases: [MCA]
+  kind: vessel
+  system: vascular
+  short: The artery that supplies most of the side (lateral) surface of the cortex; strokes here often cause aphasias.
+  functions:
+    - Supplies most of the lateral cortex; damage can cut off major areas, including the language areas.
+  topics: [nervous-system-structure]
+
+- id: anterior-cerebral-artery
+  type: region
+  name: Anterior cerebral artery
+  aliases: [ACA]
+  kind: vessel
+  system: vascular
+  short: The artery that supplies the front and inner (medial) surface of the brain.
+  functions:
+    - Runs toward the front of the brain, along the medial surface.
+  topics: [nervous-system-structure]
+
+- id: posterior-cerebral-artery
+  type: region
+  name: Posterior cerebral artery
+  aliases: [PCA]
+  kind: vessel
+  system: vascular
+  short: The artery that supplies the back of the brain, including the visual cortex.
+  functions:
+    - Runs toward the back of the brain (occipital lobe and the underside of the temporal lobe).
+  topics: [nervous-system-structure]
+
+- id: optic-nerve
+  type: region
+  name: Optic nerve
+  kind: tract
+  system: nerve
+  short: The cranial nerve that carries visual signals from the retina toward the brain.
+  functions:
+    - Carries ganglion-cell axons from the retina to the optic chiasm.
+  topics: [nervous-system-structure, central-visual-system]
+
+- id: optic-chiasm
+  type: region
+  name: Optic chiasm
+  kind: tract
+  system: nerve
+  short: The X-shaped crossing under the brain where axons from the inner half of each retina cross to the other side.
+  functions:
+    - { text: "Only axons from the nasal (inner) half of each retina cross; each hemisphere ends up seeing the opposite half of the visual field.", source: corrected, corrections: [C-007] }
+  topics: [nervous-system-structure, central-visual-system]
+
+- id: cauda-equina
+  type: region
+  name: Cauda equina
+  kind: tract
+  system: nerve
+  short: The bundle of spinal nerve roots below the point where the spinal cord ends.
+  source: corrected
+  corrections: [C-012]
+  functions:
+    - Nerve roots that continue down the spinal canal after the cord itself ends (around L1–L2).
+  topics: [nervous-system-structure]

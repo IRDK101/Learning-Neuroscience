@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="40 20 740 545" role="img" aria-label="Left side of the brain, front of the head on the left">
+  <!-- Original drawing for NeuroMap. Stylized, not to scale. Lateral (side) view of the LEFT hemisphere; anterior is LEFT. -->
+  <defs>
+    <clipPath id="lat-cortex-clip">
+      <path d="M 95 300 C 70 220 100 130 190 90 C 280 50 420 45 520 70 C 620 95 700 170 705 260 C 708 310 690 345 650 360 C 610 375 580 395 560 420 C 520 445 420 450 340 438 C 290 430 250 405 238 372 C 232 352 220 340 200 338 C 150 335 110 325 95 300 Z"/>
+    </clipPath>
+  </defs>
+
+  <g class="base">
+    <!-- hidden behind the cerebrum: brainstem & cerebellum -->
+    <path data-ref="cerebellum" d="M 520 440 C 540 410 620 385 680 380 C 722 385 738 420 717 452 C 690 488 600 497 546 482 C 524 472 512 456 520 440 Z"/>
+    <path class="deco arbor" d="M 545 460 C 590 440 640 425 700 420 M 560 475 C 610 470 660 460 705 445"/>
+    <path data-ref="pons" d="M 432 420 C 465 418 500 422 512 436 L 508 498 C 492 508 462 508 446 498 Z"/>
+    <path data-ref="medulla" d="M 448 498 L 508 498 L 497 540 L 462 540 Z"/>
+    <path data-ref="spinal-cord" d="M 462 540 L 497 540 L 494 565 L 465 565 Z"/>
+
+    <g clip-path="url(#lat-cortex-clip)">
+      <polygon data-ref="frontal-lobe" points="0,0 412,0 410,50 395,120 385,200 360,309 300,322 232,346 0,420"/>
+      <polygon data-ref="parietal-lobe" points="412,0 610,0 600,95 610,200 608,300 605,330 560,300 470,288 380,305 360,309 385,200 395,120 410,50"/>
+      <polygon data-ref="temporal-lobe" points="0,420 232,346 300,322 360,309 380,305 470,288 560,300 605,330 600,395 600,600 0,600"/>
+      <polygon data-ref="occipital-lobe" points="610,0 820,0 820,600 600,600 600,395 605,330 608,300 610,200 600,95"/>
+      <polygon data-ref="prefrontal-cortex" data-tone="2" points="0,0 232,0 216,150 200,330 0,420"/>
+      <polygon data-ref="primary-motor-cortex" data-tone="2" points="383,40 410,50 395,120 385,200 360,309 334,315 358,200 369,120"/>
+      <polygon data-ref="primary-somatosensory-cortex" data-tone="2" points="410,50 440,52 423,120 413,200 389,304 360,309 385,200 395,120"/>
+      <ellipse data-ref="brocas-area" cx="272" cy="300" rx="34" ry="20"/>
+      <ellipse data-ref="primary-auditory-cortex" cx="392" cy="324" rx="36" ry="12" transform="rotate(-9 392 324)"/>
+      <ellipse data-ref="wernickes-area" cx="478" cy="318" rx="38" ry="17" transform="rotate(-4 478 318)"/>
+      <ellipse data-ref="primary-visual-cortex" cx="700" cy="285" rx="30" ry="52"/>
+    </g>
+    <!-- gyri texture -->
+    <path class="deco sulcus" d="M 160 150 C 200 140 240 150 270 175 M 140 230 C 190 215 240 225 290 250 M 470 110 C 500 140 520 180 530 220 M 640 160 C 650 200 660 230 670 250 M 300 380 C 360 375 420 380 480 395 M 330 410 C 400 412 460 418 520 425"/>
+    <path data-ref="central-sulcus" class="line-hotspot" d="M 410 50 C 395 120 385 200 360 309"/>
+    <path data-ref="lateral-fissure" class="line-hotspot" d="M 232 346 C 300 322 380 305 470 288 C 500 284 530 290 560 300"/>
+
+    <g class="labels lbl-base">
+      <text text-anchor="middle" data-label-for="frontal-lobe" x="300" y="150">Frontal lobe</text>
+      <text text-anchor="middle" data-label-for="prefrontal-cortex" x="140" y="230"><tspan x="140">Prefrontal</tspan><tspan x="140" dy="17">cortex</tspan></text>
+      <text text-anchor="middle" data-label-for="parietal-lobe" x="515" y="180">Parietal lobe</text>
+      <text text-anchor="middle" data-label-for="temporal-lobe" x="430" y="400">Temporal lobe</text>
+      <text text-anchor="middle" data-label-for="occipital-lobe" x="650" y="220"><tspan x="650">Occipital</tspan><tspan x="650" dy="17">lobe</tspan></text>
+      <text text-anchor="end" data-label-for="primary-motor-cortex" x="330" y="38">Primary motor cortex (M1)</text>
+      <line data-label-for="primary-motor-cortex" class="leader" x1="332" y1="42" x2="378" y2="80"/>
+      <text data-label-for="primary-somatosensory-cortex" x="452" y="38">Primary somatosensory cortex (S1)</text>
+      <line data-label-for="primary-somatosensory-cortex" class="leader" x1="456" y1="42" x2="425" y2="80"/>
+      <text data-label-for="central-sulcus" x="420" y="235">Central sulcus</text>
+      <line data-label-for="central-sulcus" class="leader" x1="418" y1="231" x2="383" y2="218"/>
+      <text text-anchor="end" data-label-for="brocas-area" x="210" y="372">Broca's area</text>
+      <line data-label-for="brocas-area" class="leader" x1="212" y1="366" x2="252" y2="312"/>
+      <text text-anchor="end" data-label-for="lateral-fissure" x="250" y="410">Lateral (Sylvian) fissure</text>
+      <line data-label-for="lateral-fissure" class="leader" x1="236" y1="397" x2="300" y2="325"/>
+      <text text-anchor="middle" data-label-for="primary-auditory-cortex" x="378" y="355">A1</text>
+      <text data-label-for="wernickes-area" x="530" y="355">Wernicke's area</text>
+      <line data-label-for="wernickes-area" class="leader" x1="532" y1="345" x2="500" y2="326"/>
+      <text text-anchor="end" data-label-for="primary-visual-cortex" x="720" y="350">V1</text>
+      <text text-anchor="middle" data-label-for="cerebellum" x="640" y="465">Cerebellum</text>
+      <text text-anchor="end" data-label-for="pons" x="425" y="470">Pons</text>
+      <text text-anchor="end" data-label-for="medulla" x="440" y="525">Medulla</text>
+      <text data-label-for="spinal-cord" x="505" y="558">Spinal cord</text>
+    </g>
+  </g>
+
+  <!-- blood supply territories -->
+  <g data-layer="arteries">
+    <path class="territory" data-ref="anterior-cerebral-artery" data-fill="#e8907a" clip-path="url(#lat-cortex-clip)" d="M 78 230 C 95 120 250 45 420 40 C 500 40 560 55 580 72 L 610 92 L 570 112 C 410 82 240 95 140 175 C 115 195 100 215 92 240 Z"/>
+    <path class="territory" data-ref="middle-cerebral-artery" data-fill="#c8403a" clip-path="url(#lat-cortex-clip)" d="M 92 240 C 100 215 115 195 140 175 C 240 95 410 82 570 112 L 610 125 L 630 300 L 560 395 C 480 418 400 420 330 418 L 320 450 L 220 420 L 180 350 L 80 330 Z"/>
+    <path class="territory" data-ref="posterior-cerebral-artery" data-fill="#8f3b78" clip-path="url(#lat-cortex-clip)" d="M 610 92 L 760 200 L 740 360 L 640 380 L 560 430 C 470 452 380 452 320 445 L 330 418 C 440 430 520 415 560 395 L 630 300 L 610 125 Z"/>
+    <g class="labels">
+      <text text-anchor="middle" data-label-for="anterior-cerebral-artery" x="330" y="76">ACA territory</text>
+      <text text-anchor="middle" data-label-for="middle-cerebral-artery" x="390" y="230">MCA territory</text>
+      <text text-anchor="middle" data-label-for="posterior-cerebral-artery" x="660" y="300">PCA territory</text>
+    </g>
+  </g>
+</svg>

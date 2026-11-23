@@ -1,0 +1,59 @@
+- id: q-syn-loewi
+  kind: mcq
+  stem: In Loewi's experiment, why did the second frog heart slow down?
+  answer: A chemical released into the fluid by the first heart's vagus nerve reached it
+  distractors:
+    - { text: "Its own vagus nerve was stimulated too", why: "Only the first heart's nerve was stimulated." }
+    - { text: "Electricity traveled through the fluid", why: "That's what the experiment ruled out." }
+    - { text: "The hearts were connected by a nerve", why: "They were only connected by fluid." }
+  refs: [loewi-experiment]
+
+- id: q-syn-gap
+  kind: mcq
+  stem: Compared with chemical synapses, gap junctions are…
+  answer: Faster and bidirectional, but each signal is weak
+  distractors:
+    - { text: "Slower and one-directional", why: "Gap junctions are faster and work both ways." }
+    - { text: "Stronger, because they release more transmitter", why: "They don't use transmitter at all." }
+    - { text: "Found only in adults", why: "They're especially important in fetuses and young children." }
+  refs: [electrical-synapse]
+
+- id: q-syn-axosomatic
+  kind: mcq
+  stem: Which kind of synapse is especially likely to trigger an action potential in the receiving cell?
+  answer: Axosomatic, onto the cell body
+  distractors:
+    - { text: "Axoextracellular, into open space", why: "That sends a broad, diffuse message." }
+    - { text: "Axosecretory, into the blood", why: "That's how hormone-releasing neurons signal distant targets." }
+    - { text: "Axosynaptic, onto another synapse", why: "That adjusts another synapse's strength." }
+  refs: [axosomatic-synapse]
+
+- id: q-syn-calcium
+  kind: mcq
+  stem: What directly triggers vesicles to fuse with the membrane and release transmitter?
+  answer: Ca²⁺ entering through voltage-gated calcium channels when the action potential arrives
+  distractors:
+    - { text: "Na⁺ entering through voltage-gated sodium channels", why: "Sodium carries the spike, but calcium triggers release." }
+    - { text: "Transmitter binding to postsynaptic receptors", why: "That happens after release." }
+    - { text: "Reuptake transporters pushing the vesicles", why: "Transporters clear transmitter afterward." }
+  refs: [voltage-gated-calcium-channel, snare-proteins]
+
+- id: q-syn-peptides
+  kind: mcq
+  stem: How do peptide transmitters differ from amino-acid transmitters?
+  answer: Peptides are made near the cell body and shipped in secretory granules; amino acids are made in the terminal
+  distractors:
+    - { text: "Peptides are smaller and faster", why: "Peptides are much larger and slower acting." }
+    - { text: "Peptides diffuse everywhere like gases", why: "That's gasotransmitters." }
+    - { text: "Peptides are released without calcium", why: "Release still depends on calcium." }
+  refs: [peptide-transmitters, secretory-granule]
+
+- id: q-syn-metabotropic
+  kind: mcq
+  stem: What happens when a transmitter binds a metabotropic receptor?
+  answer: It activates G proteins inside the cell, which open channels or start second-messenger cascades
+  distractors:
+    - { text: "The receptor itself opens as an ion channel", why: "That's an ionotropic receptor." }
+    - { text: "The transmitter is pumped back into the terminal", why: "That's reuptake." }
+    - { text: "The receptor fires an action potential", why: "Receptors change voltage or chemistry; the hillock fires spikes." }
+  refs: [metabotropic-receptor, g-protein]

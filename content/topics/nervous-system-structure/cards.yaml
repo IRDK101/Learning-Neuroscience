@@ -1,0 +1,20 @@
+- id: c-struct-dorsal-twice
+  kind: basic
+  front: Why does "dorsal" mean the top of the head in the brain but the back in the spinal cord?
+  back: Humans stand upright, so the neuraxis bends 90° where the brainstem meets the brain. Dorsal is always the side that would face up if you were on all fours.
+  refs: [dorsal, neuraxis]
+- id: c-struct-planes
+  kind: basic
+  front: Coronal vs sagittal vs horizontal?
+  back: "Coronal: parallel to the face, separates front from back. Sagittal: separates left from right. Horizontal: parallel to the ground, separates top from bottom."
+  refs: [coronal-plane, sagittal-plane, horizontal-plane]
+- id: c-struct-arteries
+  kind: basic
+  front: Which cerebral artery supplies which part of the brain?
+  back: "Middle: most of the lateral cortex (strokes cause aphasias). Anterior: front and medial surface. Posterior: back, including the visual cortex. All are fed by the Circle of Willis."
+  refs: [middle-cerebral-artery, anterior-cerebral-artery, posterior-cerebral-artery, circle-of-willis]
+- id: c-struct-ventricles
+  kind: basic
+  front: Name the four ventricles.
+  back: Left and right lateral ventricles (mirror images, one per hemisphere), the third ventricle (midline, between the thalami) and the fourth ventricle (lowest, between brainstem and cerebellum).
+  refs: [lateral-ventricles, third-ventricle, fourth-ventricle]

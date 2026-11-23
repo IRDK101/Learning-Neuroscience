@@ -56,6 +56,10 @@
   --sys-body: #c8a07a;
   --sys-eye: #7aa6c2;
   --sys-ear: #b48ead;
+  --sys-vascular: #c8403a;
+  --sys-meninges: #d8c3a5;
+  --sys-bone: #ece6d8;
+  --sys-nerve: #e6c95c;
 
   --cell-pre: #cfe0f7;
   --cell-post: #dcd5f2;
@@ -110,6 +114,8 @@
   --sys-cortex: #5d6b84;
   --sys-white-matter: #c9bfa6;
   --sys-cellular: #3a5482;
+  --sys-meninges: #8c7a5f;
+  --sys-bone: #4a4f5c;
   --cell-pre: #26406b;
   --cell-post: #3a3466;
   --cell-vesicle: #4d6796;
@@ -1561,4 +1567,93 @@ a.ref.hot {
   font-weight: 600;
   z-index: 70;
   box-shadow: var(--float-shadow);
+}
+
+/* chart & cross-section details used by Exam 1 diagrams */
+.diagram svg .axes path {
+  fill: none;
+  stroke: var(--text-2);
+  stroke-width: 1.5;
+}
+.diagram svg .axes .zero {
+  stroke-dasharray: 2 4;
+  opacity: 0.6;
+}
+.diagram svg .axes text {
+  fill: var(--text-2);
+  font: 600 13px var(--font-text);
+}
+.diagram svg .axes .axis-label {
+  font-size: 14px;
+  fill: var(--text);
+}
+.diagram svg .line-hotspot.dashed {
+  stroke-dasharray: 8 6;
+}
+.diagram svg .trabeculae {
+  fill: none;
+  stroke: color-mix(in srgb, var(--sys-meninges) 80%, black);
+  stroke-width: 2;
+}
+.diagram svg .vessel {
+  fill: var(--sys-vascular);
+  stroke: none;
+}
+.diagram svg .territory {
+  fill-opacity: 0.82;
+}
+.diagram svg [data-ref] text,
+.diagram svg text.arrow-label {
+  fill: var(--label);
+  stroke: none;
+  font: 700 15px var(--font-text);
+  pointer-events: none;
+}
+.diagram svg .ion-dot {
+  font: 700 13px var(--font-text);
+}
+.diagram svg .lipid-heads circle {
+  fill: color-mix(in srgb, var(--sys-cellular) 70%, var(--text) 10%);
+  stroke: none;
+}
+.diagram svg .axes text {
+  fill: var(--text-2);
+}
+.diagram svg .stroke-shape {
+  fill: none !important;
+  stroke-linecap: round;
+}
+.diagram svg g[data-ref] > .stroke-shape {
+  stroke: var(--c);
+}
+.diagram svg g.is-focus > .stroke-shape,
+.diagram svg g.is-selected > .stroke-shape {
+  stroke: color-mix(in srgb, var(--c) 55%, var(--outline));
+}
+.diagram svg .silhouette > *:not(.brain-deco) {
+  fill: var(--bg-sunk);
+  stroke: var(--line-strong);
+  stroke-width: 1.5;
+}
+.diagram svg .brain-deco {
+  fill: color-mix(in srgb, var(--sys-cortex) 80%, var(--bg-elev));
+  stroke: var(--line-strong);
+  stroke-width: 1.2;
+}
+.diagram svg .neuraxis path {
+  fill: none;
+  stroke: var(--sys-spinal-cord);
+  stroke-width: 7;
+  stroke-linecap: round;
+}
+.diagram svg .plane {
+  fill-opacity: 0.55;
+}
+.diagram-picker .chip {
+  flex: none;
+  white-space: nowrap;
+}
+.diagram svg .panel-titles text {
+  font: 700 17px var(--font-text);
+  fill: var(--text);
 }

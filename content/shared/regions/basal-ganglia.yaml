@@ -26,3 +26,40 @@
     - { to: substantia-nigra, dir: in, note: "Dopamine input (nigrostriatal pathway)" }
   cases: [parkinsons-disease]
   topics: [nt-systems, brain-control-of-movement, memory]
+
+- id: caudate-nucleus
+  type: region
+  name: Caudate nucleus
+  aliases: [caudate]
+  kind: nucleus
+  parent: striatum
+  system: basal-ganglia
+  short: A C-shaped part of the striatum that hugs the lateral ventricle.
+  location: Beside the lateral ventricle, deep in each hemisphere.
+  functions:
+    - Together with the putamen forms the striatum, the input hub of the basal ganglia.
+  topics: [nervous-system-structure, brain-control-of-movement]
+
+- id: putamen
+  type: region
+  name: Putamen
+  kind: nucleus
+  parent: striatum
+  system: basal-ganglia
+  short: The outer part of the striatum, lying just inside the insula.
+  location: Deep in each hemisphere, outside the globus pallidus and under the insula.
+  functions:
+    - Together with the caudate forms the striatum.
+  topics: [nervous-system-structure, brain-control-of-movement]
+
+- id: globus-pallidus
+  type: region
+  name: Globus pallidus
+  kind: nucleus
+  parent: basal-ganglia
+  system: basal-ganglia
+  short: A pale basal ganglia nucleus just inside the putamen that sends the basal ganglia's output toward the thalamus.
+  location: Just medial to (inside) the putamen.
+  functions:
+    - Part of the basal ganglia circuits that start wanted movements and hold back unwanted ones.
+  topics: [nervous-system-structure, brain-control-of-movement]

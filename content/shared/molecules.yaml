@@ -297,3 +297,189 @@
   functions:
     - Packages neurotransmitter (e.g., ACh, dopamine) into synaptic vesicles for release.
   topics: [nt-systems]
+
+# ---------------------------------------------------------------- ions
+- id: sodium-ion
+  type: molecule
+  kind: ion
+  name: Sodium (Na⁺)
+  aliases: [Na+, sodium]
+  short: A positive ion concentrated outside neurons; its rush inward drives the action potential.
+  functions:
+    - Much more concentrated outside the cell; both gradients push it in when a channel opens.
+  topics: [membrane-at-rest]
+
+- id: potassium-ion
+  type: molecule
+  kind: ion
+  name: Potassium (K⁺)
+  aliases: [K+, potassium]
+  short: The one major ion concentrated inside neurons; its leak outward sets the resting potential.
+  functions:
+    - The only major ion more concentrated inside; it leaks out through always-open channels, making the inside negative.
+  topics: [membrane-at-rest]
+
+- id: chloride-ion
+  type: molecule
+  kind: ion
+  name: Chloride (Cl⁻)
+  aliases: [Cl-, chloride]
+  short: A negative ion concentrated outside neurons; letting it in makes a cell less likely to fire.
+  functions:
+    - More concentrated outside; at rest its two gradients roughly balance.
+  topics: [membrane-at-rest]
+
+- id: calcium-ion
+  type: molecule
+  kind: ion
+  name: Calcium (Ca²⁺)
+  aliases: [Ca2+, calcium]
+  short: A positive ion kept extremely low inside cells (about 10,000× higher outside); entering, it acts as a powerful trigger.
+  functions:
+    - Both gradients push it in; few channels let it through, and inside it acts as a second messenger (e.g., triggering transmitter release).
+  topics: [membrane-at-rest]
+
+# ---------------------------------------------------------------- membrane channels & pumps
+- id: sodium-potassium-pump
+  type: molecule
+  kind: protein
+  name: Sodium-potassium pump
+  aliases: [Na⁺/K⁺ pump, Na/K pump, sodium potassium pump]
+  short: A membrane pump that uses ATP to push 3 Na⁺ out and bring 2 K⁺ in, maintaining the ion gradients.
+  functions:
+    - Pumps 3 Na⁺ out and 2 K⁺ in per ATP, against their gradients.
+    - { text: "Maintains the concentration gradients; the resting potential itself comes mainly from K⁺ leaking out.", source: corrected, corrections: [C-014] }
+    - { text: "Uses a large share of the brain's energy (your notes say ~50%).", flags: [F-15] }
+  topics: [membrane-at-rest]
+
+- id: calcium-pump
+  type: molecule
+  kind: protein
+  name: Calcium pump
+  short: A membrane pump that pushes calcium back out after it has entered the cell.
+  functions:
+    - Removes Ca²⁺ after its job is done, working against both gradients.
+  topics: [membrane-at-rest]
+
+- id: potassium-leak-channel
+  type: molecule
+  kind: channel
+  name: Potassium leak channels
+  aliases: [K⁺ leak channel, leak channels, pores]
+  short: Always-open pores that let K⁺ trickle out of the cell, which is what makes the resting neuron negative inside.
+  functions:
+    - Passive, always open, no energy needed; K⁺ leaking out sets the resting potential near –65 mV.
+  source: corrected
+  corrections: [C-014]
+  topics: [membrane-at-rest]
+
+- id: voltage-gated-sodium-channel
+  type: molecule
+  kind: channel
+  name: Voltage-gated sodium channel
+  aliases: [voltage-gated Na⁺ channel, Na⁺ channel]
+  short: A channel that snaps open when the membrane reaches threshold, letting Na⁺ rush in to make the action potential.
+  functions:
+    - Opens at threshold; Na⁺ rushes in and depolarizes the cell.
+    - { text: "Built from one long protein with four domains that form the pore.", source: corrected, corrections: [C-016] }
+    - "Three states: closed, open, inactivated (a \"ball and chain\" plugs it after it opens)."
+  topics: [action-potential]
+
+- id: voltage-gated-potassium-channel
+  type: molecule
+  kind: channel
+  name: Voltage-gated potassium channel
+  aliases: [voltage-gated K⁺ channel]
+  short: A slower channel that opens near the peak of the action potential, letting K⁺ out to bring the voltage back down.
+  functions:
+    - Opens late (near the peak); K⁺ flows out, repolarizing the cell, and closes slowly, causing the undershoot.
+  topics: [action-potential]
+
+- id: mechanically-gated-channel
+  type: molecule
+  kind: channel
+  name: Mechanically-gated channel
+  aliases: [mechanically gated channel]
+  short: A channel pulled open by physical force, such as touch deforming the skin.
+  functions:
+    - Common in the skin; opened by deformation of the membrane.
+  topics: [membrane-at-rest]
+
+- id: phospholipid-bilayer
+  type: molecule
+  kind: other
+  name: Phospholipid bilayer
+  aliases: [cell membrane, membrane]
+  short: The two-layer fatty membrane around a cell; ions can't cross it except through proteins.
+  functions:
+    - Two layers of lipids with water-loving heads facing out and water-fearing tails in the middle; blocks ions except through channels and pumps.
+  topics: [membrane-at-rest]
+
+# ---------------------------------------------------------------- cytoskeleton & transport
+- id: microtubules
+  type: molecule
+  kind: protein
+  name: Microtubules
+  aliases: [microtubule]
+  short: The largest cytoskeleton fibers, running along the axon like railroad tracks for transport.
+  functions:
+    - Biggest structural fibers; run parallel along the axon and act as tracks for motor proteins.
+  topics: [neurons-and-glia]
+
+- id: neurofilaments
+  type: molecule
+  kind: protein
+  name: Neurofilaments
+  aliases: [neurofilament]
+  short: Medium-sized fibers that give the axon strength and help set its width.
+  functions:
+    - { text: "Run lengthwise along the axon; their side-arms set spacing and help determine axon width.", source: corrected, corrections: [C-013] }
+  topics: [neurons-and-glia]
+
+- id: microfilaments
+  type: molecule
+  kind: protein
+  name: Microfilaments
+  aliases: [microfilament, actin]
+  short: The thinnest cytoskeleton fibers, able to change the cell's shape as it makes new connections.
+  functions:
+    - Smallest fibers; reshape the cell (e.g., growing new connections), after which neurofilaments stabilize the new shape.
+  topics: [neurons-and-glia]
+
+- id: tau-protein
+  type: molecule
+  kind: protein
+  name: Tau
+  aliases: [tau protein]
+  short: A protein that stabilizes microtubules; in Alzheimer's it detaches and clumps into tangles.
+  functions:
+    - Stabilizes microtubules; in Alzheimer's disease it clumps up, so the neuron's structure breaks down.
+  topics: [neurons-and-glia]
+
+- id: kinesin
+  type: molecule
+  kind: protein
+  name: Kinesin
+  short: A motor protein that walks cargo down microtubules from the cell body toward the axon terminal.
+  functions:
+    - Moves vesicles forward (anterograde), toward the terminal.
+  topics: [neurons-and-glia]
+
+- id: dynein
+  type: molecule
+  kind: protein
+  name: Dynein
+  short: A motor protein that carries cargo back up the axon toward the cell body.
+  functions:
+    - Moves material backward (retrograde), toward the cell body.
+  topics: [neurons-and-glia]
+
+- id: connexon
+  type: molecule
+  kind: channel
+  name: Connexon
+  aliases: [connexons, connexins, connexin]
+  short: A channel made of six connexin proteins; two connexons dock to form a gap junction between neurons.
+  functions:
+    - Two connexons (one per cell) join into a gap-junction channel; connexins are their subunits.
+  topics: [synaptic-transmission]

@@ -1,0 +1,12 @@
+- id: c-neur-glia-list
+  kind: basic
+  front: Name the CNS glia and the PNS glia.
+  back: "CNS: oligodendrocytes (myelin), astrocytes (structure, nutrients, cleanup), microglia (immune), ependymal cells (line ventricles). PNS: Schwann cells (myelin), satellite cells (support)."
+  refs: [glia]
+- id: c-neur-cytoskeleton
+  kind: basic
+  front: Microtubules vs neurofilaments vs microfilaments?
+  back: "Microtubules: biggest, tracks for transport. Neurofilaments: medium, run lengthwise and set axon width. Microfilaments: smallest, reshape the cell for new connections."
+  refs: [microtubules, neurofilaments, microfilaments]
+  source: corrected
+  corrections: [C-013]

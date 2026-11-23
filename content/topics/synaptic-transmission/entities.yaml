@@ -1,0 +1,122 @@
+- id: otto-loewi
+  type: person
+  name: Otto Loewi
+  short: Showed in 1921, with two frog hearts, that neurons communicate chemically.
+  contributions:
+    - The vagus-nerve experiment ("Vagusstoff", later identified as acetylcholine).
+
+- id: loewi-experiment
+  type: experiment
+  name: Loewi's two-heart experiment
+  aliases: [Vagusstoff experiment]
+  short: Fluid from a frog heart whose vagus nerve was stimulated slowed a second heart, proving that synapses use chemicals.
+  setup: Two frog hearts were kept in fluid-filled containers. Loewi stimulated the vagus nerve of the first heart, and the fluid from it was transferred to the second heart.
+  findings:
+    - Stimulating the vagus nerve slowed the first heart.
+    - The second heart also slowed, although its nerve was never stimulated.
+  shows: Something chemical released by the nerve carries the message; synaptic transmission isn't only electrical.
+  people: [otto-loewi]
+
+- id: electrical-synapse
+  type: concept
+  name: Electrical synapse
+  aliases: [gap junction, gap junctions, electrical synapses]
+  short: A direct connection where ions flow straight from one neuron into the next through gap-junction channels.
+  points:
+    - Bidirectional and extremely fast, but each signal is weak.
+    - Useful for synchronizing large networks; more common early in development.
+  related: [connexon, chemical-synapse]
+
+- id: chemical-synapse
+  type: concept
+  name: Chemical synapse
+  aliases: [chemical synapses]
+  short: A synapse where the sending cell releases neurotransmitter across a gap onto receptors of the receiving cell; one-way and strong.
+  points:
+    - Most synapses we study are chemical.
+    - The message switches from electrical (action potential) to chemical (transmitter) and back.
+  related: [electrical-synapse, chemical-transmission-steps]
+
+- id: axodendritic-synapse
+  type: concept
+  name: Axodendritic synapse
+  short: An axon synapsing onto a dendrite, the typical synapse.
+  related: [axospinous-synapse]
+- id: axospinous-synapse
+  type: concept
+  name: Axospinous synapse
+  short: An axon synapsing onto a dendritic spine, a spot specialized for one synapse.
+  related: [dendritic-spine]
+- id: axosomatic-synapse
+  type: concept
+  name: Axosomatic synapse
+  short: An axon synapsing directly onto a cell body, which is more likely to trigger an action potential.
+- id: axoaxonic-synapse
+  type: concept
+  name: Axoaxonic synapse
+  short: An axon synapsing onto another axon (at an unmyelinated spot), good for influencing whether it fires.
+- id: axosynaptic-synapse
+  type: concept
+  name: Axosynaptic synapse
+  short: An axon synapsing onto another synapse, turning that synapse's message up or down like a volume knob.
+- id: axoextracellular-synapse
+  type: concept
+  name: Axoextracellular synapse
+  short: An axon releasing transmitter into open extracellular space, sending a broad message to many cells.
+- id: axosecretory-synapse
+  type: concept
+  name: Axosecretory synapse
+  short: An axon releasing its message into the bloodstream, as hormone-releasing neurons do.
+
+- id: neuromuscular-junction
+  type: region
+  name: Neuromuscular junction
+  aliases: [NMJ]
+  kind: cellular
+  system: cellular
+  short: The synapse between a motor neuron and a muscle fiber; it uses acetylcholine and is very strong.
+  functions:
+    - One nerve ending per muscle fiber; folds in the muscle membrane hold many receptors, making a very reliable connection.
+
+- id: secretory-granule
+  type: region
+  name: Secretory granules
+  aliases: [secretory granule, dense-core vesicles]
+  kind: cellular
+  system: cellular
+  short: Larger vesicles that carry big, slow-acting peptide transmitters and hormones, made near the cell body.
+  functions:
+    - Carry peptides; made by the Golgi apparatus and shipped down the axon.
+
+- id: amino-acid-transmitters
+  type: concept
+  name: Amino acid transmitters
+  aliases: [amino acids]
+  short: Small, abundant, easy-to-make transmitters such as glutamate (main excitatory) and GABA (main inhibitory).
+  related: [glutamate, gaba, glycine]
+- id: amine-transmitters
+  type: concept
+  name: Amines
+  aliases: [amine transmitters, monoamines]
+  short: Larger transmitters that take more work to make, like dopamine and serotonin; powerful neuromodulators.
+  related: [dopamine, serotonin, norepinephrine, acetylcholine]
+- id: peptide-transmitters
+  type: concept
+  name: Peptides
+  aliases: [peptide transmitters, neuropeptides]
+  short: Much larger, slower but powerful transmitters, made near the cell body and stored in secretory granules.
+  related: [secretory-granule]
+- id: gasotransmitters
+  type: concept
+  name: Gasotransmitters
+  aliases: [gaseous transmitters]
+  short: Gases released by neurons as messengers (e.g., nitric oxide, carbon monoxide), hard to regulate because they diffuse everywhere.
+
+- id: transmitter-deactivation
+  type: concept
+  name: Transmitter deactivation
+  aliases: [deactivation, neurotransmitter deactivation]
+  short: Clearing transmitter from the synapse so the next signal can get through, by reuptake, enzymes, glial uptake or diffusion.
+  source: corrected
+  corrections: [C-019]
+  related: [reuptake, acetylcholinesterase, astrocyte]

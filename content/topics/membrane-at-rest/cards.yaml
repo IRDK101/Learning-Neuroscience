@@ -1,0 +1,10 @@
+- id: c-mem-where-ions
+  kind: basic
+  front: Which ions are concentrated inside a resting neuron, and which outside?
+  back: "Inside: K⁺ (the only major one). Outside: Na⁺, Cl⁻ and especially Ca²⁺ (~10,000:1)."
+  refs: [potassium-ion, sodium-ion, chloride-ion, calcium-ion]
+- id: c-mem-gradients
+  kind: basic
+  front: What is an electrochemical gradient?
+  back: The combined push of the concentration gradient and the electrical gradient on an ion. Opposing pushes (K⁺ at rest) give little net flow; matching pushes (Na⁺) make the ion rush in when a channel opens.
+  refs: [electrochemical-gradient]

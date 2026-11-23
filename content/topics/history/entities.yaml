@@ -1,0 +1,265 @@
+# History of neuroscience. Entities here get topic "history" automatically.
+
+# ---------------------------------------------------------------- ideas & methods
+- id: trepanation
+  type: concept
+  name: Trepanation
+  aliases: [trephination]
+  short: Drilling a hole in a living person's skull, practiced since prehistoric times (around 6,500 BCE).
+  points:
+    - Found on several continents; some skulls show healing, so patients survived.
+    - "Possibly religious, possibly an attempt to cure brain ailments: an early form of surgery?"
+
+- id: edwin-smith-papyrus
+  type: concept
+  name: Edwin Smith Papyrus
+  short: An ancient Egyptian medical text (written around 1600 BCE) describing 48 injury cases, many of the head and brain.
+  source: corrected
+  corrections: [C-001]
+  points:
+    - One of the oldest known surgical texts; written by a physician who was possibly an early neurologist.
+    - Had hieroglyphs for the brain, its fluid, its folds (corrugations) and its membranes.
+
+- id: four-humors
+  type: concept
+  name: Four humors
+  aliases: [humors]
+  short: The ancient Greek idea that health depends on balancing four body fluids.
+  points:
+    - Hippocrates' theory; Galen still believed nerves pumped fluid around the body.
+
+- id: tripartite-soul
+  type: concept
+  name: Tripartite soul
+  short: Plato's idea that behavior is governed by three separate centers (reason, spirit/emotion, appetite).
+  points:
+    - All three are actually functions of the brain.
+
+- id: dualism
+  type: concept
+  name: Dualism
+  aliases: [mind-body dualism]
+  short: Descartes' idea that the mind is completely separate from the body.
+  points:
+    - Descartes placed the meeting point of mind and body in the pineal gland.
+
+- id: phrenology
+  type: concept
+  name: Phrenology
+  short: Gall's discredited idea (1796) that bumps on the skull reveal the size of brain areas and therefore personality.
+  points:
+    - No basis in reality; it fed bigoted ideas and medical pseudoscience.
+    - "It did get one thing right in spirit: different brain regions do different things."
+
+- id: cell-theory
+  type: concept
+  name: Cell theory
+  short: The idea (1839) that all living tissue is made of individual cells.
+  points:
+    - Developed by Theodor Schwann (with Matthias Schleiden).
+
+- id: nissl-stain
+  type: concept
+  name: Nissl stain
+  short: A stain that colors the cell bodies of all cells in a slice, letting scientists count and map them.
+  points:
+    - Labels RNA-rich parts of cells, so it shows cell bodies (not their branches).
+
+- id: golgi-stain
+  type: concept
+  name: Golgi stain
+  short: A stain that colors a few random neurons completely, branches and all, so single cells can be seen.
+  source: corrected
+  corrections: [C-005]
+  points:
+    - Golgi himself wrongly believed the nervous system was one continuous net (reticular theory).
+
+- id: neuron-doctrine
+  type: concept
+  name: Neuron doctrine
+  short: Cajal's conclusion that the nervous system is made of separate neurons that communicate at contact points.
+  points:
+    - Cajal used the Golgi stain to show that the brain contains many separate neurons forming circuits.
+  related: [santiago-ramon-y-cajal, golgi-stain]
+
+- id: brodmann-areas
+  type: concept
+  name: Brodmann areas
+  short: 52 cortical regions Brodmann mapped by differences in their cell types and layering, still used today.
+  source: corrected
+  corrections: [C-004]
+  points:
+    - "For example, area 4 is the primary motor cortex and area 17 is the primary visual cortex."
+
+- id: galvani-frog-legs
+  type: experiment
+  name: Galvani's frog-leg experiments
+  short: Galvani made dissected frog legs twitch with electricity, showing that nerves work electrically.
+  setup: Galvani connected dissected frog legs to electricity sources, including a lightning rod during storms.
+  findings:
+    - The legs moved when electricity reached them.
+  shows: The nervous system communicates with the body through electricity.
+  people: [luigi-galvani]
+
+# ---------------------------------------------------------------- people
+- id: hippocrates
+  type: person
+  name: Hippocrates
+  years: "460–370 BCE"
+  short: Ancient Greek "father of medicine" who correctly placed intelligence and sensation in the brain.
+  contributions:
+    - Identified the brain as the center of intelligence and sensation.
+    - Theorized that four fluids (humors) must be balanced for health.
+
+- id: plato
+  type: person
+  name: Plato
+  short: Greek philosopher who put intelligence in the brain, but because the head is closest to the heavens.
+  contributions:
+    - Tripartite soul theory (reason, spirit, appetite).
+
+- id: aristotle
+  type: person
+  name: Aristotle
+  short: Greek philosopher who wrongly placed the mind in the heart and thought the brain cooled the blood.
+  contributions:
+    - His heart-centered view persisted for hundreds of years.
+
+- id: galen
+  type: person
+  name: Galen
+  years: "2nd century CE"
+  short: Greek physician in Rome, surgeon to gladiators, who linked head injuries to changes in behavior and memory.
+  source: corrected
+  corrections: [C-002]
+  contributions:
+    - Connected head injuries with behavior, memory and function.
+    - Dissected animals; still believed nerves pumped fluid.
+
+- id: rene-descartes
+  type: person
+  name: René Descartes
+  years: "1596–1650"
+  short: 17th-century philosopher who argued for mind–body dualism and put the mind's seat in the pineal gland.
+  source: corrected
+  corrections: [C-003]
+  contributions:
+    - Dualism; the pineal gland (which actually secretes melatonin) as the seat of the mind.
+
+- id: luigi-galvani
+  type: person
+  name: Luigi Galvani
+  years: "1737–1798"
+  short: Showed with frog legs that nerves and muscles work by electricity.
+  contributions:
+    - Frog-leg experiments proving electricity's role in the nervous system.
+
+- id: franz-gall
+  type: person
+  name: Franz Gall
+  years: "1758–1828"
+  short: Founder of phrenology, the false idea that skull shape reveals personality.
+  contributions:
+    - Phrenology (1796).
+
+- id: paul-broca
+  type: person
+  name: Paul Broca
+  years: "1824–1880"
+  short: Neurologist who linked damage in the left frontal lobe to loss of fluent speech (Broca's area).
+  contributions:
+    - Studied patients' behavior after brain injury, then their brains after death.
+    - Identified Broca's area and Broca's aphasia.
+
+- id: carl-wernicke
+  type: person
+  name: Carl Wernicke
+  years: "1848–1905"
+  short: Neurologist who described Wernicke's aphasia (fluent but meaningless speech) and predicted disconnection disorders.
+  contributions:
+    - Described Wernicke's aphasia.
+    - Predicted disconnection disorders (damage to the connections between areas), such as conduction aphasia.
+
+- id: korbinian-brodmann
+  type: person
+  name: Korbinian Brodmann
+  years: "1868–1918"
+  short: Mapped the cortex into 52 areas based on its cellular structure.
+  source: corrected
+  corrections: [C-004]
+  contributions:
+    - Brodmann areas.
+
+- id: theodor-schwann
+  type: person
+  name: Theodor Schwann
+  years: "1810–1882"
+  short: Developed cell theory (1839), the idea that all tissue is made of cells.
+  contributions:
+    - Cell theory.
+
+- id: franz-nissl
+  type: person
+  name: Franz Nissl
+  years: "1860–1919"
+  short: Developed the Nissl stain, which labels the cell bodies of all cells.
+  contributions:
+    - Nissl stain.
+
+- id: camillo-golgi
+  type: person
+  name: Camillo Golgi
+  short: Invented the Golgi stain, which reveals whole individual neurons, but wrongly thought the brain was one continuous net.
+  contributions:
+    - Golgi stain.
+
+- id: santiago-ramon-y-cajal
+  type: person
+  name: Santiago Ramón y Cajal
+  aliases: [Cajal]
+  years: "1852–1934"
+  short: Probably the most famous neuroscientist; used the Golgi stain to show the brain is made of separate neurons.
+  contributions:
+    - The neuron doctrine.
+
+# ---------------------------------------------------------------- cases
+- id: phineas-gage
+  type: case
+  kind: patient
+  name: Phineas Gage
+  short: A railroad worker who survived an iron rod through his frontal lobe and changed from mild-mannered to rude and impulsive.
+  damage:
+    regions: [prefrontal-cortex]
+    cause: An iron rod blasted through his skull and frontal lobe.
+  deficits:
+    - Personality changed from mild-mannered to rude and aggressive.
+    - Lost subtlety in emotion; poor decision-making.
+  teaches: The frontal lobes are tied to emotion, decision-making and personality.
+  topics: [emotion]
+
+- id: brocas-aphasia
+  type: case
+  kind: syndrome
+  name: Broca's aphasia
+  short: A language disorder from damage to Broca's area, where speech is slow and broken but understanding is mostly intact.
+  damage:
+    regions: [brocas-area]
+  deficits:
+    - Hard to turn thoughts into fluent, grammatical speech.
+    - It also impairs communication in sign language.
+  spared:
+    - Comprehension is mostly spared; patients can often still sing words.
+  topics: [language]
+
+- id: wernickes-aphasia
+  type: case
+  kind: syndrome
+  name: Wernicke's aphasia
+  short: A language disorder from damage to Wernicke's area, where speech flows easily but makes little sense and comprehension is poor.
+  damage:
+    regions: [wernickes-area]
+  deficits:
+    - Fluent "word salad" speech; poor understanding of what others say.
+  spared:
+    - Nonverbal communication is mostly intact.
+  topics: [language]

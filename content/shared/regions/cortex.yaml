@@ -73,3 +73,134 @@
     - Carries information between the two hemispheres.
     - Cutting it (split-brain surgery, used for severe epilepsy) stops the hemispheres from sharing information.
   topics: [nervous-system-structure, language]
+
+- id: temporal-lobe
+  type: region
+  name: Temporal lobe
+  parent: cerebral-cortex
+  system: temporal
+  short: The lobe on the side of the head, by the ears, handling hearing and (on its inner side) memory and emotion.
+  location: Below the lateral (Sylvian) fissure, on the side of the head.
+  functions:
+    - Contains the primary auditory cortex (A1), just below the lateral fissure.
+    - Its inner (medial) part holds the hippocampus and amygdala.
+  topics: [nervous-system-structure]
+
+- id: insula
+  type: region
+  name: Insula
+  aliases: [insular lobe, insular cortex]
+  parent: cerebral-cortex
+  system: insula
+  short: A hidden lobe folded deep inside the lateral fissure, handling taste and the feel of emotions and pain.
+  location: Deep inside the lateral fissure, covered by the frontal, parietal and temporal lobes.
+  functions:
+    - Primary taste (gustatory) cortex.
+    - Processing of emotion and pain, which are important for physical experience.
+  topics: [nervous-system-structure, chemical-senses]
+
+- id: central-sulcus
+  type: region
+  name: Central sulcus
+  kind: landmark
+  system: cortex
+  short: The groove that separates the frontal lobe (movement) from the parietal lobe (touch).
+  location: Runs down the side of each hemisphere from the top of the brain toward the lateral fissure.
+  functions:
+    - Divides the frontal and parietal lobes; primary motor cortex lies in front of it and primary somatosensory cortex behind it.
+  topics: [nervous-system-structure]
+
+- id: lateral-fissure
+  type: region
+  name: Lateral fissure
+  aliases: [Sylvian fissure, lateral sulcus]
+  kind: landmark
+  system: cortex
+  short: The deep groove on the side of the brain that separates the temporal lobe from the frontal and parietal lobes.
+  functions:
+    - Separates the temporal lobe from the lobes above it; the insula is hidden inside it.
+  topics: [nervous-system-structure]
+
+- id: longitudinal-fissure
+  type: region
+  name: Longitudinal fissure
+  kind: landmark
+  system: cortex
+  short: The deep groove down the middle of the brain that separates the left and right hemispheres.
+  functions:
+    - Separates the left and right hemispheres; the corpus callosum bridges them at its bottom.
+  topics: [nervous-system-structure]
+
+- id: primary-motor-cortex
+  type: region
+  name: Primary motor cortex
+  aliases: [M1, precentral gyrus, area 4]
+  parent: frontal-lobe
+  system: frontal
+  short: The strip of frontal cortex just in front of the central sulcus that sends movement commands down to the spinal cord.
+  location: The precentral gyrus, directly in front of the central sulcus (Brodmann area 4).
+  functions:
+    - Sends movement commands down the corticospinal tract.
+    - Body parts needing fine control (hands, mouth) get the most cortex.
+  topics: [nervous-system-structure, brain-control-of-movement]
+
+- id: primary-somatosensory-cortex
+  type: region
+  name: Primary somatosensory cortex
+  aliases: [S1, postcentral gyrus]
+  parent: parietal-lobe
+  system: parietal
+  short: The strip of parietal cortex just behind the central sulcus where touch and body sense first reach the cortex.
+  location: The postcentral gyrus, directly behind the central sulcus.
+  functions:
+    - Receives touch, pain, temperature and body-position information from the thalamus.
+    - Laid out as a body map (somatotopy).
+  topics: [nervous-system-structure, somatosensory]
+
+- id: primary-auditory-cortex
+  type: region
+  name: Primary auditory cortex
+  aliases: [A1]
+  parent: temporal-lobe
+  system: temporal
+  short: The part of the temporal lobe, just below the lateral fissure, where sound information first reaches the cortex.
+  location: Top of the temporal lobe, just below the lateral fissure.
+  functions:
+    - Receives sound information from the thalamus; organized by pitch (tonotopy).
+  topics: [nervous-system-structure, auditory-vestibular]
+
+- id: primary-visual-cortex
+  type: region
+  name: Primary visual cortex
+  aliases: [V1, striate cortex, area 17]
+  parent: occipital-lobe
+  system: occipital
+  short: The cortex at the very back of the brain where visual information first arrives.
+  location: Back of the occipital lobe, along the calcarine fissure.
+  functions:
+    - Receives visual information from the thalamus (LGN); laid out as a map of the visual field.
+  topics: [nervous-system-structure, central-visual-system]
+
+- id: brocas-area
+  type: region
+  name: Broca's area
+  parent: frontal-lobe
+  system: frontal
+  short: An area of the left frontal lobe needed to turn thoughts into fluent, grammatical speech.
+  location: Lower frontal lobe, just in front of the face area of the motor cortex and above the lateral fissure (usually on the left).
+  functions:
+    - Speech production; damage causes Broca's aphasia, where speaking is slow and halting but comprehension is mostly spared.
+  cases: [brocas-aphasia]
+  topics: [history, language]
+
+- id: wernickes-area
+  type: region
+  name: Wernicke's area
+  parent: temporal-lobe
+  system: temporal
+  short: An area of the left temporal lobe needed to understand language.
+  location: Upper temporal lobe, just behind the primary auditory cortex (usually on the left).
+  functions:
+    - Language comprehension; damage causes Wernicke's aphasia, where speech is fluent but makes little sense.
+  cases: [wernickes-aphasia]
+  topics: [history, language]

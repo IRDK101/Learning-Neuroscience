@@ -1,0 +1,63 @@
+- id: q-ap-rising
+  kind: mcq
+  stem: What causes the rising phase of the action potential?
+  answer: Voltage-gated Na⁺ channels open and Na⁺ rushes into the cell
+  distractors:
+    - { text: "Voltage-gated K⁺ channels open and K⁺ rushes in", why: "K⁺ flows out, and it does so during the falling phase." }
+    - { text: "The Na⁺/K⁺ pump speeds up", why: "The pump is slow; it restores gradients afterward." }
+    - { text: "Cl⁻ leaves the cell", why: "Chloride doesn't drive the spike." }
+  refs: [rising-phase, voltage-gated-sodium-channel]
+  tags: { difficulty: 1 }
+
+- id: q-ap-inactivation
+  kind: mcq
+  stem: Why can't an action potential travel backward up the axon?
+  answer: The Na⁺ channels just behind it are inactivated (refractory)
+  distractors:
+    - { text: "Myelin blocks backward current", why: "Myelin insulates in both directions." }
+    - { text: "Dendrites have no channels", why: "That's not the reason the spike moves one way along the axon." }
+    - { text: "K⁺ channels open ahead of the spike", why: "K⁺ channels open behind the peak, not ahead of it." }
+  refs: [refractory-period, voltage-gated-sodium-channel]
+  tags: { difficulty: 3 }
+
+- id: q-ap-myelin
+  kind: mcq
+  stem: Which axon conducts action potentials fastest?
+  answer: A wide, myelinated axon
+  distractors:
+    - { text: "A narrow, unmyelinated axon", why: "Narrow = more resistance; no myelin = slow." }
+    - { text: "A wide, unmyelinated axon", why: "Width helps, but myelin helps a lot more." }
+    - { text: "A narrow, myelinated axon", why: "Myelin helps, but a wider axon is faster still." }
+  refs: [conduction-velocity, myelin-sheath, saltatory-conduction]
+
+- id: q-ap-frequency
+  kind: mcq
+  stem: A neuron receives a much stronger stimulus. How does its output change?
+  answer: It fires action potentials more frequently; each one is the same size
+  distractors:
+    - { text: "Each action potential gets bigger", why: "Spikes are all-or-none: always the same size." }
+    - { text: "Each action potential lasts longer", why: "The shape is fixed." }
+    - { text: "Nothing changes once threshold is passed", why: "The firing rate goes up, to a limit set by the refractory period." }
+  refs: [all-or-none]
+
+- id: q-ap-temporal
+  kind: mcq
+  stem: One synapse fires several times in rapid succession, and its EPSPs add up to threshold. What is this called?
+  answer: Temporal summation
+  distractors:
+    - { text: "Spatial summation", why: "Spatial summation is many different synapses at the same time." }
+    - { text: "Saltatory conduction", why: "That's the spike jumping between nodes of Ranvier." }
+    - { text: "Hyperpolarization", why: "That moves the cell away from threshold." }
+  refs: [temporal-summation, spatial-summation]
+  source: corrected
+  corrections: [C-017]
+
+- id: q-ap-hillock
+  kind: mcq
+  stem: What does an IPSP do to a neuron?
+  answer: Hyperpolarizes it, pushing it away from threshold
+  distractors:
+    - { text: "Depolarizes it toward threshold", why: "That's an EPSP." }
+    - { text: "Triggers an action potential directly", why: "Inhibitory input makes firing less likely." }
+    - { text: "Opens voltage-gated Na⁺ channels", why: "IPSPs make the cell more negative." }
+  refs: [ipsp, epsp]

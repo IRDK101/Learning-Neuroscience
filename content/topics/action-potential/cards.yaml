@@ -1,0 +1,12 @@
+- id: c-ap-na-states
+  kind: basic
+  front: What are the three states of the voltage-gated Na⁺ channel?
+  back: Closed (at rest, ready), open (Na⁺ flows in), inactivated (plugged by the "ball and chain" until the cell repolarizes). Inactivation causes the refractory period.
+  refs: [voltage-gated-sodium-channel, refractory-period]
+- id: c-ap-summation
+  kind: basic
+  front: Temporal vs spatial summation?
+  back: "Temporal: EPSPs from the same synapse in rapid succession. Spatial: EPSPs from different synapses at the same time."
+  refs: [temporal-summation, spatial-summation]
+  source: corrected
+  corrections: [C-017]

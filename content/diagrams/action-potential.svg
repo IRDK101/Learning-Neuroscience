@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" role="img" aria-label="Graph of an action potential: membrane voltage over about 4 milliseconds">
+  <!-- Original drawing for NeuroMap. Schematic action potential recorded inside a neuron. -->
+  <g class="deco axes">
+    <path d="M 90 30 L 90 380 L 730 380" />
+    <text x="20" y="214" class="axis-label" transform="rotate(-90 20 214)">Membrane voltage (mV)</text>
+    <text x="410" y="418" class="axis-label" text-anchor="middle">Time (ms)</text>
+    <text x="82" y="48" text-anchor="end" class="tick">+40</text>
+    <text x="82" y="146" text-anchor="end" class="tick">0</text>
+    <text x="82" y="281" text-anchor="end" class="tick">–55</text>
+    <text x="82" y="305" text-anchor="end" class="tick">–65</text>
+    <text x="82" y="342" text-anchor="end" class="tick">–80</text>
+    <path class="zero" d="M 90 142 L 730 142"/>
+  </g>
+  <g class="base">
+    <path data-ref="threshold" class="line-hotspot dashed" data-fill="var(--violet)" d="M 90 277 L 730 277"/>
+    <path data-ref="resting-membrane-potential" class="line-hotspot" data-fill="#2346b8" d="M 90 301 L 230 301 M 600 301 L 730 301"/>
+    <path data-ref="rising-phase" class="line-hotspot" data-fill="#e07b00" d="M 230 301 C 250 300 262 292 270 277 C 280 210 288 100 300 62"/>
+    <path data-ref="overshoot" class="line-hotspot" data-fill="#c8403a" d="M 300 62 C 306 40 318 40 326 62"/>
+    <path data-ref="falling-phase" class="line-hotspot" data-fill="#00936b" d="M 326 62 C 340 140 352 250 368 320"/>
+    <path data-ref="undershoot" class="line-hotspot" data-fill="#8e6cc9" d="M 368 320 C 380 352 410 352 450 334 C 510 312 560 302 600 301"/>
+    <g class="labels lbl-base">
+      <text data-label-for="resting-membrane-potential" x="100" y="322">Resting potential (about –65 mV)</text>
+      <text data-label-for="threshold" x="420" y="270">Threshold (about –55 mV)</text>
+      <text text-anchor="end" data-label-for="rising-phase" x="268" y="200">Rising phase</text>
+      <text data-label-for="overshoot" x="334" y="44">Overshoot</text>
+      <text data-label-for="falling-phase" x="356" y="186">Falling phase</text>
+      <text data-label-for="undershoot" x="420" y="372">Undershoot</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,66 @@
+- id: q-neur-hillock
+  kind: case
+  stem: Where along a neuron is the decision to fire an action potential made?
+  answer: axon-hillock
+  distractors: [dendrite, axon-terminal, node-of-ranvier]
+  explain: The axon hillock, where the axon leaves the cell body, is the spike initiation zone.
+  refs: [axon-hillock]
+
+- id: q-neur-one-axon
+  kind: mcq
+  stem: Which statement about a typical neuron is true?
+  answer: It has many dendrites but only one axon, which can branch into collaterals
+  distractors:
+    - { text: "It has one dendrite and many axons", why: "That's backward for a multipolar neuron." }
+    - { text: "Its axon terminals physically fuse with the next cell", why: "There's a gap; transmitter crosses it." }
+    - { text: "Dendrites send messages out to other neurons", why: "Dendrites receive; the axon sends." }
+  refs: [axon, dendrite, axon-collateral]
+  tags: { difficulty: 1 }
+
+- id: q-neur-types
+  kind: mcq
+  stem: A neuron has one dendrite and one axon, in one end and out the other, like those in the retina. What type is it?
+  answer: Bipolar
+  distractors:
+    - { text: "Multipolar", why: "Multipolar neurons have many dendrites." }
+    - { text: "Pseudounipolar", why: "Pseudounipolar neurons have their cell body off to the side of one long process." }
+    - { text: "Glial", why: "Glia aren't neurons." }
+  refs: [bipolar-neuron]
+
+- id: q-neur-schwann
+  kind: mcq
+  stem: How do oligodendrocytes differ from Schwann cells?
+  answer: Oligodendrocytes myelinate several CNS axons; each Schwann cell myelinates one segment of one PNS axon
+  distractors:
+    - { text: "Oligodendrocytes are in the PNS; Schwann cells are in the CNS", why: "It's the other way around." }
+    - { text: "Only Schwann cells make myelin", why: "Both make myelin." }
+    - { text: "Oligodendrocytes are immune cells", why: "That's microglia." }
+  refs: [oligodendrocyte, schwann-cell]
+
+- id: q-neur-rough-er
+  kind: mcq
+  stem: Why is the rough endoplasmic reticulum especially important in neurons?
+  answer: It makes proteins, including all the channels and pumps the membrane depends on
+  distractors:
+    - { text: "It makes the ATP for the sodium-potassium pump", why: "Mitochondria make ATP." }
+    - { text: "It conducts action potentials", why: "The membrane's channels do that." }
+    - { text: "It forms the myelin sheath", why: "Glia make myelin." }
+  refs: [rough-er]
+
+- id: q-neur-kinesin
+  kind: mcq
+  stem: A vesicle of transmitter needs to travel from the cell body to the axon terminal. What carries it?
+  answer: Kinesin, walking along microtubules
+  distractors:
+    - { text: "Dynein, walking along microtubules", why: "Dynein carries cargo back toward the cell body." }
+    - { text: "Neurofilaments pushing it along", why: "Neurofilaments are structural, not motors." }
+    - { text: "Diffusion through the axon", why: "Axons are far too long for diffusion; transport is active." }
+  refs: [kinesin, dynein, axoplasmic-transport]
+
+- id: q-neur-ms
+  kind: case
+  stem: An immune attack damages the insulation around axons, so signals slow or fail. What is being attacked?
+  answer: myelin-sheath
+  distractors: [axon-terminal, dendritic-spine, cell-nucleus]
+  explain: This is multiple sclerosis, in which the immune system attacks myelin.
+  refs: [multiple-sclerosis]

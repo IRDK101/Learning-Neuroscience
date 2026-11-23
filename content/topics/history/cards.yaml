@@ -1,0 +1,15 @@
+- id: c-hist-order
+  kind: basic
+  front: "Put these in time order: Galen, Hippocrates, Cajal, Edwin Smith Papyrus, Broca."
+  back: Edwin Smith Papyrus (~1600 BCE) → Hippocrates (460–370 BCE) → Galen (2nd century CE) → Broca (1800s) → Cajal (1852–1934).
+  refs: [edwin-smith-papyrus, hippocrates, galen, paul-broca, santiago-ramon-y-cajal]
+- id: c-hist-broca-wernicke
+  kind: basic
+  front: Broca's vs Wernicke's aphasia?
+  back: "Broca's: halting, effortful speech; comprehension mostly spared. Wernicke's: fluent \"word salad\" with poor comprehension."
+  refs: [brocas-aphasia, wernickes-aphasia]
+- id: c-hist-disconnection
+  kind: basic
+  front: What did Wernicke predict that no one had yet seen?
+  back: Disconnection disorders, where damage to the connections between two areas causes problems even though both areas are intact (e.g., conduction aphasia).
+  refs: [carl-wernicke]

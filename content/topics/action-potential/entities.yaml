@@ -1,0 +1,134 @@
+- id: ap-phases
+  type: pathway
+  kind: sequence
+  name: Phases of the action potential
+  short: Resting, threshold, rising phase, overshoot, falling phase, undershoot, back to rest, all in about 1–2 ms.
+  steps:
+    - { label: "Resting potential (about –65 mV)", ref: resting-membrane-potential }
+    - { label: "Threshold reached (about –55 mV)", ref: threshold }
+    - { label: "Rising phase: voltage-gated Na⁺ channels open, Na⁺ rushes in", ref: rising-phase }
+    - { label: "Overshoot: inside goes positive; Na⁺ channels inactivate", ref: overshoot }
+    - { label: "Falling phase: voltage-gated K⁺ channels open, K⁺ rushes out", ref: falling-phase, source: corrected, corrections: [C-015] }
+    - { label: "Undershoot: slow K⁺ channels overshoot below rest", ref: undershoot }
+    - { label: "Pump and leak channels restore rest", ref: sodium-potassium-pump }
+  diagrams: [action-potential-trace]
+
+- id: threshold
+  type: concept
+  name: Threshold
+  aliases: [threshold potential]
+  short: The voltage (about –55 mV) at which voltage-gated Na⁺ channels open and an action potential becomes unstoppable.
+  points:
+    - Below threshold, nothing opens and the cell drifts back to rest.
+
+- id: rising-phase
+  type: concept
+  name: Rising phase
+  aliases: [depolarization phase]
+  short: The upstroke of the action potential, as Na⁺ rushes in through voltage-gated channels and the inside becomes positive.
+  related: [voltage-gated-sodium-channel]
+
+- id: overshoot
+  type: concept
+  name: Overshoot
+  short: The peak of the action potential, where the inside of the cell is briefly positive.
+  points:
+    - Na⁺ channels inactivate here; K⁺ channels open.
+
+- id: falling-phase
+  type: concept
+  name: Falling phase
+  aliases: [repolarization]
+  short: The downstroke, as K⁺ rushes out through voltage-gated K⁺ channels and the inside becomes negative again.
+  source: corrected
+  corrections: [C-015]
+  related: [voltage-gated-potassium-channel]
+
+- id: undershoot
+  type: concept
+  name: Undershoot
+  aliases: [afterhyperpolarization]
+  short: The dip below resting potential after a spike, because K⁺ channels are slow to close.
+  points:
+    - The pump and leak channels then bring the cell back to rest.
+
+- id: refractory-period
+  type: concept
+  name: Refractory period
+  short: A brief time after an action potential when another one can't fire (or needs a much stronger push), mainly because Na⁺ channels are inactivated.
+  points:
+    - Sets a maximum firing rate and keeps the spike moving in one direction.
+
+- id: all-or-none
+  type: concept
+  name: All-or-none law
+  aliases: [all or nothing, all-or-nothing]
+  short: Once threshold is reached an action potential always has the same size; a stronger stimulus makes spikes more frequent, not bigger.
+  points:
+    - Like a toilet flush.
+    - Message strength is coded by firing frequency.
+
+- id: saltatory-conduction
+  type: concept
+  name: Saltatory conduction
+  short: The action potential "jumping" from one node of Ranvier to the next along a myelinated axon, which is much faster.
+  related: [node-of-ranvier, myelin-sheath]
+
+- id: conduction-velocity
+  type: concept
+  name: Conduction velocity
+  short: How fast an action potential travels (around 10 m/s typically); wider axons and myelin make it faster.
+  points:
+    - Wider axon = less resistance = faster. More myelin = faster.
+
+- id: orthodromic
+  type: term
+  name: Orthodromic
+  short: The normal direction an action potential travels, from the cell body down the axon toward the terminals.
+- id: antidromic
+  type: term
+  name: Antidromic
+  short: The reverse direction, from the axon back toward the cell body. Can be forced experimentally but doesn't happen naturally.
+
+- id: epsp
+  type: concept
+  name: Excitatory postsynaptic potential
+  aliases: [EPSP, EPSPs]
+  short: A small depolarization in the receiving cell that pushes it closer to threshold.
+  related: [ipsp, temporal-summation, spatial-summation]
+
+- id: ipsp
+  type: concept
+  name: Inhibitory postsynaptic potential
+  aliases: [IPSP, IPSPs]
+  short: A small hyperpolarization in the receiving cell that pushes it away from threshold.
+  related: [epsp]
+
+- id: temporal-summation
+  type: concept
+  name: Temporal summation
+  short: EPSPs arriving in rapid succession at the same synapse add up over time.
+  source: corrected
+  corrections: [C-017]
+  related: [spatial-summation, epsp]
+
+- id: spatial-summation
+  type: concept
+  name: Spatial summation
+  short: EPSPs arriving at the same time from different synapses add up across the cell.
+  source: corrected
+  corrections: [C-017]
+  related: [temporal-summation, epsp]
+
+- id: tetrodotoxin
+  type: drug
+  name: Tetrodotoxin
+  aliases: [TTX]
+  short: The pufferfish toxin that blocks voltage-gated Na⁺ channels, shutting down action potentials and causing paralysis.
+  actsOn: [voltage-gated-sodium-channel]
+  target: voltage-gated-sodium-channel
+  action: channel-blocker
+  effect: decreases
+  mechanism: Plugs voltage-gated Na⁺ channels, so no action potentials can fire and the nervous system is paralyzed.
+  uses:
+    - { text: "Anecdote: some dolphins reportedly nibble pufferfish for a small dose.", flags: [F-17] }

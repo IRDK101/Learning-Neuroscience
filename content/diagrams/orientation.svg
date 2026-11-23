@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 720" role="img" aria-label="Anatomical directions on a four-legged animal and a standing human, and the three section planes">
+  <!-- Original drawing for NeuroMap. Directions are relative to the nervous system's long axis (the neuraxis). -->
+  <g class="deco axes panel-titles">
+    <text x="30" y="30">On four legs, the neuraxis is straight</text>
+    <text x="480" y="30">Standing up, it bends 90° at the brainstem</text>
+    <text x="30" y="500">The three ways to slice a brain</text>
+  </g>
+  <g class="deco silhouette">
+    <ellipse cx="240" cy="230" rx="140" ry="46"/>
+    <circle cx="104" cy="182" r="40"/>
+    <path d="M 70 196 L 40 212 L 72 220 Z"/>
+    <rect x="140" y="262" width="20" height="80" rx="8"/><rect x="190" y="262" width="20" height="80" rx="8"/>
+    <rect x="300" y="262" width="20" height="80" rx="8"/><rect x="340" y="258" width="20" height="84" rx="8"/>
+    <path d="M 376 216 C 410 200 430 190 450 170" style="stroke-width:8; fill:none"/>
+    <circle cx="612" cy="150" r="72"/>
+    <path d="M 542 150 L 520 178 L 546 186 Z"/>
+    <rect x="566" y="214" width="130" height="250" rx="30"/>
+  </g>
+  <g class="deco neuraxis">
+    <ellipse class="brain-deco" cx="98" cy="172" rx="24" ry="15"/>
+    <path d="M 120 176 C 180 190 280 196 372 210"/>
+    <ellipse class="brain-deco" cx="610" cy="140" rx="52" ry="38"/>
+    <path d="M 640 170 C 664 196 672 230 672 270 L 672 456"/>
+  </g>
+  <g class="base">
+    <g data-ref="anterior" data-fill="var(--brand)">
+      <path class="stroke-shape" style="stroke-width:5" d="M 150 80 L 74 80"/>
+      <polygon points="60,80 74,72 74,88"/>
+      <text x="105" y="66" text-anchor="middle">Anterior (rostral)</text>
+    </g>
+    <g data-ref="posterior" data-fill="var(--brand)">
+      <path class="stroke-shape" style="stroke-width:5" d="M 300 80 L 376 80"/>
+      <polygon points="390,80 376,88 376,72"/>
+      <text x="345" y="66" text-anchor="middle">Posterior (caudal)</text>
+    </g>
+    <g data-ref="dorsal" data-fill="var(--brand)">
+      <path class="stroke-shape" style="stroke-width:5" d="M 425 210 L 425 142"/>
+      <polygon points="425,128 433,142 417,142"/>
+      <text x="425" y="116" text-anchor="middle">Dorsal</text>
+    </g>
+    <g data-ref="ventral" data-fill="var(--brand)">
+      <path class="stroke-shape" style="stroke-width:5" d="M 425 236 L 425 304"/>
+      <polygon points="425,318 417,304 433,304"/>
+      <text x="425" y="340" text-anchor="middle">Ventral</text>
+    </g>
+    <g data-ref="anterior" data-fill="var(--brand)">
+      <path class="stroke-shape" style="stroke-width:5" d="M 575 58 L 519 58"/>
+      <polygon points="505,58 519,50 519,66"/>
+      <text x="540" y="46" text-anchor="middle">Anterior</text>
+    </g>
+    <g data-ref="posterior" data-fill="var(--brand)">
+      <path class="stroke-shape" style="stroke-width:5" d="M 650 58 L 706 58"/>
+      <polygon points="720,58 706,66 706,50"/>
+      <text x="685" y="46" text-anchor="middle">Posterior</text>
+    </g>
+    <g data-ref="dorsal" data-fill="var(--brand)">
+      <path class="stroke-shape" style="stroke-width:5" d="M 705 380 L 766 380"/>
+      <polygon points="780,380 766,388 766,372"/>
+      <text x="742" y="368" text-anchor="middle">Dorsal</text>
+    </g>
+    <g data-ref="ventral" data-fill="var(--brand)">
+      <path class="stroke-shape" style="stroke-width:5" d="M 555 380 L 504 380"/>
+      <polygon points="490,380 504,372 504,388"/>
+      <text x="522" y="368" text-anchor="middle">Ventral</text>
+    </g>
+    <g data-ref="superior" data-fill="var(--brand)">
+      <path class="stroke-shape" style="stroke-width:5" d="M 800 206 L 800 146"/>
+      <polygon points="800,132 808,146 792,146"/>
+      <text x="800" y="96" text-anchor="middle">Superior</text>
+    </g>
+    <g data-ref="dorsal" data-fill="var(--brand)">
+      <path class="stroke-shape" style="stroke-width:5" d="M 800 206 L 800 146"/>
+      <polygon points="800,132 808,146 792,146"/>
+      <text x="800" y="116" text-anchor="middle">(dorsal, in the brain)</text>
+    </g>
+    <g data-ref="inferior" data-fill="var(--brand)">
+      <path class="stroke-shape" style="stroke-width:5" d="M 800 230 L 800 290"/>
+      <polygon points="800,304 792,290 808,290"/>
+      <text x="800" y="326" text-anchor="middle">Inferior</text>
+    </g>
+    <g data-ref="ventral" data-fill="var(--brand)">
+      <path class="stroke-shape" style="stroke-width:5" d="M 800 230 L 800 290"/>
+      <polygon points="800,304 792,290 808,290"/>
+      <text x="800" y="346" text-anchor="middle">(ventral, in the brain)</text>
+    </g>
+    <g class="deco axes"><text x="630" y="492" text-anchor="middle">In the spinal cord, toward your back is dorsal.</text></g>
+    <g class="deco silhouette">
+      <ellipse class="brain-deco" cx="150" cy="610" rx="90" ry="58"/>
+      <path class="brain-deco" d="M 380 560 C 350 560 340 600 345 630 C 350 670 400 690 436 680 L 436 560 Z"/>
+      <path class="brain-deco" d="M 500 560 C 530 560 540 600 535 630 C 530 670 480 690 444 680 L 444 560 Z"/>
+      <ellipse class="brain-deco" cx="730" cy="610" rx="90" ry="58"/>
+    </g>
+    <g data-ref="coronal-plane" data-fill="var(--violet)">
+      <polygon class="plane" points="136,534 166,524 166,690 136,700"/>
+      <text x="150" y="712">Coronal plane</text>
+    </g>
+    <g data-ref="sagittal-plane" data-fill="var(--violet)">
+      <polygon class="plane" points="430,540 452,530 452,694 430,704"/>
+      <text x="440" y="716">Sagittal plane</text>
+    </g>
+    <g data-ref="horizontal-plane" data-fill="var(--violet)">
+      <polygon class="plane" points="626,600 818,600 840,618 648,618"/>
+      <text x="730" y="696">Horizontal plane</text>
+    </g>
+    <g data-ref="medial" data-fill="var(--brand)">
+      <path class="stroke-shape" style="stroke-width:5" d="M 368 600 L 406 600"/>
+      <polygon points="420,600 406,608 406,592"/>
+      <text x="394" y="588" text-anchor="middle">Medial</text>
+    </g>
+    <g data-ref="lateral" data-fill="var(--brand)">
+      <path class="stroke-shape" style="stroke-width:5" d="M 466 600 L 506 600"/>
+      <polygon points="520,600 506,608 506,592"/>
+      <text x="492" y="588" text-anchor="middle">Lateral</text>
+    </g>
+  </g>
+</svg>

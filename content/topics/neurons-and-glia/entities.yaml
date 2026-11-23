@@ -1,0 +1,62 @@
+- id: glia
+  type: concept
+  name: Glia
+  aliases: [glial cells, glial cell]
+  short: The brain's non-neuron support cells, which insulate, feed, clean and protect neurons without signaling directly.
+  points:
+    - "CNS: oligodendrocytes, astrocytes, microglia, ependymal cells. PNS: Schwann cells, satellite cells."
+  related: [oligodendrocyte, astrocyte, microglia, ependymal-cell, schwann-cell, satellite-cell]
+
+- id: multipolar-neuron
+  type: concept
+  name: Multipolar neuron
+  aliases: [multipolar neurons, multipolar]
+  short: A neuron with many dendrites and one axon, the most common shape (e.g., motor neurons, pyramidal cells, Purkinje cells).
+
+- id: bipolar-neuron
+  type: concept
+  name: Bipolar neuron
+  aliases: [bipolar neurons]
+  short: A neuron with one dendrite and one axon, in one end and out the other (e.g., in the retina and the smell system).
+
+- id: pseudounipolar-neuron
+  type: concept
+  name: Pseudounipolar neuron
+  aliases: [pseudounipolar neurons, pseudounipolar, unipolar]
+  short: A neuron whose cell body sits off to the side of one long process running from dendrite to axon, as in touch-sensing neurons.
+  points:
+    - The signal runs nearly straight from the dendritic end to the axon without passing through the cell body.
+
+- id: axoplasmic-transport
+  type: concept
+  name: Axoplasmic transport
+  aliases: [axonal transport]
+  short: Moving materials up and down the axon on microtubule "tracks", carried by the motor proteins kinesin and dynein.
+  points:
+    - Kinesin carries cargo toward the terminal; dynein carries it back.
+  related: [microtubules, kinesin, dynein]
+
+- id: multiple-sclerosis
+  type: case
+  kind: disorder
+  name: Multiple sclerosis
+  aliases: [MS]
+  short: An autoimmune disease in which the immune system attacks myelin, slowing or blocking signals along nerve fibers.
+  damage:
+    regions: [myelin-sheath]
+    cause: The immune system attacks the myelin around axons.
+  deficits:
+    - Damaged myelin makes it much harder for neurons to pass signals along.
+
+- id: alzheimers-disease
+  type: case
+  kind: disorder
+  name: Alzheimer's disease
+  aliases: [Alzheimer's, Alzheimers]
+  short: A dementia in which tau protein clumps into tangles and neurons break down, starting in the hippocampus and medial temporal lobe.
+  damage:
+    regions: [hippocampus]
+    cause: Tau, which normally stabilizes microtubules, clumps into tangles, so neurons lose their structure.
+  deficits:
+    - Damaged declarative memory, spreading outward from the medial temporal lobe.
+  topics: [memory]

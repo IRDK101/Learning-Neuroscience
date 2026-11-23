@@ -1,0 +1,121 @@
+- id: q-struct-dorsal-spinal
+  kind: mcq
+  stem: In a standing human's spinal cord, which direction is dorsal?
+  answer: Toward the back
+  distractors:
+    - { text: "Toward the top of the head", why: "That's dorsal in the brain. The axis bends 90° at the brainstem." }
+    - { text: "Toward the belly", why: "That's ventral." }
+    - { text: "Toward the midline", why: "That's medial." }
+  refs: [dorsal, neuraxis]
+
+- id: q-struct-coronal
+  kind: mcq
+  stem: A slice parallel to your face that separates the front of the brain from the back is a…
+  answer: Coronal section
+  distractors:
+    - { text: "Sagittal section", why: "Sagittal slices separate left from right." }
+    - { text: "Horizontal section", why: "Horizontal slices separate top from bottom." }
+    - { text: "Lateral section", why: "Lateral is a direction, not a plane." }
+  refs: [coronal-plane]
+  tags: { difficulty: 1 }
+
+- id: q-struct-cns
+  kind: mcq
+  stem: Which of these is part of the central nervous system?
+  answer: The spinal cord
+  distractors:
+    - { text: "The nerves in your arm", why: "Those are peripheral." }
+    - { text: "The sympathetic chain controlling your heart", why: "The autonomic system is part of the PNS." }
+    - { text: "The touch receptors in your skin", why: "Those are peripheral." }
+  refs: [central-nervous-system, peripheral-nervous-system]
+  tags: { difficulty: 1 }
+
+- id: q-struct-sympathetic
+  kind: mcq
+  stem: You're startled by a loud noise; your heart races and your pupils dilate. Which division is driving this?
+  answer: The sympathetic branch of the autonomic nervous system
+  distractors:
+    - { text: "The parasympathetic branch", why: "Parasympathetic is rest-and-digest; it slows the heart." }
+    - { text: "The somatic nervous system", why: "Somatic controls voluntary muscles and conscious senses, not the heart." }
+    - { text: "The cranial nerves only", why: "This is an autonomic, whole-body fight-or-flight response." }
+  refs: [sympathetic-nervous-system]
+  source: corrected
+  corrections: [C-006]
+
+- id: q-struct-meninges
+  kind: mcq
+  stem: Going from the skull inward, what is the order of the meninges?
+  answer: Dura mater, arachnoid, subarachnoid space, pia mater
+  distractors:
+    - { text: "Pia mater, arachnoid, dura mater", why: "That's inside-out: the pia hugs the brain." }
+    - { text: "Arachnoid, dura mater, pia mater", why: "The dura is the outermost layer." }
+    - { text: "Dura mater, pia mater, subarachnoid space, arachnoid", why: "The CSF-filled space lies under the arachnoid, above the pia." }
+  refs: [meninges, dura-mater, pia-mater]
+
+- id: q-struct-mca
+  kind: case
+  stem: A stroke blocks the artery that feeds most of the side of the left hemisphere, and the patient develops an aphasia. Which artery?
+  answer: middle-cerebral-artery
+  distractors: [anterior-cerebral-artery, posterior-cerebral-artery, internal-carotid-artery]
+  explain: The middle cerebral artery supplies most of the lateral cortex, including the language areas.
+  refs: [middle-cerebral-artery]
+
+- id: q-struct-grey
+  kind: mcq
+  stem: What is grey matter mostly made of?
+  answer: Neuron cell bodies, dendrites and synapses
+  distractors:
+    - { text: "Myelinated axons", why: "That's white matter." }
+    - { text: "Cerebrospinal fluid", why: "CSF fills the ventricles and subarachnoid space." }
+    - { text: "Glial scar tissue", why: "Grey matter is healthy neural tissue." }
+  refs: [grey-matter, white-matter]
+  source: corrected
+  corrections: [C-010]
+
+- id: q-struct-central-sulcus
+  kind: mcq
+  stem: What lies directly in front of the central sulcus?
+  answer: The primary motor cortex (frontal lobe)
+  distractors:
+    - { text: "The primary somatosensory cortex", why: "S1 lies just behind the central sulcus, in the parietal lobe." }
+    - { text: "The primary visual cortex", why: "V1 is at the back of the occipital lobe." }
+    - { text: "The primary auditory cortex", why: "A1 is in the temporal lobe, below the lateral fissure." }
+  refs: [central-sulcus, primary-motor-cortex]
+
+- id: q-struct-insula
+  kind: case
+  stem: Which lobe is hidden inside the lateral fissure and handles primary taste, emotion and pain?
+  answer: insula
+  distractors: [temporal-lobe, parietal-lobe, occipital-lobe]
+  explain: The insula is folded deep inside the lateral fissure, covered by the other lobes.
+  refs: [insula]
+
+- id: q-struct-thalamus
+  kind: mcq
+  stem: Which sense reaches the cortex without passing through the thalamus first?
+  answer: Smell
+  distractors:
+    - { text: "Vision", why: "Vision relays through the thalamus (the LGN)." }
+    - { text: "Hearing", why: "Hearing relays through the thalamus (the MGN)." }
+    - { text: "Touch", why: "Touch relays through the thalamus." }
+  refs: [thalamus]
+
+- id: q-struct-cerebellum
+  kind: case
+  stem: Which structure, tucked behind the brainstem, holds about 70–80% of the brain's neurons?
+  answer: cerebellum
+  distractors: [pons, occipital-lobe, thalamus]
+  refs: [cerebellum]
+  tags: { difficulty: 1 }
+
+- id: q-struct-colliculi
+  kind: mcq
+  stem: Where are the superior and inferior colliculi?
+  answer: On the roof (dorsal surface) of the midbrain
+  distractors:
+    - { text: "Inside the cerebellum", why: "They're part of the brainstem, in front of the cerebellum." }
+    - { text: "In the medial temporal lobe", why: "That's where the hippocampus and amygdala are." }
+    - { text: "Floating behind the brainstem, separate from it", why: "They're part of the midbrain itself." }
+  refs: [superior-colliculus, inferior-colliculus]
+  source: corrected
+  corrections: [C-011]

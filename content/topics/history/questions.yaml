@@ -1,0 +1,60 @@
+- id: q-hist-greeks
+  kind: mcq
+  stem: Which ancient thinker put the mind in the heart and thought the brain's job was to cool the blood?
+  answer: Aristotle
+  distractors:
+    - { text: "Hippocrates", why: "Hippocrates correctly placed intelligence and sensation in the brain." }
+    - { text: "Plato", why: "Plato put intelligence in the brain, because the head is closest to the heavens." }
+    - { text: "Galen", why: "Galen linked head injuries to changes in behavior, so he looked to the brain." }
+  refs: [aristotle, hippocrates]
+  tags: { difficulty: 1 }
+
+- id: q-hist-galen
+  kind: mcq
+  stem: What did Galen notice while treating gladiators?
+  answer: Men with head injuries behaved differently, linking the brain to behavior and memory
+  distractors:
+    - { text: "Nerves carry electricity, because frog legs twitched", why: "That was Galvani, many centuries later." }
+    - { text: "Damage to the left frontal lobe destroys fluent speech", why: "That was Broca's discovery in the 1800s." }
+    - { text: "The brain is made of separate cells", why: "That's Cajal's neuron doctrine." }
+  refs: [galen]
+  source: corrected
+  corrections: [C-002]
+
+- id: q-hist-broca
+  kind: case
+  stem: After a stroke, a patient understands speech well but can only produce slow, broken phrases. Where is the damage most likely?
+  answer: brocas-area
+  distractors: [wernickes-area, primary-visual-cortex, cerebellum]
+  explain: This is Broca's aphasia. Damage to Broca's area in the left frontal lobe disrupts turning thoughts into fluent speech, while comprehension is largely spared.
+  refs: [brocas-aphasia, paul-broca]
+
+- id: q-hist-cajal
+  kind: mcq
+  stem: Cajal used Golgi's own stain to disprove Golgi's idea. What did Cajal show?
+  answer: The brain is made of many separate neurons forming circuits (the neuron doctrine)
+  distractors:
+    - { text: "The brain is one continuous net of fused cells", why: "That was Golgi's reticular theory, which Cajal disproved." }
+    - { text: "Skull bumps reveal personality", why: "That's phrenology, Gall's discredited idea." }
+    - { text: "The cortex has 52 distinct areas", why: "That's Brodmann's map." }
+  refs: [santiago-ramon-y-cajal, neuron-doctrine, golgi-stain]
+
+- id: q-hist-gage
+  kind: case
+  stem: A mild-mannered worker becomes rude, impulsive and aggressive after an iron rod passes through the front of his head. Which region was damaged?
+  answer: prefrontal-cortex
+  distractors: [cerebellum, occipital-lobe, hippocampus]
+  explain: Phineas Gage's frontal-lobe injury linked that region to emotion, decision-making and personality.
+  refs: [phineas-gage]
+
+- id: q-hist-golgi-vs-nissl
+  kind: mcq
+  stem: What made the Golgi stain so useful?
+  answer: It colors a few random neurons completely, so single cells and their branches can be seen
+  distractors:
+    - { text: "It colors every cell body in a slice", why: "That's the Nissl stain." }
+    - { text: "It colors only glial cells", why: "It reveals neurons." }
+    - { text: "It shows electrical activity", why: "Stains show structure, not activity." }
+  refs: [golgi-stain, nissl-stain]
+  source: corrected
+  corrections: [C-005]

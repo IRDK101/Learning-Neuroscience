@@ -3,12 +3,14 @@ import { Link, useSearchParams } from 'react-router';
 import { content, diagram as getDiagram, entity } from '../../content';
 import type { Question } from '../../content/types';
 import { sample, shuffle } from '../../lib/random';
+import { the } from '../../lib/text';
 import { recordGame } from '../../progress/store';
 import { CopyLinkButton } from '../../ui/bits';
 import { Diagram } from '../../ui/Diagram';
 import { QuestionView } from '../../ui/QuestionView';
 
 const ROUND = 10;
+const capitalize = (t: string) => t.charAt(0).toUpperCase() + t.slice(1);
 const SECONDS = 60;
 
 function maskName(text: string, id: string) {
@@ -105,7 +107,7 @@ export function FindGame() {
       kind: 'mcq',
       stem: 'What does the highlighted structure do?',
       options: [{ text: maskName(e.short, target), correct: true, ref: target }, ...others],
-      explain: `That's the ${e.name}.`,
+      explain: `That's ${the(e.name)}.`,
       refs: [target],
       topic: d.topics[0],
       unit: 'exam1',
@@ -188,9 +190,9 @@ export function FindGame() {
           <p className={`prompt${feedback ? (feedback.ok ? ' ok' : ' bad') : ''}`} aria-live="assertive">
             {feedback
               ? feedback.ok
-                ? `Yes, that's the ${name}.`
-                : `That's the ${entity(feedback.wrong)?.name}. The ${name} is outlined.`
-              : `Find the ${name}.`}
+                ? `Yes, that's ${the(name ?? '')}.`
+                : `That's ${the(entity(feedback.wrong)?.name ?? '')}. ${capitalize(the(name ?? ''))} is outlined.`
+              : `Find ${the(name ?? '')}.`}
           </p>
           <Diagram
             id={d.id}

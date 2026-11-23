@@ -1,0 +1,61 @@
+- id: resting-membrane-potential
+  type: concept
+  name: Resting membrane potential
+  aliases: [resting potential]
+  short: "The steady voltage of a neuron at rest, about –65 mV: the inside is negative relative to the outside."
+  source: corrected
+  corrections: [C-014]
+  points:
+    - Comes mainly from K⁺ leaking out through always-open channels; the Na⁺/K⁺ pump maintains the gradients that make this possible.
+  related: [potassium-leak-channel, sodium-potassium-pump]
+
+- id: concentration-gradient
+  type: concept
+  name: Concentration gradient
+  aliases: [diffusion gradient, chemical gradient]
+  short: A difference in how concentrated something is across a membrane; ions drift from high to low concentration if they can cross.
+  related: [electrical-gradient, electrochemical-gradient]
+
+- id: electrical-gradient
+  type: concept
+  name: Electrical gradient
+  short: A voltage difference across a membrane, which pulls positive ions toward the negative side and vice versa.
+  related: [concentration-gradient, electrochemical-gradient]
+
+- id: electrochemical-gradient
+  type: concept
+  name: Electrochemical gradient
+  short: The combined push of the concentration gradient and the electrical gradient on an ion.
+  points:
+    - When the two push in opposite directions, net movement is greatly reduced (K⁺ at rest).
+    - When both push the same way, the ion rushes in fast if a channel opens (Na⁺, Ca²⁺).
+  related: [concentration-gradient, electrical-gradient]
+
+- id: ion-channel
+  type: concept
+  name: Ion channel
+  aliases: [ion channels, channels, gated channels]
+  short: A protein pore that lets particular ions cross the membrane, either always open (leak) or gated by voltage, a ligand or force.
+  points:
+    - Open channels need no energy; ions flow down their gradients.
+    - "Gated types: ligand-gated, voltage-gated, mechanically-gated."
+  related: [potassium-leak-channel, voltage-gated-sodium-channel, ionotropic-receptor, mechanically-gated-channel]
+
+- id: ion-pump
+  type: concept
+  name: Ion pump
+  aliases: [pumps, pump]
+  short: A membrane protein that uses energy (ATP) to move ions against their gradients.
+  related: [sodium-potassium-pump, calcium-pump]
+
+- id: protein-structure-steps
+  type: pathway
+  kind: sequence
+  name: How a membrane protein is built
+  short: Amino acids chain together, coil into helices, fold into subunits, and subunits join into a protein complex.
+  steps:
+    - { label: Amino acids strung into a chain }
+    - { label: Chain coils into an alpha helix }
+    - { label: Helices fold into a subunit }
+    - { label: Subunits join into a protein complex in the membrane }
+

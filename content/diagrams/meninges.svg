@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" role="img" aria-label="Cross-section of the layers between the skull and the brain">
+  <!-- Original drawing for NeuroMap. Stylized cross-section, not to scale (the real layers are far thinner). -->
+  <g class="base">
+    <path data-ref="skull" d="M 20 30 L 520 30 L 520 92 L 20 92 Z"/>
+    <path class="deco sulcus" d="M 40 50 h 30 M 110 70 h 40 M 200 52 h 25 M 290 74 h 35 M 380 55 h 30 M 460 72 h 30"/>
+    <path data-ref="dura-mater" d="M 20 92 L 520 92 L 520 122 L 20 122 Z"/>
+    <path data-ref="arachnoid-membrane" d="M 20 122 L 520 122 L 520 136 L 20 136 Z"/>
+    <path data-ref="subarachnoid-space" d="M 20 136 L 520 136 L 520 214 C 470 214 450 190 420 190 C 380 190 370 250 330 250 C 290 250 280 190 240 190 C 200 190 190 250 150 250 C 110 250 100 190 60 190 C 40 190 30 200 20 205 Z"/>
+    <path class="deco trabeculae" d="M 70 136 L 60 188 M 130 136 L 140 232 M 210 136 L 225 192 M 300 136 L 312 240 M 390 136 L 402 196 M 470 136 L 466 210"/>
+    <circle class="deco vessel" cx="240" cy="166" r="11"/>
+    <path data-ref="cerebral-cortex" d="M 20 210 C 30 200 40 194 60 194 C 100 194 110 254 150 254 C 190 254 200 194 240 194 C 280 194 290 254 330 254 C 370 254 380 194 420 194 C 450 194 470 218 520 218 L 520 400 L 20 400 Z"/>
+    <path data-ref="white-matter" data-fill="var(--sys-white-matter)" d="M 20 300 C 60 290 100 330 150 330 C 200 330 200 300 240 300 C 290 300 290 330 330 330 C 380 330 380 300 420 300 C 460 300 480 320 520 320 L 520 400 L 20 400 Z"/>
+    <path data-ref="pia-mater" class="line-hotspot" d="M 20 207 C 30 198 40 192 60 192 C 100 192 110 252 150 252 C 190 252 200 192 240 192 C 280 192 290 252 330 252 C 370 252 380 192 420 192 C 450 192 470 216 520 216"/>
+    <g class="labels lbl-base">
+      <text data-label-for="skull" x="545" y="66">Skull</text>
+      <text data-label-for="dura-mater" x="545" y="112">Dura mater</text>
+      <text data-label-for="arachnoid-membrane" x="545" y="138">Arachnoid membrane</text>
+      <text data-label-for="subarachnoid-space" x="545" y="176">Subarachnoid space (CSF)</text>
+      <text data-label-for="pia-mater" x="545" y="222">Pia mater</text>
+      <line data-label-for="pia-mater" class="leader" x1="543" y1="218" x2="522" y2="216"/>
+      <text data-label-for="cerebral-cortex" x="545" y="270">Cortex (grey matter)</text>
+      <text data-label-for="white-matter" x="545" y="362">White matter</text>
+    </g>
+  </g>
+</svg>

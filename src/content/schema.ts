@@ -19,7 +19,7 @@ export const Unit = z.enum(UNITS);
 export const SYSTEMS = [
   'cortex', 'frontal', 'parietal', 'temporal', 'occipital', 'insula', 'limbic', 'basal-ganglia',
   'diencephalon', 'brainstem', 'cerebellum', 'white-matter', 'ventricles', 'spinal-cord',
-  'cellular', 'body', 'eye', 'ear',
+  'cellular', 'body', 'eye', 'ear', 'vascular', 'meninges', 'bone', 'nerve',
 ] as const;
 export const System = z.enum(SYSTEMS);
 
@@ -60,7 +60,7 @@ export const Connection = z.object({
 export const Region = z.object({
   ...base,
   type: z.literal('region'),
-  kind: z.enum(['area', 'nucleus', 'tract', 'ventricle', 'cellular', 'body', 'division']).default('area'),
+  kind: z.enum(['area', 'nucleus', 'tract', 'ventricle', 'cellular', 'body', 'division', 'landmark', 'vessel', 'layer']).default('area'),
   parent: Id.optional(),
   system: System,
   location: z.string().optional(),

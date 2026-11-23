@@ -1,0 +1,10 @@
+- id: c-syn-four-steps
+  kind: basic
+  front: What are the four steps of chemical synaptic transmission?
+  back: 1) Synthesis and storage in vesicles, 2) release (AP → Ca²⁺ in → SNAREs fuse vesicles), 3) receptor activation, 4) deactivation (reuptake, enzymes, glia, diffusion).
+  refs: [chemical-transmission-steps]
+- id: c-syn-nt-classes
+  kind: basic
+  front: The four classes of neurotransmitter?
+  back: Amino acids (glutamate, GABA, glycine), amines (dopamine, serotonin…), peptides (large, slow, in secretory granules), gasotransmitters (e.g., nitric oxide).
+  refs: [amino-acid-transmitters, amine-transmitters, peptide-transmitters, gasotransmitters]

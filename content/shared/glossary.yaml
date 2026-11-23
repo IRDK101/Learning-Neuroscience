@@ -7,12 +7,6 @@
   short: A nerve cell, which receives signals on its dendrites and sends them down its axon to other cells.
   topics: [neurons-and-glia]
   source: added
-- id: axon
-  type: term
-  name: Axon
-  aliases: [axons]
-  short: The long output cable of a neuron that carries action potentials to its terminals.
-  topics: [neurons-and-glia]
 - id: synapse
   type: term
   name: Synapse

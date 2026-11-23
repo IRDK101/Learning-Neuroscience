@@ -26,3 +26,59 @@
   svg: synapse.svg
   description: A chemical synapse, with the parts that synthesis, release, receptors, reuptake and drugs act on.
   topics: [synaptic-transmission, nt-systems]
+
+- id: orientation
+  title: Directions and planes
+  svg: orientation.svg
+  description: Anatomical directions on a four-legged animal and on a standing human, where the nervous system bends 90°, plus the three section planes. Tap any arrow or plane.
+  topics: [nervous-system-structure]
+  quiz: false
+
+- id: brain-lateral
+  title: Brain, side view
+  svg: brain-lateral.svg
+  description: The left side of the brain, front of the head on the left. The lobes, the central sulcus and lateral fissure, and the main primary and language areas.
+  topics: [nervous-system-structure, history]
+  layers:
+    - { id: arteries, name: Blood supply }
+
+- id: brain-arteries
+  title: Blood supply of the cortex
+  svg: brain-lateral.svg
+  description: Which artery feeds which part of the cortex, seen from the side. The middle cerebral artery covers most of the lateral surface.
+  topics: [nervous-system-structure]
+  overlay: true
+  layers:
+    - { id: arteries, name: Blood supply }
+  defaultLayers: [arteries]
+
+- id: brain-coronal
+  title: Brain, coronal slice
+  svg: brain-coronal.svg
+  description: A front-to-back slice through the thalamus, seen from the front. The basal ganglia, ventricles, thalamus and medial temporal structures.
+  topics: [nervous-system-structure]
+
+- id: meninges
+  title: Meninges
+  svg: meninges.svg
+  description: The layers between the skull and the brain, in cross-section (much thicker than real life).
+  topics: [nervous-system-structure]
+
+- id: neuron
+  title: Neuron and glia
+  svg: neuron.svg
+  description: A typical multipolar neuron, from its dendrites to its axon terminals, with three kinds of glia.
+  topics: [neurons-and-glia]
+
+- id: membrane
+  title: Membrane at rest
+  svg: membrane.svg
+  description: A patch of neuron membrane. Na⁺, Cl⁻ and Ca²⁺ are concentrated outside, K⁺ inside; leak channels, pumps and gated channels sit in the bilayer.
+  topics: [membrane-at-rest, action-potential]
+
+- id: action-potential-trace
+  title: The action potential
+  svg: action-potential.svg
+  description: Voltage inside a neuron during one action potential, which lasts about 1–2 ms. Tap a phase to see what the channels are doing.
+  topics: [action-potential]
+  quiz: false
