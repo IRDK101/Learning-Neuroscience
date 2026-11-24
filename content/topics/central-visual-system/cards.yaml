@@ -1,0 +1,20 @@
+# Hand-written flashcards. Many more are generated from entities.
+
+- id: c-vis-lesions
+  kind: basic
+  front: What is lost after damage to (1) one optic nerve, (2) the chiasm, (3) the right optic tract?
+  back: (1) That eye's vision. (2) Both outer (temporal) halves of the field — bitemporal hemianopia. (3) The left hemifield in both eyes — homonymous hemianopia.
+  refs: [monocular-blindness, bitemporal-hemianopia, homonymous-hemianopia]
+  tags: { difficulty: 3 }
+
+- id: c-vis-two-routes
+  kind: basic
+  front: The two main routes out of the retina?
+  back: Retina → LGN → V1 (conscious seeing; ~90%). Retina → superior colliculus → pulvinar → visual cortex (orienting eyes and head; ~10%).
+  refs: [retinofugal-projection, retinotectal-projection]
+
+- id: c-vis-agnosias
+  kind: basic
+  front: Simultagnosia vs associative vs apperceptive agnosia?
+  back: Simultagnosia — one object at a time (posterior parietal). Associative — sees and copies but can't name (temporal). Apperceptive — can't perceive form, can't copy (V1/V2).
+  refs: [simultagnosia, associative-agnosia, apperceptive-agnosia]

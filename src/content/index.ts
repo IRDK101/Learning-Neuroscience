@@ -23,7 +23,7 @@ export const unit = (id: UnitId): Unit | undefined => bundle.units.find((u) => u
 export const readyTopics = bundle.topics.filter((t) => t.status === 'ready');
 
 export const ENTITY_TYPE_LABEL: Record<Entity['type'], string> = {
-  region: 'Brain structure',
+  region: 'Structure',
   molecule: 'Molecule',
   neurotransmitter: 'Neurotransmitter',
   drug: 'Drug',

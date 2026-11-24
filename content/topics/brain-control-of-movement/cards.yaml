@@ -1,0 +1,20 @@
+# Hand-written flashcards. Many more are generated from entities.
+
+- id: c-move-direct-indirect
+  kind: basic
+  front: Direct vs indirect pathway of the basal ganglia?
+  back: Direct helps start wanted movements ("go"); indirect suppresses unwanted ones ("stop"). Dopamine from the substantia nigra tunes both.
+  refs: [direct-indirect-pathways]
+
+- id: c-move-tremors
+  kind: basic
+  front: Resting tremor vs tremor during movement?
+  back: A resting tremor that lessens with movement suggests Parkinson's (basal ganglia). A tremor during movement, with overshooting, suggests cerebellar damage.
+  refs: [parkinsons-disease, cerebellar-ataxia]
+
+- id: c-move-crossings
+  kind: basic
+  front: Where do touch, pain and the corticospinal tract each cross?
+  back: Touch — medulla (dorsal column nuclei). Pain/temperature — spinal cord. Corticospinal — bottom of the medulla (pyramidal decussation).
+  refs: [dorsal-column-pathway, spinothalamic-pathway, corticospinal-tract]
+  tags: { difficulty: 3 }

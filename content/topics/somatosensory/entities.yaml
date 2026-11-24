@@ -1,0 +1,296 @@
+# Touch, proprioception, pain and temperature.
+
+- id: somatosensation
+  type: concept
+  name: Somatosensation
+  aliases: [somatosensory system, body senses]
+  short: The body senses, touch, proprioception, pain and temperature; the only senses spread across the whole body.
+  related: [proprioception, nociception]
+
+- id: proprioception
+  type: term
+  name: Proprioception
+  aliases: [proprioceptive]
+  short: The sense of where your body parts are and how they're moving.
+
+- id: skin
+  type: region
+  name: Skin
+  kind: body
+  system: body
+  short: The body's largest sense organ, made of epidermis, dermis and subcutaneous layers.
+  functions:
+    - Hairy skin covers most of the body; glabrous (hairless) skin covers the palms and soles.
+
+- id: glabrous-skin
+  type: term
+  name: Glabrous skin
+  aliases: [hairless skin]
+  short: Hairless skin, as on the palms and soles; the only skin with Meissner corpuscles.
+
+- id: epidermis
+  type: region
+  name: Epidermis
+  parent: skin
+  kind: layer
+  system: body
+  short: The thin outer layer of skin; it holds Merkel cells and the tips of free nerve endings.
+
+- id: dermis
+  type: region
+  name: Dermis
+  parent: skin
+  kind: layer
+  system: body
+  short: The thick middle layer of skin, holding Meissner corpuscles (in its ridges) and Ruffini endings.
+
+- id: subcutaneous-layer
+  type: region
+  name: Subcutaneous layer
+  aliases: [hypodermis, subcutaneous tissue]
+  parent: skin
+  kind: layer
+  system: body
+  short: The deepest, fatty layer under the dermis; Pacinian corpuscles sit at its border with the dermis.
+
+- id: mechanoreceptor
+  type: concept
+  name: Mechanoreceptor
+  aliases: [mechanoreceptors]
+  short: A sensory ending that responds to physical force (touch, pressure, stretch, vibration).
+  points:
+    - Touch opens mechanically gated channels in the ending, letting in Na⁺ and Ca²⁺.
+    - Skin mechanoreceptors are pseudounipolar neurons; the signal passes by the soma in the dorsal root ganglion.
+  related: [mechanically-gated-channel, pseudounipolar-neuron, dorsal-root-ganglion]
+
+- id: meissner-corpuscle
+  type: region
+  name: Meissner corpuscle
+  aliases: [Meissner corpuscles, Meissner's corpuscle]
+  parent: dermis
+  kind: cellular
+  system: nerve
+  short: A touch receptor in the dermal ridges of hairless skin; tiny receptive field, rapidly adapting, senses fine touch and low-frequency vibration.
+  functions:
+    - Only in glabrous skin, close to the surface.
+    - Small receptive field and rapidly adapting.
+
+- id: merkel-cell
+  type: region
+  name: Merkel cell-neurite complex
+  aliases: [Merkel cell, Merkel disk, Merkel cells]
+  parent: epidermis
+  kind: cellular
+  system: nerve
+  short: The most sensitive touch receptor, at the base of the epidermis; tiny receptive field, slowly adapting, best for shape and texture.
+  functions:
+    - Highest spatial resolution of the skin receptors; poor at vibration.
+    - Slowly adapting, so it keeps firing as long as something presses.
+
+- id: ruffini-ending
+  type: region
+  name: Ruffini ending
+  aliases: [Ruffini endings]
+  parent: dermis
+  kind: cellular
+  system: nerve
+  short: A deep dermal receptor that senses skin stretch; large receptive field, slowly adapting, helps with finger position.
+
+- id: pacinian-corpuscle
+  type: region
+  name: Pacinian corpuscle
+  aliases: [Pacinian corpuscles]
+  parent: subcutaneous-layer
+  kind: cellular
+  system: nerve
+  short: The deepest touch receptor, an onion-like capsule; largest receptive field, rapidly adapting, senses deep pressure and high-frequency vibration.
+  functions:
+    - Detects slip when you grip something.
+    - Its fluid-filled layers let the ending respond to change only.
+
+- id: free-nerve-ending
+  type: region
+  name: Free nerve ending
+  aliases: [free nerve endings]
+  parent: skin
+  kind: cellular
+  system: nerve
+  short: A bare nerve ending near the skin surface that signals pain or temperature.
+
+- id: receptive-field
+  type: concept
+  name: Receptive field
+  aliases: [receptive fields]
+  short: The area (of skin, retina, and so on) where a stimulus changes a sensory neuron's firing.
+  points:
+    - Meissner and Merkel have very small fields (precise); Pacinian and Ruffini have large ones (a whole finger or more).
+
+- id: slowly-adapting
+  type: concept
+  name: Slowly adapting receptor
+  aliases: [slowly adapting]
+  short: A receptor that keeps firing for as long as the stimulus lasts (Merkel, Ruffini).
+  related: [rapidly-adapting]
+
+- id: rapidly-adapting
+  type: concept
+  name: Rapidly adapting receptor
+  aliases: [rapidly adapting]
+  short: A receptor that fires when a stimulus starts and when it stops, but not in between (Meissner, Pacinian).
+  points:
+    - It cares about change. In a Pacinian corpuscle, the capsule's fluid layers shift and then settle, so firing stops while pressure stays the same.
+  related: [slowly-adapting]
+
+- id: dorsal-root-ganglion
+  type: region
+  name: Dorsal root ganglion
+  aliases: [dorsal root ganglia, DRG, dorsal root ganglion cells]
+  kind: nucleus
+  system: nerve
+  short: A cluster of sensory cell bodies just outside the spinal cord, on the dorsal root.
+  functions:
+    - Holds the somas of the skin and muscle sensory neurons.
+
+- id: dorsal-root
+  type: region
+  name: Dorsal root
+  kind: tract
+  system: nerve
+  short: The back (dorsal) branch of a spinal nerve; sensory axons enter the cord through it.
+
+- id: dermatome
+  type: concept
+  name: Dermatome
+  aliases: [dermatomes]
+  short: The strip of skin served by one spinal segment's nerve.
+  source: corrected
+  corrections: [C-034]
+  points:
+    - Segments run cervical → thoracic → lumbar → sacral, top to bottom.
+    - The map is clearest on someone bent over on all fours.
+    - Damage higher in the spinal cord is worse, because signals from everything below must travel up past it.
+
+- id: dorsal-column-nuclei
+  type: region
+  name: Dorsal column nuclei
+  kind: nucleus
+  system: brainstem
+  parent: medulla
+  short: Nuclei in the medulla where touch axons from the dorsal columns make their first synapse; the next axon crosses over.
+
+- id: vpl-nucleus
+  type: region
+  name: Ventral posterior lateral nucleus
+  aliases: [VPL]
+  kind: nucleus
+  system: diencephalon
+  parent: thalamus
+  short: The part of the thalamus that relays touch, pain and temperature from the body to S1.
+  source: added
+
+- id: dorsal-column-pathway
+  type: pathway
+  kind: anatomical
+  name: Dorsal column–medial lemniscal pathway
+  aliases: [DCML, dorsal column pathway]
+  short: Touch and proprioception travel up the same side of the cord, cross in the medulla, and reach S1 through the thalamus.
+  steps:
+    - { label: Skin receptor → dorsal root ganglion cell, ref: dorsal-root-ganglion }
+    - { label: Up the dorsal column on the same side, ref: spinal-cord }
+    - { label: Dorsal column nuclei (medulla), ref: dorsal-column-nuclei, note: "First synapse; the second axon crosses the midline here." }
+    - { label: Thalamus (VPL), ref: vpl-nucleus }
+    - { label: Primary somatosensory cortex (S1), ref: primary-somatosensory-cortex }
+  diagrams: [long-tracts]
+
+- id: spinothalamic-pathway
+  type: pathway
+  kind: anatomical
+  name: Spinothalamic pathway
+  aliases: [spinothalamic tract, anterolateral pathway]
+  short: Pain and temperature synapse in the dorsal horn, cross right away in the spinal cord, then travel up to the thalamus and S1.
+  steps:
+    - { label: Free nerve ending → dorsal root ganglion cell, ref: free-nerve-ending }
+    - { label: Synapse in the dorsal horn, ref: dorsal-horn }
+    - { label: Crosses the midline in the spinal cord, note: "Much earlier than the touch pathway." }
+    - { label: Up the opposite side to the thalamus, ref: vpl-nucleus }
+    - { label: Primary somatosensory cortex (S1), ref: primary-somatosensory-cortex }
+  diagrams: [long-tracts]
+
+- id: trigeminal-pathway
+  type: pathway
+  kind: anatomical
+  name: Trigeminal pathway
+  short: Touch from the face enters through a cranial nerve, crosses in the brainstem, and goes to the thalamus and cortex, with no spinal cord involved.
+  steps:
+    - { label: Face receptors (trigeminal nerve), ref: cranial-nerves }
+    - { label: Brainstem; crosses the midline, ref: brainstem }
+    - { label: Thalamus (VPM), ref: vpm-nucleus }
+    - { label: S1, ref: primary-somatosensory-cortex }
+
+- id: brown-sequard-syndrome
+  type: case
+  kind: syndrome
+  name: Brown-Séquard syndrome
+  aliases: [Brown-Sequard syndrome, spinal hemisection]
+  short: Damage to one side of the spinal cord removes touch on the same side and pain/temperature on the opposite side, below the injury.
+  damage:
+    regions: [spinal-cord]
+    cause: Injury to one half (one side) of the spinal cord.
+  deficits:
+    - Loss of fine touch and proprioception on the same side as the damage (dorsal columns haven't crossed yet).
+    - Loss of pain and temperature on the opposite side (spinothalamic axons crossed below the injury).
+    - { text: "Weakness on the same side (the corticospinal tract already crossed in the medulla).", source: added }
+  teaches: The two body-sense pathways cross at different levels, so the pattern of loss shows where the cord is damaged.
+
+- id: somatotopy
+  type: concept
+  name: Somatotopy
+  aliases: [somatotopic map]
+  short: Body parts next to each other are represented next to each other in S1 (and M1).
+  points:
+    - The map's proportions follow receptor density, not body size; lips and fingertips get the most cortex.
+    - The map can change; skilled musicians show expanded finger areas (plasticity).
+  related: [homunculus, primary-somatosensory-cortex]
+
+- id: homunculus
+  type: concept
+  name: Homunculus
+  aliases: [sensory homunculus, motor homunculus]
+  short: A distorted body figure drawn to show how much cortex each body part gets.
+  related: [somatotopy]
+
+- id: s1-areas
+  type: concept
+  name: Areas of S1
+  aliases: [area 3b, area 3a, area 1, area 2]
+  short: S1 is divided into areas 3a and 3b (which receive the input), area 1 (texture) and area 2 (size and shape).
+  regions: [primary-somatosensory-cortex]
+
+- id: fiber-types
+  type: concept
+  name: Sensory fiber types
+  aliases: [A-alpha, A-beta, A-delta, C fibers, C fiber, A delta]
+  short: Wider, more myelinated axons conduct faster; from fastest to slowest are Aα (proprioception), Aβ (touch), Aδ (sharp pain, cold) and C (dull pain, heat).
+  points:
+    - Pain and temperature fibers are thin and lightly or not myelinated.
+  related: [conduction-velocity]
+
+- id: nociception
+  type: concept
+  name: Nociception
+  aliases: [nociceptor, nociceptors, pain]
+  short: The detection of harmful stimuli by free nerve endings; the signal the brain may experience as pain.
+  points:
+    - { text: "Many nociceptors are polymodal, responding to strong force, extreme temperatures, and chemicals released by damaged cells.", source: corrected, corrections: [C-035] }
+    - Aδ fibers carry fast, sharp pain; C fibers carry slow, dull, throbbing pain.
+  related: [free-nerve-ending, fiber-types]
+
+- id: thermoreceptor
+  type: concept
+  name: Thermoreceptor
+  aliases: [thermoreceptors, temperature receptors]
+  short: A free nerve ending tuned to a temperature range; the brain combines several types to judge temperature.
+  points:
+    - { text: "There are several types (counts differ between sources) tuned to different ranges.", flags: [F-12] }
+    - Heat-sensing thermoreceptors max out a little below about 45 °C. Above that, nociceptors take over, so it keeps hurting more without feeling hotter.
+  related: [nociception]

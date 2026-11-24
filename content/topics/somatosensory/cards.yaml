@@ -1,0 +1,20 @@
+# Hand-written flashcards. Many more are generated from entities.
+
+- id: c-soma-four-receptors
+  kind: basic
+  front: The four skin mechanoreceptors, with field size and adaptation?
+  back: Meissner (small field, rapid; hairless skin only); Merkel (small, slow); Ruffini (large, slow; stretch); Pacinian (large, rapid; deep pressure and vibration).
+  refs: [meissner-corpuscle, merkel-cell, ruffini-ending, pacinian-corpuscle]
+  tags: { difficulty: 3 }
+
+- id: c-soma-two-pathways
+  kind: basic
+  front: Where do the touch and pain pathways cross?
+  back: Touch (dorsal column–medial lemniscus) crosses in the medulla. Pain and temperature (spinothalamic) cross in the spinal cord, right after entering.
+  refs: [dorsal-column-pathway, spinothalamic-pathway]
+
+- id: c-soma-brown-sequard
+  kind: basic
+  front: Brown-Séquard syndrome (one side of the cord cut)?
+  back: Below the injury, fine touch and proprioception are lost on the same side; pain and temperature on the opposite side.
+  refs: [brown-sequard-syndrome]

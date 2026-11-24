@@ -1,0 +1,350 @@
+# The eye and retina.
+
+- id: visible-light
+  type: concept
+  name: Visible light
+  aliases: [light, photons]
+  short: The narrow band of electromagnetic waves, about 400–700 nm, that our eyes can detect.
+  points:
+    - Violet has the shortest visible wavelength and red the longest.
+    - Light that hits an object is reflected, refracted (bent) or absorbed. Refraction happens when light changes medium, as it does at the cornea and lens.
+
+- id: eye-globe
+  type: region
+  name: Eye
+  aliases: [eyeball, eyes]
+  kind: body
+  system: eye
+  short: The organ that focuses light onto the retina, where it is turned into neural signals.
+
+- id: cornea
+  type: region
+  name: Cornea
+  parent: eye-globe
+  kind: body
+  system: eye
+  short: The clear front window of the eye; it does most of the focusing as light passes from air into the eye.
+
+- id: conjunctiva
+  type: region
+  name: Conjunctiva
+  parent: eye-globe
+  kind: layer
+  system: eye
+  short: A thin membrane lining the inside of the eyelids and folding back over the white of the eye.
+  source: corrected
+  corrections: [C-036]
+
+- id: sclera
+  type: region
+  name: Sclera
+  parent: eye-globe
+  kind: layer
+  system: eye
+  short: The tough white outer wall of the eyeball, continuous with the cornea at the front.
+  source: corrected
+  corrections: [C-037]
+  functions:
+    - Gives the eye its shape; the extraocular muscles attach to it.
+
+- id: extraocular-muscles
+  type: region
+  name: Extraocular muscles
+  parent: eye-globe
+  kind: body
+  system: body
+  short: "Six muscles on the outside of the eyeball that move it: four rectus muscles and two obliques."
+  source: corrected
+  corrections: [C-038]
+
+- id: iris
+  type: region
+  name: Iris
+  parent: eye-globe
+  kind: body
+  system: eye
+  short: The colored ring of muscle around the pupil that makes it smaller in bright light and larger in the dark.
+
+- id: pupil
+  type: region
+  name: Pupil
+  parent: eye-globe
+  kind: landmark
+  system: eye
+  short: The opening in the middle of the iris that lets light into the eye.
+
+- id: aqueous-humor
+  type: region
+  name: Aqueous humor
+  parent: eye-globe
+  kind: ventricle
+  system: eye
+  short: The clear fluid between the cornea and the lens.
+
+- id: lens
+  type: region
+  name: Lens
+  parent: eye-globe
+  kind: body
+  system: eye
+  short: The flexible clear disk behind the iris that fine-tunes focus on the retina.
+  functions:
+    - Ciliary muscles change its shape through the zonule fibers (accommodation).
+
+- id: ciliary-muscle
+  type: region
+  name: Ciliary muscle
+  aliases: [ciliary muscles, ciliary body]
+  parent: eye-globe
+  kind: body
+  system: body
+  short: The ring of muscle that changes the lens's shape to focus near or far.
+
+- id: zonule-fibers
+  type: region
+  name: Zonule fibers
+  aliases: [zonules, zonular fibers]
+  parent: eye-globe
+  kind: body
+  system: eye
+  short: Fine fibers that hold the lens and connect it to the ciliary muscle.
+
+- id: vitreous-humor
+  type: region
+  name: Vitreous humor
+  parent: eye-globe
+  kind: ventricle
+  system: eye
+  short: The clear jelly that fills the big chamber behind the lens.
+
+- id: retina
+  type: region
+  name: Retina
+  parent: eye-globe
+  kind: layer
+  system: eye
+  short: The thin layer of neurons lining the back of the eye that turns light into neural signals.
+  functions:
+    - "Maps the visual field upside down and left–right reversed: the upper left of what you see lands on the lower right of the retina."
+
+- id: fovea
+  type: region
+  name: Fovea
+  parent: retina
+  kind: landmark
+  system: eye
+  short: A small pit in the center of the retina, packed with cones, where vision is sharpest.
+  functions:
+    - { text: "Highest acuity, not highest sensitivity; rods outside the fovea are better in dim light.", source: corrected, corrections: [C-039] }
+    - The cell layers above it are pushed aside so light reaches the cones directly.
+    - Each cone has a private line, one cone to one bipolar cell to one ganglion cell.
+
+- id: macula
+  type: region
+  name: Macula
+  parent: retina
+  kind: landmark
+  system: eye
+  short: The area around the fovea, still very sharp; few blood vessels cross it.
+
+- id: optic-disk
+  type: region
+  name: Optic disk
+  aliases: [optic disc, blind spot]
+  parent: retina
+  kind: landmark
+  system: eye
+  short: Where ganglion-cell axons leave the eye as the optic nerve; it has no photoreceptors, so it is the blind spot.
+  functions:
+    - The other eye covers each eye's blind spot.
+
+- id: nasal-retina
+  type: term
+  name: Nasal and temporal
+  aliases: [nasal, temporal retina, nasal retina]
+  short: For the eye, nasal means toward the nose (medial) and temporal means toward the temple (lateral).
+
+# ---------------------------------------------------------------- retinal cells
+
+- id: photoreceptor
+  type: region
+  name: Photoreceptor
+  aliases: [photoreceptors]
+  parent: retina
+  kind: cellular
+  system: cellular
+  short: A rod or cone, the retinal cell that absorbs light; it sits at the very back of the retina.
+  functions:
+    - Hyperpolarizes in light and depolarizes in the dark (about −30 mV in the dark).
+    - Releases glutamate, less in light than in the dark.
+    - { text: "A neuron that uses graded potentials, not spikes.", source: corrected, corrections: [C-040] }
+
+- id: rod
+  type: region
+  name: Rod
+  aliases: [rods]
+  parent: photoreceptor
+  kind: cellular
+  system: cellular
+  short: A highly light-sensitive photoreceptor for dim light; no color, low detail.
+  functions:
+    - Common outside the fovea; none in the fovea itself.
+
+- id: cone
+  type: region
+  name: Cone
+  aliases: [cones]
+  parent: photoreceptor
+  kind: cellular
+  system: cellular
+  short: A photoreceptor for color and detail; three types are most sensitive to blue, green or red light.
+  functions:
+    - { text: "Densest in the fovea, but found at lower density across the whole retina.", source: corrected, corrections: [C-041] }
+    - Missing or faulty cone types cause color blindness.
+
+- id: bipolar-cell
+  type: region
+  name: Bipolar cell
+  aliases: [bipolar cells]
+  parent: retina
+  kind: cellular
+  system: cellular
+  short: The middle cell in the retina's chain, passing signals from photoreceptors to ganglion cells with graded potentials.
+  connections:
+    - { to: photoreceptor, dir: in }
+    - { to: ganglion-cell, dir: out }
+
+- id: on-center-bipolar
+  type: region
+  name: ON-center bipolar cell
+  aliases: [on-center bipolar, ON bipolar cell]
+  parent: bipolar-cell
+  kind: cellular
+  system: cellular
+  short: A bipolar cell excited by light in its center, because its metabotropic glutamate receptors are inhibitory.
+  functions:
+    - "Light → less glutamate → the cell depolarizes → more ganglion-cell firing."
+
+- id: off-center-bipolar
+  type: region
+  name: OFF-center bipolar cell
+  aliases: [off-center bipolar, OFF bipolar cell]
+  parent: bipolar-cell
+  kind: cellular
+  system: cellular
+  short: A bipolar cell excited by darkness in its center, because its ionotropic glutamate receptors are excitatory.
+  functions:
+    - "Light → less glutamate → the cell hyperpolarizes → less ganglion-cell firing."
+
+- id: ganglion-cell
+  type: region
+  name: Retinal ganglion cell
+  aliases: [ganglion cells, ganglion cell, RGC]
+  parent: retina
+  kind: cellular
+  system: cellular
+  short: The output neuron of the retina; its axons form the optic nerve and it is the only retinal cell that fires action potentials.
+  source: corrected
+  corrections: [C-040]
+  connections:
+    - { to: bipolar-cell, dir: in }
+    - { to: lateral-geniculate-nucleus, dir: out }
+
+- id: horizontal-cell
+  type: region
+  name: Horizontal cell
+  aliases: [horizontal cells]
+  parent: retina
+  kind: cellular
+  system: cellular
+  short: A sideways-reaching retinal cell that adjusts the photoreceptor-to-bipolar synapse using input from neighboring cones; it builds the surround.
+  functions:
+    - { text: "Excited by glutamate from darkened neighbors; releases GABA, which inhibits the center pathway.", flags: [F-13] }
+
+- id: amacrine-cell
+  type: region
+  name: Amacrine cell
+  aliases: [amacrine cells]
+  parent: retina
+  kind: cellular
+  system: cellular
+  short: A sideways-reaching retinal cell that adjusts the bipolar-to-ganglion synapse.
+
+- id: pigmented-epithelium
+  type: region
+  name: Pigmented epithelium
+  aliases: [retinal pigment epithelium, RPE]
+  parent: retina
+  kind: layer
+  system: eye
+  short: The dark layer at the very back of the retina that absorbs any light the photoreceptors miss, so it doesn't scatter.
+
+- id: inverted-retina
+  type: concept
+  name: The retina is inside out
+  aliases: [inverted retina]
+  short: Light passes through the ganglion and bipolar layers before reaching the photoreceptors at the back.
+  points:
+    - At the fovea those upper layers are pushed aside for a clearer path.
+  related: [retina, fovea]
+
+- id: convergence
+  type: concept
+  name: Convergence in the retina
+  aliases: [retinal convergence]
+  short: Outside the fovea, many photoreceptors feed one ganglion cell, so vision is more sensitive but blurrier.
+  points:
+    - In the fovea, one cone → one bipolar → one ganglion cell keeps detail sharp.
+  related: [fovea, ganglion-cell]
+
+- id: opsin
+  type: molecule
+  kind: protein
+  name: Opsin and retinal
+  aliases: [opsins, photopigment, retinal molecule, rhodopsin]
+  short: The light-absorbing molecules in stacked membrane disks inside photoreceptors; light changes their shape and starts the signal.
+
+- id: phototransduction
+  type: pathway
+  kind: signaling
+  name: Phototransduction
+  short: Light → photopigment changes shape → Na⁺ channels close → the photoreceptor hyperpolarizes → less glutamate.
+  steps:
+    - { label: Light is absorbed by opsin + retinal in the disks, ref: opsin }
+    - { label: A signaling chain inside the cell starts }
+    - { label: "Na⁺ channels that are open in the dark close", ref: sodium-ion }
+    - { label: The photoreceptor hyperpolarizes, ref: photoreceptor }
+    - { label: Less glutamate is released onto bipolar cells, ref: glutamate }
+
+- id: center-surround
+  type: concept
+  name: Center–surround receptive field
+  aliases: [center-surround, on-center, off-center, ON/OFF receptive fields]
+  short: A ganglion cell's field has a center and a ring around it with opposite effects, so it responds to contrast more than to overall light.
+  points:
+    - "ON-center: light in the center excites, light in the surround inhibits."
+    - "OFF-center: light in the surround excites, light in the center inhibits."
+    - The center counts for more, so even light all over excites an ON-center cell a little.
+    - Cells sitting on an edge signal it most strongly, which is how the retina picks out borders. Our brains judge brightness relative to surroundings, which causes some illusions.
+  related: [ganglion-cell, receptive-field, horizontal-cell]
+
+- id: color-opponency
+  type: concept
+  name: Color opponency
+  aliases: [color-opponent, color opponent processing]
+  short: Some ganglion cells compare colors in center and surround, in red–green and yellow–blue pairs.
+  points:
+    - Strongest response with the preferred color in the center and its opponent in the surround.
+    - When the opponent color is removed, firing briefly overshoots (a rebound burst).
+  related: [center-surround, cone]
+
+- id: color-blindness
+  type: case
+  kind: disorder
+  name: Color blindness
+  aliases: [colour blindness, color vision deficiency]
+  short: Trouble telling some colors apart, caused by a missing or faulty type of cone.
+  damage:
+    regions: [cone]
+  deficits:
+    - Colors that the missing cone would separate look alike (most often red and green).

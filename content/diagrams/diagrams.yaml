@@ -82,3 +82,69 @@
   description: Voltage inside a neuron during one action potential, which lasts about 1–2 ms. Tap a phase to see what the channels are doing.
   topics: [action-potential]
   quiz: false
+
+- id: taste-bud
+  title: Taste bud
+  svg: taste-bud.svg
+  description: A taste bud in the tongue's surface, with taste cells reaching up to the taste pore and gustatory axons below. The inset shows where buds sit on a papilla.
+  topics: [chemical-senses]
+
+- id: visual-pathway
+  title: Visual pathway
+  svg: visual-pathway.svg
+  description: The route from the eyes to the primary visual cortex, seen from below the brain. Blue fibers carry the left visual field and orange the right; nasal fibers cross at the chiasm.
+  topics: [central-visual-system, eye]
+
+- id: long-tracts
+  title: Touch, pain and motor pathways
+  svg: long-tracts.svg
+  description: How signals for the right side of the body travel. Touch crosses in the medulla, pain and temperature cross in the spinal cord, and the corticospinal (motor) tract crosses at the bottom of the medulla.
+  topics: [somatosensory, brain-control-of-movement]
+  overlay: true
+  layers:
+    - { id: touch, name: Touch (dorsal column), color: touch }
+    - { id: pain, name: Pain and temperature (spinothalamic), color: pain }
+    - { id: motor, name: Movement (corticospinal), color: motor }
+  defaultLayers: [touch, pain, motor]
+
+- id: spinal-reflex
+  title: Spinal reflexes
+  svg: spinal-reflex.svg
+  description: The spinal cord in cross-section wired to the thigh. A tap stretches the quadriceps; its spindle's Ia axon excites the quadriceps motor neuron and, through an inhibitory interneuron, quiets the hamstring.
+  topics: [spinal-control-of-movement, somatosensory]
+
+- id: ear
+  title: The ear
+  svg: ear.svg
+  description: The right ear seen from the front. Sound passes from the outer ear through the eardrum and ossicles of the middle ear to the fluid-filled cochlea; the vestibular organs sit beside it.
+  topics: [auditory-vestibular]
+
+- id: cochlea
+  title: Inside the cochlea
+  svg: cochlea.svg
+  description: One turn of the cochlea cut across, showing its three fluid chambers and the organ of Corti on the basilar membrane.
+  topics: [auditory-vestibular]
+
+- id: skin
+  title: Skin and its receptors
+  svg: skin.svg
+  description: Skin in cross-section, hairless on the left and hairy on the right, with the three layers and the five kinds of sensory ending.
+  topics: [somatosensory]
+
+- id: eye
+  title: The eye
+  svg: eye.svg
+  description: The right eye seen from above, cut through the middle. Light enters through the cornea and lens and is focused on the retina; the fovea is where vision is sharpest.
+  topics: [eye]
+
+- id: retina
+  title: Layers of the retina
+  svg: retina.svg
+  description: The retina's cell layers. Light passes through the ganglion and bipolar cells before reaching the rods and cones at the back.
+  topics: [eye]
+
+- id: olfaction
+  title: Smell, from nose to bulb
+  svg: olfaction.svg
+  description: Olfactory receptor cells in the roof of the nasal cavity send axons through the cribriform plate to the olfactory bulb. Cells with the same receptor type (same color) all converge on one glomerulus.
+  topics: [chemical-senses]

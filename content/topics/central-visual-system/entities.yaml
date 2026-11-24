@@ -1,0 +1,243 @@
+# From the retina to the visual cortex.
+
+- id: optic-tract
+  type: region
+  name: Optic tract
+  kind: tract
+  system: nerve
+  short: The bundle of retinal axons running from the optic chiasm to the LGN; each tract carries the opposite visual hemifield from both eyes.
+  connections:
+    - { to: optic-chiasm, dir: in }
+    - { to: lateral-geniculate-nucleus, dir: out }
+
+- id: lateral-geniculate-nucleus
+  type: region
+  name: Lateral geniculate nucleus
+  aliases: [LGN, lateral geniculate body, lateral geniculate]
+  kind: nucleus
+  system: diencephalon
+  parent: thalamus
+  short: The visual relay of the thalamus, with six layers that keep the two eyes' inputs separate.
+  functions:
+    - Three layers take input from the same-side (ipsilateral) eye and three from the opposite (contralateral) eye.
+    - { text: "Keeping the eyes separate may help with depth perception (the emotional-processing idea is unsupported).", flags: [F-14] }
+  connections:
+    - { to: optic-tract, dir: in }
+    - { to: primary-visual-cortex, dir: out, note: "Via the optic radiation" }
+
+- id: optic-radiation
+  type: region
+  name: Optic radiation
+  kind: tract
+  system: white-matter
+  short: The fan of axons from the LGN to V1, carrying the information behind conscious vision.
+
+- id: retinofugal-projection
+  type: pathway
+  kind: anatomical
+  name: Retinofugal projection
+  aliases: [visual pathway, retina to V1]
+  short: Retina → optic nerve → optic chiasm → optic tract → LGN → optic radiation → V1.
+  steps:
+    - { label: Retinal ganglion cells, ref: ganglion-cell }
+    - { label: Optic nerve, ref: optic-nerve }
+    - { label: Optic chiasm (nasal axons cross), ref: optic-chiasm, source: corrected, corrections: [C-042] }
+    - { label: Optic tract, ref: optic-tract }
+    - { label: LGN (thalamus), ref: lateral-geniculate-nucleus }
+    - { label: Optic radiation, ref: optic-radiation }
+    - { label: Primary visual cortex (V1), ref: primary-visual-cortex }
+  diagrams: [visual-pathway]
+
+- id: retinotectal-projection
+  type: pathway
+  kind: anatomical
+  name: Retinotectal projection
+  short: About 10% of retinal axons go to the superior colliculus, which turns the eyes and head toward things; it relays via the pulvinar to visual cortex.
+  steps:
+    - { label: Retinal ganglion cells, ref: ganglion-cell }
+    - { label: Superior colliculus, ref: superior-colliculus, source: corrected, corrections: [C-043], note: "Orients the eyes and head; drives saccades and microsaccades." }
+    - { label: Pulvinar (thalamus), ref: pulvinar }
+    - { label: Extrastriate visual cortex, ref: visual-association-cortex, source: corrected, corrections: [C-043] }
+
+- id: pulvinar
+  type: region
+  name: Pulvinar
+  kind: nucleus
+  system: diencephalon
+  parent: thalamus
+  short: A large thalamic nucleus that relays superior-colliculus signals to visual areas beyond V1.
+
+- id: pretectum
+  type: region
+  name: Pretectum
+  kind: nucleus
+  system: brainstem
+  parent: midbrain
+  short: A midbrain area that receives retinal input and controls the pupillary light reflex.
+  source: added
+
+- id: visual-field
+  type: concept
+  name: Visual field
+  aliases: [visual hemifield, hemifield, binocular visual field]
+  short: Everything you can see at once; split into left and right hemifields, with a central zone seen by both eyes.
+  points:
+    - The far left and far right edges are seen by only one eye.
+    - The right hemisphere sees the left hemifield, and the left hemisphere sees the right.
+
+- id: partial-decussation
+  type: concept
+  name: Partial decussation
+  aliases: [decussation at the chiasm]
+  short: At the optic chiasm only the axons from the nasal half of each retina cross, so each hemisphere gets the opposite hemifield from both eyes.
+  source: corrected
+  corrections: [C-042]
+  points:
+    - The nasal retina sees the temporal (outer) visual field.
+    - Temporal-retina axons stay on the same side.
+  related: [optic-chiasm, visual-field]
+
+- id: monocular-blindness
+  type: case
+  kind: syndrome
+  name: Optic nerve damage
+  aliases: [monocular blindness]
+  short: Damage to one optic nerve blinds that eye; the other eye still covers most of the visual field.
+  damage:
+    regions: [optic-nerve]
+  deficits:
+    - Loss of vision in one eye; only the far edge that only that eye sees is lost from the field as a whole.
+
+- id: bitemporal-hemianopia
+  type: case
+  kind: syndrome
+  name: Bitemporal hemianopia
+  aliases: [tunnel vision]
+  short: Damage to the optic chiasm cuts the crossing fibers, so both outer (temporal) halves of the visual field are lost.
+  damage:
+    regions: [optic-chiasm]
+    cause: Often pressure from a pituitary tumor just below the chiasm.
+  deficits:
+    - Loss of both temporal visual fields; the central zone remains.
+  teaches: Only nasal-retina fibers cross at the chiasm.
+
+- id: homonymous-hemianopia
+  type: case
+  kind: syndrome
+  name: Homonymous hemianopia
+  aliases: [hemianopia, hemianopsia]
+  short: Damage after the chiasm (optic tract, LGN, radiation or V1) on one side removes the whole opposite hemifield in both eyes.
+  damage:
+    regions: [optic-tract, primary-visual-cortex]
+  deficits:
+    - "Left-side damage: no right visual field in either eye."
+
+- id: scotoma
+  type: case
+  kind: syndrome
+  name: Scotoma
+  aliases: [scotomas]
+  short: A small blind patch caused by a small area of damage in V1; the brain often fills it in.
+  damage:
+    regions: [primary-visual-cortex]
+
+- id: retinotopy
+  type: concept
+  name: Retinotopic map
+  aliases: [retinotopy, retinotopic]
+  short: Neighboring points in the visual field are processed by neighboring neurons, from the retina through V1 and beyond.
+  points:
+    - The map is flipped and inverted; a face in the center of view is split between the two V1s, upside down.
+  related: [primary-visual-cortex]
+
+- id: simple-cell
+  type: concept
+  name: Simple cell
+  aliases: [simple cells, orientation selectivity]
+  short: A V1 neuron that fires best to a bar or edge at one orientation, built from LGN cells whose fields line up.
+  points:
+    - { text: "Several LGN cells with aligned receptive fields feed one simple cell.", source: corrected, corrections: [C-044] }
+    - Light along the preferred line excites it; light beside the line inhibits it.
+  related: [primary-visual-cortex, center-surround]
+
+- id: visual-association-cortex
+  type: region
+  name: Visual association cortex
+  aliases: [extrastriate cortex, V2, V3, V4]
+  system: occipital
+  short: The many visual areas beyond V1 (V2, V3, V4, V5 and more), each specializing in features like color, form or motion.
+  functions:
+    - Extends into the temporal and parietal lobes.
+    - V4 is important for color.
+
+- id: area-v5
+  type: region
+  name: Area V5 (MT)
+  aliases: [V5, MT, middle temporal area]
+  parent: visual-association-cortex
+  system: occipital
+  short: A visual area near the occipital–temporal border that processes motion.
+  cases: [akinetopsia]
+
+- id: fusiform-face-area
+  type: region
+  name: Fusiform face area
+  aliases: [FFA]
+  system: temporal
+  parent: temporal-lobe
+  short: An area on the underside of the temporal lobe that is specialized for recognizing faces.
+  cases: [prosopagnosia]
+
+- id: posterior-parietal-cortex
+  type: region
+  name: Posterior parietal cortex
+  system: parietal
+  parent: parietal-lobe
+  short: Association cortex at the back of the parietal lobe that combines vision with space and attention.
+  cases: [simultagnosia]
+
+- id: akinetopsia
+  type: case
+  kind: syndrome
+  name: Akinetopsia
+  aliases: [motion blindness]
+  short: Inability to see smooth motion; moving things appear as a series of still frames.
+  damage:
+    regions: [area-v5]
+
+- id: prosopagnosia
+  type: case
+  kind: syndrome
+  name: Prosopagnosia
+  aliases: [face blindness]
+  short: Inability to recognize individual faces, though a face is still seen as a face.
+  damage:
+    regions: [fusiform-face-area]
+  deficits:
+    - Sees the parts of a face but can't put them together to know whose it is.
+
+- id: simultagnosia
+  type: case
+  kind: syndrome
+  name: Simultagnosia
+  short: Inability to see more than one object at a time, or to pull overlapping objects apart.
+  damage:
+    regions: [posterior-parietal-cortex]
+
+- id: associative-agnosia
+  type: case
+  kind: syndrome
+  name: Associative agnosia
+  short: Can see and copy an object but can't recognize what it is by sight (recognition by touch still works).
+  damage:
+    regions: [temporal-lobe]
+    cause: Damage to the temporal lobe near the fusiform face area.
+
+- id: apperceptive-agnosia
+  type: case
+  kind: syndrome
+  name: Apperceptive agnosia
+  short: Can't perceive an object's form at all, so can neither recognize nor copy it.
+  damage:
+    regions: [primary-visual-cortex]
+    cause: Damage to V1 or V2.

@@ -14,7 +14,10 @@ export function HomePage() {
   const days = streak(p.days);
   const lessonsDone = Object.keys(p.lessons).length;
   const first = content.lessons[0];
-  const next = content.lessons.find((l) => !p.lessons[l.id]) ?? first;
+  // Pick up after the most recently finished lesson, not the first unread one anywhere.
+  const latest = Object.entries(p.lessons).sort((a, b) => b[1].at.localeCompare(a[1].at))[0]?.[0];
+  const from = Math.max(0, content.lessons.findIndex((l) => l.id === latest));
+  const next = content.lessons.slice(from).find((l) => !p.lessons[l.id]) ?? content.lessons.find((l) => !p.lessons[l.id]) ?? first;
   const [open, setOpen] = useState(false);
   const closeSheet = useCallback(() => setOpen(false), []);
 

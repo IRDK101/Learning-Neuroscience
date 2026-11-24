@@ -1,0 +1,20 @@
+# Hand-written flashcards. Many more are generated from entities.
+
+- id: c-eye-light-path
+  kind: basic
+  front: Trace light from the air to the photoreceptors.
+  back: Cornea → aqueous humor → pupil → lens → vitreous humor → retina (through the ganglion and bipolar layers) → rods and cones.
+  refs: [cornea, lens, retina]
+
+- id: c-eye-dark-current
+  kind: basic
+  front: Is a photoreceptor more active in the light or the dark?
+  back: In the dark. Open Na⁺ channels keep it depolarized (~−30 mV) and releasing glutamate; light closes them and it hyperpolarizes.
+  refs: [phototransduction]
+
+- id: c-eye-on-off
+  kind: basic
+  front: ON- vs OFF-center bipolar cells?
+  back: Both get glutamate from the same cone. ON cells have inhibitory metabotropic receptors (excited by light); OFF cells have excitatory ionotropic receptors (excited by darkness).
+  refs: [on-center-bipolar, off-center-bipolar]
+  tags: { difficulty: 3 }

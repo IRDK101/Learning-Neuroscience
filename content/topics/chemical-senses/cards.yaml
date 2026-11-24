@@ -1,0 +1,27 @@
+# Hand-written flashcards. Many more are generated from entities.
+
+- id: c-chem-taste-cells-graded
+  kind: basic
+  front: Do taste cells fire action potentials?
+  back: No. They depolarize in graded steps and release more transmitter the more tastant they detect; the gustatory afferent axon fires the action potentials.
+  refs: [taste-cell]
+
+- id: c-chem-five-tastes
+  kind: basic
+  front: Which tastes use ion channels and which use G-protein-coupled receptors?
+  back: Salty (Na⁺) and sour (H⁺) use ion channels and release serotonin. Sweet, bitter and umami use GPCRs → PLC → IP3 and release ATP.
+  refs: [salt-transduction, sweet-bitter-umami-transduction]
+  tags: { difficulty: 3 }
+
+- id: c-chem-smell-cascade
+  kind: basic
+  front: Smell transduction, step by step?
+  back: Odorant → receptor → G_olf → adenylyl cyclase (ATP → cAMP) → cAMP-gated Na⁺/Ca²⁺ channels → Ca²⁺ opens Cl⁻ channels, Cl⁻ flows out → depolarization.
+  refs: [olfactory-transduction]
+  tags: { difficulty: 3 }
+
+- id: c-chem-two-routes
+  kind: basic
+  front: What are smell's two routes from the olfactory bulb?
+  back: (1) Olfactory tubercle → thalamus → orbitofrontal cortex. (2) Directly to the olfactory cortex and amygdala (and, via entorhinal cortex, the hippocampus), skipping the thalamus.
+  refs: [olfactory-pathway]

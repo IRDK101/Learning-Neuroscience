@@ -27,9 +27,22 @@ export interface LessonContext {
 
 const marked = new Marked({ gfm: true, breaks: false });
 
+/**
+ * A bare [[id]] shows the entity's name. Mid-sentence, a common-noun name is lowercased
+ * ("the [[dermatome]]" → "the dermatome"); sentence starts, acronyms and names with
+ * other capitals (Brown-Séquard syndrome, Organ of Corti) keep their capitals.
+ */
+export function inSentenceName(name: string, before: string): string {
+  const prev = before.replace(/[\s*_(["“]+$/, '');
+  if (prev === '' || /[.!?:]$/.test(prev) || /(^|\n)\s*([-*+]|\d+\.|\|)$/.test(prev)) return name;
+  const first = name.split(/\s/)[0];
+  if (!/^[A-Z][a-z]/.test(first) || /[A-Z]/.test(name.slice(1)) || /['’]/.test(first)) return name;
+  return name[0].toLowerCase() + name.slice(1);
+}
+
 function inline(md: string, ctx: LessonContext, where: string, errors: ContentErrors, mentions: Set<string>): string {
   return md
-    .replace(/\[\[([^\]|]+?)(?:\|([^\]]+?))?\]\]/g, (_, a: string, b?: string) => {
+    .replace(/\[\[([^\]|]+?)(?:\|([^\]]+?))?\]\]/g, (_, a: string, b: string | undefined, offset: number, whole: string) => {
       const id = (b ?? a).trim();
       const name = ctx.entityName(id);
       if (!name) {
@@ -37,7 +50,7 @@ function inline(md: string, ctx: LessonContext, where: string, errors: ContentEr
         return a;
       }
       mentions.add(id);
-      const label = b ? a.trim() : name;
+      const label = b ? a.trim() : inSentenceName(name, whole.slice(0, offset));
       return `<a class="ref" data-ref="${id}" href="#/entity/${id}">${escapeHtml(label)}</a>`;
     })
     .replace(/[ \t]*\{\{([CF]-\d{2,3})\}\}/g, (_, id: string) => {

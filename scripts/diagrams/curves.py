@@ -133,3 +133,35 @@ def sample(pts, per=4, closed=False, t=0.5):
 def poly_d(pts, closed=True):
     s = 'M ' + ' L '.join(f"{f(x)} {f(y)}" for x, y in pts)
     return s + (' Z' if closed else '')
+
+
+def taper(pts, w0, w1, t=0.4):
+    """Filled, tapering branch along a centerline (width w0 at the start, w1 at the end)."""
+    n = len(pts)
+    L, R = [], []
+    for i, (x, y) in enumerate(pts):
+        a, b = pts[max(i - 1, 0)], pts[min(i + 1, n - 1)]
+        dx, dy = b[0] - a[0], b[1] - a[1]
+        d = math.hypot(dx, dy) or 1
+        w = (w0 + (w1 - w0) * i / (n - 1)) / 2
+        L.append((x - dy / d * w, y + dx / d * w))
+        R.append((x + dy / d * w, y - dx / d * w))
+    tip = pts[-1]
+    return smooth(L + [(tip[0] + (tip[0] - pts[-2][0]) * 0.08, tip[1] + (tip[1] - pts[-2][1]) * 0.08)] + list(reversed(R)), closed=True, t=t)
+
+
+def spindle(center, wmax, wend=3):
+    """A cell body that is thin at both ends and widest in the middle, along a centerline."""
+    n = len(center)
+    widths = [wend + (wmax - wend) * math.sin(math.pi * i / (n - 1)) ** 0.8 for i in range(n)]
+    return ribbon(center, widths)
+
+
+def bow(p0, p1, bulge, n=7):
+    """Points along a gentle arc from p0 to p1, bulging sideways by `bulge`."""
+    (x0, y0), (x1, y1) = p0, p1
+    dx, dy = x1 - x0, y1 - y0
+    L = math.hypot(dx, dy) or 1
+    nx, ny = -dy / L, dx / L
+    return [(x0 + dx * k / (n - 1) + nx * bulge * math.sin(math.pi * k / (n - 1)),
+             y0 + dy * k / (n - 1) + ny * bulge * math.sin(math.pi * k / (n - 1))) for k in range(n)]

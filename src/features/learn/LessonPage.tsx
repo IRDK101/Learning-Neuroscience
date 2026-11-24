@@ -4,8 +4,8 @@
  * amygdala (or locus coeruleus…) lights up while the text is talking about it.
  */
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Link, useParams, useSearchParams } from 'react-router';
-import { diagram as getDiagram, lesson as getLesson, question, topic as getTopic } from '../../content';
+import { Link, useNavigate, useParams, useSearchParams } from 'react-router';
+import { content, diagram as getDiagram, lesson as getLesson, question, topic as getTopic } from '../../content';
 import type { Lesson, LessonBlock } from '../../content/types';
 import { completeLesson, recordAnswer, useProgress } from '../../progress/store';
 import { CopyLinkButton, Icon, UnitTag } from '../../ui/bits';
@@ -129,6 +129,25 @@ export function LessonPage() {
     setActive(0);
   }, [l]);
 
+  // Previous/next lesson, continuing across topics so the last lesson of a topic leads into the next topic.
+  const gi = l ? content.lessons.findIndex((x) => x.id === l.id) : -1;
+  const prevL = gi > 0 ? content.lessons[gi - 1] : undefined;
+  const nextL = gi >= 0 && gi < content.lessons.length - 1 ? content.lessons[gi + 1] : undefined;
+  const prevTo = prevL ? `/learn/${prevL.topic}/${prevL.slug}` : undefined;
+  const nextTo = nextL ? `/learn/${nextL.topic}/${nextL.slug}` : undefined;
+  const navigate = useNavigate();
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
+      const el = document.activeElement as HTMLElement | null;
+      if (el && el !== document.body && el.id !== 'main') return; // a control or diagram has focus
+      if (e.key === 'ArrowRight' && nextTo) navigate(nextTo);
+      else if (e.key === 'ArrowLeft' && prevTo) navigate(prevTo);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [navigate, nextTo, prevTo]);
+
   if (!l || !t) return <div className="panel">Lesson not found.</div>;
 
   const figure = segments[active]?.figure ?? firstFigure;
@@ -136,8 +155,10 @@ export function LessonPage() {
   const hl = (hover ?? figure?.highlight ?? []).filter((id) => d?.refs.includes(id));
   const lessons = t.lessons;
   const idx = lessons.indexOf(l.id);
-  const prev = idx > 0 ? getLesson(lessons[idx - 1]) : undefined;
-  const next = idx < lessons.length - 1 ? getLesson(lessons[idx + 1]) : undefined;
+  const prev = prevL;
+  const next = nextL;
+  const nextTopic = next && next.topic !== t.id ? getTopic(next.topic) : undefined;
+  const prevTopic = prev && prev.topic !== t.id ? getTopic(prev.topic) : undefined;
 
   // Hovering a linked term in the text highlights it on the diagram (if it's there).
   const onTextOver = (e: React.PointerEvent) => {
@@ -193,8 +214,20 @@ export function LessonPage() {
               </Link>
             </div>
             <nav className="lesson-nav" aria-label="Lessons">
-              {prev ? <Link to={`/learn/${t.id}/${prev.slug}`}>Previous: {prev.title}</Link> : <span />}
-              {next ? <Link to={`/learn/${t.id}/${next.slug}`}>Next: {next.title}</Link> : <Link to={`/learn/${t.id}`}>Back to {t.name}</Link>}
+              {prev ? (
+                <Link to={prevTo!} title="Previous lesson (←)">
+                  {prevTopic ? `Previous topic: ${prevTopic.name}` : `Previous: ${prev.title}`}
+                </Link>
+              ) : (
+                <span />
+              )}
+              {next ? (
+                <Link to={nextTo!} title="Next lesson (→)">
+                  {nextTopic ? `Next topic: ${nextTopic.name}` : `Next: ${next.title}`}
+                </Link>
+              ) : (
+                <Link to={`/learn/${t.id}`}>Back to {t.name}</Link>
+              )}
             </nav>
           </div>
         </div>

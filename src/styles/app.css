@@ -80,6 +80,9 @@
   --nt-da: #e07b00;
   --nt-ne: #0a63c9;
   --nt-serotonin: #b4489a;
+  --nt-touch: #2f6fd0;
+  --nt-pain: #d0452f;
+  --nt-motor: #1f9a62;
 }
 
 /* Fluorescence microscope */
@@ -128,6 +131,9 @@
   --nt-da: #ffa940;
   --nt-ne: #5fa8ff;
   --nt-serotonin: #ef7fd0;
+  --nt-touch: #6fa8ff;
+  --nt-pain: #ff7a62;
+  --nt-motor: #3fd38e;
 }
 
 /* ------------------------------------------------------------------ base type */
@@ -2027,4 +2033,283 @@ a.ref.hot {
   stroke: color-mix(in srgb, var(--sys-brainstem) 50%, var(--ink-line));
   stroke-width: 1;
   pointer-events: none;
+}
+
+/* ---------------------------------------------------------------- Senses & movement diagrams */
+.diagram svg .tissue {
+  fill: var(--dc, var(--deep-fill));
+  stroke: color-mix(in srgb, var(--dc, var(--deep-fill)) 60%, var(--ink-line));
+  stroke-width: 1.1;
+}
+.diagram svg .inset-frame {
+  fill: var(--bg-elev);
+  stroke: var(--line-strong, var(--line));
+  stroke-width: 1.2;
+}
+.diagram svg .zoom-line {
+  fill: none;
+  stroke: var(--text-2);
+  stroke-width: 1;
+  stroke-dasharray: 3 4;
+  opacity: 0.6;
+}
+.diagram svg .epi-cells ellipse {
+  fill: none;
+  stroke: color-mix(in srgb, var(--sys-body) 55%, var(--ink-line));
+  stroke-width: 0.8;
+  opacity: 0.45;
+}
+.diagram svg .cell-nuc ellipse,
+.diagram svg .cell-nuc circle {
+  fill: color-mix(in srgb, #3b4f86 75%, var(--ink-line));
+  opacity: 0.75;
+}
+.diagram svg .line-hotspot.fine {
+  stroke-width: 2.2 !important;
+  stroke-linecap: round;
+}
+.diagram svg .line-hotspot.thick {
+  stroke-width: 6 !important;
+  stroke-linecap: round;
+}
+.diagram svg .wave {
+  fill: none;
+  stroke: var(--text-2);
+  stroke-width: 1.6;
+  opacity: 0.7;
+}
+.diagram svg .light-ray {
+  fill: none;
+  stroke: #e9b93c;
+  stroke-width: 2.2;
+  stroke-dasharray: 7 5;
+}
+.diagram svg .vessels-deco {
+  fill: none;
+  stroke: color-mix(in srgb, var(--sys-vascular) 70%, var(--bg-elev));
+  stroke-width: 1.6;
+  opacity: 0.7;
+}
+.diagram svg .capsule-rings {
+  fill: none;
+  stroke: color-mix(in srgb, var(--sys-nerve) 50%, var(--ink-line));
+  stroke-width: 0.9;
+  opacity: 0.6;
+}
+.diagram svg .hair {
+  fill: none;
+  stroke: color-mix(in srgb, #5b4130 80%, var(--ink-line));
+  stroke-width: 2.4;
+  stroke-linecap: round;
+}
+.diagram svg .gm-butterfly {
+  fill: color-mix(in srgb, var(--sys-spinal-cord) 55%, #6d7f99);
+}
+.diagram svg .synapse-dot {
+  stroke: none;
+}
+.diagram svg .syn-exc {
+  fill: var(--label);
+}
+.diagram svg .syn-inh {
+  fill: var(--bg-elev);
+  stroke: var(--label);
+  stroke-width: 1.6;
+}
+.diagram svg .signal {
+  fill: none;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+}
+.diagram svg .pinna-fold,
+.diagram svg .cochlea-mid {
+  fill: none;
+  stroke: color-mix(in srgb, var(--sys-ear) 45%, var(--ink-line));
+  stroke-width: 1.6;
+  opacity: 0.55;
+  stroke-linecap: round;
+}
+.diagram svg .support {
+  fill: color-mix(in srgb, var(--sys-ear) 30%, var(--bg-elev));
+  stroke: color-mix(in srgb, var(--sys-ear) 50%, var(--ink-line));
+  stroke-width: 0.8;
+  opacity: 0.8;
+}
+.diagram svg .fat path {
+  fill: color-mix(in srgb, #f0dca8 70%, white);
+  stroke: color-mix(in srgb, #c9a95c 60%, var(--ink-line));
+  stroke-width: 0.8;
+  opacity: 0.85;
+}
+.diagram svg .stratum {
+  fill: color-mix(in srgb, #e8b49a 60%, #fff);
+  stroke: none;
+  opacity: 0.6;
+}
+.diagram svg .coil {
+  fill: none;
+  stroke: color-mix(in srgb, var(--sys-nerve) 50%, var(--ink-line));
+  stroke-width: 1.4;
+  opacity: 0.8;
+}
+.diagram svg .follicle {
+  fill: color-mix(in srgb, #e8b49a 70%, #b07a5a);
+  stroke: color-mix(in srgb, #b07a5a 60%, var(--ink-line));
+  stroke-width: 1;
+}
+.diagram svg .disks {
+  fill: none;
+  stroke: rgba(11, 23, 48, 0.35);
+  stroke-width: 1;
+}
+.diagram svg .pigment-dots circle {
+  fill: #3a241a;
+  opacity: 0.6;
+}
+.diagram svg .arrow-light path {
+  fill: #e9b93c;
+}
+:root {
+  --field-l: #3f7fd0;
+  --field-r: #e08a2e;
+}
+.diagram svg .field-l {
+  fill: color-mix(in srgb, var(--field-l) 22%, var(--bg-elev));
+  stroke: var(--field-l);
+  stroke-width: 1;
+}
+.diagram svg .field-r {
+  fill: color-mix(in srgb, var(--field-r) 22%, var(--bg-elev));
+  stroke: var(--field-r);
+  stroke-width: 1;
+}
+.diagram svg .retina-l {
+  fill: var(--field-r);
+}
+.diagram svg .retina-r {
+  fill: var(--field-l);
+}
+.diagram svg .sig-l {
+  stroke: var(--field-l);
+}
+.diagram svg .sig-r {
+  stroke: var(--field-r);
+}
+.diagram svg .sig-sc {
+  stroke: var(--text-2);
+  stroke-dasharray: 4 4;
+}
+.diagram svg [data-layer='touch'] {
+  --nt: var(--nt-touch);
+}
+.diagram svg [data-layer='pain'] {
+  --nt: var(--nt-pain);
+}
+.diagram svg [data-layer='motor'] {
+  --nt: var(--nt-motor);
+}
+.diagram svg .arrow-touch path {
+  fill: var(--nt-touch);
+}
+.diagram svg .arrow-pain path {
+  fill: var(--nt-pain);
+}
+.diagram svg .arrow-motor path {
+  fill: var(--nt-motor);
+}
+.diagram svg .support-cells path {
+  fill: color-mix(in srgb, var(--sys-nerve) 18%, var(--bg-elev));
+  stroke: color-mix(in srgb, var(--sys-nerve) 40%, var(--ink-line));
+  stroke-width: 0.8;
+  opacity: 0.7;
+}
+.diagram svg .plate-holes rect {
+  fill: color-mix(in srgb, var(--sys-nerve) 25%, var(--bg-elev));
+}
+.diagram svg .glom-ring {
+  fill: none;
+  stroke-width: 2.4;
+  opacity: 0.85;
+}
+
+/* ---------------------------------------------------------------- site-wide search */
+.topbar-tools {
+  display: flex;
+  gap: 0.4rem;
+  margin-left: auto;
+}
+.search-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: rgba(6, 14, 30, 0.38);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10vh 16px 16px;
+}
+.search-dialog {
+  width: min(640px, 100%);
+  max-height: 76vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 18px 48px rgba(6, 14, 30, 0.28);
+}
+.search-field {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 0.9rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--text-2);
+}
+.search-field input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  font: inherit;
+  font-size: 1.05rem;
+  color: var(--text);
+  outline: none;
+  padding: 0.25rem 0;
+}
+.search-results {
+  list-style: none;
+  margin: 0;
+  padding: 0.35rem;
+  overflow-y: auto;
+}
+.search-results li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.1rem 0.6rem;
+  padding: 0.55rem 0.7rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.search-results li.active {
+  background: color-mix(in srgb, var(--brand) 12%, var(--bg-elev));
+}
+.search-title {
+  font-weight: 700;
+}
+.search-tag {
+  font-size: 0.78rem;
+  color: var(--text-2);
+  align-self: center;
+}
+.search-detail {
+  grid-column: 1 / -1;
+  font-size: 0.86rem;
+  color: var(--text-2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.search-results li.search-empty {
+  display: block;
+  cursor: default;
 }

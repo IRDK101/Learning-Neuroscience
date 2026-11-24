@@ -1,0 +1,20 @@
+# Hand-written flashcards. Many more are generated from entities.
+
+- id: c-spin-spindle-vs-gto
+  kind: basic
+  front: Muscle spindle vs Golgi tendon organ?
+  back: Spindle — senses stretch (length), Ia axon, excites the same muscle (stretch reflex). GTO — senses tension, Ib axon, inhibits the same muscle via an interneuron.
+  refs: [muscle-spindle, golgi-tendon-organ]
+  tags: { difficulty: 3 }
+
+- id: c-spin-three-inputs
+  kind: basic
+  front: The three main inputs to an alpha motor neuron?
+  back: Upper motor neurons (brain), spinal interneurons (largest; excitatory and inhibitory), and muscle spindle Ia axons.
+  refs: [alpha-motor-neuron]
+
+- id: c-spin-motor-unit-types
+  kind: basic
+  front: The three motor unit types and what they're for?
+  back: Slow (posture, tireless), fast fatigue-resistant (walking, jogging), fast fatigable (sprinting, lifting).
+  refs: [motor-unit]

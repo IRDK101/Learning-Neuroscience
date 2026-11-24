@@ -1,0 +1,100 @@
+# Hand-written quiz questions for the body senses.
+
+- id: q-soma-meissner
+  kind: mcq
+  stem: Which touch receptor is found only in hairless (glabrous) skin?
+  answer: Meissner corpuscle
+  distractors:
+    - { text: "Merkel cell", why: "Merkel cells are in both skin types." }
+    - { text: "Pacinian corpuscle", why: "Pacinian corpuscles are in both skin types." }
+    - { text: "Ruffini ending", why: "Ruffini endings are in both skin types." }
+  refs: [meissner-corpuscle, glabrous-skin]
+  tags: { difficulty: 1 }
+
+- id: q-soma-merkel
+  kind: mcq
+  stem: Which receptor gives the finest spatial detail, such as reading Braille?
+  answer: Merkel cell
+  distractors:
+    - { text: "Pacinian corpuscle", why: "It has the largest receptive field." }
+    - { text: "Ruffini ending", why: "It senses stretch over a large field." }
+    - { text: "Free nerve ending", why: "Free endings signal pain and temperature." }
+  refs: [merkel-cell, receptive-field]
+
+- id: q-soma-adapt
+  kind: mcq
+  stem: You put on a ring and soon stop feeling it, but feel it again when you take it off. Which receptors explain this?
+  answer: Rapidly adapting receptors such as Pacinian and Meissner corpuscles
+  distractors:
+    - { text: "Slowly adapting receptors such as Merkel cells", why: "Slowly adapting receptors keep firing during steady pressure." }
+    - { text: "Nociceptors", why: "The ring isn't harmful." }
+    - { text: "Thermoreceptors", why: "The effect is about pressure starting and stopping." }
+  refs: [rapidly-adapting, pacinian-corpuscle]
+
+- id: q-soma-pacinian
+  kind: mcq
+  stem: Which receptor best detects an object beginning to slip out of your grip?
+  answer: Pacinian corpuscle, which senses high-frequency vibration
+  distractors:
+    - { text: "Merkel cell", why: "Merkel cells are poor at vibration." }
+    - { text: "Ruffini ending", why: "Ruffini endings sense steady stretch." }
+    - { text: "Muscle spindle", why: "Spindles sense muscle length, not skin vibration." }
+  refs: [pacinian-corpuscle]
+
+- id: q-soma-cross
+  kind: mcq
+  stem: Where do pain and temperature signals cross to the other side?
+  answer: In the spinal cord, right after they enter
+  distractors:
+    - { text: "In the medulla, at the dorsal column nuclei", why: "That's where touch crosses." }
+    - { text: "In the thalamus", why: "Both body-sense pathways have crossed before the thalamus." }
+    - { text: "They never cross", why: "Each side of the body is felt by the opposite hemisphere." }
+  refs: [spinothalamic-pathway, dorsal-column-pathway]
+
+- id: q-soma-brown
+  kind: case
+  stem: After a knife wound to the left half of the spinal cord, a patient can't feel fine touch on the left leg and can't feel pain or temperature on the right leg. What is this?
+  answer: brown-sequard-syndrome
+  distractors: [homonymous-hemianopia, als, multiple-sclerosis]
+
+- id: q-soma-homunculus
+  kind: mcq
+  stem: Why do the lips and fingertips take up so much of S1?
+  answer: They have the densest sensory receptors
+  distractors:
+    - { text: "They are the largest body parts", why: "S1 area follows receptor density, not size." }
+    - { text: "They are closest to the brain", why: "Distance doesn't set cortical area; the toes are tiny on the map too." }
+    - { text: "They have the most muscles", why: "That's closer to M1's logic, and still about precision rather than muscle count." }
+  refs: [somatotopy, homunculus]
+
+- id: q-soma-fibers
+  kind: mcq
+  stem: Which fibers carry slow, dull, throbbing pain?
+  answer: C fibers (thin, unmyelinated)
+  distractors:
+    - { text: "Aδ fibers", why: "Aδ fibers carry fast, sharp pain." }
+    - { text: "Aβ fibers", why: "Aβ fibers carry touch." }
+    - { text: "Aα fibers", why: "Aα fibers carry proprioception." }
+  refs: [fiber-types, nociception]
+
+- id: q-soma-45
+  kind: mcq
+  stem: Past about 45 °C, a hot surface feels more painful but not hotter. Why?
+  answer: Heat thermoreceptors have maxed out, while nociceptors keep increasing their firing
+  distractors:
+    - { text: "The skin stops conducting heat", why: "Heat keeps flowing; the receptors are the limit." }
+    - { text: "Thermoreceptors switch into pain receptors", why: "They're separate receptors." }
+    - { text: "C fibers block the thermoreceptor signal", why: "Both signals reach the brain." }
+  refs: [thermoreceptor, nociception]
+  tags: { difficulty: 3 }
+
+- id: q-soma-dermatome
+  kind: mcq
+  stem: What is a dermatome?
+  answer: The strip of skin served by one spinal segment's nerve
+  distractors:
+    - { text: "A zone inside the spinal cord", why: "Dermatomes are areas of skin." }
+    - { text: "A layer of the skin", why: "The layers are the epidermis, dermis and subcutaneous layer." }
+    - { text: "A patch of S1", why: "S1's body map is somatotopy." }
+  refs: [dermatome]
+  tags: { difficulty: 1 }

@@ -1,0 +1,26 @@
+# Hand-written flashcards. Many more are generated from entities.
+
+- id: c-aud-three-forms
+  kind: basic
+  front: What three forms does a sound signal take on its way to the inner ear?
+  back: Air pressure wave (outer ear) → mechanical motion of the ossicles (middle ear) → fluid wave in the cochlea (inner ear).
+  refs: [middle-ear]
+  tags: { difficulty: 1 }
+
+- id: c-aud-chambers
+  kind: basic
+  front: Which membranes separate the three chambers of the cochlea?
+  back: Reissner's membrane separates the scala vestibuli from the scala media; the basilar membrane separates the scala media from the scala tympani.
+  refs: [reissners-membrane, basilar-membrane]
+
+- id: c-aud-inner-outer
+  kind: basic
+  front: Inner vs outer hair cells?
+  back: Inner (one row) are the main sensors; ~95% of auditory nerve fibers come from them. Outer (~3× more) amplify basilar-membrane motion as a cochlear amplifier.
+  refs: [inner-hair-cell, outer-hair-cell]
+
+- id: c-aud-canals-otoliths
+  kind: basic
+  front: Semicircular canals vs otolith organs?
+  back: Canals (3, at right angles) sense head rotation; their cupula has no crystals. Otolith organs (utricle, saccule) have crystals and sense tilt and linear acceleration.
+  refs: [semicircular-canals, otolith-organs]

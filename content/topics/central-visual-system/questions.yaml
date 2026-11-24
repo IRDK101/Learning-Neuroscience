@@ -1,0 +1,76 @@
+# Hand-written quiz questions for the central visual system.
+
+- id: q-vis-cross
+  kind: mcq
+  stem: Which axons cross at the optic chiasm?
+  answer: Those from the nasal (inner) half of each retina
+  distractors:
+    - { text: "Those from the temporal (outer) half of each retina", why: "Temporal-retina axons stay on the same side." }
+    - { text: "All axons from both eyes", why: "Only half cross; that's why it's called partial decussation." }
+    - { text: "Only axons carrying the binocular zone", why: "Crossing depends on which half of the retina, not on overlap." }
+  refs: [partial-decussation, optic-chiasm]
+
+- id: q-vis-chiasm
+  kind: case
+  stem: A pituitary tumor presses up on the structure just above it. The patient loses the outer half of the visual field in both eyes. What is this?
+  answer: bitemporal-hemianopia
+  distractors: [homonymous-hemianopia, scotoma, monocular-blindness]
+
+- id: q-vis-tract
+  kind: mcq
+  stem: A stroke damages the left optic tract. What is lost?
+  answer: The right visual field in both eyes
+  distractors:
+    - { text: "All vision in the left eye", why: "That would be damage to the left optic nerve." }
+    - { text: "The left visual field in both eyes", why: "The left tract carries the right visual field." }
+    - { text: "The outer half of the field in both eyes", why: "That's chiasm damage." }
+  refs: [optic-tract, homonymous-hemianopia]
+
+- id: q-vis-lgn
+  kind: mcq
+  stem: How does the LGN keep track of which eye a signal came from?
+  answer: It has six layers, three for each eye
+  distractors:
+    - { text: "Each eye has its own LGN", why: "Each hemisphere has one LGN that gets input from both eyes." }
+    - { text: "It doesn't; the eyes merge at the chiasm", why: "Eye-specific inputs stay separate in the LGN and even in V1." }
+    - { text: "Left-eye signals use a different transmitter", why: "The separation is anatomical, by layer." }
+  refs: [lateral-geniculate-nucleus]
+
+- id: q-vis-sc
+  kind: mcq
+  stem: What does the superior colliculus mainly do in vision?
+  answer: Turns the eyes and head toward things, driving saccades
+  distractors:
+    - { text: "Controls pupil size", why: "That's the pretectum." }
+    - { text: "Relays most conscious vision to V1", why: "That's the LGN." }
+    - { text: "Recognizes faces", why: "That's the fusiform face area." }
+  refs: [superior-colliculus, retinotectal-projection]
+
+- id: q-vis-simple
+  kind: mcq
+  stem: A V1 simple cell fires best to a bar of light at one angle. Where does this tuning come from?
+  answer: Several LGN cells with receptive fields lined up in a row feed it
+  distractors:
+    - { text: "One ganglion cell connects directly to it", why: "Ganglion cells reach V1 only through the LGN, and many inputs are combined." }
+    - { text: "The cornea is shaped to favor lines", why: "Orientation tuning is built in V1's wiring." }
+    - { text: "Rods detect edges", why: "Edges are built up from center–surround fields further along." }
+  refs: [simple-cell]
+  tags: { difficulty: 3 }
+
+- id: q-vis-face
+  kind: case
+  stem: After a stroke on the underside of the temporal lobe, a man can describe a face's eyes, nose and mouth but cannot tell his wife's face from a stranger's. What is this?
+  answer: prosopagnosia
+  distractors: [akinetopsia, simultagnosia, apperceptive-agnosia]
+
+- id: q-vis-motion
+  kind: case
+  stem: A woman says pouring tea is hard because the liquid looks frozen, then suddenly the cup is full. What does she have?
+  answer: akinetopsia
+  distractors: [prosopagnosia, simultagnosia, associative-agnosia]
+
+- id: q-vis-agnosia
+  kind: case
+  stem: A patient copies a drawing of a key accurately but can't say what it is until he holds a real key. What is this?
+  answer: associative-agnosia
+  distractors: [apperceptive-agnosia, simultagnosia, prosopagnosia]

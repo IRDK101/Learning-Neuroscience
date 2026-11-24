@@ -1,0 +1,104 @@
+# Hand-written quiz questions for the eye.
+
+- id: q-eye-muscles
+  kind: mcq
+  stem: How many extraocular muscles move each eye?
+  answer: Six (four rectus and two oblique)
+  distractors:
+    - { text: "Four", why: "There are four rectus muscles plus two obliques." }
+    - { text: "Two", why: "Moving the eye in every direction takes six." }
+    - { text: "One, the ciliary muscle", why: "The ciliary muscle is inside the eye and focuses the lens." }
+  refs: [extraocular-muscles]
+  tags: { difficulty: 1 }
+
+- id: q-eye-lens
+  kind: mcq
+  stem: What changes the shape of the lens to focus on something close?
+  answer: The ciliary muscle, acting through the zonule fibers
+  distractors:
+    - { text: "The iris", why: "The iris sets the pupil size." }
+    - { text: "The extraocular muscles", why: "Those rotate the whole eyeball." }
+    - { text: "The cornea", why: "The cornea bends light but has a fixed shape." }
+  refs: [ciliary-muscle, zonule-fibers, lens]
+
+- id: q-eye-blindspot
+  kind: mcq
+  stem: Why does each eye have a blind spot?
+  answer: The optic disk, where axons leave the eye, has no photoreceptors
+  distractors:
+    - { text: "The fovea has no cones", why: "The fovea is packed with cones." }
+    - { text: "Blood vessels block light at the macula", why: "Few vessels cross the macula." }
+    - { text: "The lens can't focus on that spot", why: "The problem is missing receptors, not focus." }
+  refs: [optic-disk]
+  tags: { difficulty: 1 }
+
+- id: q-eye-spikes
+  kind: mcq
+  stem: Which retinal cells fire action potentials?
+  answer: Only the ganglion cells
+  distractors:
+    - { text: "Photoreceptors and bipolar cells", why: "They're neurons but use graded potentials." }
+    - { text: "All retinal neurons", why: "Only ganglion cells spike." }
+    - { text: "Only the photoreceptors", why: "Photoreceptors use graded potentials." }
+  refs: [ganglion-cell]
+
+- id: q-eye-rods
+  kind: mcq
+  stem: Why is a dim star easier to see if you look slightly to one side of it?
+  answer: The light then falls outside the fovea, where sensitive rods are common
+  distractors:
+    - { text: "The fovea has more rods than the rest of the retina", why: "The fovea has no rods at all." }
+    - { text: "Cones are more light-sensitive than rods", why: "Rods are far more sensitive." }
+    - { text: "The blind spot is in the center of vision", why: "The blind spot is off to the side." }
+  refs: [rod, fovea]
+
+- id: q-eye-fovea
+  kind: mcq
+  stem: Why is vision sharpest at the fovea?
+  answer: Each cone there has its own bipolar and ganglion cell, so location is preserved
+  distractors:
+    - { text: "Many photoreceptors converge on each ganglion cell", why: "Convergence boosts sensitivity but blurs location; that's outside the fovea." }
+    - { text: "Rods are densest there", why: "There are no rods in the fovea." }
+    - { text: "Light passes through more layers there", why: "The layers are pushed aside at the fovea." }
+  refs: [fovea, convergence]
+
+- id: q-eye-dark
+  kind: mcq
+  stem: What happens to a photoreceptor when light hits it?
+  answer: Na⁺ channels close, it hyperpolarizes and releases less glutamate
+  distractors:
+    - { text: "Na⁺ channels open and it fires an action potential", why: "Photoreceptors hyperpolarize in light and don't spike." }
+    - { text: "It depolarizes and releases more glutamate", why: "That's what happens in the dark." }
+    - { text: "It releases GABA onto bipolar cells", why: "Photoreceptors release glutamate." }
+  refs: [phototransduction, photoreceptor]
+
+- id: q-eye-on
+  kind: mcq
+  stem: Light shines on a cone. What happens to the ON-center bipolar cell it connects to?
+  answer: It depolarizes, because less glutamate means less inhibition through its metabotropic receptors
+  distractors:
+    - { text: "It hyperpolarizes, because it has excitatory ionotropic receptors", why: "That describes the OFF-center bipolar cell." }
+    - { text: "Nothing; bipolar cells respond only to darkness", why: "ON and OFF cells respond in opposite ways to light." }
+    - { text: "It fires an action potential", why: "Bipolar cells use graded potentials." }
+  refs: [on-center-bipolar]
+  tags: { difficulty: 3 }
+
+- id: q-eye-center
+  kind: mcq
+  stem: A spot of light falls only on the surround of an ON-center ganglion cell's receptive field. What does the cell do?
+  answer: It fires less than usual
+  distractors:
+    - { text: "It fires more than usual", why: "Light in the surround inhibits an ON-center cell." }
+    - { text: "It fires the same as in uniform light", why: "Surround light alone lowers the rate." }
+    - { text: "It stops responding permanently", why: "The effect lasts only while the light is there." }
+  refs: [center-surround]
+
+- id: q-eye-color
+  kind: mcq
+  stem: A red-center, green-surround ganglion cell fires most strongly when...
+  answer: Red light is in the center and green light in the surround
+  distractors:
+    - { text: "Green light fills the whole field", why: "Green in the center inhibits this cell." }
+    - { text: "Red light fills the whole field", why: "Red in the surround inhibits; the best response pairs red center with green surround." }
+    - { text: "Blue light is in the center", why: "This cell compares red and green." }
+  refs: [color-opponency]

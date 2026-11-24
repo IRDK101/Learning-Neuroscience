@@ -1,0 +1,104 @@
+# Hand-written quiz questions for hearing and balance.
+
+- id: q-aud-order
+  kind: mcq
+  stem: In what order does sound pass through the middle ear?
+  answer: Eardrum → malleus → incus → stapes → oval window
+  distractors:
+    - { text: "Eardrum → stapes → incus → malleus → round window", why: "The malleus is attached to the eardrum; the stapes is last." }
+    - { text: "Oval window → stapes → incus → malleus → eardrum", why: "That's backwards." }
+    - { text: "Eardrum → incus → malleus → stapes → oval window", why: "The malleus comes before the incus." }
+  refs: [ossicles, malleus, incus, stapes]
+  tags: { difficulty: 1 }
+
+- id: q-aud-pitch
+  kind: mcq
+  stem: Two sounds have the same intensity but one has double the frequency. How do they differ?
+  answer: The higher-frequency one sounds higher in pitch
+  distractors:
+    - { text: "The higher-frequency one sounds louder", why: "Loudness depends on intensity, which is the same." }
+    - { text: "They sound identical", why: "Frequency is heard as pitch." }
+    - { text: "The higher-frequency one has a longer period", why: "Higher frequency means a shorter period." }
+  refs: [sound, frequency]
+  tags: { difficulty: 1 }
+
+- id: q-aud-base
+  kind: mcq
+  stem: Which part of the basilar membrane vibrates most to a high-pitched sound?
+  answer: The base, near the oval window, where it is narrow and stiff
+  distractors:
+    - { text: "The apex, where it is wide and floppy", why: "The apex responds best to low frequencies." }
+    - { text: "The whole membrane equally", why: "Each place is tuned to a different frequency." }
+    - { text: "The tectorial membrane, not the basilar membrane", why: "The tectorial membrane stays relatively still." }
+  refs: [basilar-membrane, tonotopy]
+
+- id: q-aud-ohc
+  kind: mcq
+  stem: What do outer hair cells mainly do?
+  answer: Change length to amplify basilar-membrane motion
+  distractors:
+    - { text: "Carry most of the signal into the auditory nerve", why: "About 95% of auditory fibers come from inner hair cells." }
+    - { text: "Detect head rotation", why: "That's the semicircular canals." }
+    - { text: "Release ATP onto spiral ganglion cells", why: "Hair cells release glutamate." }
+  refs: [outer-hair-cell]
+  tags: { difficulty: 3 }
+
+- id: q-aud-k
+  kind: mcq
+  stem: When a hair cell's stereocilia bend toward the tallest one, what flows in to depolarize it?
+  answer: K⁺, because the surrounding fluid is unusually rich in potassium
+  distractors:
+    - { text: "Na⁺, as in a typical neuron", why: "The channels on the stereocilia let in K⁺ from K⁺-rich fluid." }
+    - { text: "Cl⁻, which leaves the cell", why: "Chloride efflux is part of smell transduction." }
+    - { text: "Glutamate", why: "Glutamate is what the hair cell releases, not what enters it." }
+  refs: [hair-cell-transduction]
+
+- id: q-aud-path
+  kind: mcq
+  stem: Which is the correct order of the auditory pathway?
+  answer: Cochlear nuclei → superior olive → inferior colliculus → MGN → A1
+  distractors:
+    - { text: "Cochlear nuclei → superior colliculus → LGN → A1", why: "The superior colliculus and LGN are visual." }
+    - { text: "Superior olive → cochlear nuclei → MGN → inferior colliculus → A1", why: "The cochlear nuclei come first and the MGN comes after the inferior colliculus." }
+    - { text: "Cochlear nuclei → VPM → insula", why: "That's closer to the taste pathway." }
+  refs: [auditory-pathway]
+
+- id: q-aud-olive
+  kind: mcq
+  stem: Where does the brain first compare input from the two ears to locate a sound?
+  answer: The superior olive
+  distractors:
+    - { text: "The cochlear nuclei", why: "Each cochlear nucleus gets input from one ear only." }
+    - { text: "The inferior colliculus", why: "It comes after the superior olive." }
+    - { text: "The MGN", why: "Binaural comparison starts much earlier, in the brainstem." }
+  refs: [superior-olive]
+
+- id: q-aud-a1
+  kind: mcq
+  stem: In the primary auditory cortex, where are low frequencies represented?
+  answer: Toward the front (anterior)
+  distractors:
+    - { text: "Toward the back (posterior)", why: "High frequencies are represented toward the back." }
+    - { text: "Everywhere equally", why: "A1 is tonotopically organized." }
+    - { text: "Only in the right hemisphere", why: "Both A1s have the same map." }
+  refs: [primary-auditory-cortex, tonotopy]
+
+- id: q-aud-otolith
+  kind: mcq
+  stem: Which vestibular organs use calcium carbonate crystals, and what do they detect?
+  answer: The utricle and saccule; tilt and straight-line acceleration
+  distractors:
+    - { text: "The semicircular canals; head rotation", why: "The canals detect rotation but have no crystals in their cupula." }
+    - { text: "The cochlea; loud sounds", why: "The cochlea is for hearing." }
+    - { text: "The ossicles; sound pressure", why: "The ossicles are bones of the middle ear." }
+  refs: [otolith-organs, semicircular-canals]
+
+- id: q-aud-implant
+  kind: mcq
+  stem: Why do cochlear implants help most people with permanent hearing loss?
+  answer: Most permanent loss is from lost hair cells, which the implant bypasses by stimulating the nerve
+  distractors:
+    - { text: "They replace the ossicles", why: "Implants act in the cochlea, past the middle ear." }
+    - { text: "They regrow hair cells", why: "They bypass hair cells; nothing regrows." }
+    - { text: "They amplify sound in the ear canal", why: "That's a hearing aid." }
+  refs: [cochlear-implant]

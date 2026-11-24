@@ -1,0 +1,431 @@
+# The chemical senses: taste (gustation) and smell (olfaction).
+
+- id: chemical-senses
+  type: concept
+  name: Chemical senses
+  aliases: [chemical sense]
+  short: Taste and smell, the senses that detect molecules touching a sensory organ; among the oldest senses in evolution.
+  points:
+    - Even very simple organisms react to chemicals in their environment.
+    - "Taste is the gustatory system; smell is the olfactory system."
+    - Taste and smell are closely linked, because air from the mouth reaches the nasal cavity through the back of the throat.
+  related: [tastant, odorant]
+
+- id: tastant
+  type: term
+  name: Tastant
+  aliases: [tastants]
+  short: A molecule that taste cells detect, such as salt, acid or sugar.
+  source: corrected
+  corrections: [C-024]
+
+- id: odorant
+  type: term
+  name: Odorant
+  aliases: [odorants]
+  short: An airborne molecule that olfactory receptor cells detect.
+
+- id: epiglottis
+  type: region
+  name: Epiglottis
+  kind: body
+  system: body
+  short: The flap that closes over the trachea when you swallow, so food goes down the esophagus instead of the lungs.
+  functions:
+    - Separates the trachea (to the lungs, in front) from the esophagus (to the stomach, behind) during swallowing.
+
+# ---------------------------------------------------------------- taste
+
+- id: papilla
+  type: region
+  name: Papilla
+  aliases: [papillae]
+  kind: body
+  system: body
+  short: One of the bumps on the tongue; its grooves hold the taste buds.
+  functions:
+    - { text: "Houses taste buds in the grooves along its sides; papillae are not receptors themselves.", source: corrected, corrections: [C-024] }
+
+- id: taste-bud
+  type: region
+  name: Taste bud
+  aliases: [taste buds]
+  kind: cellular
+  system: cellular
+  short: An onion-shaped cluster of taste cells and basal cells that opens onto the tongue surface through a taste pore.
+  functions:
+    - Saliva dissolves food and carries tastants to the bud.
+    - Each bud holds cells that prefer different tastes, so every part of the tongue can detect every taste.
+
+- id: taste-pore
+  type: region
+  name: Taste pore
+  kind: cellular
+  system: cellular
+  parent: taste-bud
+  short: The small opening at the top of a taste bud where tastants make contact with the taste cells.
+
+- id: taste-cell
+  type: region
+  name: Taste cell
+  aliases: [taste receptor cell, taste cells]
+  kind: cellular
+  system: cellular
+  parent: taste-bud
+  short: The receptor cell of a taste bud; it detects tastants with its microvilli and releases transmitter onto gustatory afferent axons.
+  functions:
+    - Not a spiking neuron. It responds with graded depolarization, so more tastant means more transmitter released.
+    - Each cell has "favorite" tastes it responds to most strongly, though it can respond to several.
+    - Lives only about two weeks, because acid, heat and spice damage it.
+  connections:
+    - { to: gustatory-afferent-axon, dir: out, note: "Releases serotonin or ATP onto it" }
+
+- id: microvilli
+  type: region
+  name: Microvilli
+  aliases: [microvillus]
+  kind: cellular
+  system: cellular
+  parent: taste-cell
+  short: Fine finger-like extensions of a taste cell that reach into the taste pore and carry its taste receptors.
+
+- id: basal-cell
+  type: region
+  name: Basal cell
+  aliases: [basal cells]
+  kind: cellular
+  system: cellular
+  parent: taste-bud
+  short: A support cell at the base of a taste bud that makes new taste cells as old ones die.
+  functions:
+    - Replaces taste cells (which live about two weeks).
+    - Helps pass signals between taste cells and the gustatory afferent axons.
+    - { text: "Support cells may be what COVID-19 damages (best shown for the smell epithelium).", flags: [F-10] }
+
+- id: gustatory-afferent-axon
+  type: region
+  name: Gustatory afferent axon
+  aliases: [gustatory afferent axons, GAA]
+  kind: cellular
+  system: nerve
+  short: A sensory axon that receives transmitter from taste cells and fires action potentials toward the brainstem.
+  functions:
+    - More transmitter from the taste cell means a higher firing rate.
+    - Bundles into three cranial nerves that leave the tongue for the medulla.
+  connections:
+    - { to: gustatory-nucleus, dir: out }
+
+- id: gustatory-nucleus
+  type: region
+  name: Gustatory nucleus
+  aliases: [nucleus of the solitary tract, solitary nucleus]
+  kind: nucleus
+  system: brainstem
+  parent: medulla
+  short: The first stop for taste in the brain, in the medulla.
+  connections:
+    - { to: gustatory-afferent-axon, dir: in }
+    - { to: vpm-nucleus, dir: out }
+
+- id: vpm-nucleus
+  type: region
+  name: Ventral posterior medial nucleus
+  aliases: [VPM, VPM nucleus]
+  kind: nucleus
+  system: diencephalon
+  parent: thalamus
+  short: The part of the thalamus that relays taste (and touch from the face) to the cortex.
+  connections:
+    - { to: gustatory-nucleus, dir: in }
+    - { to: gustatory-cortex, dir: out }
+
+- id: gustatory-cortex
+  type: region
+  name: Primary gustatory cortex
+  aliases: [gustatory cortex, taste cortex]
+  system: insula
+  parent: insula
+  short: The taste area of the cortex, in the insula.
+  functions:
+    - Where taste information is consciously processed.
+  connections:
+    - { to: vpm-nucleus, dir: in }
+
+- id: taste-receptor-dimer
+  type: molecule
+  kind: receptor
+  name: Sweet and umami receptors
+  aliases: [T1R receptors, sweet receptor, umami receptor]
+  short: G-protein-coupled taste receptors built from two subunits; one pairing detects sweet and another detects umami.
+  functions:
+    - { text: "Sweet = T1R2 + T1R3; umami = T1R1 + T1R3.", source: corrected, corrections: [C-025] }
+
+- id: bitter-receptors
+  type: molecule
+  kind: receptor
+  name: Bitter receptors
+  aliases: [T2R receptors, T2Rs]
+  short: A family of about 25 different G-protein-coupled receptors, so many different toxins taste bitter.
+  functions:
+    - { text: "Many receptor types (not combinations of two subunits) let bitter detect a wide range of potential poisons.", source: corrected, corrections: [C-025] }
+
+- id: phospholipase-c
+  type: molecule
+  kind: enzyme
+  name: Phospholipase C
+  aliases: [PLC]
+  short: An enzyme, switched on by G proteins, that cuts PIP2 to make the messenger IP3.
+
+- id: ip3
+  type: molecule
+  kind: other
+  name: IP3
+  aliases: [inositol trisphosphate, PIP2]
+  short: A second messenger made from PIP2; in taste cells it releases Ca²⁺ from internal stores and opens Na⁺ channels.
+
+- id: atp-transmitter
+  type: molecule
+  kind: other
+  name: ATP (as a transmitter)
+  aliases: [ATP]
+  short: In sweet, bitter and umami cells, ATP itself is released through channels and excites the gustatory axon.
+
+- id: salt-transduction
+  type: pathway
+  kind: signaling
+  name: Salty taste transduction
+  short: Na⁺ flows straight into the taste cell, depolarizes it, and triggers serotonin release onto the gustatory axon.
+  steps:
+    - { label: Na⁺ enters through open Na⁺ channels at the top of the cell, ref: sodium-ion }
+    - { label: The taste cell depolarizes (graded) }
+    - { label: Voltage-gated Na⁺ and Ca²⁺ channels near the base open, ref: voltage-gated-calcium-channel }
+    - { label: Ca²⁺ makes vesicles fuse and release serotonin, ref: serotonin }
+    - { label: The gustatory afferent axon fires, ref: gustatory-afferent-axon }
+
+- id: sour-transduction
+  type: pathway
+  kind: signaling
+  name: Sour taste transduction
+  short: Protons (H⁺) enter through proton channels and also block K⁺ channels, so the cell depolarizes and releases serotonin.
+  steps:
+    - { label: H⁺ from acid enters through proton channels }
+    - { label: "H⁺ blocks K⁺ channels that are normally open, trapping K⁺ inside", ref: potassium-ion }
+    - { label: The taste cell depolarizes }
+    - { label: Voltage-gated Ca²⁺ channels open and serotonin is released, ref: serotonin }
+    - { label: The gustatory afferent axon fires, ref: gustatory-afferent-axon }
+
+- id: sweet-bitter-umami-transduction
+  type: pathway
+  kind: signaling
+  name: Sweet, bitter and umami transduction
+  short: G-protein-coupled receptors switch on phospholipase C, IP3 raises Ca²⁺ and Na⁺ inside, and ATP is released onto the axon.
+  steps:
+    - { label: Tastant binds a G-protein-coupled receptor, ref: metabotropic-receptor }
+    - { label: G protein activates phospholipase C, ref: phospholipase-c, via: g-protein }
+    - { label: PIP2 → IP3, ref: ip3 }
+    - { label: "IP3 releases Ca²⁺ from internal stores and opens Na⁺ channels", ref: calcium-ion }
+    - { label: Ca²⁺ opens ATP-release channels, ref: atp-transmitter }
+    - { label: The gustatory afferent axon fires, ref: gustatory-afferent-axon }
+
+- id: taste-pathway
+  type: pathway
+  kind: anatomical
+  name: Taste pathway
+  short: Tongue → gustatory nucleus (medulla) → VPM of the thalamus → gustatory cortex (insula).
+  steps:
+    - { label: Taste cells on the tongue, ref: taste-cell }
+    - { label: Gustatory afferent axons in three cranial nerves, ref: gustatory-afferent-axon }
+    - { label: Gustatory nucleus (medulla), ref: gustatory-nucleus }
+    - { label: VPM nucleus (thalamus), ref: vpm-nucleus }
+    - { label: Primary gustatory cortex (insula), ref: gustatory-cortex }
+
+- id: conditioned-taste-aversion
+  type: experiment
+  name: Conditioned taste aversion
+  aliases: [Garcia effect, taste aversion]
+  short: After a new food is followed by nausea, animals avoid that food; one pairing is enough.
+  setup: Rats ate a new food, then were injected either with a drug that made them nauseous or with nothing.
+  findings:
+    - Rats that got sick avoided the food afterwards.
+    - Rats that didn't get sick ate more of it the second time.
+    - Taste pairs easily with sickness and sound with pain, but taste–pain and sound–sickness pairings are hard to learn.
+  shows: The brain is built to learn some associations far more easily than others, which helps animals avoid poison.
+
+# ---------------------------------------------------------------- smell
+
+- id: olfactory-epithelium
+  type: region
+  name: Olfactory epithelium
+  kind: layer
+  system: nerve
+  short: The patch of tissue lining the roof of the nasal cavity that holds the olfactory receptor cells.
+  location: Top of the nasal cavity, just under the cribriform plate of the skull.
+  functions:
+    - The only place in the body with cells that detect odorants.
+    - Covered in mucus, which traps odorant molecules so they reach the cilia.
+    - Much smaller in humans than in dogs, which is one reason dogs smell far better.
+
+- id: olfactory-receptor-cell
+  type: region
+  name: Olfactory receptor cell
+  aliases: [olfactory receptor neuron, olfactory receptor cells]
+  kind: cellular
+  system: nerve
+  parent: olfactory-epithelium
+  short: A neuron in the nasal epithelium whose cilia detect odorants and whose axon runs to the olfactory bulb.
+  functions:
+    - { text: "Each cell expresses one type of odorant receptor, out of about 400 in humans.", source: corrected, corrections: [C-026] }
+  connections:
+    - { to: glomerulus, dir: out }
+
+- id: olfactory-cilia
+  type: region
+  name: Olfactory cilia
+  kind: cellular
+  system: nerve
+  parent: olfactory-receptor-cell
+  short: Hair-like dendrites of olfactory receptor cells that sit in the mucus and carry the odorant receptors.
+
+- id: odorant-receptor
+  type: molecule
+  kind: receptor
+  name: Odorant receptor
+  aliases: [odorant receptors, olfactory receptor protein]
+  short: A G-protein-coupled receptor on olfactory cilia; humans have about 400 types.
+  functions:
+    - { text: "Each receptor responds to many odorants, and each odorant activates several receptors; a smell is a pattern across receptors.", source: corrected, corrections: [C-026] }
+    - Couples to the G protein G_olf (not itself called "Golf").
+
+- id: g-olf
+  type: molecule
+  kind: protein
+  name: G_olf
+  aliases: [Golf, G-olf]
+  parent: g-protein
+  short: The G protein that odorant receptors switch on; it activates adenylyl cyclase.
+  source: corrected
+  corrections: [C-026]
+
+- id: adenylyl-cyclase
+  type: molecule
+  kind: enzyme
+  name: Adenylyl cyclase
+  short: An enzyme that converts ATP into the second messenger cAMP.
+  functions:
+    - { text: "ATP → cAMP (ATP is the raw material).", source: corrected, corrections: [C-027] }
+
+- id: camp
+  type: molecule
+  kind: other
+  name: cAMP
+  aliases: [cyclic AMP]
+  short: A second messenger; in olfactory cells it opens cAMP-gated Na⁺/Ca²⁺ channels from the inside.
+
+- id: olfactory-transduction
+  type: pathway
+  kind: signaling
+  name: Smell transduction
+  short: Odorant → receptor → G_olf → adenylyl cyclase → cAMP → Na⁺/Ca²⁺ in → Cl⁻ out → depolarization.
+  steps:
+    - { label: Odorant binds a receptor on the cilia, ref: odorant-receptor }
+    - { label: G_olf activates adenylyl cyclase, ref: adenylyl-cyclase, via: g-olf }
+    - { label: ATP → cAMP, ref: camp, source: corrected, corrections: [C-027] }
+    - { label: cAMP opens Na⁺/Ca²⁺ channels, ref: calcium-ion }
+    - { label: Ca²⁺ opens Cl⁻ channels; Cl⁻ flows out, ref: chloride-ion, note: "These cells hold unusually high Cl⁻ inside, so Cl⁻ leaving depolarizes them." }
+    - { label: The cell depolarizes and fires, ref: olfactory-receptor-cell }
+
+- id: olfactory-bulb
+  type: region
+  name: Olfactory bulb
+  aliases: [olfactory bulbs]
+  system: limbic
+  short: The first stop for smell in the brain, just above the nasal cavity, where receptor-cell axons end in glomeruli.
+  location: Under the frontal lobe, above the cribriform plate.
+  functions:
+    - Sorts smell input by receptor type, so the "label" of each receptor is kept up the chain.
+  connections:
+    - { to: olfactory-receptor-cell, dir: in }
+    - { to: olfactory-tubercle, dir: out }
+    - { to: olfactory-cortex, dir: out, note: "Directly, without the thalamus" }
+    - { to: amygdala, dir: out }
+
+- id: glomerulus
+  type: region
+  name: Glomerulus
+  aliases: [glomeruli]
+  kind: cellular
+  system: limbic
+  parent: olfactory-bulb
+  short: A small knot in the olfactory bulb where all the axons from one receptor type converge.
+  functions:
+    - One receptor type, one location.
+
+- id: mitral-cell
+  type: region
+  name: Mitral cell
+  aliases: [mitral cells]
+  kind: cellular
+  system: limbic
+  parent: olfactory-bulb
+  short: The output neuron of the olfactory bulb; it receives from a glomerulus and sends its axon into the olfactory tract.
+  source: added
+
+- id: cribriform-plate
+  type: region
+  name: Cribriform plate
+  kind: body
+  system: bone
+  short: A sieve-like piece of skull bone that olfactory axons pass through on their way to the bulb.
+  source: added
+
+- id: olfactory-tubercle
+  type: region
+  name: Olfactory tubercle
+  system: limbic
+  short: A target of the olfactory bulb that passes smell on to the thalamus and then the orbitofrontal cortex.
+  connections:
+    - { to: olfactory-bulb, dir: in }
+    - { to: thalamus, dir: out }
+
+- id: orbitofrontal-cortex
+  type: region
+  name: Orbitofrontal cortex
+  aliases: [OFC]
+  parent: prefrontal-cortex
+  system: frontal
+  short: The underside of the frontal lobe, just above the eyes; it receives smell via the thalamus and helps judge rewards.
+  connections:
+    - { to: thalamus, dir: in }
+
+- id: olfactory-cortex
+  type: region
+  name: Olfactory cortex
+  aliases: [piriform cortex, primary olfactory cortex]
+  system: temporal
+  short: Cortex on the medial temporal lobe that receives smell directly from the olfactory bulb, skipping the thalamus.
+  functions:
+    - { text: "Part of the direct route to the temporal lobe, near memory and emotion centers (the bulb reaches the hippocampus via the entorhinal cortex).", flags: [F-11] }
+  connections:
+    - { to: olfactory-bulb, dir: in }
+
+- id: olfactory-pathway
+  type: pathway
+  kind: anatomical
+  name: Smell pathways
+  short: Receptor cells → olfactory bulb → either the olfactory tubercle → thalamus → orbitofrontal cortex, or directly to the temporal lobe.
+  steps:
+    - { label: Olfactory receptor cells, ref: olfactory-receptor-cell }
+    - { label: Glomeruli of the olfactory bulb, ref: glomerulus }
+    - { label: Olfactory tubercle, ref: olfactory-tubercle, note: "Route 1. Route 2 skips the thalamus and goes straight to the olfactory cortex, amygdala and (via entorhinal cortex) hippocampus." }
+    - { label: Thalamus, ref: thalamus }
+    - { label: Orbitofrontal cortex, ref: orbitofrontal-cortex }
+
+- id: smell-population-code
+  type: concept
+  name: Smell as a pattern
+  aliases: [population coding of smell, combinatorial code]
+  short: Each smell activates a unique combination of the ~400 receptor types at different strengths, so we can tell apart far more than 400 smells.
+  points:
+    - { text: "A receptor and a single smell are not one-to-one.", source: corrected, corrections: [C-026] }
+    - Receptor types come in families of similar receptors.
+  related: [odorant-receptor, glomerulus]

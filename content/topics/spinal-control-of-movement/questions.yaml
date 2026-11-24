@@ -1,0 +1,89 @@
+# Hand-written quiz questions for spinal control of movement.
+
+- id: q-spin-ventral
+  kind: mcq
+  stem: Where are the cell bodies of alpha (lower) motor neurons?
+  answer: In the ventral horn of the spinal cord
+  distractors:
+    - { text: "In the dorsal root ganglion", why: "That holds sensory neuron cell bodies." }
+    - { text: "In the dorsal horn", why: "The dorsal horn is mostly sensory." }
+    - { text: "In the primary motor cortex", why: "That's where upper motor neurons are." }
+  refs: [alpha-motor-neuron, ventral-horn]
+  tags: { difficulty: 1 }
+
+- id: q-spin-unit
+  kind: mcq
+  stem: What is a motor unit?
+  answer: One alpha motor neuron and all the muscle fibers it contacts
+  distractors:
+    - { text: "All the motor neurons supplying one muscle", why: "That's a motor neuron pool." }
+    - { text: "One muscle fiber and its spindle", why: "A spindle is a sensor, not part of a motor unit." }
+    - { text: "A pair of opposing muscles", why: "That's a flexor–extensor pair." }
+  refs: [motor-unit, motor-neuron-pool]
+  tags: { difficulty: 1 }
+
+- id: q-spin-ratio
+  kind: mcq
+  stem: Why can your fingers make finer movements than your thigh?
+  answer: Each finger motor neuron controls only a few muscle fibers
+  distractors:
+    - { text: "Finger muscles are smooth muscle", why: "Finger muscles are skeletal muscle." }
+    - { text: "Finger motor neurons fire more slowly", why: "Precision comes from a low innervation ratio." }
+    - { text: "Thigh muscles have no motor units", why: "All skeletal muscles are organized into motor units." }
+  refs: [innervation-ratio]
+
+- id: q-spin-force
+  kind: mcq
+  stem: Which two things does the nervous system adjust to increase a muscle's force?
+  answer: Firing rate of motor neurons and the number of motor units recruited
+  distractors:
+    - { text: "The amount of ACh per vesicle and the length of the muscle", why: "Force is graded by rate and recruitment." }
+    - { text: "Switching motor units from fast to slow", why: "Motor unit types are fixed." }
+    - { text: "Activating the antagonist at the same time", why: "That would work against the movement." }
+  refs: [muscle-force]
+
+- id: q-spin-als
+  kind: case
+  stem: A 55-year-old develops spreading muscle weakness, wasting and twitching. Tests show both upper and lower motor neurons are dying while the muscles themselves are healthy. What is this?
+  answer: als
+  distractors: [bells-palsy, parkinsons-disease, multiple-sclerosis]
+
+- id: q-spin-knee
+  kind: mcq
+  stem: In the knee-jerk reflex, what does the tap do?
+  answer: Stretches the quadriceps, so its spindles excite its own motor neurons
+  distractors:
+    - { text: "Relaxes the quadriceps, so the spindle signals a correction", why: "The tap stretches the muscle." }
+    - { text: "Activates the Golgi tendon organ, which excites the quadriceps", why: "Golgi tendon organs inhibit their own muscle." }
+    - { text: "Sends a signal to the motor cortex, which kicks the leg", why: "The reflex is handled in the spinal cord." }
+  refs: [stretch-reflex]
+
+- id: q-spin-gamma
+  kind: mcq
+  stem: What do gamma motor neurons do?
+  answer: Tighten the spindle's fibers along with the muscle so the spindle keeps reporting
+  distractors:
+    - { text: "Make the main muscle fibers contract", why: "That's the alpha motor neurons' job." }
+    - { text: "Inhibit the antagonist muscle", why: "That's done by inhibitory interneurons." }
+    - { text: "Carry tension signals from the tendon", why: "That's the Ib axon." }
+  refs: [gamma-motor-neuron]
+
+- id: q-spin-gto
+  kind: mcq
+  stem: What happens when a Golgi tendon organ senses very high tension?
+  answer: Through an inhibitory interneuron, it relaxes the same muscle
+  distractors:
+    - { text: "It makes the same muscle contract harder", why: "That's the spindle's stretch reflex." }
+    - { text: "It sends a signal straight to the cortex to stop", why: "The loop is in the spinal cord." }
+    - { text: "It excites the antagonist via Ia axons", why: "GTOs use Ib axons and inhibit their own muscle." }
+  refs: [golgi-tendon-organ, golgi-tendon-reflex]
+
+- id: q-spin-reciprocal
+  kind: mcq
+  stem: When the quadriceps contracts in the knee-jerk, why doesn't the hamstring resist?
+  answer: A branch of the Ia axon excites an inhibitory interneuron that silences the hamstring's motor neurons
+  distractors:
+    - { text: "The hamstring has no motor neurons", why: "It does; they're inhibited." }
+    - { text: "The brain sends a stop command to the hamstring", why: "Reciprocal inhibition happens in the cord." }
+    - { text: "The Golgi tendon organ excites the hamstring", why: "GTOs inhibit their own muscle." }
+  refs: [reciprocal-inhibition]

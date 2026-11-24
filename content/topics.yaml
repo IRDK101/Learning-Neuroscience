@@ -6,13 +6,13 @@
 - { id: action-potential, name: The Action Potential, unit: foundations, order: 5, status: ready, summary: "The all-or-nothing spike: its phases, the channels behind it, conduction, and summation." }
 - { id: synaptic-transmission, name: Synaptic Transmission, unit: foundations, order: 6, status: ready, summary: "Electrical vs chemical synapses, the four steps of chemical transmission, and receptors." }
 - { id: nt-systems, name: Neurotransmitter Systems, unit: foundations, order: 7, status: ready, summary: "Acetylcholine, the catecholamines, serotonin and the amino acids: how each is made, where it comes from, how it's cleared, and how drugs change it." }
-- { id: chemical-senses, name: The Chemical Senses, unit: senses-and-movement, order: 8, summary: "Taste transduction, the taste pathway, conditioned taste aversion, and smell." }
-- { id: auditory-vestibular, name: Auditory and Vestibular Systems, unit: senses-and-movement, order: 9, summary: "From air pressure to hair cells: the middle ear, cochlea, auditory pathway, and balance." }
-- { id: somatosensory, name: The Somatosensory System, unit: senses-and-movement, order: 10, summary: "Skin receptors, pain and temperature, the two pathways to the brain, and S1." }
-- { id: eye, name: The Eye, unit: senses-and-movement, order: 11, summary: "Eye anatomy, the retina, phototransduction, and ON/OFF receptive fields." }
-- { id: central-visual-system, name: The Central Visual System, unit: senses-and-movement, order: 12, summary: "Retina to LGN to V1, visual-field lesions, and the agnosias." }
-- { id: spinal-control-of-movement, name: Spinal Control of Movement, unit: senses-and-movement, order: 13, summary: "Muscles, motor units, muscle spindles, Golgi tendon organs and spinal reflexes." }
-- { id: brain-control-of-movement, name: Brain Control of Movement, unit: senses-and-movement, order: 14, summary: "Descending tracts, M1 and population coding, the basal ganglia and the cerebellum." }
+- { id: chemical-senses, name: The Chemical Senses, unit: senses-and-movement, order: 8, status: ready, summary: "Taste transduction, the taste pathway, conditioned taste aversion, and smell." }
+- { id: auditory-vestibular, name: Auditory and Vestibular Systems, unit: senses-and-movement, order: 9, status: ready, summary: "From air pressure to hair cells: the middle ear, cochlea, auditory pathway, and balance." }
+- { id: somatosensory, name: The Somatosensory System, unit: senses-and-movement, order: 10, status: ready, summary: "Skin receptors, pain and temperature, the two pathways to the brain, and S1." }
+- { id: eye, name: The Eye, unit: senses-and-movement, order: 11, status: ready, summary: "Eye anatomy, the retina, phototransduction, and ON/OFF receptive fields." }
+- { id: central-visual-system, name: The Central Visual System, unit: senses-and-movement, order: 12, status: ready, summary: "Retina to LGN to V1, visual-field lesions, and the agnosias." }
+- { id: spinal-control-of-movement, name: Spinal Control of Movement, unit: senses-and-movement, order: 13, status: ready, summary: "Muscles, motor units, muscle spindles, Golgi tendon organs and spinal reflexes." }
+- { id: brain-control-of-movement, name: Brain Control of Movement, unit: senses-and-movement, order: 14, status: ready, summary: "Descending tracts, M1 and population coding, the basal ganglia and the cerebellum." }
 - { id: emotion, name: Brain Mechanisms of Emotion, unit: higher-functions, order: 15, summary: "Theories of emotion, the limbic system, the amygdala and the hypothalamus." }
 - { id: rest-attention-unconscious, name: "The Resting Brain, Attention & the Unconscious", unit: higher-functions, order: 16, summary: "The default mode network, bottom-up vs top-down attention, and neglect." }
 - { id: language, name: Language, unit: higher-functions, order: 17, summary: "Aphasias, the Wernicke-Geschwind model, and how language is lateralized." }

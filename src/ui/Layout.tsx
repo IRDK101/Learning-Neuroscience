@@ -4,6 +4,7 @@ import { setSetting, useProgress } from '../progress/store';
 import { Icon } from './bits';
 import { SvgDefs } from './Diagram';
 import { PopoverLayer } from './PopoverLayer';
+import { SearchButton } from './SearchDialog';
 import { Toaster } from './toast';
 
 const NAV = [
@@ -59,7 +60,10 @@ export function Layout() {
               </NavLink>
             ))}
           </nav>
-          <ThemeButton />
+          <div className="topbar-tools">
+            <SearchButton />
+            <ThemeButton />
+          </div>
         </div>
       </header>
       <main id="main" tabIndex={-1}>

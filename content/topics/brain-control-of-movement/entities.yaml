@@ -1,0 +1,185 @@
+# How the brain plans, starts, steers and refines movement.
+
+- id: motor-hierarchy
+  type: concept
+  name: Motor hierarchy
+  aliases: [strategy tactics execution]
+  short: "Movement is organized at three levels: strategy (what goal), tactics (which movements) and execution (carrying them out)."
+  source: corrected
+  corrections: [C-051]
+  points:
+    - "Strategy: association cortex and basal ganglia (e.g., get a drink because you're thirsty)."
+    - "Tactics: motor cortex and cerebellum (reach for the bottle)."
+    - "Execution: brainstem and spinal cord (the muscle contractions of grabbing it)."
+
+- id: lateral-pathways
+  type: concept
+  name: Lateral pathways
+  short: The descending tracts for voluntary movement of the limbs, including the corticospinal and rubrospinal tracts.
+  related: [corticospinal-tract, ventromedial-pathways]
+
+- id: ventromedial-pathways
+  type: concept
+  name: Ventromedial pathways
+  short: Descending tracts near the middle of the cord that handle posture, balance and other automatic adjustments.
+  related: [lateral-pathways]
+
+- id: upper-motor-neuron
+  type: region
+  name: Upper motor neuron
+  aliases: [upper motor neurons, UMN, corticospinal neuron, corticospinal neurons]
+  kind: cellular
+  system: frontal
+  short: A motor neuron in the cortex (mostly M1) whose single long axon runs down to the spinal cord's lower motor neurons.
+  functions:
+    - Some of the longest cells in the body.
+    - Fires most just before a movement starts; its rate predicts the force needed.
+    - Each one has a preferred direction of movement.
+  connections:
+    - { to: alpha-motor-neuron, dir: out }
+    - { to: spinal-interneuron, dir: out }
+
+- id: corticospinal-tract
+  type: pathway
+  kind: anatomical
+  name: Corticospinal tract
+  aliases: [pyramidal tract]
+  short: Upper motor neurons in M1 and area 6 send axons through the brainstem; they cross in the medulla and synapse on lower motor neurons on the other side.
+  steps:
+    - { label: Upper motor neurons in M1 and area 6, ref: upper-motor-neuron, source: corrected, corrections: [C-052] }
+    - { label: Down through the internal capsule and brainstem, ref: brainstem }
+    - { label: Crosses at the pyramidal decussation (medulla), ref: medulla, source: corrected, corrections: [C-052] }
+    - { label: Lateral white matter of the spinal cord, ref: spinal-cord }
+    - { label: Lower (alpha) motor neuron in the ventral horn, ref: alpha-motor-neuron }
+  diagrams: [long-tracts]
+
+- id: premotor-area
+  type: region
+  name: Premotor area
+  aliases: [PMA, premotor cortex]
+  parent: frontal-lobe
+  system: frontal
+  short: Part of area 6, in front of M1, that plans movements; its neurons fire after an instruction and before the movement.
+  source: corrected
+  corrections: [C-053]
+  functions:
+    - Decides what movement to make before the upper motor neurons carry it out.
+    - Contains mirror neurons (shown in monkeys).
+
+- id: supplementary-motor-area
+  type: region
+  name: Supplementary motor area
+  aliases: [SMA]
+  parent: frontal-lobe
+  system: frontal
+  short: Part of area 6, on the top and inner surface in front of M1, involved in planning sequences of movement.
+
+- id: area-6
+  type: term
+  name: Area 6
+  short: Brodmann's area 6, just in front of M1; it holds the premotor and supplementary motor areas.
+
+- id: mirror-neurons
+  type: concept
+  name: Mirror neurons
+  aliases: [mirror neuron]
+  short: Premotor neurons that fire both when an animal does an action and when it watches another do it.
+  points:
+    - Clearly shown in monkeys; whether humans have them in the same form is debated.
+    - Proposed as a basis for understanding others' intentions and empathy.
+  regions: [premotor-area]
+
+- id: population-coding
+  type: concept
+  name: Population coding
+  aliases: [population vector, directional tuning]
+  short: Each M1 neuron fires most for one direction; the direction of a movement is the combined "vote" of many neurons, like adding vectors.
+  points:
+    - There isn't a neuron for every angle; combining cells at different rates gives any direction.
+  regions: [primary-motor-cortex]
+
+- id: subthalamic-nucleus
+  type: region
+  name: Subthalamic nucleus
+  aliases: [STN]
+  kind: nucleus
+  parent: basal-ganglia
+  system: basal-ganglia
+  short: A small nucleus below the thalamus in the indirect pathway; damage causes hemiballismus.
+  cases: [hemiballismus]
+
+- id: basal-ganglia-loop
+  type: pathway
+  kind: circuit
+  name: Basal ganglia motor loop
+  short: Cortex → striatum → globus pallidus → thalamus → back to the motor cortex, comparing intended and actual movement.
+  steps:
+    - { label: Frontal and motor cortex (a copy of the plan), ref: prefrontal-cortex }
+    - { label: Striatum (caudate + putamen), ref: striatum }
+    - { label: Globus pallidus, ref: globus-pallidus }
+    - { label: Thalamus, ref: thalamus }
+    - { label: Back to the motor cortex and SMA, ref: supplementary-motor-area }
+
+- id: direct-indirect-pathways
+  type: concept
+  name: Direct and indirect pathways
+  aliases: [direct pathway, indirect pathway]
+  short: Two routes through the basal ganglia; the direct pathway helps start wanted movements and the indirect pathway suppresses unwanted ones.
+  points:
+    - Dopamine from the substantia nigra tunes both.
+    - Parkinson's disease is mostly too little "go"; hemiballismus and Tourette syndrome involve too little "stop".
+  regions: [basal-ganglia, substantia-nigra]
+
+- id: hemiballismus
+  type: case
+  kind: disorder
+  name: Hemiballismus
+  aliases: [ballism]
+  short: Violent, flinging movements of the limbs on one side of the body, from failing to suppress unwanted movement.
+  damage:
+    regions: [subthalamic-nucleus]
+    cause: Damage to the subthalamic nucleus on the side opposite the affected limbs.
+  source: corrected
+  corrections: [C-055]
+
+- id: tourette-syndrome
+  type: case
+  kind: disorder
+  name: Tourette syndrome
+  aliases: [Tourette's]
+  short: A disorder of unwanted tics and vocalizations, linked to faulty basal ganglia loops.
+  damage:
+    regions: [basal-ganglia]
+  treatments:
+    - { text: "Deep brain stimulation in some severe cases.", flags: [F-18] }
+
+- id: deep-brain-stimulation
+  type: concept
+  name: Deep brain stimulation
+  aliases: [DBS]
+  short: Implanted electrodes deliver steady pulses to a deep target (such as the subthalamic nucleus) to treat movement disorders.
+  points:
+    - { text: "How it works is debated; high-frequency stimulation often overrides abnormal activity rather than simply boosting it.", flags: [F-18] }
+
+- id: motor-learning
+  type: concept
+  name: Motor learning
+  short: Improving a skill with practice; the cerebellum compares intended and actual movement and adjusts.
+  points:
+    - The cerebellum gets most of its input from the body senses and combines it with other senses.
+    - Damage hurts both accuracy and the ability to adapt (e.g., to prism glasses).
+  regions: [cerebellum]
+
+- id: cerebellar-ataxia
+  type: case
+  kind: syndrome
+  name: Cerebellar damage
+  aliases: [ataxia, dysmetria, dyssynergia, cerebellar ataxia]
+  short: Damage or alcohol disrupts the cerebellum, making movements clumsy, poorly timed and inaccurate.
+  damage:
+    regions: [cerebellum]
+    cause: Stroke, injury, or temporarily alcohol.
+  deficits:
+    - "Dyssynergia: movements that should be smooth break into jerky parts."
+    - { text: "Dysmetria: movements overshoot or undershoot their target (missing your nose on a finger-to-nose test).", source: corrected, corrections: [C-056] }
+    - Tremor during movement, unlike Parkinson's resting tremor.

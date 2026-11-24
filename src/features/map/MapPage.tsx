@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import { Link, useParams, useSearchParams } from 'react-router';
-import { connectedIds, content, diagram as getDiagram, entity, hotspotFor, NT_LAYER } from '../../content';
+import { connectedIds, content, diagram as getDiagram, entity, hotspotFor, NT_LAYER, topic } from '../../content';
+import { search } from '../../lib/search';
 import type { Entity } from '../../content/types';
 import { CopyLinkButton, Icon } from '../../ui/bits';
 import { Diagram } from '../../ui/Diagram';
@@ -9,37 +10,53 @@ import { PathwayView } from '../../ui/PathwayView';
 
 export function MapIndex() {
   const [q, setQ] = useState('');
-  const all = useMemo(() => Object.values(content.entities).sort((a, b) => a.name.localeCompare(b.name)), []);
-  const hits = q.trim()
-    ? all.filter((e) => `${e.name} ${e.aliases.join(' ')} ${e.short}`.toLowerCase().includes(q.trim().toLowerCase())).slice(0, 30)
-    : [];
+  const hits = useMemo(() => search(q, 30), [q]);
+  const groups = useMemo(
+    () =>
+      content.units
+        .map((u) => ({
+          unit: u,
+          diagrams: content.diagrams
+            .map((d, i) => ({ d, i, first: d.topics.map((t) => topic(t)).find(Boolean) }))
+            .filter((x) => (x.first?.unit ?? 'foundations') === u.id)
+            .sort((a, b) => (a.first?.order ?? 0) - (b.first?.order ?? 0) || a.i - b.i)
+            .map((x) => x.d),
+        }))
+        .filter((g) => g.diagrams.length > 0),
+    [],
+  );
   return (
     <div className="stack">
       <div className="page-head">
         <h1>Brain and body maps</h1>
       </div>
-      <div className="grid grid-3">
-        {content.diagrams.map((d) => (
-          <Link key={d.id} to={`/map/${d.id}`} className="panel topic-card" style={{ padding: '0.6rem' }}>
-            <Diagram id={d.id} controls={false} showLabels={false} ariaLabel={`Preview: ${d.title}`} />
-            <h3 style={{ padding: '0 0.3rem' }}>{d.title}</h3>
-          </Link>
-        ))}
-      </div>
       <section className="sheet">
-        <h2>Search everything</h2>
-        <input type="search" placeholder="e.g. dopamine, VTA, SSRIs…" value={q} onChange={(e) => setQ(e.target.value)} aria-label="Search brain structures, transmitters, drugs and concepts" style={{ width: '100%' }} />
+        <input type="search" placeholder="Search, e.g. dopamine, cochlea, fovea…" value={q} onChange={(e) => setQ(e.target.value)} aria-label="Search structures, terms, lessons and diagrams" style={{ width: '100%' }} />
         {hits.length > 0 && (
           <ul style={{ marginTop: '0.8rem' }}>
-            {hits.map((e) => (
-              <li key={e.id}>
-                <Link to={content.diagramsFor[e.id] ? `/map/${content.diagramsFor[e.id][0]}?focus=${e.id}` : `/entity/${e.id}`}>{e.name}</Link>
-                <span className="muted small">: {e.short}</span>
+            {hits.map((h) => (
+              <li key={h.key}>
+                <Link to={h.to}>{h.title}</Link>
+                <span className="muted small">: {h.detail}</span>
               </li>
             ))}
           </ul>
         )}
+        {q.trim() && hits.length === 0 && <p className="muted small">No matches.</p>}
       </section>
+      {groups.map((g) => (
+        <section key={g.unit.id} className="stack">
+          <h2>{g.unit.name}</h2>
+          <div className="grid grid-3">
+            {g.diagrams.map((d) => (
+              <Link key={d.id} to={`/map/${d.id}`} className="panel topic-card" style={{ padding: '0.6rem' }}>
+                <Diagram id={d.id} controls={false} showLabels={false} ariaLabel={`Preview: ${d.title}`} />
+                <h3 style={{ padding: '0 0.3rem' }}>{d.title}</h3>
+              </Link>
+            ))}
+          </div>
+        </section>
+      ))}
     </div>
   );
 }

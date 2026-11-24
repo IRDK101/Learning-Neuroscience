@@ -1,0 +1,75 @@
+# Hand-written quiz questions for brain control of movement.
+
+- id: q-move-hierarchy
+  kind: mcq
+  stem: Deciding to get a glass of water because you're thirsty is which level of motor control?
+  answer: Strategy
+  distractors:
+    - { text: "Tactics", why: "Tactics choose the movements, such as reaching for the glass." }
+    - { text: "Execution", why: "Execution is carrying out the contractions." }
+    - { text: "Reflex", why: "This is a goal-driven decision, not a reflex." }
+  refs: [motor-hierarchy]
+  tags: { difficulty: 1 }
+
+- id: q-move-cross
+  kind: mcq
+  stem: Where does the corticospinal tract cross to the other side?
+  answer: At the bottom of the medulla (the pyramidal decussation)
+  distractors:
+    - { text: "In the spinal cord at each level", why: "That's where pain and temperature fibers cross." }
+    - { text: "In the corpus callosum", why: "The corpus callosum connects the hemispheres; the tract descends." }
+    - { text: "It doesn't cross", why: "Each hemisphere controls the opposite side of the body." }
+  refs: [corticospinal-tract]
+
+- id: q-move-umn
+  kind: mcq
+  stem: How many neurons does a voluntary command pass through between M1 and a muscle fiber, at minimum?
+  answer: Two, an upper motor neuron and a lower motor neuron
+  distractors:
+    - { text: "One; M1 neurons reach the muscle", why: "Upper motor neurons stop in the spinal cord." }
+    - { text: "Three, as in the touch pathway", why: "The touch pathway has three; the direct motor route has two." }
+    - { text: "Five", why: "The shortest route is two neurons." }
+  refs: [upper-motor-neuron, alpha-motor-neuron]
+
+- id: q-move-population
+  kind: mcq
+  stem: How does M1 specify the direction of a reach?
+  answer: Many neurons with different preferred directions fire at different rates, and their combined vote sets the direction
+  distractors:
+    - { text: "One dedicated neuron exists for each possible angle", why: "There aren't neurons for every angle; directions are combined." }
+    - { text: "The cerebellum alone chooses the direction", why: "Direction is coded in M1's population activity." }
+    - { text: "Direction is set by which hemisphere fires", why: "Both hemispheres code direction for opposite limbs." }
+  refs: [population-coding]
+
+- id: q-move-pma
+  kind: mcq
+  stem: A monkey is told to get ready to reach but not to move yet. Neurons in which area fire during the wait?
+  answer: The premotor area
+  distractors:
+    - { text: "The primary somatosensory cortex", why: "S1 responds to touch and position." }
+    - { text: "The cerebellum's output only after the reach", why: "The planning activity is in premotor cortex before movement." }
+    - { text: "The ventral horn", why: "Lower motor neurons fire when the movement happens." }
+  refs: [premotor-area]
+
+- id: q-move-hemiballismus
+  kind: case
+  stem: After a small stroke, a man's left arm and leg make sudden violent flinging movements he can't stop. What is this, and where is the damage likely to be?
+  answer: hemiballismus
+  distractors: [parkinsons-disease, tourette-syndrome, cerebellar-ataxia]
+  explain: Hemiballismus comes from damage to the subthalamic nucleus on the side opposite the flailing limbs, here the right.
+
+- id: q-move-parkinson
+  kind: mcq
+  stem: Why does L-DOPA help in early Parkinson's disease but less as the disease advances?
+  answer: It boosts dopamine in surviving neurons but can't replace cells that have died
+  distractors:
+    - { text: "It regrows the substantia nigra", why: "It can't make new cells." }
+    - { text: "It blocks the indirect pathway completely", why: "It works by raising dopamine." }
+    - { text: "It stops working because the blood–brain barrier closes", why: "L-DOPA keeps crossing the barrier." }
+  refs: [l-dopa, parkinsons-disease]
+
+- id: q-move-cerebellum
+  kind: case
+  stem: A patient's hand overshoots when she reaches for a cup, and she misses her nose in a finger-to-nose test. Her limb-position sense is normal. What's the likely problem?
+  answer: cerebellar-ataxia
+  distractors: [parkinsons-disease, hemiballismus, brown-sequard-syndrome]

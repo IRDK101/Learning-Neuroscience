@@ -1,0 +1,253 @@
+# Muscles, motor units and spinal reflexes.
+
+- id: smooth-muscle
+  type: concept
+  name: Smooth muscle
+  short: Involuntary muscle lining the gut, blood vessels, airways and iris, controlled automatically by the nervous system.
+  source: corrected
+  corrections: [C-045]
+  related: [striated-muscle]
+
+- id: striated-muscle
+  type: concept
+  name: Striated muscle
+  aliases: [skeletal muscle, cardiac muscle]
+  short: Striped muscle; skeletal muscle (voluntary, moves bones) and cardiac muscle (the heart, involuntary).
+  points:
+    - { text: "The heart is cardiac muscle, not smooth muscle.", source: corrected, corrections: [C-045] }
+  related: [smooth-muscle]
+
+- id: flexor-extensor
+  type: concept
+  name: Flexors and extensors
+  aliases: [flexor, extensor, flexion, extension, antagonist muscles]
+  short: Muscles work in opposing pairs; flexors close a joint (biceps) and extensors open it (triceps).
+  points:
+    - The agonist does the intended movement while its antagonist relaxes.
+
+- id: muscle-fiber
+  type: region
+  name: Muscle fiber
+  aliases: [muscle fibers, extrafusal fibers, extrafusal fiber]
+  kind: cellular
+  system: body
+  short: A single muscle cell; it contracts when a motor neuron releases acetylcholine onto it.
+  connections:
+    - { to: alpha-motor-neuron, dir: in, note: "At the neuromuscular junction" }
+
+- id: alpha-motor-neuron
+  type: region
+  name: Alpha motor neuron
+  aliases: [lower motor neuron, lower motor neurons, LMN, alpha motor neurons, AMN]
+  kind: cellular
+  system: spinal-cord
+  short: A lower motor neuron in the ventral horn whose axon leaves through the ventral root and makes muscle fibers contract.
+  functions:
+    - Releases acetylcholine at the neuromuscular junction.
+    - { text: "Inputs come from upper motor neurons, spinal interneurons (the largest input, excitatory or inhibitory) and muscle spindles.", source: corrected, corrections: [C-047] }
+  connections:
+    - { to: upper-motor-neuron, dir: in }
+    - { to: spinal-interneuron, dir: in }
+    - { to: ia-axon, dir: in }
+    - { to: muscle-fiber, dir: out }
+
+- id: ventral-horn
+  type: region
+  name: Ventral horn
+  aliases: [anterior horn]
+  parent: spinal-cord
+  kind: area
+  system: spinal-cord
+  short: The front part of the spinal cord's grey matter, holding the motor neurons.
+
+- id: dorsal-horn
+  type: region
+  name: Dorsal horn
+  aliases: [posterior horn]
+  parent: spinal-cord
+  kind: area
+  system: spinal-cord
+  short: The back part of the spinal cord's grey matter, where many sensory axons (such as pain) synapse.
+
+- id: ventral-root
+  type: region
+  name: Ventral root
+  kind: tract
+  system: nerve
+  short: The front branch of a spinal nerve; motor axons leave the cord through it.
+
+- id: motor-unit
+  type: concept
+  name: Motor unit
+  aliases: [motor units]
+  short: One alpha motor neuron plus all the muscle fibers it contacts.
+  source: corrected
+  corrections: [C-046]
+  points:
+    - "Types: slow (weak, tireless, e.g. posture muscles), fast fatigue-resistant (walking, jogging), fast fatigable (strong bursts like sprinting or lifting)."
+  related: [motor-neuron-pool, innervation-ratio]
+
+- id: motor-neuron-pool
+  type: concept
+  name: Motor neuron pool
+  short: All the alpha motor neurons that supply one muscle.
+  source: corrected
+  corrections: [C-046]
+  related: [motor-unit]
+
+- id: innervation-ratio
+  type: concept
+  name: Innervation ratio
+  short: How many muscle fibers one motor neuron controls; small in the fingers and eyes (fine control), thousands in the legs (force).
+
+- id: muscle-force
+  type: concept
+  name: Grading muscle force
+  aliases: [force]
+  short: The nervous system increases force by firing motor neurons faster and by recruiting more of them.
+  points:
+    - A single slow-firing neuron gives jerky twitches; a fast rate makes twitches fuse into sustained tension.
+
+- id: spinal-interneuron
+  type: region
+  name: Spinal interneuron
+  aliases: [spinal interneurons, inhibitory interneuron, interneurons]
+  kind: cellular
+  system: spinal-cord
+  short: A neuron entirely inside the spinal cord connecting sensory and motor neurons; the inhibitory ones stop opposing muscles from fighting.
+  source: corrected
+  corrections: [C-047]
+
+- id: muscle-spindle
+  type: region
+  name: Muscle spindle
+  aliases: [muscle spindles, intrafusal fibers, intrafusal fiber]
+  kind: cellular
+  system: nerve
+  short: A stretch sensor inside a muscle, made of thin intrafusal fibers wrapped by Ia sensory axons.
+  functions:
+    - Reports how stretched the muscle is.
+  connections:
+    - { to: ia-axon, dir: out }
+    - { to: gamma-motor-neuron, dir: in }
+
+- id: ia-axon
+  type: region
+  name: Ia axon
+  aliases: [Ia axons, Ia afferent, 1A axon]
+  kind: tract
+  system: nerve
+  short: The fast sensory axon from a muscle spindle; in the spinal cord it excites the same muscle's alpha motor neurons directly.
+  connections:
+    - { to: muscle-spindle, dir: in }
+    - { to: alpha-motor-neuron, dir: out }
+
+- id: gamma-motor-neuron
+  type: region
+  name: Gamma motor neuron
+  aliases: [gamma motor neurons]
+  kind: cellular
+  system: spinal-cord
+  short: A motor neuron that tightens the spindle's intrafusal fibers along with the muscle, so the spindle keeps reporting accurately.
+  functions:
+    - Fires along with the alpha motor neuron, so the spindle never goes slack.
+
+- id: golgi-tendon-organ
+  type: region
+  name: Golgi tendon organ
+  aliases: [Golgi tendon organs, GTO]
+  kind: cellular
+  system: nerve
+  short: A tension sensor in the tendon where muscle meets bone; via Ib axons and inhibitory interneurons it relaxes a muscle pulling too hard.
+  connections:
+    - { to: ib-axon, dir: out }
+
+- id: ib-axon
+  type: region
+  name: Ib axon
+  aliases: [Ib axons, 1B axon]
+  kind: tract
+  system: nerve
+  short: The sensory axon from a Golgi tendon organ; slightly slower than Ia.
+
+- id: stretch-reflex
+  type: pathway
+  kind: circuit
+  name: Stretch reflex
+  aliases: [knee-jerk reflex, myotatic reflex]
+  short: A tap stretches the muscle, the spindle's Ia axon excites the muscle's own motor neurons, and the muscle contracts.
+  steps:
+    - { label: A tap on the tendon stretches the quadriceps, source: corrected, corrections: [C-050] }
+    - { label: Muscle spindle fires, ref: muscle-spindle }
+    - { label: Ia axon into the dorsal spinal cord, ref: ia-axon }
+    - { label: Direct synapse onto the quadriceps alpha motor neuron, ref: alpha-motor-neuron, note: "Monosynaptic: no brain involved." }
+    - { label: Quadriceps contracts and the leg kicks, ref: muscle-fiber }
+  diagrams: [spinal-reflex]
+
+- id: reciprocal-inhibition
+  type: pathway
+  kind: circuit
+  name: Reciprocal inhibition
+  short: When a muscle contracts, a branch of its Ia input excites an inhibitory interneuron that silences the opposing muscle.
+  steps:
+    - { label: The agonist (e.g. biceps) is stretched or commanded, ref: muscle-spindle }
+    - { label: Ia axon branches in the spinal cord, ref: ia-axon }
+    - { label: Inhibitory interneuron, ref: spinal-interneuron }
+    - { label: Antagonist (triceps) motor neurons are inhibited, ref: alpha-motor-neuron }
+  diagrams: [spinal-reflex]
+
+- id: golgi-tendon-reflex
+  type: pathway
+  kind: circuit
+  name: Golgi tendon reflex
+  aliases: [autogenic inhibition]
+  short: Golgi tendon organ → Ib axon → inhibitory interneuron → the muscle relaxes, preventing a dangerous over-contraction.
+  steps:
+    - { label: Muscle tension pulls hard on the tendon, ref: golgi-tendon-organ }
+    - { label: Ib axon into the dorsal spinal cord, ref: ib-axon }
+    - { label: Inhibitory interneuron, ref: spinal-interneuron }
+    - { label: The same muscle's alpha motor neurons are inhibited, ref: alpha-motor-neuron }
+  diagrams: [spinal-reflex]
+
+- id: central-pattern-generator
+  type: concept
+  name: Spinal walking circuits
+  aliases: [central pattern generator, CPG]
+  short: Circuits in the spinal cord can produce walking rhythms on their own; implanted stimulators and brain–spine interfaces use this after injury.
+  points:
+    - A brain–spine interface reads movement signals from the brain wirelessly and stimulates the cord below the injury.
+    - The legs still need to bear some body weight.
+
+- id: als
+  type: case
+  kind: disorder
+  name: ALS
+  aliases: [amyotrophic lateral sclerosis, Lou Gehrig's disease]
+  short: A disease that destroys upper and lower motor neurons, so muscles weaken and waste away although the muscles themselves are healthy.
+  damage:
+    regions: [alpha-motor-neuron, upper-motor-neuron]
+  source: corrected
+  corrections: [C-048]
+  deficits:
+    - Progressive weakness and muscle atrophy.
+
+- id: bells-palsy
+  type: case
+  kind: disorder
+  name: Bell's palsy
+  aliases: [Bells palsy]
+  short: Sudden weakness of one side of the face from facial-nerve (cranial nerve VII) dysfunction, usually temporary.
+  damage:
+    regions: [facial-nerve]
+    cause: Usually inflammation, often viral.
+  source: corrected
+  corrections: [C-049]
+
+- id: facial-nerve
+  type: region
+  name: Facial nerve
+  aliases: [cranial nerve VII, CN VII]
+  kind: tract
+  system: nerve
+  short: Cranial nerve VII, which controls the muscles of facial expression and carries taste from the front of the tongue.
+  cases: [bells-palsy]

@@ -1,0 +1,427 @@
+# Hearing and balance.
+
+- id: sound
+  type: concept
+  name: Sound
+  aliases: [sound wave, sound waves]
+  short: Waves of compressed and rarefied (spread-out) air; frequency is heard as pitch and intensity as loudness.
+  points:
+    - { text: "Frequency is the number of cycles per second (Hz): higher frequency, higher pitch. The time for one cycle is the period.", source: corrected, corrections: [C-028] }
+    - Intensity (amplitude) is the size of the pressure change, heard as loudness. Frequency and intensity are independent.
+    - Most real sounds are many waves superimposed.
+  related: [frequency, intensity]
+
+- id: frequency
+  type: term
+  name: Frequency
+  aliases: [Hz, pitch]
+  short: How many cycles of a wave happen per second, measured in hertz (Hz); heard as pitch.
+  source: corrected
+  corrections: [C-028]
+
+- id: intensity
+  type: term
+  name: Intensity
+  aliases: [amplitude, loudness]
+  short: The size of a sound wave's pressure change; heard as loudness.
+
+- id: outer-ear
+  type: region
+  name: Outer ear
+  kind: division
+  system: ear
+  short: The pinna and auditory canal, which collect sound and funnel it to the eardrum.
+
+- id: pinna
+  type: region
+  name: Pinna
+  aliases: [auricle]
+  parent: outer-ear
+  kind: body
+  system: ear
+  short: The visible, funnel-shaped part of the ear that gathers sound waves.
+
+- id: auditory-canal
+  type: region
+  name: Auditory canal
+  aliases: [ear canal]
+  parent: outer-ear
+  kind: body
+  system: ear
+  short: The tube from the pinna to the eardrum; still part of the outer ear.
+
+- id: middle-ear
+  type: region
+  name: Middle ear
+  kind: division
+  system: ear
+  short: The air-filled space behind the eardrum where three tiny bones turn air vibration into mechanical motion.
+  functions:
+    - "Air wave → mechanical (ossicles) → fluid wave (cochlea)."
+
+- id: tympanic-membrane
+  type: region
+  name: Tympanic membrane
+  aliases: [eardrum]
+  parent: middle-ear
+  kind: body
+  system: ear
+  short: The eardrum, which vibrates when sound hits it and passes the vibration to the ossicles.
+
+- id: ossicles
+  type: region
+  name: Ossicles
+  parent: middle-ear
+  kind: body
+  system: bone
+  short: The three smallest bones in the body (malleus, incus, stapes), linking the eardrum to the cochlea.
+
+- id: malleus
+  type: region
+  name: Malleus
+  aliases: [hammer]
+  parent: ossicles
+  kind: body
+  system: bone
+  short: The first ossicle, attached to the eardrum.
+
+- id: incus
+  type: region
+  name: Incus
+  aliases: [anvil]
+  parent: ossicles
+  kind: body
+  system: bone
+  short: The middle ossicle, between the malleus and the stapes.
+
+- id: stapes
+  type: region
+  name: Stapes
+  aliases: [stirrup]
+  parent: ossicles
+  kind: body
+  system: bone
+  short: The last ossicle; its footplate pushes on the oval window of the cochlea.
+
+- id: oval-window
+  type: region
+  name: Oval window
+  kind: landmark
+  system: ear
+  short: The membrane-covered opening where the stapes pushes on the cochlea, starting the fluid wave.
+
+- id: round-window
+  type: region
+  name: Round window
+  kind: landmark
+  system: ear
+  short: A thin membrane at the end of the scala tympani that bulges out to release the fluid wave's pressure.
+
+- id: eustachian-tube
+  type: region
+  name: Eustachian tube
+  kind: body
+  system: ear
+  short: A tube from the middle ear to the back of the nose that equalizes air pressure (why ears pop).
+  functions:
+    - Swallowing opens it and lets the pressure inside and outside the head match.
+
+- id: middle-ear-muscles
+  type: region
+  name: Middle-ear muscles
+  aliases: [tensor tympani, stapedius, attenuation reflex]
+  parent: middle-ear
+  kind: body
+  system: ear
+  short: The tensor tympani and stapedius, which tighten during very loud sounds (and when you talk) to damp the ossicles.
+
+- id: inner-ear
+  type: region
+  name: Inner ear
+  kind: division
+  system: ear
+  short: The fluid-filled cochlea (hearing) and vestibular labyrinth (balance).
+
+- id: cochlea
+  type: region
+  name: Cochlea
+  parent: inner-ear
+  kind: body
+  system: ear
+  short: The snail-shaped, fluid-filled spiral of the inner ear that turns sound into nerve signals.
+  functions:
+    - Has three fluid-filled chambers; the organ of Corti sits in the middle one.
+    - "Its basilar membrane is tuned: high frequencies near the base, low frequencies near the apex."
+
+- id: scala-vestibuli
+  type: region
+  name: Scala vestibuli
+  parent: cochlea
+  kind: ventricle
+  system: ear
+  short: The upper chamber of the cochlea, starting at the oval window.
+
+- id: scala-media
+  type: region
+  name: Scala media
+  aliases: [cochlear duct]
+  parent: cochlea
+  kind: ventricle
+  system: ear
+  short: The middle chamber of the cochlea; it holds the organ of Corti.
+
+- id: scala-tympani
+  type: region
+  name: Scala tympani
+  parent: cochlea
+  kind: ventricle
+  system: ear
+  short: The lower chamber of the cochlea, ending at the round window.
+
+- id: helicotrema
+  type: region
+  name: Helicotrema
+  parent: cochlea
+  kind: landmark
+  system: ear
+  short: The opening at the apex of the cochlea where the scala vestibuli and scala tympani join.
+  source: corrected
+  corrections: [C-029]
+
+- id: reissners-membrane
+  type: region
+  name: Reissner's membrane
+  parent: cochlea
+  kind: layer
+  system: ear
+  short: The thin membrane between the scala vestibuli and the scala media.
+  source: corrected
+  corrections: [C-029]
+
+- id: basilar-membrane
+  type: region
+  name: Basilar membrane
+  parent: cochlea
+  kind: layer
+  system: ear
+  short: The membrane under the organ of Corti; narrow and stiff at the base (high pitches), wide and floppy at the apex (low pitches).
+  functions:
+    - { text: "Separates the scala media from the scala tympani.", source: corrected, corrections: [C-029] }
+    - Each place along it vibrates most for one frequency, so position codes pitch.
+
+- id: tectorial-membrane
+  type: region
+  name: Tectorial membrane
+  parent: cochlea
+  kind: layer
+  system: ear
+  short: A gel-like flap above the hair cells; when the basilar membrane moves, the stereocilia bend against it.
+
+- id: organ-of-corti
+  type: region
+  name: Organ of Corti
+  parent: cochlea
+  kind: cellular
+  system: ear
+  short: The strip of hair cells and support cells on the basilar membrane that detects sound.
+
+- id: hair-cell
+  type: region
+  name: Hair cell
+  aliases: [hair cells, auditory hair cell]
+  parent: organ-of-corti
+  kind: cellular
+  system: cellular
+  short: The sound receptor cell; bending its stereocilia opens K⁺ channels and it releases glutamate onto spiral ganglion cells.
+  functions:
+    - Not a spiking neuron; it uses graded potentials.
+
+- id: inner-hair-cell
+  type: region
+  name: Inner hair cell
+  aliases: [inner hair cells]
+  parent: hair-cell
+  kind: cellular
+  system: cellular
+  short: The main sound sensor; one row of them, each feeding many spiral ganglion cells.
+  functions:
+    - { text: "About 95% of auditory nerve fibers carry signals from inner hair cells.", source: corrected, corrections: [C-030] }
+    - Its stereocilia don't attach to the tectorial membrane; fluid movement bends them.
+
+- id: outer-hair-cell
+  type: region
+  name: Outer hair cell
+  aliases: [outer hair cells, cochlear amplifier]
+  parent: hair-cell
+  kind: cellular
+  system: cellular
+  short: About three times as numerous as inner hair cells; they change length to amplify basilar-membrane motion.
+  functions:
+    - Stereocilia are embedded in the tectorial membrane.
+    - { text: "Act as a cochlear amplifier, sharpening sensitivity and frequency tuning.", source: corrected, corrections: [C-030] }
+    - Many outer hair cells converge on one spiral ganglion cell.
+
+- id: stereocilia
+  type: region
+  name: Stereocilia
+  parent: hair-cell
+  kind: cellular
+  system: cellular
+  short: Stiff, rod-like projections on top of a hair cell; tip links between them pull K⁺ channels open when they bend.
+
+- id: hair-cell-transduction
+  type: pathway
+  kind: signaling
+  name: Hair-cell transduction
+  short: Stereocilia bend → mechanically gated K⁺ channels open → K⁺ flows in → Ca²⁺ channels open → glutamate onto the spiral ganglion cell.
+  steps:
+    - { label: The basilar membrane moves and stereocilia bend, ref: stereocilia }
+    - { label: Tip links pull mechanically gated K⁺ channels open, ref: mechanically-gated-channel }
+    - { label: K⁺ flows in and depolarizes the cell, ref: potassium-ion, note: "Unusually, the fluid around the stereocilia (endolymph) is rich in K⁺." }
+    - { label: Voltage-gated Ca²⁺ channels open, ref: voltage-gated-calcium-channel }
+    - { label: Glutamate is released, ref: glutamate }
+    - { label: The spiral ganglion cell fires, ref: spiral-ganglion }
+
+- id: spiral-ganglion
+  type: region
+  name: Spiral ganglion
+  aliases: [spiral ganglion cells, spiral ganglion cell]
+  parent: cochlea
+  kind: nucleus
+  system: nerve
+  short: The neurons whose axons form the auditory nerve; the first cells in hearing that fire action potentials.
+  functions:
+    - Each cell has a favorite frequency; louder sound means more firing.
+  connections:
+    - { to: hair-cell, dir: in }
+    - { to: cochlear-nuclei, dir: out }
+
+- id: auditory-nerve
+  type: region
+  name: Auditory-vestibular nerve
+  aliases: [auditory nerve, vestibulocochlear nerve, cranial nerve VIII]
+  kind: tract
+  system: nerve
+  short: Cranial nerve VIII, carrying hearing and balance signals from the inner ear to the brainstem.
+
+- id: cochlear-implant
+  type: concept
+  name: Cochlear implant
+  aliases: [cochlear implants]
+  short: A device that picks up sound and stimulates the auditory nerve directly, bypassing lost hair cells.
+  points:
+    - { text: "Most permanent hearing loss (aging, noise) is from lost hair cells, which is exactly what implants bypass.", source: corrected, corrections: [C-031] }
+    - It can't help if the auditory nerve itself is damaged.
+
+- id: cochlear-nuclei
+  type: region
+  name: Cochlear nuclei
+  aliases: [cochlear nucleus, ventral cochlear nucleus, dorsal cochlear nucleus]
+  kind: nucleus
+  system: brainstem
+  parent: medulla
+  short: The first brain stop for hearing, in the medulla (ventral and dorsal parts).
+  source: corrected
+  corrections: [C-032]
+  connections:
+    - { to: spiral-ganglion, dir: in }
+    - { to: superior-olive, dir: out, note: "To both sides" }
+
+- id: superior-olive
+  type: region
+  name: Superior olive
+  aliases: [superior olivary nucleus]
+  kind: nucleus
+  system: brainstem
+  parent: pons
+  short: A brainstem nucleus that compares the timing and loudness of sound at the two ears to locate where a sound comes from.
+  functions:
+    - The first place where input from both ears meets.
+    - A sound to your left reaches the left ear slightly earlier; the superior olive detects that delay.
+  connections:
+    - { to: cochlear-nuclei, dir: in }
+    - { to: inferior-colliculus, dir: out }
+
+- id: medial-geniculate-nucleus
+  type: region
+  name: Medial geniculate nucleus
+  aliases: [MGN, medial geniculate body]
+  kind: nucleus
+  system: diencephalon
+  parent: thalamus
+  short: The hearing relay of the thalamus, sending to the primary auditory cortex.
+  connections:
+    - { to: inferior-colliculus, dir: in }
+    - { to: primary-auditory-cortex, dir: out }
+
+- id: auditory-pathway
+  type: pathway
+  kind: anatomical
+  name: Auditory pathway
+  short: Spiral ganglion → cochlear nuclei → superior olive → inferior colliculus → MGN → A1.
+  steps:
+    - { label: Spiral ganglion cells (auditory nerve), ref: spiral-ganglion }
+    - { label: Cochlear nuclei (medulla), ref: cochlear-nuclei, source: corrected, corrections: [C-032] }
+    - { label: Superior olive (both sides), ref: superior-olive, note: "Sound becomes bilateral here." }
+    - { label: Inferior colliculus (midbrain), ref: inferior-colliculus }
+    - { label: Medial geniculate nucleus (thalamus), ref: medial-geniculate-nucleus }
+    - { label: Primary auditory cortex (A1), ref: primary-auditory-cortex }
+
+- id: tonotopy
+  type: concept
+  name: Tonotopy
+  aliases: [tonotopic map, tonotopic]
+  short: An orderly map of frequency, kept from the basilar membrane all the way to A1.
+  points:
+    - In A1, the front (anterior) end responds to low frequencies and the back (posterior) end to high frequencies.
+  related: [basilar-membrane, primary-auditory-cortex]
+
+# ---------------------------------------------------------------- vestibular
+
+- id: vestibular-labyrinth
+  type: region
+  name: Vestibular labyrinth
+  aliases: [vestibular system, vestibular apparatus]
+  parent: inner-ear
+  kind: body
+  system: ear
+  short: The balance organ next to the cochlea, made of three semicircular canals and two otolith organs.
+  functions:
+    - { text: "Senses head rotation, tilt and acceleration (head movement and gravity, not air).", source: corrected, corrections: [C-033] }
+
+- id: semicircular-canals
+  type: region
+  name: Semicircular canals
+  aliases: [semicircular canal]
+  parent: vestibular-labyrinth
+  kind: body
+  system: ear
+  short: Three fluid-filled loops at right angles to each other that detect head rotation.
+  functions:
+    - { text: "Their hair cells sit in a gel cupula with no crystals; fluid lagging behind during rotation bends them.", source: corrected, corrections: [C-033] }
+
+- id: otolith-organs
+  type: region
+  name: Otolith organs
+  aliases: [utricle, saccule, otoliths, otoconia]
+  parent: vestibular-labyrinth
+  kind: body
+  system: ear
+  short: The utricle and saccule; their gel carries calcium carbonate crystals that drag on hair cells when the head tilts or accelerates.
+  source: corrected
+  corrections: [C-033]
+
+- id: vestibulo-ocular-reflex
+  type: concept
+  name: Vestibulo-ocular reflex
+  aliases: [VOR]
+  short: An automatic reflex that moves the eyes opposite to head movement, keeping your gaze steady.
+  points:
+    - Lets you read a sign while walking.
+  related: [vestibular-labyrinth]
+
+- id: motion-sickness
+  type: concept
+  name: Motion sickness
+  short: Nausea caused by a mismatch between what the eyes and the vestibular system report.
+  related: [vestibular-labyrinth]

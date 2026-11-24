@@ -19,6 +19,9 @@ npm run content:report nt-systems   # print every generated card/question for a 
 
 - `content/`: all learning content (YAML entities, Markdown lessons, SVG diagrams). See `PLAN.md` §2–3.
 - `CORRECTIONS.md`: every place the site differs from the notes, and why.
+- `scripts/diagrams/`: Python generators for the diagrams (`python3 scripts/diagrams/<name>.py`).
+
+Content so far: Foundations and Senses & Movement are complete; Higher Functions is planned.
 - `scripts/lib/`: the content build (validation, cross-references, card/question generation).
 - `src/`: the React app.
 

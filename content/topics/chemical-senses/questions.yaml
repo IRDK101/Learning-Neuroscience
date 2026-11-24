@@ -1,0 +1,108 @@
+# Hand-written quiz questions for the chemical senses.
+
+- id: q-taste-map
+  kind: mcq
+  stem: Which part of the tongue detects bitter taste?
+  answer: Every part; each taste bud has cells that prefer different tastes
+  distractors:
+    - { text: "Only the back of the tongue", why: "That's the old 'tongue map', which is a myth." }
+    - { text: "Only the tip of the tongue", why: "All regions with taste buds detect all five tastes." }
+    - { text: "Only the papillae at the sides", why: "Papillae everywhere hold buds with mixed taste cells." }
+  explain: Taste cells have favorite tastes, but every bud mixes cells with different favorites, so every region tastes everything.
+  refs: [taste-bud, taste-cell]
+  tags: { difficulty: 1 }
+
+- id: q-taste-sour
+  kind: mcq
+  stem: How do protons (H⁺) depolarize a sour-sensitive taste cell?
+  answer: They enter through proton channels and block K⁺ channels, so positive charge builds up inside
+  distractors:
+    - { text: "They bind a G-protein-coupled receptor that makes IP3", why: "That's how sweet, bitter and umami work." }
+    - { text: "They open Cl⁻ channels so chloride flows out", why: "That's part of smell transduction." }
+    - { text: "They trigger an action potential in the taste cell", why: "Taste cells use graded potentials, not action potentials." }
+  refs: [sour-transduction]
+
+- id: q-taste-atp
+  kind: mcq
+  stem: In a sweet-sensing taste cell, what finally excites the gustatory afferent axon?
+  answer: ATP released through channels opened by Ca²⁺
+  distractors:
+    - { text: "Serotonin released from vesicles", why: "Serotonin is used by salty and sour cells." }
+    - { text: "Glutamate released from vesicles", why: "Glutamate is the hair cell's transmitter, not the sweet cell's." }
+    - { text: "IP3 diffusing into the axon", why: "IP3 acts inside the taste cell only." }
+  refs: [sweet-bitter-umami-transduction, atp-transmitter]
+  tags: { difficulty: 3 }
+
+- id: q-taste-bitter
+  kind: mcq
+  stem: Why can we taste so many different molecules as bitter?
+  answer: There are about 25 different bitter receptors, each detecting different molecules
+  distractors:
+    - { text: "Bitter molecules all share one chemical group", why: "Bitter molecules are chemically very varied." }
+    - { text: "One bitter receptor binds almost anything", why: "Breadth comes from many receptor types, not one promiscuous receptor." }
+    - { text: "Bitter is sensed by pain fibers, not taste cells", why: "Bitter is a true taste, detected by taste cells." }
+  explain: Many poisons are bitter, so a broad family of bitter receptors helps avoid toxins.
+  refs: [bitter-receptors]
+
+- id: q-taste-path
+  kind: mcq
+  stem: What is the order of the taste pathway?
+  answer: Gustatory nucleus (medulla) → VPM (thalamus) → insula
+  distractors:
+    - { text: "Olfactory bulb → thalamus → orbitofrontal cortex", why: "That's one of the smell routes." }
+    - { text: "Gustatory nucleus → MGN → temporal lobe", why: "The MGN relays hearing." }
+    - { text: "Spinal cord → VPL → S1", why: "That's the route for touch from the body." }
+  refs: [taste-pathway]
+
+- id: q-taste-aversion
+  kind: mcq
+  stem: A rat eats a new food and is then made nauseous. What happens next time it is offered the food?
+  answer: It avoids the food, even after a single pairing
+  distractors:
+    - { text: "It eats more, because the food is now familiar", why: "That's what happens to rats that weren't made sick." }
+    - { text: "Nothing, because taste can't be paired with illness", why: "Taste pairs with illness especially easily." }
+    - { text: "It avoids the cage, not the food", why: "The aversion attaches to the taste." }
+  refs: [conditioned-taste-aversion]
+  tags: { difficulty: 1 }
+
+- id: q-smell-cl
+  kind: mcq
+  stem: Why does opening chloride channels depolarize an olfactory receptor cell?
+  answer: These cells hold a lot of Cl⁻ inside, so chloride flows out
+  distractors:
+    - { text: "Chloride flows in, making the inside positive", why: "Cl⁻ is negative; flowing in would hyperpolarize." }
+    - { text: "Chloride channels also let Na⁺ through", why: "The depolarization comes from losing negative charge." }
+    - { text: "Chloride activates adenylyl cyclase", why: "G_olf activates adenylyl cyclase." }
+  refs: [olfactory-transduction]
+  tags: { difficulty: 3 }
+
+- id: q-smell-400
+  kind: mcq
+  stem: Humans have about 400 kinds of odorant receptor. How can we tell apart far more than 400 smells?
+  answer: Each smell activates a different combination of receptors at different strengths
+  distractors:
+    - { text: "Each receptor cell expresses many receptor types", why: "Each cell expresses just one type." }
+    - { text: "The olfactory bulb invents new receptors as needed", why: "Receptors are genetically fixed." }
+    - { text: "We can't; there are exactly 400 smells", why: "A receptor and a smell aren't one-to-one." }
+  refs: [smell-population-code, odorant-receptor]
+
+- id: q-smell-glomerulus
+  kind: mcq
+  stem: Where do the axons of all receptor cells expressing the same odorant receptor end up?
+  answer: In the same glomerulus of the olfactory bulb
+  distractors:
+    - { text: "Spread evenly across all glomeruli", why: "Each type converges on its own glomerulus." }
+    - { text: "Directly in the orbitofrontal cortex", why: "They synapse first in the olfactory bulb." }
+    - { text: "In the thalamus", why: "Receptor-cell axons stop in the bulb." }
+  refs: [glomerulus]
+
+- id: q-smell-thalamus
+  kind: mcq
+  stem: What makes smell unusual among the senses?
+  answer: Part of its pathway reaches the cortex without passing through the thalamus
+  distractors:
+    - { text: "Its receptors are ionotropic", why: "Odorant receptors are G-protein-coupled." }
+    - { text: "It has no receptor cells, only free nerve endings", why: "It uses dedicated olfactory receptor cells." }
+    - { text: "It is processed only in the right hemisphere", why: "Both hemispheres process smell." }
+  refs: [olfactory-pathway, thalamus]
+  tags: { difficulty: 1 }
