@@ -1,0 +1,134 @@
+# Hand-written quiz questions for memory.
+
+- id: q-mem-types
+  kind: mcq
+  stem: Knowing that water boils at 100 °C is which kind of memory?
+  answer: Semantic (declarative)
+  distractors:
+    - { text: "Episodic (declarative)", why: "Episodic memory is for events you lived through." }
+    - { text: "Procedural (nondeclarative)", why: "Procedural memory is for skills." }
+    - { text: "Conditioned emotional (nondeclarative)", why: "That's an emotional association, like learned fear." }
+  refs: [semantic-memory]
+  tags: { difficulty: 1 }
+
+- id: q-mem-buffer
+  kind: mcq
+  stem: In the working memory model, what does the episodic buffer do?
+  answer: Combines information from the other parts and from long-term memory
+  distractors:
+    - { text: "It's the final storage stage after working memory", why: "It's part of working memory, not a later stage." }
+    - { text: "It rehearses words", why: "That's the phonological loop." }
+    - { text: "It holds images and locations", why: "That's the visuospatial sketchpad." }
+  refs: [working-memory]
+
+- id: q-mem-pfc
+  kind: mcq
+  stem: In the delayed-response task, what do dorsolateral prefrontal neurons do while the screen hides the food?
+  answer: Keep firing throughout the delay, holding the location in mind
+  distractors:
+    - { text: "Stop firing until the screen lifts", why: "Their persistent firing is the memory." }
+    - { text: "Fire only when the monkey eats", why: "They fire during the delay." }
+    - { text: "Fire only if the hippocampus is removed", why: "This is normal working-memory activity." }
+  refs: [delayed-response-task, dorsolateral-prefrontal-cortex]
+
+- id: q-mem-wcst
+  kind: mcq
+  stem: In the Wisconsin Card Sorting Test, what do people with prefrontal damage typically do when the rule changes?
+  answer: Keep sorting by the old rule
+  distractors:
+    - { text: "Switch immediately to the new rule", why: "That's what healthy people do after a few errors." }
+    - { text: "Forget how to sort cards at all", why: "They can sort; they just can't switch." }
+    - { text: "Sort randomly from the start", why: "They learn the first rule fine." }
+  refs: [wisconsin-card-sort]
+
+- id: q-mem-hm
+  kind: mcq
+  stem: After his surgery, which ability did H.M. keep?
+  answer: Learning new motor skills
+  distractors:
+    - { text: "Remembering new people he met", why: "He had severe anterograde amnesia for new facts and events." }
+    - { text: "Forming new episodic memories", why: "That's exactly what he lost." }
+    - { text: "Learning new facts about the world", why: "New semantic memories also failed to form." }
+  refs: [hm-henry-molaison]
+
+- id: q-mem-anterograde
+  kind: mcq
+  stem: A patient remembers her childhood well but can't remember anything that happened after her injury. What is this?
+  answer: Anterograde amnesia
+  distractors:
+    - { text: "Retrograde amnesia", why: "That's losing memories from before the injury." }
+    - { text: "Prosopagnosia", why: "That's not recognizing faces." }
+    - { text: "Conduction aphasia", why: "That's a language problem." }
+  refs: [anterograde-amnesia]
+  tags: { difficulty: 1 }
+
+- id: q-mem-recognition
+  kind: mcq
+  stem: Damage limited to the perirhinal cortex mainly impairs which ability?
+  answer: Recognizing something as familiar
+  distractors:
+    - { text: "Recalling the details of an event", why: "That depends more on the hippocampus." }
+    - { text: "Learning motor skills", why: "Skills depend on the striatum and cerebellum." }
+    - { text: "Holding a phone number in working memory", why: "Working memory relies on prefrontal and parietal cortex." }
+  refs: [recognition-vs-recall, perirhinal-cortex]
+
+- id: q-mem-consolidation
+  kind: mcq
+  stem: In the standard model of consolidation, what happens to a memory over time?
+  answer: It comes to rely on the neocortex alone, no longer needing the hippocampus
+  distractors:
+    - { text: "It moves from the neocortex into the hippocampus", why: "It's the other way round." }
+    - { text: "It always needs the hippocampus", why: "That's the multiple trace theory." }
+    - { text: "It moves into the cerebellum", why: "The cerebellum handles motor learning." }
+  refs: [consolidation]
+
+- id: q-mem-specific
+  kind: mcq
+  stem: One input to a hippocampal neuron gets a tetanus and shows LTP. What happens to a second input onto the same neuron that wasn't stimulated?
+  answer: Nothing; LTP is input specific
+  distractors:
+    - { text: "It strengthens too", why: "Only the stimulated synapses change." }
+    - { text: "It weakens to compensate", why: "It stays the same." }
+    - { text: "It becomes NMDA-only", why: "Its receptors don't change." }
+  refs: [long-term-potentiation]
+
+- id: q-mem-nmda
+  kind: mcq
+  stem: What two conditions must be met for an NMDA receptor to let Ca²⁺ in?
+  answer: Glutamate must be bound and the cell must be depolarized to remove the Mg²⁺ block
+  distractors:
+    - { text: "Glutamate must be bound and GABA must be absent", why: "The second condition is depolarization." }
+    - { text: "Only depolarization is needed", why: "It's also ligand-gated; glutamate must bind." }
+    - { text: "Only glutamate is needed", why: "At rest the Mg²⁺ block stops ions even with glutamate bound." }
+  refs: [nmda-receptor, magnesium-block]
+
+- id: q-mem-camkii
+  kind: mcq
+  stem: Which of these does CaMKII do during LTP that protein kinase C does not?
+  answer: Gets more AMPA receptors inserted into the synapse
+  distractors:
+    - { text: "Phosphorylates AMPA receptors", why: "Both kinases do this." }
+    - { text: "Removes AMPA receptors", why: "That happens in LTD, via phosphatases." }
+    - { text: "Blocks NMDA receptors with Mg²⁺", why: "The Mg²⁺ block is a property of the channel." }
+  refs: [camkii, protein-kinase-c]
+  tags: { difficulty: 3 }
+
+- id: q-mem-timing
+  kind: mcq
+  stem: The postsynaptic cell repeatedly fires a few milliseconds before the presynaptic cell. What happens to the synapse?
+  answer: It weakens (LTD)
+  distractors:
+    - { text: "It strengthens (LTP)", why: "LTP needs presynaptic before postsynaptic." }
+    - { text: "Nothing, because timing doesn't matter", why: "Order and timing decide the direction and size of the change." }
+    - { text: "It becomes inhibitory", why: "It stays excitatory, just weaker." }
+  refs: [spike-timing]
+
+- id: q-mem-protein
+  kind: mcq
+  stem: A rat given a protein synthesis inhibitor during training remembers the task an hour later but not the next day. Why?
+  answer: Long-term memory needs new proteins; short-term memory doesn't
+  distractors:
+    - { text: "The drug blocked NMDA receptors", why: "It blocks protein synthesis, not receptors." }
+    - { text: "Short-term memory needs new proteins", why: "Short-term memory survived." }
+    - { text: "The drug destroyed the hippocampus", why: "It prevents consolidation without destroying tissue." }
+  refs: [protein-synthesis-memory, creb]

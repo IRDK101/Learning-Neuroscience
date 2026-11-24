@@ -148,3 +148,63 @@
   svg: olfaction.svg
   description: Olfactory receptor cells in the roof of the nasal cavity send axons through the cribriform plate to the olfactory bulb. Cells with the same receptor type (same color) all converge on one glomerulus.
   topics: [chemical-senses]
+
+- id: limbic-system
+  title: Limbic system and Papez circuit
+  svg: brain-midsagittal.svg
+  description: The midline view with the emotion structures picked out. Arrows trace the Papez circuit from the hippocampus through the fornix, mammillary body, thalamus and cingulate cortex. The amygdala and hippocampus lie off the midline and are drawn faintly.
+  topics: [emotion, memory]
+  overlay: true
+  layers:
+    - { id: papez, name: Papez circuit, color: papez }
+  defaultLayers: [papez]
+
+- id: default-mode-network
+  title: Default mode network
+  svg: brain-midsagittal.svg
+  description: The two big midline hubs of the default mode network, which become more active when you rest. The third hub, the temporoparietal junction, is on the side of the brain.
+  topics: [rest-attention-unconscious]
+  overlay: true
+  quiz: false
+  layers:
+    - { id: dmn, name: Default mode network, color: dmn }
+  defaultLayers: [dmn]
+
+- id: language-areas
+  title: Language areas
+  svg: brain-lateral.svg
+  description: The left hemisphere's language areas. Arrows follow the Wernicke-Geschwind model for repeating a heard word, from A1 to Wernicke's area, along the arcuate fasciculus to Broca's area, then to the face area of M1.
+  topics: [language]
+  overlay: true
+  layers:
+    - { id: language, name: Wernicke-Geschwind route, color: language }
+  defaultLayers: [language]
+
+- id: attention-areas
+  title: Attention areas
+  svg: brain-lateral.svg
+  description: Two cortical areas that steer attention. The frontal eye fields point attention (and the eyes) at locations; the posterior parietal cortex maps space, and right-side damage causes neglect.
+  topics: [rest-attention-unconscious]
+  overlay: true
+  quiz: false
+  layers:
+    - { id: attention, name: Attention areas, color: attention }
+  defaultLayers: [attention]
+
+- id: ltp-synapse
+  title: Synapse during LTP
+  svg: ltp-synapse.svg
+  description: A glutamate synapse onto a dendritic spine. AMPA receptors depolarize the spine, which frees the NMDA receptor of its Mg²⁺ block; Ca²⁺ then switches on CaMKII and PKC, which boost AMPA receptors and insert new ones.
+  topics: [memory]
+
+- id: hpa-axis
+  title: HPA stress axis
+  svg: hpa-axis.svg
+  description: The stress hormone loop. The hypothalamus signals the pituitary, which signals the adrenal glands to release cortisol. The amygdala pushes the loop up; the hippocampus senses cortisol and brakes it.
+  topics: [mental-illness, emotion]
+
+- id: medial-temporal-lobe
+  title: Medial temporal lobe
+  svg: medial-temporal-lobe.svg
+  description: The memory structures of the medial temporal lobe, seen from the inside. Information from the cortex flows through the perirhinal and parahippocampal cortices to the entorhinal cortex and into the hippocampus.
+  topics: [memory]

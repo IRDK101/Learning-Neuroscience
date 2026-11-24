@@ -1,0 +1,77 @@
+# Hand-written quiz questions for emotion.
+
+- id: q-emo-theories
+  kind: mcq
+  stem: According to the Cannon-Bard theory, how are the feeling of fear and the pounding heart related?
+  answer: The thalamus triggers both at the same time; neither causes the other
+  distractors:
+    - { text: "The pounding heart causes the feeling", why: "That's the James-Lange theory." }
+    - { text: "The feeling causes the pounding heart", why: "Cannon-Bard says they happen in parallel, not in sequence." }
+    - { text: "Both come from the cerebellum", why: "Cannon-Bard gives the key role to the thalamus." }
+  refs: [cannon-bard-theory, james-lange-theory]
+
+- id: q-emo-epinephrine
+  kind: mcq
+  stem: In the epinephrine experiments, why didn't people who were warned about the side effects become angrier?
+  answer: They already had an explanation for their arousal, so they didn't label it as anger
+  distractors:
+    - { text: "The warning blocked epinephrine's effect on the heart", why: "Their bodies still reacted; only the interpretation changed." }
+    - { text: "They had been given saline instead", why: "They received epinephrine but knew what to expect." }
+    - { text: "Anger requires no body arousal at all", why: "The study shows arousal matters, but so does the label." }
+  refs: [schachter-singer-experiment, two-factor-theory]
+
+- id: q-emo-papez
+  kind: mcq
+  stem: Which is the order of the Papez circuit?
+  answer: Hippocampus → fornix → mammillary bodies → anterior thalamus → cingulate cortex → back to the hippocampus
+  distractors:
+    - { text: "Amygdala → hypothalamus → pituitary → adrenal gland", why: "That's closer to the stress (HPA) axis." }
+    - { text: "Cingulate cortex → amygdala → hippocampus → cerebellum", why: "The cerebellum isn't part of the circuit." }
+    - { text: "Thalamus → hippocampus → fornix → prefrontal cortex", why: "The fornix carries hippocampal output to the mammillary bodies." }
+  refs: [papez-circuit]
+
+- id: q-emo-kluver
+  kind: case
+  stem: After both temporal lobes are removed, a monkey approaches snakes without fear, puts objects in its mouth and eats more. What is this?
+  answer: kluver-bucy-syndrome
+  distractors: [urbach-wiethe-disease, hemispatial-neglect, prosopagnosia]
+
+- id: q-emo-urbach
+  kind: mcq
+  stem: A patient with Urbach-Wiethe disease (both amygdalae destroyed) is poor at spotting fear in faces. What helps?
+  answer: Telling her to look at the eyes
+  distractors:
+    - { text: "Showing the faces for longer", why: "The problem is where she looks, not how long." }
+    - { text: "Showing her own face in a mirror", why: "Her own face doesn't solve the attention problem." }
+    - { text: "Nothing; the ability is gone completely", why: "Instructed recognition works much better." }
+  refs: [urbach-wiethe-disease, amygdala]
+
+- id: q-emo-fear
+  kind: mcq
+  stem: A rat hears a tone just before a mild shock several times, and now freezes at the tone alone. Where in the amygdala are the tone and shock linked?
+  answer: The basolateral nuclei
+  distractors:
+    - { text: "The central nucleus", why: "The central nucleus is the output that triggers the response." }
+    - { text: "The corticomedial nuclei", why: "They mainly receive smell." }
+    - { text: "The mammillary bodies", why: "Those are part of the hypothalamus, in the Papez circuit." }
+  refs: [fear-conditioning, basolateral-amygdala]
+
+- id: q-emo-sham
+  kind: mcq
+  stem: A cat whose cerebral cortex has been removed, but whose hypothalamus is intact, hisses and arches its back at a gentle touch. What does this show?
+  answer: The hypothalamus can produce the full rage display on its own
+  distractors:
+    - { text: "Rage needs the motor cortex", why: "The motor cortex was removed, yet rage appeared." }
+    - { text: "The amygdala is the only source of aggression", why: "Here the hypothalamus produces it even without cortical input." }
+    - { text: "The cat is truly angry at the touch", why: "It's called sham rage because the display is out of proportion and out of context." }
+  refs: [sham-rage, hypothalamus]
+
+- id: q-emo-aggression
+  kind: mcq
+  stem: A monkey's amygdala is damaged. Which change is expected?
+  answer: Less affective aggression and a drop in social rank
+  distractors:
+    - { text: "More predatory hunting", why: "Predatory aggression isn't the amygdala-dependent kind." }
+    - { text: "Sham rage at harmless stimuli", why: "Sham rage comes from a hypothalamus released from the cortex." }
+    - { text: "Loss of all facial expressions", why: "Expressions don't depend on the amygdala alone." }
+  refs: [aggression, amygdala]

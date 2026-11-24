@@ -43,8 +43,15 @@ export function inSentenceName(name: string, before: string): string {
 function inline(md: string, ctx: LessonContext, where: string, errors: ContentErrors, mentions: Set<string>): string {
   return md
     .replace(/\[\[([^\]|]+?)(?:\|([^\]]+?))?\]\]/g, (_, a: string, b: string | undefined, offset: number, whole: string) => {
-      const id = (b ?? a).trim();
-      const name = ctx.entityName(id);
+      let id = (b ?? a).trim();
+      let name = ctx.entityName(id);
+      // [[Agoraphobia]] → id "agoraphobia", shown as typed.
+      const slug = id.toLowerCase().replace(/\s+/g, '-');
+      if (!name && !b && ctx.entityName(slug)) {
+        id = slug;
+        name = ctx.entityName(slug);
+        b = slug;
+      }
       if (!name) {
         errors.add(where, `[[${id}]] is not a known entity id`);
         return a;

@@ -1,0 +1,20 @@
+# Hand-written flashcards. Many more are generated from entities.
+
+- id: c-emo-three-theories
+  kind: basic
+  front: James-Lange vs Cannon-Bard vs two-factor theory?
+  back: James-Lange — body change first, the feeling is reading it. Cannon-Bard — thalamus triggers feeling and body together. Two-factor — body arousal plus a label from the situation.
+  refs: [james-lange-theory, cannon-bard-theory, two-factor-theory]
+  tags: { difficulty: 3 }
+
+- id: c-emo-amygdala-nuclei
+  kind: basic
+  front: The amygdala's three groups of nuclei?
+  back: Basolateral (sensory input; where fear associations form), corticomedial (smell input), central (output to hypothalamus, brainstem, thalamus, cortex).
+  refs: [basolateral-amygdala, corticomedial-amygdala, central-amygdala]
+
+- id: c-emo-hypothalamus-amygdala
+  kind: basic
+  front: What do the amygdala and hypothalamus each contribute to emotion?
+  back: Amygdala — detecting and learning threats, reading fear in faces, affective aggression. Hypothalamus — producing the body's emotional responses (sham rage, involuntary smiles) and the stress hormones.
+  refs: [amygdala, hypothalamus]

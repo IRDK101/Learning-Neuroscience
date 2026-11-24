@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router';
 import { content, ENTITY_TYPE_LABEL, readyTopics } from '../../content';
+import { usePractice } from '../../content/lazy';
 import type { Card, EntityType } from '../../content/types';
 import { describeFilter, filterToQuery, matchCard, parseFilter, type Filter } from '../../lib/filters';
 import { dueCount, planSession } from '../../lib/session';
@@ -20,6 +21,10 @@ function toggle<T>(list: T[], v: T): T[] {
 }
 
 export function CardsPage() {
+  return usePractice() ? <CardsInner /> : <div className="question loading" aria-busy="true" />;
+}
+
+function CardsInner() {
   const [params, setParams] = useSearchParams();
   const filter = parseFilter(params);
   const p = useProgress();

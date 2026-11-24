@@ -6,6 +6,7 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { diagram as getDiagram, entity } from '../content';
 import type { Entity } from '../content/types';
+import { useSvgs } from '../content/lazy';
 import { useProgress } from '../progress/store';
 import { Icon } from './bits';
 
@@ -128,7 +129,8 @@ export function Diagram({
   const { settings } = useProgress();
   const labelsOn = showLabels ?? labelsLocal;
   const visibleLayers = layers ?? d?.defaultLayers ?? [];
-  const svg = useMemo(() => d?.svg ?? '', [d]);
+  const svgsReady = useSvgs();
+  const svg = useMemo(() => d?.svg ?? '', [d, svgsReady]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // One-time setup per SVG: colors, a11y, keyboard.
   useLayoutEffect(() => {
@@ -235,7 +237,8 @@ export function Diagram({
       <div className="diagram-scroll">
         <div
           ref={hostRef}
-          className="diagram-svg"
+          className={svg ? 'diagram-svg' : 'diagram-svg loading'}
+          aria-busy={!svg || undefined}
           onClick={(e) => pick(e.target)}
           onKeyDown={(e) => {
             if (e.key === 'Enter' || e.key === ' ') {

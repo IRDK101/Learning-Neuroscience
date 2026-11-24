@@ -20,7 +20,8 @@
     - Regulates many body systems we don't consciously think about, through hormones and the autonomic nervous system.
     - Starts the HPA stress axis by signaling the pituitary gland.
     - Can generate rage displays on its own (sham rage) when the cortex is removed.
-  topics: [nervous-system-structure, emotion, nt-systems]
+    - Drives involuntary expressions like spontaneous smiles and laughs (through brainstem motor nuclei).
+  topics: [nervous-system-structure, emotion, nt-systems, mental-illness]
 
 - id: pituitary-gland
   type: region

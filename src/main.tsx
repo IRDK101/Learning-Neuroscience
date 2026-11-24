@@ -10,3 +10,7 @@ createRoot(document.getElementById('root')!).render(
     <App />
   </StrictMode>,
 );
+
+// Fetch the diagram and practice-text chunks as soon as the first screen has painted.
+const idle = (window as Window & { requestIdleCallback?: (cb: () => void) => void }).requestIdleCallback ?? ((cb: () => void) => setTimeout(cb, 200));
+idle(() => void import('./content/lazy').then((m) => m.prefetchContent()));

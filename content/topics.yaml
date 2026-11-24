@@ -13,8 +13,8 @@
 - { id: central-visual-system, name: The Central Visual System, unit: senses-and-movement, order: 12, status: ready, summary: "Retina to LGN to V1, visual-field lesions, and the agnosias." }
 - { id: spinal-control-of-movement, name: Spinal Control of Movement, unit: senses-and-movement, order: 13, status: ready, summary: "Muscles, motor units, muscle spindles, Golgi tendon organs and spinal reflexes." }
 - { id: brain-control-of-movement, name: Brain Control of Movement, unit: senses-and-movement, order: 14, status: ready, summary: "Descending tracts, M1 and population coding, the basal ganglia and the cerebellum." }
-- { id: emotion, name: Brain Mechanisms of Emotion, unit: higher-functions, order: 15, summary: "Theories of emotion, the limbic system, the amygdala and the hypothalamus." }
-- { id: rest-attention-unconscious, name: "The Resting Brain, Attention & the Unconscious", unit: higher-functions, order: 16, summary: "The default mode network, bottom-up vs top-down attention, and neglect." }
-- { id: language, name: Language, unit: higher-functions, order: 17, summary: "Aphasias, the Wernicke-Geschwind model, and how language is lateralized." }
-- { id: memory, name: Memory Systems, unit: higher-functions, order: 18, summary: "Kinds of memory, working memory, the medial temporal lobe, consolidation, and LTP/LTD." }
-- { id: mental-illness, name: Mental Illness, unit: higher-functions, order: 19, summary: "Anxiety, mood disorders and schizophrenia: symptoms, biology and treatment." }
+- { id: emotion, name: Brain Mechanisms of Emotion, unit: higher-functions, order: 15, status: ready, summary: "Theories of emotion, the limbic system, the amygdala and the hypothalamus." }
+- { id: rest-attention-unconscious, name: "The Resting Brain, Attention & the Unconscious", unit: higher-functions, order: 16, status: ready, summary: "The default mode network, bottom-up vs top-down attention, and neglect." }
+- { id: language, name: Language, unit: higher-functions, order: 17, status: ready, summary: "Aphasias, the Wernicke-Geschwind model, and how language is lateralized." }
+- { id: memory, name: Memory Systems, unit: higher-functions, order: 18, status: ready, summary: "Kinds of memory, working memory, the medial temporal lobe, consolidation, and LTP/LTD." }
+- { id: mental-illness, name: Mental Illness, unit: higher-functions, order: 19, status: ready, summary: "Anxiety, mood disorders and schizophrenia: symptoms, biology and treatment." }

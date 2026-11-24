@@ -203,6 +203,8 @@
     - Very different symptoms are possible (eating or sleeping too much or too little), suggesting several underlying disorders.
   treatments:
     - SSRIs and MAO inhibitors (take weeks to work), psychotherapy, deep brain stimulation.
+    - { text: "Deep brain stimulation of the subgenual cingulate (area 25) has helped some people whose depression resisted other treatments.", source: corrected, corrections: [C-063] }
+  teaches: Depression is diagnosed by symptoms; it is probably several different disorders that look alike, which is why predicting who responds to which treatment is hard.
   topics: [mental-illness]
 
 - id: schizophrenia
@@ -213,7 +215,9 @@
   deficits:
     - "Positive symptoms (things present that shouldn't be): hallucinations, delusions."
     - "Negative symptoms (things missing that should be there): trouble with planning, memory, attention."
+    - Often emerges in late adolescence or the twenties.
+    - Enlarged lateral ventricles on average (not consistent enough for diagnosis).
   treatments:
-    - Antipsychotics that block dopamine receptors.
+    - Antipsychotics that block dopamine receptors; many have side effects on movement and reward.
   teaches: Amphetamines (more dopamine) can cause psychosis, and drugs that block NMDA glutamate receptors (PCP, ketamine) mimic it.
   topics: [mental-illness]

@@ -1,0 +1,26 @@
+# Hand-written flashcards. Many more are generated from entities.
+
+- id: c-mem-ltp-steps
+  kind: basic
+  front: How does LTP strengthen a synapse, step by step?
+  back: Glutamate → AMPA lets Na⁺ in → depolarization expels Mg²⁺ from NMDA → Ca²⁺ enters → CaMKII and PKC → AMPA receptors phosphorylated, and more inserted.
+  refs: [ltp-mechanism]
+  tags: { difficulty: 3 }
+
+- id: c-mem-ltp-ltd
+  kind: basic
+  front: LTP vs LTD in terms of calcium and enzymes?
+  back: LTP — large, fast Ca²⁺ rise → kinases (CaMKII, PKC) add AMPA receptors. LTD — small Ca²⁺ rise → phosphatases remove AMPA receptors.
+  refs: [long-term-potentiation, long-term-depression]
+
+- id: c-mem-hm
+  kind: basic
+  front: What did H.M. lose and keep?
+  back: Lost the ability to form new declarative memories (anterograde amnesia) and some older ones. Kept working memory, old memories, and the ability to learn new skills.
+  refs: [hm-henry-molaison]
+
+- id: c-mem-nondeclarative
+  kind: basic
+  front: Which brain systems handle the kinds of nondeclarative memory?
+  back: Skills and habits — striatum. Conditioned movements — cerebellum. Conditioned emotions (fear) — amygdala.
+  refs: [nondeclarative-memory]

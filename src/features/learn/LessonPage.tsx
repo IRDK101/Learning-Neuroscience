@@ -7,6 +7,7 @@ import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from 'rea
 import { Link, useNavigate, useParams, useSearchParams } from 'react-router';
 import { content, diagram as getDiagram, lesson as getLesson, question, topic as getTopic } from '../../content';
 import type { Lesson, LessonBlock } from '../../content/types';
+import { useLessons } from '../../content/lazy';
 import { completeLesson, recordAnswer, useProgress } from '../../progress/store';
 import { CopyLinkButton, Icon, UnitTag } from '../../ui/bits';
 import { DetailSheet } from '../../ui/DetailSheet';
@@ -80,6 +81,11 @@ function Block({ b, topic, onPathwayStep }: { b: LessonBlock; topic: string; onP
 }
 
 export function LessonPage() {
+  const { topic: tId, lesson: lId } = useParams();
+  return useLessons() ? <LessonInner key={`${tId}/${lId}`} /> : <div className="question loading" aria-busy="true" />;
+}
+
+function LessonInner() {
   const { topic: topicId, lesson: slug } = useParams();
   const [params] = useSearchParams();
   const l = getLesson(`${topicId}/${slug}`);

@@ -33,7 +33,11 @@
     - Forms new declarative (fact and event) memories; H.M. could not form new ones after losing it.
     - Brakes the stress (HPA) axis using glucocorticoid receptors that sense cortisol.
     - Receives acetylcholine from the medial septal nuclei and norepinephrine from the locus coeruleus.
-  topics: [memory, nervous-system-structure, nt-systems]
+  connections:
+    - { to: entorhinal-cortex, dir: both }
+    - { to: fornix, dir: out }
+  cases: [hm-henry-molaison]
+  topics: [memory, nervous-system-structure, nt-systems, mental-illness]
 
 - id: basal-forebrain
   type: region
@@ -87,4 +91,11 @@
   functions:
     - The fear and threat processing center of the brain.
     - Drives the stress (HPA) axis up; the hippocampus brakes it.
-  topics: [nervous-system-structure, emotion, memory]
+    - Learns fear by pairing a neutral cue with danger (fear conditioning) in its basolateral nuclei.
+    - Steers attention to the eyes in faces, whose whites signal fear.
+    - Needed for affective (not predatory) aggression and social rank.
+  connections:
+    - { to: hypothalamus, dir: out, note: "Central nucleus → hypothalamus → autonomic fear response" }
+    - { to: prefrontal-cortex, dir: both, note: "The PFC supplies context: a snake in the wild vs at the zoo" }
+  cases: [kluver-bucy-syndrome, urbach-wiethe-disease]
+  topics: [nervous-system-structure, emotion, memory, mental-illness]

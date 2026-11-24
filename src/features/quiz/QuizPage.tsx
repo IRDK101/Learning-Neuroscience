@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router';
 import { content, readyTopics } from '../../content';
+import { usePractice } from '../../content/lazy';
 import type { Question } from '../../content/types';
 import { describeFilter, filterToQuery, matchQuestion, parseFilter, type Filter } from '../../lib/filters';
 import { shuffle } from '../../lib/random';
@@ -28,6 +29,10 @@ export function pickQuestions(pool: Question[], n: number, random = Math.random)
 }
 
 export function QuizPage() {
+  return usePractice() ? <QuizInner /> : <div className="question loading" aria-busy="true" />;
+}
+
+function QuizInner() {
   const [params, setParams] = useSearchParams();
   const filter = parseFilter(params);
   const n = filter.n ?? 10;

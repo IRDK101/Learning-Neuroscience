@@ -52,7 +52,10 @@ export interface Diagram {
   defaultLayers: string[];
   overlay: boolean;
   quiz: boolean;
+  /** SVG markup. Empty until the lazy SVG chunk has loaded (see src/content/lazy.ts). */
   svg: string;
+  /** Index into the lazy SVG chunk (set by the Vite plugin). */
+  svgKey?: number;
   /** entity ids with a clickable hotspot (data-ref) */
   refs: string[];
   /** ids per layer; base hotspots are under "" */

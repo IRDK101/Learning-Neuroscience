@@ -1,0 +1,171 @@
+# The resting brain, attention and the unconscious.
+
+- id: brain-states
+  type: concept
+  name: Resting, attending and unconscious
+  aliases: [brain states]
+  short: Three broad brain states with blurry, overlapping boundaries; each shifts which regions are more or less active.
+  points:
+    - "Resting: not focused on the outside world. You're still thinking, just not attending to your surroundings."
+    - "Attending: focused on something outside you."
+    - "Unconscious: sleep, anesthesia, coma and other unresponsive states."
+  flags: [F-04]
+
+- id: default-mode-network
+  type: concept
+  name: Default mode network
+  aliases: [DMN, default network, resting-state network]
+  short: A set of regions that become more active when you rest and less active when you focus on a task; their activity rises and falls together.
+  points:
+    - Main hubs are the posterior cingulate cortex, the medial prefrontal cortex and the temporoparietal junction.
+    - Found with brain scans by comparing rest periods with task periods; the same regions turned down for almost any task.
+    - Disrupted in nearly every mental illness. It's overactive in depression, which may make it a "rumination network".
+    - Psychedelics turn it down and shift focus outward.
+  regions: [posterior-cingulate-cortex, medial-prefrontal-cortex, temporoparietal-junction]
+  related: [internal-mentation-hypothesis]
+
+- id: posterior-cingulate-cortex
+  type: region
+  name: Posterior cingulate cortex
+  aliases: [PCC]
+  parent: cingulate-cortex
+  system: limbic
+  short: The back part of the cingulate cortex, a central hub of the default mode network.
+
+- id: medial-prefrontal-cortex
+  type: region
+  name: Medial prefrontal cortex
+  aliases: [mPFC, medial PFC]
+  parent: prefrontal-cortex
+  system: frontal
+  short: The inner surface of the prefrontal cortex, a hub of the default mode network.
+
+- id: temporoparietal-junction
+  type: region
+  name: Temporoparietal junction
+  aliases: [TPJ]
+  system: parietal
+  short: Where the temporal and parietal lobes meet, behind the lateral fissure; part of the default mode network.
+
+- id: sentinel-hypothesis
+  type: concept
+  name: Sentinel hypothesis
+  short: An early idea that the default mode network keeps a loose watch on the surroundings, like a lookout; it's no longer favored.
+  related: [default-mode-network]
+
+- id: internal-mentation-hypothesis
+  type: concept
+  name: Internal mentation hypothesis
+  aliases: [mental time travel]
+  short: The idea that the default mode network supports thinking about things that aren't in front of you, such as remembering the past or imagining the future.
+  points:
+    - Thinking about past or future events activates default mode regions more than control prompts do.
+  related: [default-mode-network]
+
+- id: attention
+  type: concept
+  name: Attention
+  aliases: [selective attention]
+  short: Selecting some information for priority processing; it's very limited, so dividing it among tasks makes performance drop.
+  related: [bottom-up-attention, top-down-attention, covert-attention]
+
+- id: bottom-up-attention
+  type: concept
+  name: Bottom-up attention
+  aliases: [exogenous attention, stimulus-driven attention, salience]
+  short: Attention grabbed by something in the environment that stands out, like a red stop sign or a sudden noise.
+  points:
+    - The cocktail party effect is an example; hearing your name across the room pulls your attention.
+  related: [cocktail-party-effect, top-down-attention]
+
+- id: top-down-attention
+  type: concept
+  name: Top-down attention
+  aliases: [endogenous attention, goal-driven attention]
+  short: Attention you direct on purpose, guided by your goals; the same painting is looked at differently depending on what you're asked to find.
+  related: [bottom-up-attention]
+
+- id: cocktail-party-effect
+  type: concept
+  name: Cocktail party effect
+  short: Focusing on one conversation in a noisy room, yet noticing at once when someone nearby says your name.
+  related: [bottom-up-attention]
+
+- id: change-blindness
+  type: concept
+  name: Change blindness
+  short: Failing to notice even large changes in a scene when your attention is elsewhere.
+  points:
+    - We notice changes mainly in what we're attending to; distractions make changes much harder to spot.
+
+- id: covert-attention
+  type: concept
+  name: Covert attention
+  short: Attending to a place without moving your eyes to it.
+  source: corrected
+  corrections: [C-064]
+  related: [posner-cueing-task]
+
+- id: posner-cueing-task
+  type: experiment
+  name: Cueing task
+  aliases: [Posner cueing task, Posner task]
+  short: While looking at a central point, people spot a target faster when a cue has correctly pointed to its side.
+  setup: People fix their eyes on a central point. A cue points left, right or neither, then a target appears on one side.
+  findings:
+    - "Valid cue (points to the target's side): fastest and most accurate."
+    - "Neutral cue: slower."
+    - "Invalid cue (points the wrong way): slowest."
+  shows: Attention can move to a location without the eyes, improving how that location is processed.
+  supports: [covert-attention]
+
+- id: attention-preactivation
+  type: concept
+  name: Attention prepares the cortex
+  aliases: [feature attention, preparatory activity]
+  short: Attending to a place or a feature raises activity in the matching part of visual cortex before anything appears.
+  points:
+    - Cue a location and the matching part of V1's map becomes active ahead of time (central vision at the back of V1, the periphery further forward).
+    - "Cue a feature and the area for that feature becomes more active: V4 for color, V5 for motion."
+  regions: [primary-visual-cortex, visual-association-cortex, area-v5]
+
+- id: frontal-eye-fields
+  type: region
+  name: Frontal eye fields
+  aliases: [FEF, frontal eye field]
+  parent: frontal-lobe
+  system: frontal
+  short: An area in front of the premotor cortex that controls voluntary eye movements and directs attention to locations in space.
+  functions:
+    - Contains a map of the visual field.
+    - Stimulating one spot boosts responses in the matching part of V4, like a spotlight.
+    - { text: "V4 is tuned to color and form.", source: corrected, corrections: [C-065] }
+  connections:
+    - { to: visual-association-cortex, dir: out, note: "Boosts V4 responses at the attended location" }
+
+- id: hemispatial-neglect
+  type: case
+  kind: syndrome
+  name: Hemispatial neglect
+  aliases: [neglect, unilateral neglect, hemineglect]
+  short: After damage to the right posterior parietal cortex, people ignore the left side of space, objects and even their own body, without realizing it.
+  damage:
+    regions: [posterior-parietal-cortex]
+    cause: Usually a stroke in the right parietal lobe.
+  source: corrected
+  corrections: [C-066]
+  deficits:
+    - Ignores the left side of space, of objects, and of the body (may shave or eat only on the right).
+    - Unaware that anything is wrong.
+  spared:
+    - Vision itself; the visual pathway still works. It's a problem of attention.
+  teaches: The right hemisphere attends to both sides of space while the left attends mostly to the right, so only right-side damage causes lasting neglect.
+
+- id: blindsight
+  type: case
+  kind: syndrome
+  name: Blindsight
+  short: After damage to V1, some people say they see nothing in part of their field, yet can still point to or avoid objects there.
+  damage:
+    regions: [primary-visual-cortex]
+  teaches: Routes that bypass V1 (such as the superior colliculus and pulvinar) can guide behavior without conscious seeing.

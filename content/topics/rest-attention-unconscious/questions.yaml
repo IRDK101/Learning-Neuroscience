@@ -1,0 +1,69 @@
+# Hand-written quiz questions for the resting brain, attention and the unconscious.
+
+- id: q-rest-dmn
+  kind: mcq
+  stem: What defines the default mode network?
+  answer: Regions that become more active at rest and less active during almost any task
+  distractors:
+    - { text: "Regions that are active only during sleep", why: "The network is defined by rest versus task, while awake." }
+    - { text: "Regions that are most active during difficult tasks", why: "Its activity drops during tasks." }
+    - { text: "The motor areas that keep posture at rest", why: "Its hubs are the posterior cingulate, medial prefrontal cortex and TPJ." }
+  refs: [default-mode-network]
+  tags: { difficulty: 1 }
+
+- id: q-rest-mentation
+  kind: mcq
+  stem: Which finding supports the internal mentation hypothesis of the default mode network?
+  answer: Thinking about past or future events activates its regions more than control prompts
+  distractors:
+    - { text: "It becomes more active whenever a loud sound occurs", why: "That would fit a sentinel role, which is no longer favored." }
+    - { text: "It is overactive in depression", why: "True, but that's about illness, not its normal function." }
+    - { text: "Psychedelics turn it down", why: "True, but it doesn't show what the network normally does." }
+  refs: [internal-mentation-hypothesis]
+
+- id: q-att-bottom-up
+  kind: mcq
+  stem: You're reading in a café and look up when someone nearby says your name. What kind of attention is this?
+  answer: Bottom-up (stimulus-driven) attention
+  distractors:
+    - { text: "Top-down attention", why: "You weren't trying to listen; the stimulus grabbed you." }
+    - { text: "Covert attention", why: "Covert attention is attending to a place without moving your eyes." }
+    - { text: "Change blindness", why: "Change blindness is failing to notice something." }
+  refs: [cocktail-party-effect, bottom-up-attention]
+  tags: { difficulty: 1 }
+
+- id: q-att-covert
+  kind: mcq
+  stem: In the cueing task, which cue gives the slowest responses?
+  answer: An invalid cue pointing to the wrong side
+  distractors:
+    - { text: "A valid cue pointing to the target's side", why: "Valid cues give the fastest responses." }
+    - { text: "A neutral cue", why: "Neutral cues are in between." }
+    - { text: "All cues give the same speed", why: "Cues shift covert attention and change speed." }
+  refs: [posner-cueing-task, covert-attention]
+
+- id: q-att-v4
+  kind: mcq
+  stem: You're told to watch for a change in color. Which area becomes more active before the stimulus even appears?
+  answer: V4
+  distractors:
+    - { text: "V5 (MT)", why: "V5 is for motion." }
+    - { text: "A1", why: "A1 is auditory." }
+    - { text: "The hippocampus", why: "Feature attention acts on the visual area for that feature." }
+  refs: [attention-preactivation]
+
+- id: q-att-fef
+  kind: mcq
+  stem: Stimulating one spot in the frontal eye fields makes V4 neurons respond more strongly at the matching location. What does this suggest?
+  answer: The frontal eye fields direct attention to locations, like a spotlight
+  distractors:
+    - { text: "The frontal eye fields process color", why: "They boost V4, which handles color and form." }
+    - { text: "V4 controls eye movements", why: "The frontal eye fields control voluntary eye movements." }
+    - { text: "Attention works only through the pulvinar", why: "Cortical areas like the FEF also steer it." }
+  refs: [frontal-eye-fields]
+
+- id: q-att-neglect
+  kind: case
+  stem: After a stroke in the right parietal lobe, a man eats only the food on the right side of his plate and doesn't notice anything is wrong. His vision tests normally. What is this?
+  answer: hemispatial-neglect
+  distractors: [homonymous-hemianopia, simultagnosia, blindsight]

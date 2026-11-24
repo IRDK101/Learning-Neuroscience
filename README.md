@@ -21,7 +21,7 @@ npm run content:report nt-systems   # print every generated card/question for a 
 - `CORRECTIONS.md`: every place the site differs from the notes, and why.
 - `scripts/diagrams/`: Python generators for the diagrams (`python3 scripts/diagrams/<name>.py`).
 
-Content so far: Foundations and Senses & Movement are complete; Higher Functions is planned.
+All three parts (Foundations, Senses & Movement, Higher Functions) are complete: 19 topics, 52 lessons.
 - `scripts/lib/`: the content build (validation, cross-references, card/question generation).
 - `src/`: the React app.
 

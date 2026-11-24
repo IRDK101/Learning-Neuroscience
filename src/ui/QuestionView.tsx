@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router';
 import type { Question } from '../content/types';
+import { usePractice } from '../content/lazy';
 import { shuffle } from '../lib/random';
 import { Icon, SourceBadges } from './bits';
 
@@ -26,7 +27,8 @@ export function QuestionView({
   nextLabel?: string;
   showLessonLink?: boolean;
 }) {
-  const options = useMemo(() => shuffle(q.options), [q]);
+  const ready = usePractice();
+  const options = useMemo(() => shuffle(q.options), [q, ready]); // eslint-disable-line react-hooks/exhaustive-deps
   const [picked, setPicked] = useState<number | null>(null);
   useEffect(() => setPicked(null), [q]);
 
@@ -49,6 +51,8 @@ export function QuestionView({
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   });
+
+  if (!ready || options.length === 0) return <div className="question loading" aria-busy="true" />;
 
   return (
     <div className="question">

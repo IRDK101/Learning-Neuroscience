@@ -1,0 +1,21 @@
+# Hand-written flashcards. Many more are generated from entities.
+
+- id: c-mi-hpa
+  kind: basic
+  front: The HPA axis and its two regulators?
+  back: Hypothalamus (CRH) → pituitary (ACTH) → adrenal glands (cortisol). The amygdala drives it up; the hippocampus senses cortisol through glucocorticoid receptors and brakes it.
+  refs: [hpa-axis]
+  tags: { difficulty: 3 }
+
+- id: c-mi-drugs
+  kind: basic
+  front: Match the drug to its disorder and target — benzodiazepines, SSRIs, MAOIs, lithium, antipsychotics.
+  back: Benzodiazepines — anxiety, GABA_A. SSRIs — depression/anxiety, serotonin transporter. MAOIs — depression, monoamine oxidase. Lithium — bipolar. Antipsychotics — schizophrenia, dopamine receptors.
+  refs: [benzodiazepines, ssris, mao-inhibitors, lithium, antipsychotics]
+  tags: { difficulty: 3 }
+
+- id: c-mi-positive-negative
+  kind: basic
+  front: Positive vs negative symptoms of schizophrenia?
+  back: Positive — present but shouldn't be (hallucinations, delusions). Negative — missing but should be there (planning, memory, attention, motivation).
+  refs: [positive-negative-symptoms]

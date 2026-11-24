@@ -1,0 +1,14 @@
+# Hand-written flashcards. Many more are generated from entities.
+
+- id: c-att-dmn-hubs
+  kind: basic
+  front: The three hubs of the default mode network?
+  back: Posterior cingulate cortex, medial prefrontal cortex, and temporoparietal junction.
+  refs: [default-mode-network]
+
+- id: c-att-neglect-side
+  kind: basic
+  front: Why does neglect usually affect the left side of space?
+  back: The right hemisphere attends to both sides, the left mostly to the right. Right parietal damage leaves the left side unattended; left damage is covered by the right.
+  refs: [hemispatial-neglect]
+  tags: { difficulty: 3 }

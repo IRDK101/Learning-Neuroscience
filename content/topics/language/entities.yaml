@@ -1,0 +1,153 @@
+# Language.
+
+- id: language
+  type: concept
+  name: Language
+  short: A system of symbols and rules for communicating; it draws on sensory, motor and cognitive systems and is found in every human culture.
+  points:
+    - "Input can be heard, read, or felt (Braille); output uses over 100 muscles of the mouth and throat, or the hands for writing and signing."
+    - About 7,000 languages are spoken today, most of them in Asia and Africa. Every known human culture has language.
+    - Children pick up the language around them naturally, but only within a critical period.
+  related: [critical-period, syntax]
+
+- id: critical-period
+  type: concept
+  name: Critical period
+  aliases: [sensitive period]
+  short: A window in early life when a skill such as language is learned easily; children not exposed to language within the first few years struggle to acquire any.
+
+- id: syntax
+  type: term
+  name: Syntax
+  aliases: [grammar]
+  short: The rules for ordering words to express how ideas relate; the part of language other animals don't seem to grasp.
+
+- id: semantics
+  type: term
+  name: Semantics
+  short: The meaning of words and sentences.
+
+- id: human-language-features
+  type: concept
+  name: What makes human language special
+  aliases: [counterfactuals, abstract words]
+  short: Words for abstract ideas, syntax that builds layered meanings, and counterfactuals (talking about things that haven't happened) set human language apart.
+  points:
+    - Other animals have communication systems, and some can learn signs, but syntax and counterfactuals haven't been shown in them.
+
+- id: aphasia
+  type: concept
+  name: Aphasia
+  aliases: [aphasias]
+  short: Loss of language ability after brain damage, while other mental abilities may be spared.
+  points:
+    - Described as early as the 1770s; Broca and Wernicke linked types of aphasia to brain areas in the late 1800s by examining patients' brains after death.
+    - "Broadly, Broca's aphasia disrupts syntax (putting sentences together), while Wernicke's disrupts semantics (word meaning)."
+  related: [brocas-aphasia, wernickes-aphasia, conduction-aphasia]
+
+- id: arcuate-fasciculus
+  type: region
+  name: Arcuate fasciculus
+  kind: tract
+  system: white-matter
+  short: A curved bundle of white matter linking Wernicke's area and Broca's area in both directions.
+  cases: [conduction-aphasia]
+  connections:
+    - { to: wernickes-area, dir: both }
+    - { to: brocas-area, dir: both }
+
+- id: conduction-aphasia
+  type: case
+  kind: syndrome
+  name: Conduction aphasia
+  short: Damage to the arcuate fasciculus leaves understanding and fluent speech mostly intact, but repeating what you hear (especially nonsense words) fails.
+  damage:
+    regions: [arcuate-fasciculus]
+    cause: Damage that disconnects Wernicke's area from Broca's area.
+  source: corrected
+  corrections: [C-067]
+  deficits:
+    - Can't repeat words, especially meaningless ones.
+    - { text: "Paraphasias: swapping in the wrong word (such as \"week\" for \"month\") or a wrong-sounding one.", flags: [F-05] }
+  spared:
+    - Comprehension and fluent speech.
+  teaches: Wernicke predicted this syndrome from his model before anyone had seen a patient with it.
+
+- id: wernicke-geschwind-model
+  type: pathway
+  kind: circuit
+  name: Wernicke-Geschwind model
+  short: "Hearing a word and saying it back: A1 → Wernicke's area (meaning) → arcuate fasciculus → Broca's area (sentence plan) → M1 face area (speech)."
+  steps:
+    - { label: Primary auditory cortex (A1), ref: primary-auditory-cortex }
+    - { label: Wernicke's area (word meaning), ref: wernickes-area }
+    - { label: Arcuate fasciculus, ref: arcuate-fasciculus }
+    - { label: "Broca's area (syntax, planning speech)", ref: brocas-area }
+    - { label: Face area of M1 (moves the mouth), ref: primary-motor-cortex }
+  diagrams: [language-areas]
+
+- id: language-lateralization
+  type: concept
+  name: Lateralization of language
+  aliases: [left hemisphere language, language dominance]
+  short: Language depends mostly on the left hemisphere in most people, especially right-handers.
+  points:
+    - The planum temporale, the core of Wernicke's area, is usually larger on the left.
+    - The left lateral fissure tends to be longer and flatter.
+    - Language and handedness both need fine motor control, which may be why both favor the left hemisphere.
+    - Left-handers are more likely to have language on the right or on both sides.
+  related: [wada-test, planum-temporale]
+
+- id: planum-temporale
+  type: region
+  name: Planum temporale
+  parent: temporal-lobe
+  system: temporal
+  short: The top surface of the temporal lobe behind A1, the core of Wernicke's area; usually larger on the left.
+
+- id: wada-test
+  type: experiment
+  name: Wada test
+  aliases: [Wada procedure]
+  short: A drug injected into one carotid artery briefly puts one hemisphere to sleep, showing which side handles language before surgery.
+  setup: Before brain surgery, a short-acting anesthetic is injected into one internal carotid artery, silencing that hemisphere for a few minutes while the patient tries to speak.
+  findings:
+    - In most people, silencing the left hemisphere stops speech.
+    - Some people are bilateral or right-dominant, more often left-handers.
+  shows: Language is usually, but not always, in the left hemisphere.
+  supports: [language-lateralization]
+
+- id: split-brain
+  type: experiment
+  name: Split-brain studies
+  aliases: [split brain, corpus callosotomy]
+  short: After the corpus callosum is cut to treat seizures, a word shown only to the right hemisphere can't be spoken, but can be drawn or picked out with the left hand.
+  setup: Patients whose corpus callosum had been cut to stop seizures spreading saw words flashed to one side of the visual field, or felt objects with one hand out of sight.
+  findings:
+    - { text: "A word in the right visual field (left hemisphere) can be read aloud.", source: corrected, corrections: [C-068] }
+    - { text: "A word in the left visual field reaches only the right hemisphere: the person can't say it, but can draw it or pick the object with the left hand.", source: corrected, corrections: [C-068] }
+    - An object felt with the left hand can't be named.
+  shows: The two hemispheres need the corpus callosum to share information, and speech is usually in the left.
+  supports: [language-lateralization]
+
+- id: sign-language-brain
+  type: concept
+  name: Sign language and the brain
+  short: Sign languages use the same left-hemisphere language areas as spoken language when learned early.
+  points:
+    - { text: "Signers who learned late show more involvement of other (more visual and right-hemisphere) regions.", flags: [F-06] }
+    - Later-learned languages in general engage both hemispheres more; brain damage can spare a second language.
+
+- id: cortical-stimulation-mapping
+  type: concept
+  name: Stimulation mapping
+  aliases: [cortical stimulation mapping]
+  short: During surgery, stimulating spots of cortex while the patient talks reveals language sites; their layout varies a lot between people.
+
+- id: sapir-whorf-hypothesis
+  type: concept
+  name: Sapir-Whorf hypothesis
+  aliases: [linguistic relativity]
+  short: The idea that language shapes thought; having a word makes you more likely to think in that category (not unable to think without it).
+  points:
+    - Speakers of languages with gendered nouns tend to describe objects in ways that match their grammatical gender.

@@ -83,6 +83,10 @@
   --nt-touch: #2f6fd0;
   --nt-pain: #d0452f;
   --nt-motor: #1f9a62;
+  --nt-papez: #c2306a;
+  --nt-dmn: #7b5cc4;
+  --nt-language: #d0452f;
+  --nt-attention: #0a7fa8;
 }
 
 /* Fluorescence microscope */
@@ -134,6 +138,10 @@
   --nt-touch: #6fa8ff;
   --nt-pain: #ff7a62;
   --nt-motor: #3fd38e;
+  --nt-papez: #ff7aa8;
+  --nt-dmn: #b9a2ff;
+  --nt-language: #ff8a6f;
+  --nt-attention: #4fc8f0;
 }
 
 /* ------------------------------------------------------------------ base type */
@@ -2312,4 +2320,83 @@ a.ref.hot {
 .search-results li.search-empty {
   display: block;
   cursor: default;
+}
+.diagram svg [data-layer='papez'] {
+  --nt: var(--nt-papez);
+}
+.diagram svg .arrow-papez path {
+  fill: var(--nt-papez);
+}
+.diagram svg [data-layer='dmn'] {
+  --nt: var(--nt-dmn);
+}
+.diagram svg .arrow-dmn path {
+  fill: var(--nt-dmn);
+}
+.diagram svg [data-layer='language'] {
+  --nt: var(--nt-language);
+}
+.diagram svg .arrow-language path {
+  fill: var(--nt-language);
+}
+.diagram svg [data-layer='attention'] {
+  --nt: var(--nt-attention);
+}
+.diagram svg .arrow-attention path {
+  fill: var(--nt-attention);
+}
+.diagram svg .phos {
+  fill: #e9b93c;
+  stroke: var(--ink-line);
+  stroke-width: 0.8;
+}
+.diagram svg .phos-t {
+  font: 700 8px var(--font-text);
+  fill: var(--ink-line);
+}
+.diagram svg .endosome {
+  fill: color-mix(in srgb, var(--cell-vesicle) 40%, var(--bg-elev));
+  stroke: color-mix(in srgb, var(--cell-vesicle) 60%, var(--ink-line));
+  stroke-width: 1.2;
+}
+.diagram svg .sig-acth {
+  stroke: #c8403a;
+}
+.diagram svg .sig-cort {
+  stroke: #2a9d8f;
+}
+.diagram svg .sig-plus {
+  stroke: var(--text-2);
+}
+.diagram svg .sig-minus {
+  stroke: var(--text-2);
+  stroke-dasharray: 4 3;
+}
+/* placeholder while the diagram chunk downloads */
+.diagram-svg.loading {
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(100deg, transparent 30%, color-mix(in srgb, var(--line) 50%, transparent) 50%, transparent 70%) 0 0 / 200% 100%;
+  animation: nm-shimmer 1.2s linear infinite;
+  border-radius: 6px;
+}
+@keyframes nm-shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .diagram-svg.loading {
+    animation: none;
+  }
+}
+.question.loading {
+  min-height: 9rem;
+  border-radius: 10px;
+  background: linear-gradient(100deg, transparent 30%, color-mix(in srgb, var(--line) 50%, transparent) 50%, transparent 70%) 0 0 / 200% 100%;
+  animation: nm-shimmer 1.2s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .question.loading {
+    animation: none;
+  }
 }

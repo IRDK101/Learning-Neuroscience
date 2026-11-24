@@ -111,3 +111,13 @@ and helper text only where they say how to use something.
 - Site-wide search (top bar button, `/` or Ctrl/⌘-K) over structures, terms, lessons and diagrams (`src/lib/search.ts`). The map index uses the same ranking and groups diagrams by part.
 - "Continue" on the home page resumes after your most recent lesson. ← / → move between lessons, and the last lesson of a topic links into the next topic.
 - Bare `[[id]]` links in lessons use a lowercase name mid-sentence ("a dermatome"), keeping capitals at sentence starts and for proper nouns and acronyms.
+
+## Higher Functions part (fifth pass)
+
+- New overlay views reuse the two brain drawings: `limbic-system` (Papez circuit) and `default-mode-network` on the midline view (layers in `scripts/diagrams/midsagittal_limbic_layers.svg.part`), and `language-areas` and `attention-areas` on the side view (layers in `brain_lateral.py`). Layer colors: `--nt-papez`, `--nt-dmn`, `--nt-language`, `--nt-attention`.
+- New drawings: `ltp-synapse` (`ltp_synapse.py`), `hpa-axis` (`hpa_axis.py`) and `medial-temporal-lobe` (`mtl.py`).
+- `[[Capitalized]]` lesson links resolve to the lowercase id and keep the typed text.
+
+### Loading in pieces
+
+The Vite plugin serves the content as four modules. `virtual:content` (metadata needed everywhere) loads with the app. Three lazy chunks, `virtual:content-svgs` (deduplicated diagram markup), `virtual:content-practice` (card and question text) and `virtual:content-lessons` (lesson bodies), are prefetched once the first screen has painted and filled into the bundle in place (`src/content/lazy.ts`). Components that need them call `useSvgs()`, `usePractice()` or `useLessons()` and show a shimmer placeholder until ready.

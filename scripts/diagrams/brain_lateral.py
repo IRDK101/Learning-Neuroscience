@@ -105,6 +105,8 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="40 20 740 550" class=
   <defs>
     <clipPath id="lat-cortex-clip"><path d="{outline}"/></clipPath>
     <clipPath id="lat-cb-clip"><path d="{smooth(cb, closed=True)}"/></clipPath>
+    <marker id="arr-language" class="arrow arrow-language" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z"/></marker>
+    <marker id="arr-attention" class="arrow arrow-attention" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z"/></marker>
   </defs>
 
   <g class="base">
@@ -179,6 +181,34 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="40 20 740 550" class=
       <text text-anchor="middle" data-label-for="anterior-cerebral-artery" x="370" y="72">ACA territory</text>
       <text text-anchor="middle" data-label-for="middle-cerebral-artery" x="380" y="230">MCA territory</text>
       <text text-anchor="middle" data-label-for="posterior-cerebral-artery" x="680" y="270">PCA territory</text>
+    </g>
+  </g>
+
+  <!-- language: the Wernicke-Geschwind route (A1 → Wernicke → arcuate fasciculus → Broca → M1 face area) -->
+  <g data-layer="language">
+    <path data-ref="brocas-area" d="{blob(300, 282, 36, 21, seed=2, rot=-12)}"/>
+    <path data-ref="primary-auditory-cortex" d="{blob(420, 300, 36, 11, seed=4, rot=-9)}"/>
+    <path data-ref="wernickes-area" d="{blob(540, 302, 40, 17, seed=5, rot=-2)}"/>
+    <path data-ref="arcuate-fasciculus" class="line-hotspot thick" data-fill="#7a4fbf" d="M 548 292 C 576 262 566 226 520 214 C 460 200 380 204 336 226 C 312 240 302 256 300 270"/>
+    <path class="proj" marker-end="url(#arr-language)" d="M 436 300 C 470 316 500 318 520 312"/>
+    <path class="proj" marker-end="url(#arr-language)" d="M 536 286 C 560 258 552 234 516 224 C 460 212 386 214 344 234 C 324 246 314 256 310 266"/>
+    <path class="proj" marker-end="url(#arr-language)" d="M 320 270 C 340 252 360 240 384 232"/>
+    <g class="labels">
+      <text data-label-for="arcuate-fasciculus" x="440" y="196" text-anchor="middle">Arcuate fasciculus</text>
+      <text data-label-for="brocas-area" x="300" y="330" text-anchor="middle">Broca's area</text>
+      <text data-label-for="primary-auditory-cortex" x="420" y="336" text-anchor="middle">A1</text>
+      <text data-label-for="wernickes-area" x="560" y="350" text-anchor="middle">Wernicke's area</text>
+    </g>
+  </g>
+
+  <!-- attention: frontal eye fields and posterior parietal cortex -->
+  <g data-layer="attention">
+    <path data-ref="frontal-eye-fields" class="ghost" d="{blob(300, 150, 26, 20, 0.06, seed=7, rot=-20)}"/>
+    <path data-ref="posterior-parietal-cortex" class="ghost" d="{blob(580, 170, 52, 40, 0.06, seed=8, rot=10)}"/>
+    <path class="proj" marker-end="url(#arr-attention)" d="M 540 150 C 470 112 380 112 326 140"/>
+    <g class="labels">
+      <text data-label-for="frontal-eye-fields" x="300" y="104" text-anchor="middle">Frontal eye fields</text>
+      <text data-label-for="posterior-parietal-cortex" x="580" y="236" text-anchor="middle"><tspan x="580">Posterior</tspan><tspan x="580" dy="17">parietal cortex</tspan></text>
     </g>
   </g>
 </svg>

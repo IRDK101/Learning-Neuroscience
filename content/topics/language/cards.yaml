@@ -1,0 +1,14 @@
+# Hand-written flashcards. Many more are generated from entities.
+
+- id: c-lang-three-aphasias
+  kind: basic
+  front: Broca's vs Wernicke's vs conduction aphasia?
+  back: Broca's — slow, halting speech, comprehension spared (syntax). Wernicke's — fluent but meaningless speech, poor comprehension (semantics). Conduction — can't repeat, fluent and understands (arcuate fasciculus).
+  refs: [brocas-aphasia, wernickes-aphasia, conduction-aphasia]
+  tags: { difficulty: 3 }
+
+- id: c-lang-split-left-field
+  kind: basic
+  front: Split-brain patient, word in the left visual field?
+  back: It goes to the right hemisphere only. He can't say it (speech is left) but can draw it or pick the object with his left hand.
+  refs: [split-brain]

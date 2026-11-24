@@ -1,0 +1,333 @@
+# Memory systems, and the molecular mechanisms of learning.
+
+- id: declarative-memory
+  type: concept
+  name: Declarative memory
+  aliases: [explicit memory]
+  short: Memory you can put into words, made up of semantic (facts) and episodic (personal events) memory; depends on the medial temporal lobe.
+  related: [semantic-memory, episodic-memory, nondeclarative-memory]
+
+- id: semantic-memory
+  type: concept
+  name: Semantic memory
+  short: Memory for facts and general knowledge, such as Paris being the capital of France.
+  source: corrected
+  corrections: [C-069]
+
+- id: episodic-memory
+  type: concept
+  name: Episodic memory
+  short: Memory for events you lived through, such as your last birthday.
+
+- id: nondeclarative-memory
+  type: concept
+  name: Nondeclarative memory
+  aliases: [implicit memory, procedural memory]
+  short: Memory shown by doing rather than saying, such as skills and conditioned responses; it depends on other brain systems.
+  points:
+    - "Procedural skills and habits: the striatum (basal ganglia)."
+    - "Conditioned body movements, like the eyeblink: the cerebellum."
+    - "Conditioned emotional responses, like fear: the amygdala."
+
+- id: memory-stages
+  type: pathway
+  kind: sequence
+  name: Stages of memory
+  short: Sensory memory → working memory → short-term memory → long-term memory, with attention and rehearsal moving information along.
+  steps:
+    - { label: Sensory memory, note: "A brief trace in sensory cortex (V1, A1); only what you attend to moves on." }
+    - { label: Working memory, ref: working-memory, note: "A mental scratchpad kept alive by rehearsal." }
+    - { label: Short-term memory, note: "Minutes to hours; lost unless consolidated." }
+    - { label: Long-term memory, ref: consolidation, note: "Lasting; usually lost only with brain damage." }
+  flags: [F-07]
+
+- id: reconsolidation
+  type: concept
+  name: Reconsolidation
+  short: Each time a memory is recalled it becomes changeable again and is stored anew, slightly altered.
+
+- id: working-memory
+  type: concept
+  name: Working memory
+  aliases: [Baddeley's model, central executive]
+  short: Holding and working with information for a short time; directed by a central executive with a phonological loop, a visuospatial sketchpad and an episodic buffer.
+  points:
+    - "Phonological loop: keeps words alive by repeating them (rehearsal)."
+    - "Visuospatial sketchpad: holds images and locations."
+    - { text: "Episodic buffer: combines information from the other parts and from long-term memory; it's a part of working memory, not a later stage.", source: corrected, corrections: [C-070] }
+    - Depends on the prefrontal cortex (especially dorsolateral) and parietal cortex.
+  regions: [dorsolateral-prefrontal-cortex, lateral-intraparietal-area]
+
+- id: wisconsin-card-sort
+  type: experiment
+  name: Wisconsin Card Sorting Test
+  aliases: [Wisconsin card sort, WCST]
+  short: People sort cards by an unstated rule that changes partway through; people with prefrontal damage keep using the old rule.
+  setup: Cards differ in color, shape and number. The person sorts them and is told only "right" or "wrong". Partway through, the rule changes without warning.
+  findings:
+    - Healthy people notice the change and switch.
+    - People with prefrontal damage keep sorting by the old rule.
+  shows: The prefrontal cortex is needed to hold a rule in mind and switch flexibly.
+  supports: [working-memory]
+  source: corrected
+  corrections: [C-071]
+
+- id: delayed-response-task
+  type: experiment
+  name: Delayed-response task
+  aliases: [delayed response]
+  short: A monkey sees food hidden in one of two wells, waits behind a screen, then must choose; prefrontal neurons fire throughout the wait.
+  setup: Food is placed in one of two wells while the monkey watches. A screen blocks the view for a delay, then the monkey chooses.
+  findings:
+    - Neurons in the dorsolateral prefrontal cortex fire steadily during the delay, holding the location in mind.
+  shows: Persistent prefrontal activity carries working memory.
+  supports: [working-memory]
+
+- id: lateral-intraparietal-area
+  type: region
+  name: Lateral intraparietal area
+  aliases: [LIP]
+  parent: posterior-parietal-cortex
+  system: parietal
+  short: A parietal area whose neurons keep firing while a monkey remembers where a target flashed, until it moves its eyes there.
+  functions:
+    - Together with the prefrontal cortex and frontal eye fields, holds spatial locations in working memory.
+
+- id: engram
+  type: concept
+  name: Engram
+  aliases: [memory trace]
+  short: The physical trace of a memory, thought to be a network of cells that fire together, not a single cell.
+  points:
+    - A cell can belong to many engrams.
+    - Seeing part of a scene can reactivate the whole network and bring back the full memory.
+  related: [hebbian-learning]
+
+- id: hebbian-learning
+  type: concept
+  name: Hebb's rule
+  aliases: [Hebbian learning, fire together wire together, Hebbian modification]
+  short: Neurons that fire together wire together; when one cell repeatedly helps fire another, the connection between them strengthens.
+  related: [long-term-potentiation, engram]
+
+- id: medial-temporal-lobe
+  type: region
+  name: Medial temporal lobe
+  aliases: [MTL]
+  parent: temporal-lobe
+  system: limbic
+  short: The inner part of the temporal lobe, holding the hippocampus and the entorhinal, perirhinal and parahippocampal cortices; essential for forming declarative memories.
+
+- id: entorhinal-cortex
+  type: region
+  name: Entorhinal cortex
+  parent: medial-temporal-lobe
+  system: limbic
+  short: The main gateway between the hippocampus and the rest of the cortex.
+  connections:
+    - { to: hippocampus, dir: both }
+
+- id: perirhinal-cortex
+  type: region
+  name: Perirhinal cortex
+  parent: medial-temporal-lobe
+  system: limbic
+  short: Cortex beside the entorhinal cortex, important for recognizing objects as familiar.
+  functions:
+    - Damage here impairs recognition, while the hippocampus matters more for recalling detailed events.
+
+- id: parahippocampal-cortex
+  type: region
+  name: Parahippocampal cortex
+  parent: medial-temporal-lobe
+  system: limbic
+  short: Cortex along the hippocampus that feeds it information about places and scenes.
+
+- id: hm-henry-molaison
+  type: case
+  kind: patient
+  name: H.M. (Henry Molaison)
+  aliases: [HM, H.M., Henry Molaison, patient HM]
+  short: After much of both medial temporal lobes was removed to stop his seizures, H.M. could no longer form new declarative memories, though he could still learn skills.
+  damage:
+    regions: [hippocampus, medial-temporal-lobe]
+    cause: Surgery in 1953 removing much of both medial temporal lobes, including the hippocampi, to treat epilepsy.
+  deficits:
+    - Severe anterograde amnesia; he never learned to recognize staff he worked with for decades.
+    - Some retrograde amnesia for the years before surgery.
+  spared:
+    - Procedural learning; he improved at new motor skills without remembering practicing.
+    - Working memory and older memories.
+  teaches: The medial temporal lobe is needed to form new declarative memories, but not for skills or old memories.
+
+- id: anterograde-amnesia
+  type: term
+  name: Anterograde amnesia
+  short: Inability to form new memories after a brain injury.
+
+- id: retrograde-amnesia
+  type: term
+  name: Retrograde amnesia
+  short: Loss of memories from before a brain injury.
+
+- id: delayed-non-match-to-sample
+  type: experiment
+  name: Delayed non-match to sample
+  aliases: [DNMS]
+  short: A monkey sees an object, then after a delay must pick the new one of two objects; MTL damage makes it fail as the delay grows.
+  setup: The monkey sees a sample object. After a delay it sees that object and a new one, and finds food under the new one.
+  findings:
+    - Healthy monkeys stay accurate even with long delays.
+    - { text: "With medial temporal damage, accuracy falls as the delay grows; short delays are fine.", source: corrected, corrections: [C-072] }
+    - Damage to the perirhinal, entorhinal and parahippocampal cortices hurts more than damage to the hippocampus alone.
+  shows: The MTL cortices around the hippocampus are critical for recognition memory over a delay.
+  supports: [recognition-vs-recall]
+
+- id: recognition-vs-recall
+  type: concept
+  name: Recognition vs recall
+  short: Recognition is knowing you've seen something before; recall is bringing back the details of an event. They depend on different parts of the MTL.
+  points:
+    - Perirhinal damage impairs recognition.
+    - Hippocampal damage impairs recall of detailed events more than recognition.
+  regions: [perirhinal-cortex, hippocampus]
+
+- id: consolidation
+  type: concept
+  name: Consolidation
+  aliases: [memory consolidation, standard model, systems consolidation]
+  short: Turning a fragile new memory into a lasting one. In the standard model, memories first need the hippocampus, then gradually come to rely on the neocortex alone.
+  points:
+    - { text: "Early on, recall depends on the hippocampus binding together the cortical pieces of a memory.", flags: [F-08] }
+    - "Systems consolidation: over time the neocortical network stands on its own and the hippocampus is no longer needed."
+  related: [multiple-trace-theory]
+
+- id: multiple-trace-theory
+  type: concept
+  name: Multiple trace theory
+  aliases: [multiple trace model]
+  short: An alternative to the standard model; each recall lays down a new trace, and detailed episodic memories always need the hippocampus.
+  related: [consolidation]
+
+# ---------------------------------------------------------------- molecular mechanisms
+
+- id: long-term-potentiation
+  type: concept
+  name: Long-term potentiation
+  aliases: [LTP]
+  short: A lasting increase in the strength of a synapse after strong, repeated activity; a cellular basis of learning.
+  points:
+    - Triggered by high-frequency stimulation (a tetanus) that makes the pre- and postsynaptic cells fire together.
+    - "Input specific: only the stimulated synapse strengthens, not its neighbors."
+    - Calcium entering through NMDA receptors starts it; extra AMPA receptors make it last.
+  related: [ltp-mechanism, long-term-depression, hebbian-learning]
+
+- id: long-term-depression
+  type: concept
+  name: Long-term depression
+  aliases: [LTD]
+  short: A lasting weakening of a synapse after weak or badly timed activity; a small Ca²⁺ rise activates phosphatases that remove AMPA receptors.
+  points:
+    - Also input specific.
+    - "Small, slow Ca²⁺ rise → phosphatase → AMPA receptors dephosphorylated and pulled out of the membrane."
+  related: [long-term-potentiation, spike-timing]
+
+- id: spike-timing
+  type: concept
+  name: Spike timing and plasticity
+  aliases: [spike-timing-dependent plasticity, STDP]
+  short: If the presynaptic cell fires just before the postsynaptic cell, the synapse strengthens (LTP); just after, it weakens (LTD). Closer timing means a bigger change.
+  related: [long-term-potentiation, long-term-depression]
+
+- id: ampa-receptor
+  type: molecule
+  kind: receptor
+  name: AMPA receptor
+  aliases: [AMPA receptors, AMPA]
+  short: An ionotropic glutamate receptor that lets in Na⁺ and produces the fast EPSP; adding more of them strengthens a synapse.
+  functions:
+    - { text: "Glutamate binds it and Na⁺ flows in; glutamate itself doesn't enter the cell.", source: corrected, corrections: [C-073] }
+
+- id: nmda-receptor
+  type: molecule
+  kind: receptor
+  name: NMDA receptor
+  aliases: [NMDA receptors, NMDA]
+  short: A glutamate receptor blocked by Mg²⁺ until the cell is depolarized; then it lets in Ca²⁺, the trigger for LTP.
+  functions:
+    - "Needs both glutamate (ligand) and depolarization (voltage): a coincidence detector."
+    - Blocked by PCP and ketamine.
+
+- id: magnesium-block
+  type: term
+  name: Magnesium block
+  aliases: [Mg block, Mg²⁺ block]
+  short: A magnesium ion plugging the NMDA receptor channel at rest; depolarization pushes it out.
+
+- id: camkii
+  type: molecule
+  kind: enzyme
+  name: CaMKII
+  aliases: [calcium/calmodulin-dependent protein kinase II]
+  short: A kinase switched on by Ca²⁺ that phosphorylates AMPA receptors and helps insert more of them into the synapse.
+  functions:
+    - Can keep itself switched on by phosphorylating itself (the molecular switch hypothesis).
+
+- id: protein-kinase-c
+  type: molecule
+  kind: enzyme
+  name: Protein kinase C
+  aliases: [PKC]
+  short: A kinase activated in LTP that phosphorylates AMPA receptors so they pass more current.
+
+- id: phosphatase
+  type: molecule
+  kind: enzyme
+  name: Protein phosphatase
+  aliases: [phosphatases, phosphatase]
+  short: An enzyme that removes phosphate groups; in LTD it dephosphorylates AMPA receptors and helps pull them out of the synapse.
+
+- id: creb
+  type: molecule
+  kind: protein
+  name: CREB
+  short: A transcription factor that switches on genes needed to make new proteins for long-term memory.
+  functions:
+    - Blocking CREB prevents long-term memory.
+    - { text: "Boosting CREB in flies and mice makes long-term memory form with fewer training trials.", source: corrected, corrections: [C-076] }
+
+- id: ltp-mechanism
+  type: pathway
+  kind: signaling
+  name: How LTP happens
+  short: Glutamate → AMPA depolarizes the cell → Mg²⁺ leaves NMDA → Ca²⁺ in → kinases → more and better AMPA receptors.
+  steps:
+    - { label: Glutamate binds AMPA and NMDA receptors, ref: glutamate }
+    - { label: Na⁺ through AMPA receptors depolarizes the cell, ref: ampa-receptor, source: corrected, corrections: [C-073] }
+    - { label: Depolarization expels Mg²⁺ from the NMDA receptor, ref: magnesium-block }
+    - { label: Ca²⁺ enters through the NMDA receptor, ref: nmda-receptor }
+    - { label: CaMKII and PKC are activated, ref: camkii }
+    - { label: AMPA receptors pass more current and more are inserted, ref: ampa-receptor }
+  diagrams: [ltp-synapse]
+
+- id: protein-synthesis-memory
+  type: concept
+  name: Proteins and lasting memory
+  aliases: [molecular switch hypothesis, protein synthesis inhibitors]
+  short: Phosphorylation strengthens a synapse for hours; memories that last need new proteins made through CREB.
+  points:
+    - { text: "Short-lasting changes come from kinases phosphorylating existing proteins; long-lasting ones need new protein synthesis and structural change.", source: corrected, corrections: [C-074] }
+    - { text: "Protein synthesis inhibitors block long-term memory but leave short-term memory intact.", source: corrected, corrections: [C-075] }
+    - The molecular switch hypothesis proposes that CaMKII keeps itself active by self-phosphorylation.
+  related: [creb, camkii]
+
+- id: inhibitory-avoidance
+  type: experiment
+  name: Inhibitory avoidance
+  short: A rat shocked in one compartment learns in a single trial to avoid it, and hippocampal synapses show LTP-like strengthening.
+  setup: A rat gets a mild foot shock when it enters a dark compartment, then is tested later.
+  findings:
+    - It avoids the compartment for a long time afterwards.
+    - EPSPs in the hippocampus rise and stay raised after training.
+  shows: Real learning produces LTP-like changes in the hippocampus.
+  supports: [long-term-potentiation]

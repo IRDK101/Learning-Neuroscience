@@ -1,0 +1,122 @@
+# Hand-written quiz questions for mental illness.
+
+- id: q-mi-diagnosis
+  kind: mcq
+  stem: How are most mental illnesses diagnosed today?
+  answer: From symptoms, using criteria such as those in the DSM
+  distractors:
+    - { text: "With a brain scan", why: "No brain scan can diagnose disorders like depression yet." }
+    - { text: "With a blood test for neurotransmitters", why: "There are no reliable biological tests for most disorders." }
+    - { text: "By genetic testing", why: "Genes raise risk but don't diagnose." }
+  refs: [mental-illness-definition, dsm]
+  tags: { difficulty: 1 }
+
+- id: q-mi-agoraphobia
+  kind: mcq
+  stem: What is the core fear in agoraphobia?
+  answer: Being somewhere escape would be hard or help unavailable if panic strikes
+  distractors:
+    - { text: "Being judged by other people", why: "That describes social anxiety." }
+    - { text: "Spiders, heights or other specific objects", why: "Those are specific phobias." }
+    - { text: "Germs and contamination", why: "That's a common OCD theme." }
+  refs: [agoraphobia]
+
+- id: q-mi-hpa
+  kind: mcq
+  stem: In the HPA axis, which structure senses cortisol and brakes the system?
+  answer: The hippocampus, through glucocorticoid receptors
+  distractors:
+    - { text: "The amygdala", why: "The amygdala pushes the axis up." }
+    - { text: "The adrenal glands", why: "They release cortisol." }
+    - { text: "The cerebellum", why: "It isn't part of the stress axis." }
+  refs: [hpa-axis, glucocorticoid-receptor]
+
+- id: q-mi-hpa-order
+  kind: mcq
+  stem: What is the order of the HPA axis?
+  answer: Hypothalamus (CRH) → pituitary (ACTH) → adrenal glands (cortisol)
+  distractors:
+    - { text: "Pituitary → hypothalamus → kidneys", why: "The hypothalamus starts it, and the adrenal glands (on the kidneys) release cortisol." }
+    - { text: "Amygdala → hippocampus → adrenal glands", why: "Those regulate the axis but aren't its chain." }
+    - { text: "Adrenal glands → pituitary → hypothalamus", why: "That's backwards." }
+  refs: [hpa-axis]
+
+- id: q-mi-benzo
+  kind: mcq
+  stem: How do benzodiazepines reduce anxiety?
+  answer: They make GABA_A receptors open their Cl⁻ channel more effectively when GABA binds
+  distractors:
+    - { text: "They block serotonin reuptake", why: "That's SSRIs." }
+    - { text: "They open the Cl⁻ channel by themselves, without GABA", why: "They enhance GABA's effect; they're allosteric modulators." }
+    - { text: "They block dopamine receptors", why: "That's antipsychotics." }
+  refs: [benzodiazepines]
+
+- id: q-mi-ssri-delay
+  kind: mcq
+  stem: SSRIs block reuptake within hours but take weeks to help. What does this suggest?
+  answer: Their benefit comes from slower downstream changes, not just more serotonin in the synapse
+  distractors:
+    - { text: "They take weeks to reach the brain", why: "They act on the transporter quickly." }
+    - { text: "Serotonin plays no role in mood", why: "Serotonin systems are involved, through slower changes." }
+    - { text: "They work only after the dose is doubled", why: "The delay happens at a steady dose." }
+  refs: [ssris]
+
+- id: q-mi-bipolar
+  kind: mcq
+  stem: Which drug is used long-term to prevent episodes of bipolar disorder?
+  answer: Lithium
+  distractors:
+    - { text: "Benzodiazepines", why: "They treat anxiety." }
+    - { text: "Antipsychotics only", why: "Lithium is the classic long-term mood stabilizer." }
+    - { text: "L-DOPA", why: "L-DOPA treats Parkinson's disease." }
+  refs: [lithium, bipolar-disorder]
+
+- id: q-mi-mao
+  kind: mcq
+  stem: How do MAO inhibitors raise monoamine levels?
+  answer: They block the enzyme that breaks down norepinephrine and serotonin
+  distractors:
+    - { text: "They block the serotonin transporter", why: "That's how SSRIs work." }
+    - { text: "They activate dopamine receptors", why: "They act on breakdown, not receptors." }
+    - { text: "They make more tryptophan", why: "They prevent breakdown rather than boosting synthesis." }
+  refs: [mao-inhibitors, monoamine-hypothesis]
+
+- id: q-mi-negative
+  kind: mcq
+  stem: Which is a negative symptom of schizophrenia?
+  answer: Lack of motivation and trouble planning
+  distractors:
+    - { text: "Hearing voices", why: "Hallucinations are positive symptoms." }
+    - { text: "Believing you're being followed", why: "Delusions are positive symptoms." }
+    - { text: "Having a sad mood", why: "Negative means something missing, not a sad feeling." }
+  refs: [positive-negative-symptoms]
+
+- id: q-mi-comt
+  kind: mcq
+  stem: In the COMT study, who showed the biggest rise in psychosis risk after adolescent cannabis use?
+  answer: People with two Val copies of the COMT gene
+  distractors:
+    - { text: "People with two Met copies", why: "They showed no rise in risk." }
+    - { text: "Everyone equally", why: "The effect depended on genotype." }
+    - { text: "Only people who never used cannabis", why: "The risk was tied to cannabis use." }
+  refs: [comt, gene-environment-interaction]
+
+- id: q-mi-dopamine
+  kind: mcq
+  stem: Which finding supports the dopamine hypothesis of schizophrenia?
+  answer: Antipsychotics that bind dopamine receptors more tightly work at lower doses
+  distractors:
+    - { text: "PCP blocks NMDA receptors and causes psychosis", why: "That supports the glutamate hypothesis." }
+    - { text: "Patients have enlarged ventricles", why: "That's a structural finding, not about dopamine." }
+    - { text: "SSRIs relieve depression", why: "That concerns serotonin and mood." }
+  refs: [dopamine-hypothesis, antipsychotics]
+
+- id: q-mi-glutamate
+  kind: mcq
+  stem: Why does ketamine's effect support the glutamate hypothesis of schizophrenia?
+  answer: It blocks NMDA receptors and can produce schizophrenia-like symptoms
+  distractors:
+    - { text: "It raises dopamine like amphetamine", why: "Its key action here is blocking NMDA receptors." }
+    - { text: "It increases glutamate release", why: "The hypothesis is about reduced NMDA receptor function." }
+    - { text: "It cures schizophrenia", why: "It mimics symptoms rather than treating them." }
+  refs: [pcp-ketamine, nmda-hypofunction]

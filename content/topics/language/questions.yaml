@@ -1,0 +1,74 @@
+# Hand-written quiz questions for language.
+
+- id: q-lang-human
+  kind: mcq
+  stem: Which feature of language has not been shown in other animals?
+  answer: Talking about hypothetical events that never happened (counterfactuals)
+  distractors:
+    - { text: "Communicating with sounds", why: "Many animals communicate with sounds." }
+    - { text: "Learning a few signs", why: "Some apes and other animals can learn signs." }
+    - { text: "Signaling danger", why: "Alarm calls are common in animals." }
+  refs: [human-language-features]
+
+- id: q-lang-broca
+  kind: case
+  stem: After a stroke, a woman understands questions well but answers in slow, effortful bursts like "Walk... dog... park." Which aphasia is this?
+  answer: brocas-aphasia
+  distractors: [wernickes-aphasia, conduction-aphasia, hemispatial-neglect]
+
+- id: q-lang-wernicke
+  kind: case
+  stem: A man speaks fluently and confidently, but his sentences make little sense and he doesn't follow simple instructions. Which aphasia is this?
+  answer: wernickes-aphasia
+  distractors: [brocas-aphasia, conduction-aphasia, prosopagnosia]
+
+- id: q-lang-conduction
+  kind: mcq
+  stem: A patient understands speech and talks fluently but can't repeat "blick" back to you. Where is the damage most likely?
+  answer: The arcuate fasciculus
+  distractors:
+    - { text: "Broca's area", why: "Broca's damage makes speech itself slow and halting." }
+    - { text: "Wernicke's area", why: "Wernicke's damage impairs understanding." }
+    - { text: "The corpus callosum", why: "That would affect sharing between hemispheres, not repetition in one." }
+  refs: [conduction-aphasia, arcuate-fasciculus]
+
+- id: q-lang-model
+  kind: mcq
+  stem: In the Wernicke-Geschwind model, what is the route for repeating a word you hear?
+  answer: A1 → Wernicke's area → arcuate fasciculus → Broca's area → face area of M1
+  distractors:
+    - { text: "A1 → Broca's area → Wernicke's area → M1", why: "Meaning (Wernicke's) comes before planning speech (Broca's)." }
+    - { text: "V1 → Wernicke's area → Broca's area → M1", why: "Heard words start in A1." }
+    - { text: "A1 → corpus callosum → right Broca's area", why: "Language is mostly in the left hemisphere." }
+  refs: [wernicke-geschwind-model]
+
+- id: q-lang-wada
+  kind: mcq
+  stem: What does the Wada test show?
+  answer: Which hemisphere handles language, by putting one side briefly to sleep
+  distractors:
+    - { text: "Which hand is dominant", why: "Handedness is easy to observe; the test is about language." }
+    - { text: "Where Broca's area is, to the millimeter", why: "That needs stimulation mapping." }
+    - { text: "Whether the corpus callosum is intact", why: "It silences one hemisphere through its artery." }
+  refs: [wada-test]
+
+- id: q-lang-split
+  kind: mcq
+  stem: A split-brain patient sees the word "key" only in the left visual field. What can he do?
+  answer: Pick out a key with his left hand, though he can't say the word
+  distractors:
+    - { text: "Say \"key\" aloud", why: "The word reached only the right hemisphere, which can't speak." }
+    - { text: "Nothing; the word wasn't processed at all", why: "The right hemisphere understands it well enough to act." }
+    - { text: "Pick out a key with his right hand", why: "The right hand is controlled by the left hemisphere, which didn't see the word." }
+  refs: [split-brain]
+  tags: { difficulty: 3 }
+
+- id: q-lang-whorf
+  kind: mcq
+  stem: Which statement fits the evidence on the Sapir-Whorf hypothesis?
+  answer: Having a word makes you more likely to think in that category, but you can still think without it
+  distractors:
+    - { text: "You cannot think about anything you have no word for", why: "This strong version isn't supported." }
+    - { text: "Language has no effect at all on thought", why: "Studies such as those on gendered nouns show some effect." }
+    - { text: "Only bilingual people are affected", why: "Effects are seen across speakers of different languages." }
+  refs: [sapir-whorf-hypothesis]

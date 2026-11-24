@@ -7,7 +7,7 @@ from curves import smooth, shift, blob, rev, wiggle, ribbon, band, normal_offset
 
 HERE = Path(__file__).resolve().parent
 OUT = HERE.parents[1] / 'content/diagrams/brain-midsagittal.svg'
-LAYERS = (HERE / 'midsagittal_layers.svg.part').read_text()
+LAYERS = (HERE / 'midsagittal_layers.svg.part').read_text() + (HERE / 'midsagittal_limbic_layers.svg.part').read_text()
 
 cerebrum = [(84, 304), (70, 236), (90, 170), (138, 116), (208, 76), (300, 50), (400, 42), (500, 50),
             (592, 82), (656, 138), (696, 206), (710, 266), (696, 312), (662, 334), (616, 338), (574, 328),
@@ -116,6 +116,7 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="40 30 720 530" class=
     <marker id="arr-ach" class="arrow arrow-ach" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z"/></marker>
     <marker id="arr-da" class="arrow arrow-da" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z"/></marker>
     <marker id="arr-ne" class="arrow arrow-ne" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z"/></marker>
+    <marker id="arr-papez" class="arrow arrow-papez" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z"/></marker>
     <marker id="arr-serotonin" class="arrow arrow-serotonin" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z"/></marker>
   </defs>
 

@@ -1,0 +1,246 @@
+# Brain mechanisms of emotion.
+
+- id: james-lange-theory
+  type: concept
+  name: James-Lange theory
+  aliases: [James-Lange]
+  short: The theory that emotion is our interpretation of body changes; the body responds first and the feeling follows ("bottom-up").
+  points:
+    - "Event → autonomic body change → the cortex reads the change as an emotion."
+    - Can't be the whole story, because emotion can exist without the matching body response (you can be sad without crying).
+    - { text: "Supported by reports that spinal cord injury, which cuts off feedback from the body, reduces felt emotion.", flags: [F-02] }
+  related: [cannon-bard-theory, two-factor-theory]
+
+- id: cannon-bard-theory
+  type: concept
+  name: Cannon-Bard theory
+  aliases: [Cannon-Bard]
+  short: The theory that the thalamus sends signals at the same time to the cortex (the feeling) and to the body (the autonomic response); neither causes the other.
+  source: corrected
+  corrections: [C-057]
+  related: [james-lange-theory]
+
+- id: two-factor-theory
+  type: concept
+  name: Two-factor theory
+  aliases: [Schachter-Singer theory, misattribution of arousal]
+  short: The theory that an emotion is body arousal plus a label taken from context; the body says "aroused", the situation says which emotion.
+  source: added
+  points:
+    - { text: "Agrees with James-Lange that the body matters, but the label decides which emotion you feel.", source: corrected, corrections: [C-058] }
+  related: [james-lange-theory, schachter-singer-experiment, bridge-experiment]
+
+- id: schachter-singer-experiment
+  type: experiment
+  name: Epinephrine experiments
+  aliases: [Schachter and Singer, vitamin experiment, epinephrine injection study]
+  short: People injected with epinephrine (told it was a vitamin) felt angrier around an angry stooge, unless they had been told to expect the side effects.
+  setup: Participants got an injection of epinephrine (adrenaline) or saline, described as a vitamin. They then waited with an actor who behaved angrily, or happily.
+  findings:
+    - People given epinephrine became angrier than the saline group when the actor was angry.
+    - People who had been told to expect a racing heart and shaky hands did not get angrier; they had an explanation for their arousal.
+    - With a happy actor, the epinephrine group felt happier.
+  shows: "Body arousal feeds emotion, but the label comes from the situation."
+  supports: [two-factor-theory]
+  source: corrected
+  corrections: [C-058]
+
+- id: bridge-experiment
+  type: experiment
+  name: Bridge experiment
+  aliases: [Dutton and Aron, rickety bridge study]
+  short: Men who crossed a scary, swaying bridge were more likely to call an attractive interviewer afterwards than men who crossed a sturdy one.
+  setup: Men crossed either a rickety suspension bridge or a solid one, then met an attractive interviewer who gave them her phone number.
+  findings:
+    - More men called her after the rickety bridge.
+  shows: Arousal from fear can be misread as attraction.
+  supports: [two-factor-theory]
+  flags: [F-01]
+
+- id: basic-emotions
+  type: concept
+  name: Basic emotions
+  aliases: [universal emotions, facial expressions]
+  short: Five or six emotions (happiness, sadness, fear, anger, disgust, perhaps surprise) whose facial expressions appear in every culture.
+  points:
+    - Even isolated cultures show the same expressions, and other animals show similar ones.
+    - No single brain region handles each emotion. Each activates a pattern of many overlapping regions, differing in which areas and how strongly.
+    - Some regions are causally tied to specific emotions; stimulating one part of the cingulate cortex can relieve sadness.
+
+- id: circumplex-model
+  type: concept
+  name: Circumplex model
+  short: A map of emotions on two axes, arousal (calm to excited) and valence (unpleasant to pleasant).
+  points:
+    - Doesn't capture mixed emotions.
+    - { text: "Arousal tends to be more predictable from body measures than valence.", flags: [F-03] }
+
+- id: papez-circuit
+  type: pathway
+  kind: circuit
+  name: Papez circuit
+  short: A loop linking the hippocampus, hypothalamus (mammillary bodies), anterior thalamus and cingulate cortex, proposed as the brain's emotion circuit.
+  steps:
+    - { label: Hippocampus, ref: hippocampus }
+    - { label: Fornix, ref: fornix }
+    - { label: Mammillary bodies (hypothalamus), ref: mammillary-bodies }
+    - { label: Anterior thalamus, ref: thalamus }
+    - { label: Cingulate cortex, ref: cingulate-cortex, note: "Feels the basic emotion; the neocortex adds context." }
+    - { label: Back to the hippocampus, ref: hippocampus }
+  diagrams: [limbic-system]
+
+- id: limbic-lobe
+  type: concept
+  name: Limbic lobe
+  short: Broca's name for the ring of cortex around the brainstem on the inner surface of the brain; Papez later turned it into an emotion circuit.
+  related: [papez-circuit, limbic-system]
+
+- id: fornix
+  type: region
+  name: Fornix
+  kind: tract
+  system: limbic
+  parent: limbic-system
+  short: An arching bundle of axons that carries output from the hippocampus to the mammillary bodies.
+  connections:
+    - { to: hippocampus, dir: in }
+    - { to: mammillary-bodies, dir: out }
+
+- id: mammillary-bodies
+  type: region
+  name: Mammillary bodies
+  aliases: [mammillary body]
+  kind: nucleus
+  system: diencephalon
+  parent: hypothalamus
+  short: A pair of small round nuclei at the back of the hypothalamus, a relay in the Papez circuit.
+  connections:
+    - { to: fornix, dir: in }
+    - { to: thalamus, dir: out, note: "To the anterior thalamus" }
+
+- id: basolateral-amygdala
+  type: region
+  name: Basolateral nuclei
+  aliases: [basolateral amygdala, basolateral nucleus]
+  kind: nucleus
+  parent: amygdala
+  system: limbic
+  short: The amygdala's input hub; it receives the senses and is where a cue gets paired with danger.
+  functions:
+    - Receives input from the sensory systems and sends some output to the cortex.
+    - Site where fear associations are learned.
+
+- id: corticomedial-amygdala
+  type: region
+  name: Corticomedial nuclei
+  aliases: [corticomedial amygdala]
+  kind: nucleus
+  parent: amygdala
+  system: limbic
+  short: The top part of the amygdala, which receives input from the olfactory system.
+
+- id: central-amygdala
+  type: region
+  name: Central nucleus
+  aliases: [central amygdala, central nucleus of the amygdala]
+  kind: nucleus
+  parent: amygdala
+  system: limbic
+  short: The amygdala's output, sending to the hypothalamus, brainstem, thalamus and cortex to trigger fear responses.
+  connections:
+    - { to: hypothalamus, dir: out, note: "Drives the autonomic fear response" }
+
+- id: kluver-bucy-syndrome
+  type: case
+  kind: syndrome
+  name: Klüver-Bucy syndrome
+  aliases: [Kluver-Bucy syndrome, Kluver-Bucy]
+  short: After both temporal lobes (including the amygdalae) are removed, monkeys lose fear, become tame, put things in their mouths and become hypersexual.
+  damage:
+    regions: [amygdala, temporal-lobe]
+    cause: Removal of both temporal lobes in monkeys; in humans, damage to both temporal lobes from surgery, injury or herpes encephalitis.
+  source: corrected
+  corrections: [C-061]
+  deficits:
+    - Loss of fear and tameness (from the amygdala).
+    - Putting objects in the mouth, eating more, hypersexuality.
+    - Trouble recognizing objects by sight (visual agnosia).
+  teaches: The amygdala is needed for fear; without it, danger no longer triggers a fast automatic reaction.
+
+- id: urbach-wiethe-disease
+  type: case
+  kind: disorder
+  name: Urbach-Wiethe disease
+  aliases: [patient S.M.]
+  short: A rare genetic disease in which calcium deposits destroy both amygdalae; patients struggle to recognize fear in faces.
+  damage:
+    regions: [amygdala]
+    cause: Calcium buildup that destroys the amygdala on both sides.
+  deficits:
+    - Poor at recognizing fear in faces, because they don't naturally look at the eyes.
+    - Told to look at the eyes, they recognize fear much better.
+  teaches: The amygdala steers attention to the eyes, whose visible whites are a key fear signal.
+
+- id: fear-conditioning
+  type: concept
+  name: Fear conditioning
+  aliases: [Pavlovian fear conditioning, learned fear]
+  short: Learning to fear a neutral cue after it has been paired with something dangerous; the pairing happens in the basolateral amygdala.
+  source: corrected
+  corrections: [C-062]
+  points:
+    - The basolateral nuclei link the cue and the danger; the central nucleus then drives the hypothalamus and brainstem to respond.
+    - Usually needs several pairings, but one intense experience can be enough, as in PTSD.
+    - The prefrontal cortex supplies context, such as a snake in the wild versus behind glass at the zoo.
+  regions: [basolateral-amygdala, central-amygdala, prefrontal-cortex]
+
+- id: aggression
+  type: concept
+  name: Predatory vs affective aggression
+  aliases: [affective aggression, predatory aggression]
+  short: Predatory aggression is hunting; affective aggression is a showy threat aimed at others of the same species, and depends on the amygdala.
+  points:
+    - Amygdala damage reduces affective aggression, and the animal drops in the social hierarchy.
+    - The hypothalamus is also heavily involved.
+  regions: [amygdala, hypothalamus]
+
+- id: sham-rage
+  type: experiment
+  name: Sham rage
+  short: Cats whose cerebral cortex was removed, with the hypothalamus left intact, flew into rages at harmless things.
+  setup: The cerebral cortex was removed while the hypothalamus was left in place.
+  findings:
+    - "Motor signs: arched back, claws out, lashing tail, snarling."
+    - "Body (visceral) signs: higher blood pressure, wide pupils, hair standing up."
+    - { text: "Also removing the posterior hypothalamus abolished the rage.", source: corrected, corrections: [C-059] }
+    - Stimulating the hypothalamus produces rage directed at whatever is nearby.
+  shows: The hypothalamus can produce the full expression of rage on its own; the cortex normally keeps it in check and in context.
+
+- id: involuntary-expression
+  type: concept
+  name: Involuntary expressions
+  aliases: [Duchenne smile, genuine smile]
+  short: Spontaneous smiles and laughs are driven by the hypothalamus and limbic system, not by the voluntary motor cortex, and look subtly different from posed ones.
+  points:
+    - { text: "The hypothalamus works through brainstem motor nuclei, which control the face.", source: corrected, corrections: [C-060] }
+
+- id: subgenual-cingulate
+  type: region
+  name: Subgenual cingulate cortex
+  aliases: [area 25, Brodmann area 25, subgenual cingulate]
+  parent: cingulate-cortex
+  system: limbic
+  short: Area 25, the part of the cingulate cortex below the front of the corpus callosum; a deep brain stimulation target for hard-to-treat depression.
+  source: corrected
+  corrections: [C-063]
+
+- id: dorsolateral-prefrontal-cortex
+  type: region
+  name: Dorsolateral prefrontal cortex
+  aliases: [DLPFC, dorsolateral PFC]
+  parent: prefrontal-cortex
+  system: frontal
+  short: The upper side part of the prefrontal cortex, key for working memory and flexible control of behavior.
+  functions:
+    - Keeps information active in working memory.
+    - Helps supply context in fear learning.

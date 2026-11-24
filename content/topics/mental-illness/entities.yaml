@@ -1,0 +1,187 @@
+# Mental illness: anxiety, mood disorders and schizophrenia.
+
+- id: mental-illness-definition
+  type: concept
+  name: Mental illness
+  aliases: [mental disorder, psychiatric disorder]
+  short: A condition that changes emotion, thinking or behavior enough to make everyday functioning hard.
+  points:
+    - Almost all are diagnosed from symptoms, not biological tests; no brain scan can diagnose depression today.
+    - That doesn't mean they aren't biological, only that we don't yet know enough to measure them.
+  related: [dsm]
+
+- id: dsm
+  type: term
+  name: DSM
+  aliases: [Diagnostic and Statistical Manual of Mental Disorders, DSM-5]
+  short: The Diagnostic and Statistical Manual of Mental Disorders, which defines diagnoses by their symptoms.
+
+# ---------------------------------------------------------------- anxiety
+
+- id: anxiety-disorders
+  type: case
+  kind: disorder
+  name: Anxiety disorders
+  aliases: [anxiety, anxiety disorder, generalized anxiety]
+  short: Disorders of excessive tension and worry with strong body responses, clinically significant when panic is acute or worry is chronic.
+  deficits:
+    - "Body signs from the autonomic nervous system: sweating, trembling, racing heart, raised blood pressure, wide pupils, stomach upset."
+    - "Thinking patterns such as black-and-white thinking, catastrophizing and mind-reading."
+    - Feed-forward loops, where worry causes body changes that cause more worry; poor sleep and concentration add to it.
+  treatments:
+    - Cognitive behavioral therapy.
+    - Benzodiazepines and SSRIs.
+  teaches: Brain and body drive each other, so anxiety can be eased from either side.
+
+- id: panic-attack
+  type: case
+  kind: syndrome
+  name: Panic attack
+  aliases: [panic attacks, panic disorder]
+  short: A short burst (usually under 30 minutes) of overwhelming fear with racing heart, trouble breathing, sweating and a sense of doom.
+  deficits:
+    - Can come out of the blue and be mistaken for a heart attack.
+
+- id: agoraphobia
+  type: case
+  kind: disorder
+  name: Agoraphobia
+  short: Fear of situations where escape might be hard or help unavailable if panic strikes, such as crowds, public transport or open spaces.
+  source: corrected
+  corrections: [C-078]
+  deficits:
+    - In severe cases, people stop leaving home, which makes keeping a job and friendships hard.
+
+- id: ocd
+  type: case
+  kind: disorder
+  name: Obsessive-compulsive disorder
+  aliases: [OCD]
+  short: A disorder of obsessions (intrusive, distressing thoughts) and compulsions (repeated actions done to ease them).
+  deficits:
+    - Common themes include contamination, ordering and hoarding.
+
+- id: hpa-axis
+  type: pathway
+  kind: circuit
+  name: HPA axis
+  aliases: [hypothalamic-pituitary-adrenal axis, stress axis]
+  short: The stress hormone chain from hypothalamus (CRH) to pituitary (ACTH) to adrenal glands (cortisol); the amygdala drives it and the hippocampus brakes it.
+  steps:
+    - { label: Hypothalamus releases CRH, ref: hypothalamus, note: "The amygdala pushes this step up." }
+    - { label: Pituitary gland releases ACTH into the blood, ref: pituitary-gland }
+    - { label: Adrenal glands (on top of the kidneys) release cortisol, ref: adrenal-gland, source: corrected, corrections: [C-077] }
+    - { label: Cortisol acts across the body (fight or flight), ref: cortisol }
+    - { label: Hippocampus senses cortisol and inhibits the hypothalamus, ref: glucocorticoid-receptor }
+  diagrams: [hpa-axis]
+
+- id: adrenal-gland
+  type: region
+  name: Adrenal gland
+  aliases: [adrenal glands, adrenal cortex]
+  kind: body
+  system: body
+  short: A gland on top of each kidney whose outer layer (cortex) releases cortisol.
+  source: corrected
+  corrections: [C-077]
+
+- id: cortisol
+  type: molecule
+  kind: hormone
+  name: Cortisol
+  aliases: [stress hormone, glucocorticoid]
+  short: The main stress hormone, released by the adrenal glands; some helps in a crisis, too much for too long is harmful.
+
+- id: glucocorticoid-receptor
+  type: molecule
+  kind: receptor
+  name: Glucocorticoid receptor
+  aliases: [glucocorticoid receptors, GR]
+  short: The receptor for cortisol; on the hippocampus it senses rising cortisol and helps switch the HPA axis off.
+  functions:
+    - People with anxiety tend to have fewer of these in the hippocampus, so the brake is weaker.
+    - SSRIs increase them over weeks, one possible reason they take time to work.
+
+- id: cbt
+  type: concept
+  name: Cognitive behavioral therapy
+  aliases: [CBT, psychotherapy]
+  short: A therapy that breaks the loop between thoughts, feelings and behavior, by challenging thoughts or by calming the body.
+  points:
+    - Challenging thoughts works "top-down"; deep breathing and muscle relaxation work "bottom-up", in the spirit of James-Lange.
+    - Changing behavior changes the brain, even without a drug.
+
+- id: anxiolytic
+  type: term
+  name: Anxiolytic
+  aliases: [anxiolytics]
+  short: A drug that reduces anxiety, such as a benzodiazepine.
+
+# ---------------------------------------------------------------- mood
+
+- id: bipolar-disorder
+  type: case
+  kind: disorder
+  name: Bipolar disorder
+  aliases: [bipolar, manic depression]
+  short: A mood disorder with distinct episodes of mania (grandiosity, overconfidence, risk-taking) and depression.
+  deficits:
+    - "Mania: grandiosity, feeling invincible, too little sleep, risky behavior."
+    - { text: "Depressive episodes alternate with manic ones.", flags: [F-09] }
+  treatments:
+    - Lithium, taken long-term.
+
+- id: mania
+  type: term
+  name: Mania
+  aliases: [manic episode]
+  short: A period of abnormally high mood and energy with grandiosity and risky behavior.
+
+- id: affective-disorders
+  type: concept
+  name: Mood disorders
+  aliases: [affective disorders, mood disorder]
+  short: Disorders of mood (affect), chiefly major depression and bipolar disorder.
+  related: [major-depression, bipolar-disorder, monoamine-hypothesis]
+
+# ---------------------------------------------------------------- schizophrenia
+
+- id: positive-negative-symptoms
+  type: concept
+  name: Positive and negative symptoms
+  short: Positive symptoms are added experiences (hallucinations, delusions); negative symptoms are missing abilities (planning, motivation, memory, attention).
+  points:
+    - Positive symptoms are usually noticed first; negative symptoms are often the most disabling.
+
+- id: comt
+  type: molecule
+  kind: enzyme
+  name: COMT
+  aliases: [catechol-O-methyltransferase, Val/Met]
+  short: An enzyme that breaks down dopamine; a common Val/Met gene variant changes how risky adolescent cannabis use is for psychosis.
+  functions:
+    - { text: "In one long-term study, adolescent cannabis use raised psychosis risk most in Val/Val carriers, somewhat in Val/Met, and not in Met/Met.", source: corrected, corrections: [C-081] }
+
+- id: gene-environment-interaction
+  type: concept
+  name: Genes and environment
+  aliases: [gene-environment interaction]
+  short: Schizophrenia risk rises with closer affected relatives, but genes act together with environment, such as cannabis use in adolescence.
+  related: [comt, schizophrenia]
+
+- id: dopamine-hypothesis
+  type: concept
+  name: Dopamine hypothesis
+  short: The idea that too much dopamine signaling drives psychosis; antipsychotics block dopamine receptors and amphetamines can cause psychosis.
+  points:
+    - The more tightly a drug binds dopamine receptors, the lower the dose needed to treat psychosis.
+  related: [antipsychotics, amphetamine, schizophrenia]
+
+- id: nmda-hypofunction
+  type: concept
+  name: Glutamate (NMDA) hypothesis
+  aliases: [glutamate hypothesis, NMDA hypofunction]
+  short: The idea that reduced NMDA-receptor function contributes to schizophrenia; drugs that block NMDA receptors mimic its symptoms.
+  source: corrected
+  corrections: [C-082]
+  related: [pcp-ketamine, nmda-receptor, schizophrenia]

@@ -65,7 +65,11 @@
   kind: nucleus
   system: diencephalon
   parent: thalamus
-  short: A large thalamic nucleus that relays superior-colliculus signals to visual areas beyond V1.
+  short: A large thalamic nucleus at the back of the thalamus that relays visual signals and helps gate which ones get attention.
+  functions:
+    - Relays superior-colliculus signals to visual areas beyond V1.
+    - Helps decide which visual information is prioritized (attention), influencing V1 and later visual areas.
+  topics: [central-visual-system, rest-attention-unconscious]
 
 - id: pretectum
   type: region
@@ -194,7 +198,8 @@
   system: parietal
   parent: parietal-lobe
   short: Association cortex at the back of the parietal lobe that combines vision with space and attention.
-  cases: [simultagnosia]
+  cases: [simultagnosia, hemispatial-neglect]
+  topics: [central-visual-system, rest-attention-unconscious]
 
 - id: akinetopsia
   type: case

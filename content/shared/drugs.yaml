@@ -106,3 +106,29 @@
   effect: increases
   mechanism: Enhances GABA-A receptors, increasing Cl⁻ inflow and inhibiting neurons. This may help explain why drinking and anxiety disorders often go together.
   topics: [nt-systems, mental-illness]
+
+- id: lithium
+  type: drug
+  name: Lithium
+  short: A mood stabilizer for bipolar disorder, taken long-term; it can have serious side effects, so blood levels are monitored.
+  actsOn: [glutamate]
+  action: other
+  effect: mixed
+  mechanism: Its exact mechanism is still unclear; it affects several second-messenger systems inside neurons.
+  uses:
+    - Preventing manic and depressive episodes in bipolar disorder.
+  topics: [mental-illness]
+
+- id: pcp-ketamine
+  type: drug
+  name: PCP and ketamine
+  aliases: [PCP, ketamine, phencyclidine]
+  short: Drugs that block NMDA glutamate receptors and can cause psychosis resembling schizophrenia.
+  actsOn: [glutamate]
+  target: nmda-receptor
+  action: antagonist
+  effect: decreases
+  mechanism: Block the NMDA receptor channel, reducing glutamate signaling through it.
+  uses:
+    - { text: "Mimic both positive and negative symptoms of schizophrenia, supporting the NMDA-hypofunction hypothesis.", source: corrected, corrections: [C-082] }
+  topics: [mental-illness]
