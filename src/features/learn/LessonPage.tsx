@@ -3,12 +3,13 @@
  * into the reading zone, the diagram switches to that paragraph's ::diagram / ::focus state, so the
  * amygdala (or locus coeruleus…) lights up while the text is talking about it.
  */
-import { Fragment, useEffect, useMemo, useRef, useState } from 'react';
+import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useParams, useSearchParams } from 'react-router';
-import { diagram as getDiagram, entity, lesson as getLesson, question, topic as getTopic } from '../../content';
+import { diagram as getDiagram, lesson as getLesson, question, topic as getTopic } from '../../content';
 import type { Lesson, LessonBlock } from '../../content/types';
 import { completeLesson, recordAnswer, useProgress } from '../../progress/store';
 import { CopyLinkButton, Icon, UnitTag } from '../../ui/bits';
+import { DetailSheet } from '../../ui/DetailSheet';
 import { Diagram } from '../../ui/Diagram';
 import { PathwayView } from '../../ui/PathwayView';
 import { QuestionView } from '../../ui/QuestionView';
@@ -89,6 +90,7 @@ export function LessonPage() {
   const [active, setActive] = useState(0);
   const [hover, setHover] = useState<string[] | null>(null);
   const [selected, setSelected] = useState<string | null>(null);
+  const closeSheet = useCallback(() => setSelected(null), []);
   const [collapsed, setCollapsed] = useState(false);
   const segRefs = useRef<(HTMLDivElement | null)[]>([]);
   const endRef = useRef<HTMLDivElement>(null);
@@ -208,22 +210,14 @@ export function LessonPage() {
               selected={selected}
               projectionsFor={d.overlay && hl.length ? hl : undefined}
               onSelect={(id) => setSelected((s) => (s === id ? null : id))}
-              caption={
-                selected ? (
-                  <span>
-                    <b>{entity(selected)?.name}:</b> {entity(selected)?.short}{' '}
-                    <Link to={`/entity/${selected}`}>More about it</Link>
-                  </span>
-                ) : (
-                  <span className="idle">{d.title}. Tap a structure to identify it.</span>
-                )
-              }
+              caption={<span className="idle">{d.title}. Tap any part or label for details.</span>}
               toolbar={
                 <button type="button" className="chip lesson-collapse" onClick={() => setCollapsed((c) => !c)} aria-expanded={!collapsed}>
                   {collapsed ? 'Show diagram' : 'Hide'}
                 </button>
               }
             />
+            {!collapsed && <DetailSheet id={selected} onClose={closeSheet} mapLink={selected ? `/map/${d.id}?focus=${selected}` : undefined} />}
             {collapsed && (
               <button type="button" className="chip" onClick={() => setCollapsed(false)}>
                 <Icon name="map" size={15} /> Show diagram

@@ -1,0 +1,29 @@
+    <g class="labels lbl-base">
+      <text text-anchor="middle" data-label-for="presynaptic-terminal" x="400" y="84">Presynaptic terminal</text>
+      <text data-label-for="mitochondrion" x="640" y="92">Mitochondrion</text>
+      <line data-label-for="mitochondrion" class="leader" x1="638" y1="88" x2="574" y2="108"/>
+      <text data-label-for="monoamine-oxidase" x="660" y="160">MAO</text>
+      <line data-label-for="monoamine-oxidase" class="leader" x1="658" y1="156" x2="580" y2="132"/>
+      <text data-label-for="synaptic-vesicle" x="150" y="140" text-anchor="end">Synaptic vesicles</text>
+      <line data-label-for="synaptic-vesicle" class="leader" x1="152" y1="136" x2="280" y2="150"/>
+      <text text-anchor="middle" data-label-for="snare-proteins" x="440" y="236">SNAREs</text>
+      <line data-label-for="snare-proteins" class="leader" x1="440" y1="240" x2="434" y2="288"/>
+      <text data-label-for="voltage-gated-calcium-channel" x="690" y="246" text-anchor="end">Ca²⁺ channel</text>
+      <line data-label-for="voltage-gated-calcium-channel" class="leader" x1="660" y1="250" x2="560" y2="286"/>
+      <text data-label-for="reuptake-transporter" x="186" y="250" text-anchor="end">Reuptake</text>
+      <text data-label-for="reuptake-transporter" x="186" y="268" text-anchor="end">transporter</text>
+      <line data-label-for="reuptake-transporter" class="leader" x1="188" y1="262" x2="236" y2="290"/>
+      <text data-label-for="autoreceptor" x="300" y="270" text-anchor="end">Autoreceptor</text>
+      <text data-label-for="synaptic-cleft" x="760" y="306" text-anchor="end">Synaptic cleft</text>
+      <line data-label-for="synaptic-cleft" class="leader" x1="664" y1="302" x2="606" y2="310"/>
+      <text text-anchor="middle" data-label-for="acetylcholinesterase" x="700" y="376">Enzyme (AChE)</text>
+      <line data-label-for="acetylcholinesterase" class="leader" x1="690" y1="362" x2="624" y2="330"/>
+      <text data-label-for="ionotropic-receptor" x="300" y="420" text-anchor="end">Ionotropic receptor</text>
+      <line data-label-for="ionotropic-receptor" class="leader" x1="302" y1="416" x2="398" y2="360"/>
+      <text data-label-for="metabotropic-receptor" x="640" y="400">Metabotropic</text>
+      <text data-label-for="metabotropic-receptor" x="640" y="418">receptor</text>
+      <line data-label-for="metabotropic-receptor" class="leader" x1="638" y1="398" x2="556" y2="360"/>
+      <text data-label-for="g-protein" x="570" y="444">G protein</text>
+      <text text-anchor="middle" data-label-for="postsynaptic-dendrite" x="400" y="560">Postsynaptic dendrite</text>
+      <text text-anchor="middle" data-label-for="astrocyte" x="70" y="476">Astrocyte</text>
+    </g>

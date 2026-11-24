@@ -1,15 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" role="img" aria-label="Graph of an action potential: membrane voltage over about 4 milliseconds">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" class="shade-sm" role="img" aria-label="Graph of an action potential: membrane voltage over about 4 milliseconds">
   <!-- Original drawing for NeuroMap. Schematic action potential recorded inside a neuron. -->
   <g class="deco axes">
     <path d="M 90 30 L 90 380 L 730 380" />
     <text x="20" y="214" class="axis-label" transform="rotate(-90 20 214)">Membrane voltage (mV)</text>
-    <text x="410" y="418" class="axis-label" text-anchor="middle">Time (ms)</text>
+    <text x="410" y="424" class="axis-label" text-anchor="middle">Time (ms)</text>
     <text x="82" y="48" text-anchor="end" class="tick">+40</text>
     <text x="82" y="146" text-anchor="end" class="tick">0</text>
     <text x="82" y="281" text-anchor="end" class="tick">–55</text>
     <text x="82" y="305" text-anchor="end" class="tick">–65</text>
     <text x="82" y="342" text-anchor="end" class="tick">–80</text>
     <path class="zero" d="M 90 142 L 730 142"/>
+    <path class="grid" d="M 90 46 L 730 46 M 90 301 L 730 301 M 90 338 L 730 338 M 110 30 L 110 380 M 235 30 L 235 380 M 360 30 L 360 380 M 485 30 L 485 380 M 610 30 L 610 380"/>
+    <path class="tickmark" d="M 110 380 L 110 387"/><text x="110" y="402" text-anchor="middle" class="tick">0</text><path class="tickmark" d="M 235 380 L 235 387"/><text x="235" y="402" text-anchor="middle" class="tick">1</text><path class="tickmark" d="M 360 380 L 360 387"/><text x="360" y="402" text-anchor="middle" class="tick">2</text><path class="tickmark" d="M 485 380 L 485 387"/><text x="485" y="402" text-anchor="middle" class="tick">3</text><path class="tickmark" d="M 610 380 L 610 387"/><text x="610" y="402" text-anchor="middle" class="tick">4</text>
+  </g>
+  <path class="deco ap-area" d="M 230 301 C 250 300 262 292 270 277 C 280 210 288 100 300 62 C 306 40 318 40 326 62 C 340 140 352 250 368 320 C 380 352 410 352 450 334 C 510 312 560 302 600 301 Z"/>
+  <g class="deco ion-notes">
+    <text x="214" y="120" text-anchor="end">Na⁺ channels open:</text><text x="214" y="137" text-anchor="end">Na⁺ rushes in</text>
+    <text x="356" y="112">Na⁺ channels inactivate,</text><text x="356" y="129">K⁺ flows out</text>
   </g>
   <g class="base">
     <path data-ref="threshold" class="line-hotspot dashed" data-fill="var(--violet)" d="M 90 277 L 730 277"/>

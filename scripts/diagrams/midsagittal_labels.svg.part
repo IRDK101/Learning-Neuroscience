@@ -1,0 +1,27 @@
+    <g class="labels lbl-base">
+      <text text-anchor="middle" data-label-for="frontal-lobe" x="300" y="98">Frontal lobe</text>
+      <text text-anchor="middle" data-label-for="prefrontal-cortex" x="140" y="230"><tspan x="140">Prefrontal</tspan><tspan x="140" dy="17">cortex</tspan></text>
+      <text text-anchor="middle" data-label-for="parietal-lobe" x="530" y="112">Parietal lobe</text>
+      <text text-anchor="middle" data-label-for="occipital-lobe" x="648" y="214"><tspan x="648">Occipital</tspan><tspan x="648" dy="17">lobe</tspan></text>
+      <text text-anchor="middle" data-label-for="cingulate-cortex" x="400" y="148">Cingulate cortex</text>
+      <text text-anchor="middle" data-label-for="corpus-callosum" x="400" y="181">Corpus callosum</text>
+      <text text-anchor="middle" data-label-for="thalamus" x="425" y="271">Thalamus</text>
+      <text data-label-for="hypothalamus" x="318" y="356" text-anchor="end">Hypothalamus</text>
+      <line data-label-for="hypothalamus" class="leader" x1="320" y1="351" x2="338" y2="315"/>
+      <text data-label-for="pituitary-gland" x="318" y="380" text-anchor="end">Pituitary gland</text>
+      <line data-label-for="pituitary-gland" class="leader" x1="320" y1="375" x2="337" y2="360"/>
+      <text data-label-for="third-ventricle" x="318" y="404" text-anchor="end">Third ventricle</text>
+      <line data-label-for="third-ventricle" class="leader" x1="320" y1="399" x2="372" y2="295"/>
+      <text text-anchor="middle" data-label-for="midbrain" x="455" y="335">Midbrain</text>
+      <text data-label-for="pons" x="388" y="430" text-anchor="end">Pons</text>
+      <line data-label-for="pons" class="leader" x1="390" y1="425" x2="420" y2="400"/>
+      <text data-label-for="medulla" x="430" y="462" text-anchor="end">Medulla</text>
+      <text data-label-for="spinal-cord" x="458" y="532" text-anchor="end">Spinal cord</text>
+      <text text-anchor="middle" data-label-for="cerebellum" x="615" y="424">Cerebellum</text>
+      <text data-label-for="fourth-ventricle" x="560" y="500">Fourth ventricle</text>
+      <line data-label-for="fourth-ventricle" class="leader" x1="566" y1="489" x2="520" y2="396"/>
+      <text data-label-for="superior-colliculus" x="556" y="268">Superior colliculus</text>
+      <line data-label-for="superior-colliculus" class="leader" x1="554" y1="264" x2="516" y2="299"/>
+      <text data-label-for="inferior-colliculus" x="556" y="290">Inferior colliculus</text>
+      <line data-label-for="inferior-colliculus" class="leader" x1="554" y1="286" x2="518" y2="326"/>
+    </g>

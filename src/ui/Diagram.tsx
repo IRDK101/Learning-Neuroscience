@@ -57,6 +57,8 @@ export function SvgDefs() {
   return (
     <svg width="0" height="0" style={{ position: 'absolute' }} aria-hidden="true" focusable="false">
       <defs>
+        {shadeFilter('nm-shade', 7, 5)}
+        {shadeFilter('nm-shade-sm', 2.6, 1.8)}
         <pattern id="nm-hatch" patternUnits="userSpaceOnUse" width="9" height="9" patternTransform="rotate(45)">
           <rect width="9" height="9" fill="transparent" />
           <line x1="0" y1="0" x2="0" y2="9" style={{ stroke: 'var(--hatch)' }} strokeWidth="3" />
@@ -74,6 +76,28 @@ export function SvgDefs() {
         ))}
       </defs>
     </svg>
+  );
+}
+
+/** Inner shading: a dark rim on the lower right and a light rim on the upper left. */
+function shadeFilter(id: string, blur: number, off: number) {
+  return (
+    <filter id={id} x="-3%" y="-3%" width="106%" height="106%" colorInterpolationFilters="sRGB">
+      <feGaussianBlur in="SourceAlpha" stdDeviation={blur} result="blur" />
+      <feOffset in="blur" dx={-off} dy={-off * 1.2} result="o1" />
+      <feComposite in="SourceAlpha" in2="o1" operator="arithmetic" k2={1} k3={-1} result="rim1" />
+      <feFlood floodColor="#061230" floodOpacity={0.42} />
+      <feComposite in2="rim1" operator="in" result="shadow" />
+      <feOffset in="blur" dx={off * 0.8} dy={off} result="o2" />
+      <feComposite in="SourceAlpha" in2="o2" operator="arithmetic" k2={1} k3={-1} result="rim2" />
+      <feFlood floodColor="#ffffff" floodOpacity={0.5} />
+      <feComposite in2="rim2" operator="in" result="light" />
+      <feMerge>
+        <feMergeNode in="SourceGraphic" />
+        <feMergeNode in="shadow" />
+        <feMergeNode in="light" />
+      </feMerge>
+    </filter>
   );
 }
 
@@ -163,7 +187,10 @@ export function Diagram({
         el.after(clone);
       }
     });
-    host.querySelectorAll<SVGElement>('[data-label-for]').forEach((l) => l.classList.toggle('label-on', !occlusion && labelOn.has(l.dataset.labelFor!)));
+    host.querySelectorAll<SVGElement>('[data-label-for]').forEach((l) => {
+      l.classList.toggle('label-on', !occlusion && labelOn.has(l.dataset.labelFor!));
+      l.classList.toggle('label-sel', l.dataset.labelFor === selected);
+    });
     const projSet = new Set(projectionsFor ?? []);
     host.querySelectorAll<SVGElement>('.proj').forEach((p) => {
       p.classList.toggle('proj-on', projSet.has(p.dataset.from ?? '') || projSet.has(p.dataset.to ?? ''));
@@ -180,8 +207,9 @@ export function Diagram({
 
   const pick = (target: EventTarget | null) => {
     if (!(target instanceof Element)) return;
-    const el = target.closest<SVGElement>('[data-ref]');
-    const ref = el?.dataset.ref;
+    // Tapping a label (or its leader line) selects the part it names.
+    const el = target.closest<SVGElement>('[data-ref], [data-label-for]');
+    const ref = el?.dataset.ref ?? el?.dataset.labelFor;
     if (ref && onSelect && (!clickable || clickable(ref))) onSelect(ref);
   };
 
@@ -192,6 +220,7 @@ export function Diagram({
     projectionsFor?.length ? 'dim-proj' : '',
     labelsOn && !occlusion ? 'show-labels' : '',
     occlusion ? 'occlusion' : '',
+    onSelect ? 'interactive' : '',
     zoomed ? 'zoomed' : '',
     className,
   ]

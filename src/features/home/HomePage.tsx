@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { Link } from 'react-router';
-import { content, entity } from '../../content';
+import { content } from '../../content';
 import { dueCount } from '../../lib/session';
 import { streak, useProgress } from '../../progress/store';
+import { DetailSheet } from '../../ui/DetailSheet';
 import { Diagram } from '../../ui/Diagram';
 import { Syllabus } from '../../ui/Syllabus';
 
@@ -14,17 +15,14 @@ export function HomePage() {
   const lessonsDone = Object.keys(p.lessons).length;
   const first = content.lessons[0];
   const next = content.lessons.find((l) => !p.lessons[l.id]) ?? first;
-  const e = entity(picked ?? undefined);
+  const [open, setOpen] = useState(false);
+  const closeSheet = useCallback(() => setOpen(false), []);
 
   return (
     <div>
       <section className="home-hero">
         <div>
-          <h1>Learn the brain by taking it apart.</h1>
-          <p className="lede">
-            Short lessons, maps you can tap, and flashcards that come back right before you'd forget them. Built from PSYC 6 course
-            notes, with the mistakes fixed.
-          </p>
+          <h1>Learning Introductory Neuroscience.</h1>
           <div className="row">
             {next && (
               <Link className="btn primary" to={`/learn/${next.topic}/${next.slug}`}>
@@ -36,24 +34,23 @@ export function HomePage() {
             </Link>
           </div>
         </div>
-        <Diagram
-          id="nt-overlay"
-          controls={false}
-          showLabels={false}
-          selected={picked}
-          projectionsFor={picked ? [picked] : undefined}
-          onSelect={(id) => setPicked((x) => (x === id ? null : id))}
-          ariaLabel="The brain's neurotransmitter systems. Tap a structure to identify it."
-          caption={
-            e ? (
-              <span>
-                <b>{e.name}.</b> {e.short} <Link to={`/map/nt-overlay?focus=${e.id}`}>Open in the map</Link>
-              </span>
-            ) : (
-              <span>The brain's four neurotransmitter systems. Tap any colored nucleus to see what it does.</span>
-            )
-          }
-        />
+        <div>
+          <Diagram
+            id="nt-overlay"
+            controls={false}
+            showLabels={false}
+            selected={picked}
+            projectionsFor={picked ? [picked] : undefined}
+            onSelect={(id) => {
+              const same = picked === id && open;
+              setPicked(same ? null : id);
+              setOpen(!same);
+            }}
+            ariaLabel="The brain's neurotransmitter systems. Tap a structure for its facts and connections."
+            caption={<span>The brain's four neurotransmitter systems. Tap any colored nucleus or structure for what it does and what it connects to.</span>}
+          />
+          <DetailSheet id={open ? picked : null} onClose={closeSheet} mapLink={picked ? `/map/nt-overlay?focus=${picked}` : undefined} />
+        </div>
       </section>
 
       <p className="today" aria-label="Your progress today">

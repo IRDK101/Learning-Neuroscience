@@ -4,7 +4,7 @@ import { connectedIds, content, diagram as getDiagram, entity, hotspotFor, NT_LA
 import type { Entity } from '../../content/types';
 import { CopyLinkButton, Icon } from '../../ui/bits';
 import { Diagram } from '../../ui/Diagram';
-import { InfoPanel } from '../../ui/InfoPanel';
+import { DetailSheet } from '../../ui/DetailSheet';
 import { PathwayView } from '../../ui/PathwayView';
 
 export function MapIndex() {
@@ -152,10 +152,12 @@ export function MapPage() {
             </section>
           )}
         </div>
-        <aside className="panel side-sheet">
+        <aside className="side-sheet">
           {selected && entity(selected) ? (
-            <InfoPanel
+            <DetailSheet
               id={selected}
+              className="map-sheet"
+              onClose={() => update({ focus: null, connected: null })}
               connectedOn={connected}
               onShowConnected={() => update({ connected: connected ? null : '1' })}
               extra={
@@ -167,11 +169,11 @@ export function MapPage() {
               }
             />
           ) : (
-            <div>
+            <div className="panel">
               <h2>{d.title}</h2>
               <p className="muted">{d.description}</p>
               <p>
-                <b>Tap any structure</b> to see what it does. Turn labels off to test yourself, or use <b>Zoom</b> on a small screen.
+                <b>Tap any part or its label</b> to see its facts, functions and connections. Turn labels off to test yourself, or use <b>Zoom</b> on a small screen.
               </p>
               {ntLayers.length > 0 && (
                 <ul className="small">
