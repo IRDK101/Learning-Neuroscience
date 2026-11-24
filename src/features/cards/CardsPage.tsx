@@ -38,7 +38,6 @@ export function CardsPage() {
     <div className="stack">
       <div className="page-head">
         <h1>Flashcards</h1>
-        <p>Cards you know well come back less often. Cards you miss come back soon. Rate honestly: that's what makes the schedule work.</p>
       </div>
 
       <section className="stack">
@@ -58,11 +57,11 @@ export function CardsPage() {
           </div>
         </div>
         <div className="filter-group">
-          <div className="label">Exam</div>
+          <div className="label">Part</div>
           <div className="linklist">
             {content.units.map((u) => (
               <button key={u.id} type="button" className="chip" aria-pressed={filter.units.includes(u.id)} onClick={() => setFilter({ ...filter, units: toggle(filter.units, u.id) })}>
-                {u.id.replace('exam', 'Exam ')}: {u.name}
+                {u.name}
               </button>
             ))}
           </div>
@@ -106,9 +105,9 @@ export function CardsPage() {
             Cram 30 at random
           </button>
         </div>
-        {plan.queue.length === 0 && cards.length > 0 && <div className="notice ok">Nothing due in this deck. Come back later, or cram to practice anyway.</div>}
+        {plan.queue.length === 0 && cards.length > 0 && <div className="notice ok">Nothing due in this deck.</div>}
         <p className="tiny muted" style={{ margin: 0 }}>
-          New cards per session: {p.settings.newPerSession} (change in <Link to="/progress">settings</Link>). Scheduling uses the FSRS algorithm.
+          New cards per session: {p.settings.newPerSession} (<Link to="/progress">change</Link>)
         </p>
       </section>
     </div>

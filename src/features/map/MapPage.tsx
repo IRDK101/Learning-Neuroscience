@@ -17,16 +17,12 @@ export function MapIndex() {
     <div className="stack">
       <div className="page-head">
         <h1>Brain and body maps</h1>
-        <p>Every diagram is clickable. Tap a structure to see what it does, what it connects to, and which cards and questions cover it.</p>
       </div>
       <div className="grid grid-3">
         {content.diagrams.map((d) => (
           <Link key={d.id} to={`/map/${d.id}`} className="panel topic-card" style={{ padding: '0.6rem' }}>
             <Diagram id={d.id} controls={false} showLabels={false} ariaLabel={`Preview: ${d.title}`} />
             <h3 style={{ padding: '0 0.3rem' }}>{d.title}</h3>
-            <p className="small muted" style={{ margin: '0 0.3rem 0.3rem' }}>
-              {d.description}
-            </p>
           </Link>
         ))}
       </div>
@@ -112,7 +108,6 @@ export function MapPage() {
             related={related}
             projectionsFor={d.overlay && (selected || stepFocus) ? [selected, stepFocus].filter((x): x is string => !!x) : undefined}
             onSelect={select}
-            caption={d.description}
             toolbar={
               ntLayers.length > 0 ? (
                 <>
@@ -171,10 +166,7 @@ export function MapPage() {
           ) : (
             <div className="panel">
               <h2>{d.title}</h2>
-              <p className="muted">{d.description}</p>
-              <p>
-                <b>Tap any part or its label</b> to see its facts, functions and connections. Turn labels off to test yourself, or use <b>Zoom</b> on a small screen.
-              </p>
+              <p className="muted">Tap any part or label for details.</p>
               {ntLayers.length > 0 && (
                 <ul className="small">
                   {ntLayers.map((l) => (

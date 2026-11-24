@@ -42,7 +42,6 @@ export function QuizPage() {
     <div className="stack">
       <div className="page-head">
         <h1>Quiz yourself</h1>
-        <p>Multiple choice plus "which region would be damaged if…" cases. Wrong answers explain why and link back to the lesson.</p>
       </div>
       <section className="stack">
         <div className="row">
@@ -61,11 +60,11 @@ export function QuizPage() {
           </div>
         </div>
         <div className="filter-group">
-          <div className="label">Exam</div>
+          <div className="label">Part</div>
           <div className="linklist">
             {content.units.map((u) => (
               <button key={u.id} type="button" className="chip" aria-pressed={filter.units.includes(u.id)} onClick={() => setFilter({ ...filter, units: toggle(filter.units, u.id) })}>
-                {u.id.replace('exam', 'Exam ')}
+                {u.name}
               </button>
             ))}
           </div>

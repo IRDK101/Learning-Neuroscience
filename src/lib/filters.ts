@@ -1,7 +1,7 @@
 /**
  * Deck / quiz filters, encoded in the URL so any configuration is a shareable deep link:
  *   #/cards?topic=nt-systems&type=neurotransmitter
- *   #/quiz?unit=exam1&n=15
+ *   #/quiz?unit=foundations&n=15
  */
 import type { Card, ContentBundle, EntityType, Question } from '../content/types';
 
@@ -75,7 +75,7 @@ export function describeFilter(f: Filter, bundle: ContentBundle): string {
   const parts: string[] = [];
   if (f.ref) parts.push(bundle.entities[f.ref]?.name ?? f.ref);
   if (f.topics.length) parts.push(f.topics.map((t) => bundle.topics.find((x) => x.id === t)?.name ?? t).join(', '));
-  if (f.units.length) parts.push(f.units.map((u) => u.replace('exam', 'Exam ')).join(', '));
+  if (f.units.length) parts.push(f.units.map((u) => bundle.units.find((x) => x.id === u)?.name ?? u).join(', '));
   if (f.types.length) parts.push(f.types.map((t) => `${t}s`).join(', '));
   if (f.kinds.length) parts.push(f.kinds.join(', ') + ' cards');
   if (f.mistakes) parts.push('my mistakes');

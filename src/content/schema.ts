@@ -12,7 +12,7 @@ export const FlagId = z.string().regex(/^F-\d{2}$/, 'Flag IDs look like F-07');
 export const Source = z.enum(['notes', 'corrected', 'added']);
 export type Source = z.infer<typeof Source>;
 
-export const UNITS = ['exam1', 'exam2', 'exam3'] as const;
+export const UNITS = ['foundations', 'senses-and-movement', 'higher-functions'] as const;
 export const Unit = z.enum(UNITS);
 
 /** Color families for diagrams. One per anatomical system. */

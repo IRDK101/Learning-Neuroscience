@@ -11,7 +11,7 @@ minutes: 6
 Serotonin is also called **5-HT** (5-hydroxytryptamine). Its precursor is **tryptophan**, an amino acid the body can't make, so it has to come from the diet. The supply of tryptophan is the **rate-limiting** factor for making serotonin. Tryptophan is also the precursor of **melatonin**, the sleep hormone.
 
 :::added
-The two enzymes in between (tryptophan hydroxylase, then the same decarboxylase that turns L-DOPA into dopamine) aren't in your notes, but they make the chain easier to remember.
+The two enzymes in between (tryptophan hydroxylase, then the same decarboxylase that turns L-DOPA into dopamine) make the chain easier to remember.
 :::
 
 ::check{q="q-nt-tryptophan"}

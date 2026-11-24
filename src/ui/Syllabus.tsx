@@ -3,7 +3,7 @@ import { content } from '../content';
 import { mastery, useProgress } from '../progress/store';
 import { Meter } from './bits';
 
-/** The course as a numbered table of contents, one column per exam. Numbers are real: course order. */
+/** All topics as a numbered table of contents, one column per part. */
 export function Syllabus({ detailed = false }: { detailed?: boolean }) {
   const p = useProgress();
   return (

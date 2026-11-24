@@ -42,9 +42,6 @@ Cholinergic neurons in the brain sit in two places:
 
 There are only a few of these cells, but their axons spread very widely: around the cortex, the thalamus and the hippocampus, down the brainstem, and around the temporal lobe.
 
-:::note
-Your notes list where ACh goes overall. The finer mapping (septal nuclei → hippocampus, nucleus of Meynert → cortex, PMT → thalamus) is standard textbook detail, added here and marked as such.
-:::
 
 ::check{q="q-nt-ach-sources"}
 

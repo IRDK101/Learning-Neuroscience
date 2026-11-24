@@ -89,3 +89,12 @@ The diagrams moved from flat blocks to a textbook-illustration style:
 - Every label is tappable: a tap on a label selects the part it names. The detail card (`DetailSheet`) opens
   beside the diagram on wide screens and slides up above the tab bar on phones. Games and quiz cards hide
   labels, so they give nothing away.
+
+## General-purpose presentation (third pass)
+
+The site presents itself as a general neuroscience learning tool, not a companion to a specific class:
+no course, exam or "your notes" wording anywhere in the UI or lessons. The three units are parts
+(`foundations`, `senses-and-movement`, `higher-functions`). Provenance (`source`, corrections, flags) is
+still recorded and validated in the content and in CORRECTIONS.md, but is not rendered: no inline
+"corrected"/"note"/"added" badges and no corrections page. Page intros are kept to a heading; captions
+and helper text only where they say how to use something.

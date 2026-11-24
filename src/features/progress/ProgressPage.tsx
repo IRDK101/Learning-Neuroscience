@@ -32,7 +32,6 @@ export function ProgressPage() {
     <div className="stack">
       <div className="page-head">
         <h1>Progress and settings</h1>
-        <p>Everything is stored in this browser only. Use export/import to move it to another device.</p>
       </div>
 
       <p className="today">
@@ -79,9 +78,6 @@ export function ProgressPage() {
           </button>
           <input ref={fileRef} type="file" accept="application/json,.json" hidden onChange={(e) => onFile(e.target.files?.[0])} />
         </div>
-        <p className="small muted" style={{ margin: 0 }}>
-          Importing merges: for each card the most recent review wins, and streak days and completed lessons are combined.
-        </p>
         {msg && <div className={`notice ${msg.ok ? 'ok' : 'bad'}`}>{msg.text}</div>}
       </section>
 

@@ -45,7 +45,7 @@ The **insula** is folded deep inside the lateral fissure, covered by the other l
 
 ## Sensory and association cortex {#association}
 
-**Sensory areas** get direct input from a sense. **Association areas** make connections *between* inputs, for example combining the slides you see with the lecture you hear. They support language, memory, planning and feeling.
+**Sensory areas** get direct input from a sense. **Association areas** make connections *between* inputs, for example combining a face you see with a voice you hear. They support language, memory, planning and feeling.
 
 ## Deep in the forebrain {#deep}
 

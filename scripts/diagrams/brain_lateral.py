@@ -112,6 +112,7 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="40 20 740 550" class=
     <path data-ref="spinal-cord" d="{smooth(cord, closed=True, t=0.2)}"/>
     <path data-ref="medulla" d="{smooth(medulla, closed=True)}"/>
     <path data-ref="pons" d="{smooth(pons, closed=True)}"/>
+    <path class="deco olive" d="{blob(492, 506, 9, 15, 0.05, seed=2, rot=-12)}"/>
     <path class="deco folia" d="M 470 440 C 500 446 530 446 552 440 M 466 462 C 498 468 528 468 550 462"/>
     <path data-ref="cerebellum" d="{smooth(cb, closed=True)}"/>
     <g clip-path="url(#lat-cb-clip)" class="deco"><path class="folia" d="{' '.join(folia)}"/></g>

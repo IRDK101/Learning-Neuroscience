@@ -349,7 +349,7 @@
   functions:
     - Pumps 3 Na⁺ out and 2 K⁺ in per ATP, against their gradients.
     - { text: "Maintains the concentration gradients; the resting potential itself comes mainly from K⁺ leaking out.", source: corrected, corrections: [C-014] }
-    - { text: "Uses a large share of the brain's energy (your notes say ~50%).", flags: [F-15] }
+    - { text: "Uses a large share of the brain's energy (often estimated at about half).", flags: [F-15] }
   topics: [membrane-at-rest]
 
 - id: calcium-pump

@@ -68,7 +68,6 @@ export function Layout() {
       <footer className="footer">
         <div className="footer-inner">
           <Link to="/progress">Progress and settings</Link>
-          <Link to="/corrections">Corrections to the notes</Link>
           <Link to="/about">About and credits</Link>
         </div>
       </footer>

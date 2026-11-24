@@ -10,15 +10,13 @@ export function PlayPage() {
     <div>
       <div className="page-head">
         <h1>Games</h1>
-        <p>Short rounds that drill the same material as the cards. Each one counts toward your streak.</p>
       </div>
       <ul className="game-list">
         <li>
           <div>
             <h2>Find the region</h2>
             <p className="muted">
-              The labels are hidden. You're asked to find the locus coeruleus, and you tap it. In reverse mode, a part is highlighted and you
-              say what it does.
+              Labels hidden: tap the named part, or name the highlighted one.
             </p>
             {best('find') !== undefined && <p className="small muted">Your best 60-second score: {best('find')}.</p>}
           </div>
@@ -42,7 +40,7 @@ export function PlayPage() {
         <li>
           <div>
             <h2>Trivia quiz</h2>
-            <p className="muted">Multiple choice and "which region would be damaged if…" cases. Wrong answers explain why and link back to the lesson.</p>
+            <p className="muted">Multiple choice and lesion cases.</p>
             {best('quiz') !== undefined && <p className="small muted">Your best round: {best('quiz')} correct.</p>}
           </div>
           <div className="row" style={{ alignSelf: 'start' }}>
@@ -57,7 +55,7 @@ export function PlayPage() {
         <li>
           <div>
             <h2>Pathway builder</h2>
-            <p className="muted">Put the steps of a pathway or a synthesis chain in order. Drag them, or use the arrow buttons.</p>
+            <p className="muted">Put the steps of a pathway in order.</p>
           </div>
           <div className="row" style={{ alignSelf: 'start' }}>
             {pathways.map((pw) => (

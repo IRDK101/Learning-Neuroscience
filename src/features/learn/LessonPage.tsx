@@ -50,7 +50,7 @@ function Block({ b, topic, onPathwayStep }: { b: LessonBlock; topic: string; onP
     case 'aside':
       return (
         <aside className={`aside aside-${b.kind}`}>
-          <div className="aside-label">{b.kind === 'added' ? 'Background, added for beginners (not from the notes)' : b.kind === 'tip' ? 'Tip' : 'Note'}</div>
+          <div className="aside-label">{b.kind === 'added' ? 'Background' : b.kind === 'tip' ? 'Tip' : 'Note'}</div>
           <div dangerouslySetInnerHTML={{ __html: b.html }} />
         </aside>
       );
@@ -184,7 +184,6 @@ export function LessonPage() {
 
           <div ref={endRef} className="lesson-end">
             <h2 style={{ marginTop: 0 }}>Practice this topic</h2>
-            <p className="muted">Lock it in with spaced-repetition flashcards or a quick quiz on {t.name}.</p>
             <div className="row">
               <Link className="btn primary" to={`/cards?topic=${t.id}`}>
                 <Icon name="cards" /> Flashcards
@@ -210,7 +209,7 @@ export function LessonPage() {
               selected={selected}
               projectionsFor={d.overlay && hl.length ? hl : undefined}
               onSelect={(id) => setSelected((s) => (s === id ? null : id))}
-              caption={<span className="idle">{d.title}. Tap any part or label for details.</span>}
+              caption={<span className="idle">{d.title}</span>}
               toolbar={
                 <button type="button" className="chip lesson-collapse" onClick={() => setCollapsed((c) => !c)} aria-expanded={!collapsed}>
                   {collapsed ? 'Show diagram' : 'Hide'}

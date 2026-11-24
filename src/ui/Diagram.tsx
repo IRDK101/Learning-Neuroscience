@@ -59,6 +59,9 @@ export function SvgDefs() {
       <defs>
         {shadeFilter('nm-shade', 7, 5)}
         {shadeFilter('nm-shade-sm', 2.6, 1.8)}
+        <marker id="nm-dot" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="5" markerHeight="5" markerUnits="strokeWidth">
+          <circle cx="4" cy="4" r="3" style={{ fill: 'var(--label)', stroke: 'var(--label-halo)', strokeWidth: 1 }} />
+        </marker>
         <pattern id="nm-hatch" patternUnits="userSpaceOnUse" width="9" height="9" patternTransform="rotate(45)">
           <rect width="9" height="9" fill="transparent" />
           <line x1="0" y1="0" x2="0" y2="9" style={{ stroke: 'var(--hatch)' }} strokeWidth="3" />

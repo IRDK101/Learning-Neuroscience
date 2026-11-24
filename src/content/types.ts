@@ -2,7 +2,7 @@
 import type { Entity, EntityType, Pathway, Source } from './schema';
 
 export type { Entity, EntityType, Pathway, Source };
-export type UnitId = 'exam1' | 'exam2' | 'exam3';
+export type UnitId = 'foundations' | 'senses-and-movement' | 'higher-functions';
 
 export interface Unit {
   id: UnitId;

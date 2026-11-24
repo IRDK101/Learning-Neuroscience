@@ -47,7 +47,7 @@ export function HomePage() {
               setOpen(!same);
             }}
             ariaLabel="The brain's neurotransmitter systems. Tap a structure for its facts and connections."
-            caption={<span>The brain's four neurotransmitter systems. Tap any colored nucleus or structure for what it does and what it connects to.</span>}
+            caption={<span>Neurotransmitter systems. Tap any part for details.</span>}
           />
           <DetailSheet id={open ? picked : null} onClose={closeSheet} mapLink={picked ? `/map/nt-overlay?focus=${picked}` : undefined} />
         </div>

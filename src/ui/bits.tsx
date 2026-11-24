@@ -6,7 +6,7 @@ import { copyLink } from './toast';
 
 export function UnitTag({ unit }: { unit: string }) {
   const u = content.units.find((x) => x.id === unit);
-  return <span className={`tag unit-${unit}`}>{u ? `${u.id.replace('exam', 'Exam ')}: ${u.name}` : unit}</span>;
+  return <span className={`tag unit-${unit}`}>{u ? u.name : unit}</span>;
 }
 
 export function TypeTag({ id }: { id: string }) {
@@ -14,27 +14,12 @@ export function TypeTag({ id }: { id: string }) {
   return e ? <span className="tag">{ENTITY_TYPE_LABEL[e.type]}</span> : null;
 }
 
-/** "corrected" / "note" badges; click opens the CORRECTIONS.md entry (handled by the popover layer). */
-export function SourceBadges({ corrections = [], flags = [], source }: { corrections?: string[]; flags?: string[]; source?: string }) {
-  return (
-    <>
-      {corrections.map((c) => (
-        <button key={c} type="button" className="badge badge-corrected" data-corr={c}>
-          corrected
-        </button>
-      ))}
-      {flags.map((f) => (
-        <button key={f} type="button" className="badge badge-flag" data-corr={f}>
-          note
-        </button>
-      ))}
-      {source === 'added' && (
-        <span className="badge badge-added" title="Beginner context added; not from the course notes">
-          added
-        </span>
-      )}
-    </>
-  );
+/**
+ * Provenance markers. Corrections and flags stay in the content (and on the Common misconceptions page),
+ * but are not shown inline: the site presents the corrected material on its own terms.
+ */
+export function SourceBadges(_props: { corrections?: string[]; flags?: string[]; source?: string }) {
+  return null;
 }
 
 export function FactText({ fact }: { fact: Fact }) {

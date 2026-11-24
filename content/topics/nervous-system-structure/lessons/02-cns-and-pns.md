@@ -26,6 +26,6 @@ The PNS has two parts:
 
 ## Cranial nerves {#cranial}
 
-Twelve pairs of **cranial nerves** leave the brain directly, without passing through the spinal cord, to serve the head, face and neck. You don't need their names for this course. They're technically PNS, though some people group them with the CNS because they're so close to the brain. Damage to one can cost you control of part of the face.
+Twelve pairs of **cranial nerves** leave the brain directly, without passing through the spinal cord, to serve the head, face and neck. They're technically PNS, though some people group them with the CNS because they're so close to the brain. Damage to one can cost you control of part of the face.
 
 The **optic nerve** is one of them. It carries signals from the retina to the **optic chiasm**, the X-shaped crossing under the brain. Only the axons from the *inner (nasal) half* of each retina cross {{C-007}}. The result is that each hemisphere sees the opposite half of the visual field with both eyes.

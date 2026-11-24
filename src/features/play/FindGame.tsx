@@ -110,7 +110,7 @@ export function FindGame() {
       explain: `That's ${the(e.name)}.`,
       refs: [target],
       topic: d.topics[0],
-      unit: 'exam1',
+      unit: 'foundations',
       difficulty: 2,
       source: e.source,
       corrections: [],

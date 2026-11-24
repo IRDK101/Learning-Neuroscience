@@ -5,7 +5,7 @@ minutes: 6
 ---
 
 :::added
-**Why bother?** Every diagram and every textbook describes brain parts by where they sit relative to each other. Learn these few words once and the rest of the course gets much easier to read.
+**Why bother?** Every diagram and every textbook describes brain parts by where they sit relative to each other. Learn these few words once and everything else gets much easier to read.
 :::
 
 ## On four legs {#quadruped}

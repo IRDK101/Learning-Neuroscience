@@ -41,6 +41,6 @@ Here's where each ion stands:
 
 ::focus{highlight="sodium-potassium-pump"}
 
-The **sodium-potassium pump** keeps sodium out and potassium in by pushing 3 Na⁺ out for every 2 K⁺ it brings in. It's often described as "creating" the resting potential, but its main job is maintaining the *concentration gradients* that the leak channels rely on. Its direct effect on the voltage is only a few millivolts. If the pumps stopped, the gradients would slowly run down and the cell would drift toward no charge. Pumping costs a lot: your notes estimate about half the brain's energy {{F-15}}.
+The **sodium-potassium pump** keeps sodium out and potassium in by pushing 3 Na⁺ out for every 2 K⁺ it brings in. It's often described as "creating" the resting potential, but its main job is maintaining the *concentration gradients* that the leak channels rely on. Its direct effect on the voltage is only a few millivolts. If the pumps stopped, the gradients would slowly run down and the cell would drift toward no charge. Pumping costs a lot: often estimated at about half the brain's energy {{F-15}}.
 
 ::check{q="q-mem-pump"}

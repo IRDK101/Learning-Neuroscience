@@ -37,7 +37,7 @@
     - { label: Tryptophan, ref: tryptophan, note: "Must come from the diet; its supply limits serotonin production." }
     - { label: 5-HTP, ref: five-htp, via: tryptophan-hydroxylase, source: added }
     - { label: Serotonin (5-HT), ref: serotonin, via: dopa-decarboxylase, source: added, note: "The same decarboxylase that makes dopamine from L-DOPA." }
-    - { label: Melatonin (pineal gland), ref: melatonin, note: "Notes: tryptophan is also a precursor for melatonin." }
+    - { label: Melatonin (pineal gland), ref: melatonin, note: "Tryptophan is also a precursor for melatonin." }
 
 - id: chemical-transmission-steps
   type: pathway

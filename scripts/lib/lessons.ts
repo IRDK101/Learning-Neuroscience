@@ -9,8 +9,8 @@
  *   …markdown…
  *   :::
  *
- * Inline: [[entity-id]] or [[label|entity-id]] links an entity; {{C-022}} adds a "corrected" badge,
- * {{F-07}} a flag badge. Known terms are auto-linked to hover definitions.
+ * Inline: [[entity-id]] or [[label|entity-id]] links an entity; {{C-022}} / {{F-07}} cite a
+ * correction or flag (validated, not rendered). Known terms are auto-linked to hover definitions.
  */
 import { Marked } from 'marked';
 import YAML from 'yaml';
@@ -40,13 +40,14 @@ function inline(md: string, ctx: LessonContext, where: string, errors: ContentEr
       const label = b ? a.trim() : name;
       return `<a class="ref" data-ref="${id}" href="#/entity/${id}">${escapeHtml(label)}</a>`;
     })
-    .replace(/\{\{([CF]-\d{2,3})\}\}/g, (_, id: string) => {
+    .replace(/[ \t]*\{\{([CF]-\d{2,3})\}\}/g, (_, id: string) => {
       const isC = id.startsWith('C-');
       if (isC ? !ctx.hasCorrection(id) : !ctx.hasFlag(id)) {
         errors.add(where, `{{${id}}} is not in CORRECTIONS.md`);
         return '';
       }
-      return `<button type="button" class="badge ${isC ? 'badge-corrected' : 'badge-flag'}" data-corr="${id}">${isC ? 'corrected' : 'note'}</button>`;
+      // Checked, but not rendered: corrections are listed on the Common misconceptions page instead.
+      return '';
     });
 }
 

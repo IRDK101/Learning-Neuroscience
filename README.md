@@ -1,8 +1,8 @@
 # NeuroMap
 
-An interactive site for learning and reviewing introductory neuroscience (PSYC 6), built from course notes
-(`notes/PSYC6_notes.pdf`). Clickable brain diagrams, short lessons, FSRS spaced-repetition flashcards and games.
-Static site; progress is saved in the browser.
+An interactive site for learning neuroscience: clickable brain diagrams, short lessons, FSRS spaced-repetition
+flashcards and games. Static site; progress is saved in the browser. Content lives in `content/`;
+`CORRECTIONS.md` records fixes made to the source material.
 
 ## Run it
 

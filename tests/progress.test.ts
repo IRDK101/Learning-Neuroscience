@@ -55,7 +55,7 @@ describe('mergeProgress', () => {
 });
 
 const card = (id: string, extra: Partial<Card> = {}): Card => ({
-  id, kind: 'basic', front: 'f', back: 'b', refs: [], topic: 'nt-systems', unit: 'exam1', difficulty: 2, source: 'notes', corrections: [], generated: true, ...extra,
+  id, kind: 'basic', front: 'f', back: 'b', refs: [], topic: 'nt-systems', unit: 'foundations', difficulty: 2, source: 'notes', corrections: [], generated: true, ...extra,
 });
 
 describe('session planning', () => {

@@ -13,7 +13,6 @@ import { FindGame } from './features/play/FindGame';
 import { PathwayGame } from './features/play/PathwayGame';
 import { ProgressPage } from './features/progress/ProgressPage';
 import { AboutPage } from './features/about/AboutPage';
-import { CorrectionsPage } from './features/about/CorrectionsPage';
 import { content } from './content';
 
 /** #/map?region=amygdala → the first diagram that has that region. */
@@ -56,7 +55,7 @@ const router = createHashRouter([
       { path: '/play/pathway', element: <PathwayGame /> },
       { path: '/progress', element: <ProgressPage /> },
       { path: '/about', element: <AboutPage /> },
-      { path: '/corrections', element: <CorrectionsPage /> },
+      { path: '/corrections', element: <Navigate to="/about" replace /> },
       { path: '*', element: <NotFound /> },
     ],
   },
